@@ -18,6 +18,7 @@
       "ESNext"
     ],
     "allowJs": true,
+    "declaration": true,
     "skipLibCheck": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
