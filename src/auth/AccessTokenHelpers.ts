@@ -44,9 +44,13 @@ export default class AccessTokenHelpers {
         const data = new TextEncoder().encode(codeVerifier);
 
         if (!window.crypto || !window.crypto.subtle) {
-            const { Crypto } = require("@peculiar/webcrypto");
-            const crypto = new Crypto();
-            window.crypto = crypto;
+            try {
+                const { Crypto } = require("@peculiar/webcrypto");
+                const crypto = new Crypto();
+                window.crypto = crypto;
+            } catch(e) {
+                throw e;
+            }
         }
 
         const digest = await window.crypto.subtle.digest('SHA-256', data);
