@@ -2,12 +2,15 @@
   "name": "spotify-web-api-ts-skd",
   "version": "1.0.0",
   "description": "A typescript SDK for the Spotify Web API",
-  "main": "index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
   "scripts": {
     "start": "npx vite serve",
     "test": "vitest run",
     "ci": "npm run test && npm run build",
-    "build": "tsc"
+    "build": "npm run build:cjs && npm run build:mjs",
+    "build:mjs": "tsc --project tsconfig.mjs.json && cp res/package.mjs.json dist/mjs/package.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json && cp res/package.cjs.json dist/cjs/package.json"
   },
   "exports": {
     "import": "./dist/index.js"

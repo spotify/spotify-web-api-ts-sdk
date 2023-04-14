@@ -1,4 +1,11 @@
 {
+  "exclude": [
+    "./src/**/*.test.ts",
+    "./example/**/*.ts",
+    "./vite.config.ts",
+    "./vitest.config.ts",
+    "./src/test/**/*.ts"
+  ],
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
@@ -11,12 +18,9 @@
     "skipLibCheck": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
-    "module": "ESNext",
     "moduleResolution": "Node",
-    "outDir": "dist",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,
     "strict": true
   }
 }
