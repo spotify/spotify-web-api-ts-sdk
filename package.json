@@ -1,10 +1,10 @@
 {
   "name": "@spotify/web-api-ts-sdk",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "A typescript SDK for the Spotify Web API",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
-  "types": "dist/mjs/index.d.ts",
+  "types": "src/types.d.ts",
   "scripts": {
     "start": "npx vite serve",
     "test": "vitest run",
