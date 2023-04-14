@@ -1,4 +1,7 @@
 {
+  "include": [
+    "./src/**/*.ts"
+  ],
   "exclude": [
     "./src/**/*.test.ts",
     "./example/**/*.ts",
@@ -15,12 +18,15 @@
       "ESNext"
     ],
     "allowJs": true,
+    "declaration": true,
     "skipLibCheck": false,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "rootDir": "./src",
+    "sourceMap": true,
     "strict": true
   }
 }

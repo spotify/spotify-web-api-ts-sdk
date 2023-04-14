@@ -1,9 +1,10 @@
 {
   "name": "@spotify/web-api-ts-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A typescript SDK for the Spotify Web API",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
+  "types": "dist/mjs/index.d.ts",
   "scripts": {
     "start": "npx vite serve",
     "test": "vitest run",
@@ -13,14 +14,15 @@
     "build:cjs": "tsc --project tsconfig.cjs.json && cp res/package.cjs.json dist/cjs/package.json"
   },
   "exports": {
-    "import": "./dist/index.js"
+    "import": "./dist/mjs/index.js",
+    "require": "./dist/cjs/index.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/spotify/spotify-web-api-ts-sdk"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Spotify",
+  "license": "Apache",
   "devDependencies": {
     "@peculiar/webcrypto": "^1.4.1",
     "@types/node": "^18.15.1",
