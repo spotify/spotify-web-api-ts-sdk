@@ -1,3 +1,5 @@
+import type { AccessToken, ICachable } from "../types";
+
 export default class AccessTokenHelpers {
     public static async refreshCachedAccessToken(clientId: string, item: AccessToken) {
         const updated = await AccessTokenHelpers.refreshToken(clientId, item.refresh_token);
@@ -48,7 +50,7 @@ export default class AccessTokenHelpers {
                 const { Crypto } = require("@peculiar/webcrypto");
                 const crypto = new Crypto();
                 window.crypto = crypto;
-            } catch(e) {
+            } catch (e) {
                 throw e;
             }
         }

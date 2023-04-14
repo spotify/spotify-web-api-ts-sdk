@@ -1,3 +1,4 @@
+import type { Market, Episode, Episodes } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class EpisodesEndpoints extends EndpointsBase {

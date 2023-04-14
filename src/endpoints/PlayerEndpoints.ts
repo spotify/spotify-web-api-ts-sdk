@@ -1,3 +1,4 @@
+import type { Market, MaxInt } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 interface QueryRange {
@@ -49,19 +50,19 @@ export default class PlayerEndpoints extends EndpointsBase {
     public startResumePlayback(device_id: string, context_uri?: string, uris?: string[], offset?: object, positionMs?: number) {
         const params = this.paramsFor({ device_id });
 
-        return this.putRequest<any>(`me/player/play${params}`, {context_uri, uris, offset, positionMs});
+        return this.putRequest<any>(`me/player/play${params}`, { context_uri, uris, offset, positionMs });
     }
 
     public pausePlayback(device_id: string) {
         const params = this.paramsFor({ device_id });
         return this.putRequest<any>(`me/player/pause${params}`);
     }
-    
+
     public skipToNext(device_id: string) {
         const params = this.paramsFor({ device_id });
         return this.postRequest<any>(`me/player/next${params}`);
     }
-    
+
     public skipToPrevious(device_id: string) {
         const params = this.paramsFor({ device_id });
         return this.postRequest<any>(`me/player/previous${params}`);

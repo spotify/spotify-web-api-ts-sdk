@@ -1,3 +1,4 @@
+import type { CountryCodeA2, MaxInt, Categories, Category, NewReleases, PlaylistsWithTrackReferences } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class BrowseEndpoints extends EndpointsBase {

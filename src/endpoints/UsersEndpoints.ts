@@ -1,3 +1,4 @@
+import type { User } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class UsersEndpoints extends EndpointsBase {

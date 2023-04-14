@@ -1,3 +1,4 @@
+import type { ItemTypes, Market, MaxInt, SearchResults } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export interface SearchExecutionFunction {

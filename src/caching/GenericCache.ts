@@ -1,3 +1,4 @@
+import { ICachingStrategy, ICachable } from "../types";
 import { ICacheStore } from "./ICacheStore";
 
 export default class GenericCache implements ICachingStrategy {

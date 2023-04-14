@@ -1,3 +1,4 @@
+import type { Markets } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class MarketsEndpoints extends EndpointsBase {

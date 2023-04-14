@@ -1,3 +1,4 @@
+import type { Genres } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class RecommendationsEndpoints extends EndpointsBase {
@@ -5,7 +6,7 @@ export default class RecommendationsEndpoints extends EndpointsBase {
         throw new Error("not implemented, too many params :O")
         return this.getRequest<any>('recommendations');
     }
-    
+
     public genreSeeds() {
         return this.getRequest<Genres>('recommendations/available-genre-seeds');
     }

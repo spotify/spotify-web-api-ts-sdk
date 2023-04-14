@@ -1,3 +1,4 @@
+import type { SdkConfiguration, ICachingStrategy, AccessToken } from "../types";
 import AccessTokenHelpers from "./AccessTokenHelpers";
 import IAuthStrategy from "./IAuthStrategy";
 

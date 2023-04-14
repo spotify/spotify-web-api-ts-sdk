@@ -1,3 +1,4 @@
+import type { Market, PlaylistWithTracks, MaxInt, Page, Track, SnapshotReference, Image } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class PlaylistsEndpoints extends EndpointsBase {
@@ -19,10 +20,10 @@ export default class PlaylistsEndpoints extends EndpointsBase {
     }
 
     public movePlaylistItems(playlist_id: string, range_start: number, range_length: number, moveToPosition: number) {
-        return this.updatePlaylistItems(playlist_id, { 
-            range_start, 
+        return this.updatePlaylistItems(playlist_id, {
+            range_start,
             range_length,
-            insert_before: moveToPosition 
+            insert_before: moveToPosition
         });
     }
 

@@ -1,3 +1,4 @@
+import type { Market, AlbumWithTracks, Albums, MaxInt, Page, Track } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class AlbumsEndpoints extends EndpointsBase {

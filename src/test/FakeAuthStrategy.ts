@@ -1,4 +1,5 @@
 import IAuthStrategy from "../auth/IAuthStrategy";
+import type { SdkConfiguration } from "../types";
 
 export class FakeAuthStrategy implements IAuthStrategy {
     public static FAKE_AUTH_TOKEN = "fake-auth-token";

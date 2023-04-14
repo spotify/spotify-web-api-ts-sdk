@@ -1,3 +1,4 @@
+import type { Market, TrackWithAlbum, Tracks, AudioFeatures, AudioFeaturesCollection, AudioAnalysis } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class TracksEndpoints extends EndpointsBase {
@@ -5,7 +6,7 @@ export default class TracksEndpoints extends EndpointsBase {
     public get(id: string, market?: Market): Promise<TrackWithAlbum>
     public get(ids: string[], market?: Market): Promise<TrackWithAlbum[]>
     public async get(idOrIds: string | string[], market?: Market) {
-        if(typeof idOrIds === 'string') {
+        if (typeof idOrIds === 'string') {
             const params = this.paramsFor({ market });
             return this.getRequest<TrackWithAlbum>(`tracks/${idOrIds}${params}`);
         }

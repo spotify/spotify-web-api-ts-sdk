@@ -1,3 +1,5 @@
+import type { IResponseDeserializer } from "../types";
+
 export default class DefaultResponseDeserializer implements IResponseDeserializer {
     public async deserialize<TReturnType>(response: Response): Promise<TReturnType> {
         const text = await response.text();

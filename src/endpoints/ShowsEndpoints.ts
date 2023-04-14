@@ -1,3 +1,4 @@
+import type { Market, ShowWithEpisodes, Shows, MaxInt, Page, Episode } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class ShowsEndpoints extends EndpointsBase {
@@ -5,7 +6,7 @@ export default class ShowsEndpoints extends EndpointsBase {
     public get(id: string, market: Market): Promise<ShowWithEpisodes>;
     public get(ids: string[], market: Market): Promise<ShowWithEpisodes[]>
     public async get(idOrIds: string | string[], market: Market) {
-        if(typeof idOrIds === 'string') {
+        if (typeof idOrIds === 'string') {
             const params = this.paramsFor({ market })
             return this.getRequest<ShowWithEpisodes>(`shows/${idOrIds}${params}`);
         }

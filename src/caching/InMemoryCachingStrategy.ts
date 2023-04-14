@@ -1,5 +1,5 @@
 import GenericCache from "./GenericCache";
-import { ICacheStore } from "./ICacheStore";
+import type { ICacheStore } from "./ICacheStore";
 
 export default class InMemoryCachingStrategy extends GenericCache {
     constructor() {

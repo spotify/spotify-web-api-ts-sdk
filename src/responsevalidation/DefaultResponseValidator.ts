@@ -1,3 +1,5 @@
+import type { IValidateResponses } from "../types";
+
 export default class DefaultResponseValidator implements IValidateResponses {
     public async validateResponse(response: Response): Promise<void> {
 

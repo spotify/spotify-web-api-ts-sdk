@@ -1,7 +1,8 @@
+import type { Market, AudiobookWithChapters, Audiobooks, MaxInt, Page, Chapter } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class AudiobooksEndpoints extends EndpointsBase {
-    public async get(id: string, market?: Market): Promise<AudiobookWithChapters>; 
+    public async get(id: string, market?: Market): Promise<AudiobookWithChapters>;
     public async get(ids: string[], market?: Market): Promise<AudiobookWithChapters[]>;
     public async get(idOrIds: string | string[], market?: Market) {
         if (typeof idOrIds === 'string') {

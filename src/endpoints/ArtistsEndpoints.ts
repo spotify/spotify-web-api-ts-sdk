@@ -1,3 +1,4 @@
+import type { Artist, Artists, Market, MaxInt, Page, Album, TopTracksResult } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class ArtistsEndpoints extends EndpointsBase {
@@ -10,7 +11,7 @@ export default class ArtistsEndpoints extends EndpointsBase {
             return artist;
         }
 
-        const params = this.paramsFor({ ids:idOrIds });
+        const params = this.paramsFor({ ids: idOrIds });
         // TODO: only returns top 50, validate here
         const response = await this.getRequest<Artists>(`artists${params}`);
         return response.artists;

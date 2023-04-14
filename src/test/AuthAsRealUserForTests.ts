@@ -1,6 +1,7 @@
 import playwright from "playwright";
 import AuthorizationCodeWithPKCEStrategy from "../auth/AuthorizationCodeWithPKCEStrategy";
 import AccessTokenHelpers from "../auth/AccessTokenHelpers";
+import type { AccessToken } from "../types";
 
 export default class AuthAsSpecifcUserForTests extends AuthorizationCodeWithPKCEStrategy {
     constructor(

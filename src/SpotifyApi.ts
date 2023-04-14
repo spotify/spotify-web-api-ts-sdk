@@ -23,6 +23,7 @@ import NoOpErrorHandler from "./errorhandling/NoOpErrorHandler";
 import DocumentLocationRedirectionStrategy from "./redirection/DocumentLocationRedirectionStrategy";
 import LocalStorageCachingStrategy from "./caching/LocalStorageCachingStrategy";
 import InMemoryCachingStrategy from "./caching/InMemoryCachingStrategy";
+import type { SdkConfiguration, SdkOptions } from "./types";
 
 export class SpotifyApi {
     private sdkConfig: SdkConfiguration;

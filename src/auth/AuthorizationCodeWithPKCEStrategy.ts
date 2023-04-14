@@ -1,3 +1,4 @@
+import type { ICachable, SdkConfiguration, AccessToken, ICachingStrategy } from "../types";
 import AccessTokenHelpers from "./AccessTokenHelpers";
 import IAuthStrategy from "./IAuthStrategy";
 
