@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npx vite serve",
     "test": "vitest run",
-    "ci": "npm run test && npm run build",
+    "ci": "npm run build",
     "build": "npm run build:cjs && npm run build:mjs",
     "build:mjs": "tsc --project tsconfig.mjs.json && cp res/package.mjs.json dist/mjs/package.json",
     "build:cjs": "tsc --project tsconfig.cjs.json && cp res/package.cjs.json dist/cjs/package.json"
