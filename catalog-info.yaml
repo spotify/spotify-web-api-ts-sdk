@@ -1,7 +1,0 @@
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: Web-API-Typescript-SDK
-spec:
-  type: library
-  owner: DX
