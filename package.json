@@ -1,6 +1,6 @@
 {
   "name": "@spotify/web-api-ts-sdk",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A typescript SDK for the Spotify Web API",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
@@ -24,7 +24,6 @@
   "author": "Spotify",
   "license": "Apache",
   "devDependencies": {
-    "@peculiar/webcrypto": "^1.4.1",
     "@types/node": "^18.15.1",
     "@types/uuid": "^9.0.1",
     "dotenv": "^16.0.3",
@@ -34,6 +33,9 @@
     "uuid": "^9.0.0",
     "vite": "^4.1.4",
     "vitest": "^0.29.2"
+  },
+  "peerDependencies": {
+    "@peculiar/webcrypto": "^1.4.1"
   },
   "publishConfig": {
     "access": "public"
