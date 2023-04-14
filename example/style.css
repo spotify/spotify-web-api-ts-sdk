@@ -1,0 +1,33 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+h2 {
+  grid-column: span 2;
+}
+
+ul {
+  max-width: 500px;
+  margin: 0;
+  list-style: none;
+  line-height: 1.5em;
+}
+
+li {
+  font-weight: bold;
+}
+
+li span {
+  font-weight: normal;
+  overflow-wrap: break-word;
+}
