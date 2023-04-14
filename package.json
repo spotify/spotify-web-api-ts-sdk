@@ -1,5 +1,5 @@
 {
-  "name": "spotify-web-api-ts-sdk",
+  "name": "@spotify/web-api-ts-sdk",
   "version": "0.0.1",
   "description": "A typescript SDK for the Spotify Web API",
   "main": "dist/cjs/index.js",
