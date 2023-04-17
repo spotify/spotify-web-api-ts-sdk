@@ -6,6 +6,7 @@ import { FetchApiSpy } from "./FetchApiSpy";
 import AuthAsSpecifcUserForTests from "./AuthAsRealUserForTests";
 
 import dotenv from "dotenv";
+import InMemoryCachingStrategy from "../caching/InMemoryCachingStrategy";
 dotenv.config();
 
 export function buildIntegrationTestSdkInstance(logResults: boolean = false): [SpotifyApi, FetchApiSpy] {
@@ -29,7 +30,8 @@ export function buildIntegrationTestSdkInstance(logResults: boolean = false): [S
     const sdkConfig = {
         fetch: (input: RequestInfo | URL, init?: RequestInit | undefined) => {
             return fetchSpy.fetch(input, init);
-        }
+        },
+        cachingStrategy: new InMemoryCachingStrategy()
     }
 
     const sdkInstance = new SpotifyApi(authStrat, sdkConfig);
@@ -71,7 +73,8 @@ export function buildIntegrationTestUserSdkInstance(logResults: boolean = false)
     const sdkConfig = {
         fetch: (input: RequestInfo | URL, init?: RequestInit | undefined) => {
             return fetchSpy.fetch(input, init);
-        }
+        },
+        cachingStrategy: new InMemoryCachingStrategy()
     }
 
     const sdkInstance = new SpotifyApi(authStrat, sdkConfig);
@@ -85,7 +88,8 @@ export function buildUnitTestSdkInstance(): [SpotifyApi, FetchApiMock] {
     const sdkConfig = {
         fetch: (input: RequestInfo | URL, init?: RequestInit | undefined) => {
             return fetchMock.fetch(input, init);
-        }
+        },
+        cachingStrategy: new InMemoryCachingStrategy()
     }
 
     const sdkInstance = new SpotifyApi(authStrat, sdkConfig);

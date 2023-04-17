@@ -79,6 +79,7 @@ describe("Integration: Users Endpoints (logged in user)", () => {
         const validTrack = valid.tracks.items[0];
 
         const me = await sut.currentUser.profile();
+        
         const result = await sut.playlists.createPlaylist(me.id, {
             name: "test playlist name!",
             description: "test playlist description!"

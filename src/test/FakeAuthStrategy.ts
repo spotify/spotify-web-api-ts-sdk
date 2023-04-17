@@ -1,16 +1,18 @@
 import IAuthStrategy from "../auth/IAuthStrategy";
-import type { SdkConfiguration } from "../types";
+import type { AccessToken, SdkConfiguration } from "../types";
 
 export class FakeAuthStrategy implements IAuthStrategy {
     public static FAKE_AUTH_TOKEN = "fake-auth-token";
-    private promiseToResolve: Promise<string | null>;
+    private promiseToResolve: Promise<AccessToken>;
     private res: any;
 
     private returnedToken;
 
     constructor(autoResolve: boolean = true, returnedToken: string = FakeAuthStrategy.FAKE_AUTH_TOKEN) {
 
-        this.returnedToken = returnedToken;
+        this.returnedToken = {
+            access_token: returnedToken
+        };
 
         this.promiseToResolve = new Promise((res, rej) => {
             this.res = res;
@@ -23,7 +25,7 @@ export class FakeAuthStrategy implements IAuthStrategy {
     public setConfiguration(configuration: SdkConfiguration): void {
     }
 
-    public getAccessToken(): Promise<string | null> {
+    public getAccessToken(): Promise<AccessToken> {
         return this.promiseToResolve;
     }
 

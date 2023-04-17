@@ -34,9 +34,6 @@
     "vite": "^4.1.4",
     "vitest": "^0.29.2"
   },
-  "peerDependencies": {
-    "@peculiar/webcrypto": "^1.4.1"
-  },
   "publishConfig": {
     "access": "public"
   },

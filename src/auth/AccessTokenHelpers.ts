@@ -45,17 +45,20 @@ export default class AccessTokenHelpers {
     public static async generateCodeChallenge(codeVerifier: string) {
         const data = new TextEncoder().encode(codeVerifier);
 
-        if (!window.crypto || !window.crypto.subtle) {
+        let crypto: Crypto;
+
+        if (window?.crypto?.subtle) {
+            crypto = window.crypto;
+        } else {
             try {
-                const { Crypto } = require("@peculiar/webcrypto");
-                const crypto = new Crypto();
-                window.crypto = crypto;
-            } catch (e) {
+                const { webcrypto } = require('crypto');
+                crypto = webcrypto;
+            } catch (e) { 
                 throw e;
             }
         }
 
-        const digest = await window.crypto.subtle.digest('SHA-256', data);
+        const digest = await crypto.subtle.digest('SHA-256', data);
         return btoa(String.fromCharCode.apply(null, [...new Uint8Array(digest)]))
             .replace(/\+/g, '-')
             .replace(/\//g, '_')
