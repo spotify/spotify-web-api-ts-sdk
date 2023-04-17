@@ -5,7 +5,7 @@ export default class GenericCache implements ICachingStrategy {
     constructor(
         private storage: ICacheStore,
         private updateFunctions: Map<string, (item: any) => Promise<ICachable>> = new Map(),
-        private autoRenewInterval: number = 10000,
+        private autoRenewInterval: number = 0,
         private autoRenewWindow: number = 2 * 60 * 1000 // Two minutes
     ) {
         if (this.autoRenewInterval > 0) {

@@ -16,3 +16,4 @@ TODOs.md
 .eslintcache
 /*.env
 /example/.env
+/example_node/.env
