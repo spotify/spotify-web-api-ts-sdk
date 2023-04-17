@@ -13,14 +13,14 @@ export default class AuthAsSpecifcUserForTests extends AuthorizationCodeWithPKCE
         super(clientId, "http://localhost:3000", scopes);
     }
 
-    public async getAccessToken(): Promise<string | null> {
+    public async getAccessToken(): Promise<AccessToken> {
         const token = await this.cache.getOrCreate<AccessToken>("spotify-sdk:token", async () => {
             const token = await this.useBrowserAutomationToGetToken();
             const expires = Date.now() + (token.expires_in * 1000);
             return { ...token, expires };
         });
 
-        return token?.access_token;
+        return token;
     }
 
     private async useBrowserAutomationToGetToken(): Promise<AccessToken> {

@@ -1,6 +1,6 @@
 import type { ICachable, SdkConfiguration, AccessToken, ICachingStrategy } from "../types";
 import AccessTokenHelpers from "./AccessTokenHelpers";
-import IAuthStrategy from "./IAuthStrategy";
+import IAuthStrategy, { emptyAccessToken } from "./IAuthStrategy";
 
 interface CachedVerifier extends ICachable {
     verifier: string;
@@ -10,7 +10,6 @@ interface CachedVerifier extends ICachable {
 export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy {
 
     private configuration: SdkConfiguration | null = null;
-    private static emptyAccessToken: AccessToken = { access_token: "", token_type: "", expires_in: 0, refresh_token: "" };
     protected get cache(): ICachingStrategy { return this.configuration!.cachingStrategy; }
 
     constructor(
@@ -24,7 +23,7 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
         this.configuration = configuration;
     }
 
-    public async getAccessToken(): Promise<string | null> {
+    public async getAccessToken(): Promise<AccessToken> {
         const cacheKey = "spotify-sdk:AuthorizationCodeWithPKCEStrategy:token";
 
         const token = await this.cache.getOrCreate<AccessToken>(cacheKey, async () => {
@@ -34,7 +33,7 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
             return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
         });
 
-        return token?.access_token;
+        return token;
     }
 
     private async redirectOrVerifyToken(): Promise<AccessToken> {
@@ -52,7 +51,7 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
             await this.configuration!.redirectionStrategy.redirect(redirectTarget);
 
             // Redirected away at this point, just make TypeScript happy :)           
-            return AuthorizationCodeWithPKCEStrategy.emptyAccessToken;
+            return emptyAccessToken;
         }
 
         this.removeCodeFromUrl();

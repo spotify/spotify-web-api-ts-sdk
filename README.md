@@ -50,8 +50,52 @@ Each of these factory methods will return a `SpotifyApi` instance, which you can
 - Authorization Code Flow with PKCE
 - Client Credentials Flow
 - Implicit Grant Flow
+- Mixed Server and Client Side Authentication
 
 We do auto-token refresh when expired and a refresh token is available.
+
+### Mixed Server and Client Side Authentication
+
+There's capabilities in the client if you want to interact with Spotify from your Node.js server, but perform a client side Authorization Code Flow with PKCE.
+You might want to do this if you want your server side SDK instance to be authorized "as a specific user" to interact with user data.
+
+You'll need to do three things.
+
+1. Perform Authorization Code Flow with PKCE using some special helper functions
+2. Expose a URL from your Node.js application that accepts a token post-back
+3. Initilise an instance of the SDK with the posted-back token
+
+Setup:
+
+*Client Side*
+```js
+SpotifyApi.performUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"], "https://your-backend-server.com/accept-user-token");
+// Alternatively if you want to perform your own custom post-back
+SpotifyApi.performUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"], (accessToken) => { /* do postback here */ });
+```
+
+These functions will work as usual, triggering a client side redirect to grant permissions, along with verifying the response and performing token exchange.
+
+*Server Side*
+```js
+const express = require('express');
+const bodyParser = require('body-parser'); 
+const app = express();
+ 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+let sdk;
+
+app.post('/accept-user-token', (req, res) => {
+    let data = req.body;
+    sdk = SpotifyApi.withAccessToken("client-id", data); // SDK now authenticated as client-side user
+}); 
+ 
+app.listen(3000, () => {
+  console.log('Example app listening on port 3000!')
+});
+```
 
 ### Extensibility
 

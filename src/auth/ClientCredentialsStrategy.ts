@@ -18,7 +18,7 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
         this.configuration = configuration;
     }
 
-    public async getAccessToken(): Promise<string | null> {
+    public async getAccessToken(): Promise<AccessToken> {
         const cacheKey = "spotify-sdk:ClientCredentialsStrategy:token";
 
         const token = await this.cache.getOrCreate<AccessToken>(cacheKey, async () => {
@@ -26,7 +26,7 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
             return AccessTokenHelpers.toCachable(token);
         });
 
-        return token?.access_token;
+        return token;
     }
 
     private async getTokenFromApi(): Promise<AccessToken> {

@@ -11,7 +11,7 @@ import PlaylistsEndpoints from "./endpoints/PlaylistsEndpoints";
 import SearchEndpoints, { SearchExecutionFunction } from "./endpoints/SearchEndpoints";
 import ShowsEndpoints from "./endpoints/ShowsEndpoints";
 import TracksEndpoints from "./endpoints/TracksEndpoints";
-import IAuthStrategy from "./auth/IAuthStrategy";
+import IAuthStrategy, { emptyAccessToken } from "./auth/IAuthStrategy";
 import UsersEndpoints from "./endpoints/UsersEndpoints";
 import CurrentUserEndpoints from "./endpoints/CurrentUserEndpoints";
 import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy";
@@ -23,7 +23,8 @@ import NoOpErrorHandler from "./errorhandling/NoOpErrorHandler";
 import DocumentLocationRedirectionStrategy from "./redirection/DocumentLocationRedirectionStrategy";
 import LocalStorageCachingStrategy from "./caching/LocalStorageCachingStrategy";
 import InMemoryCachingStrategy from "./caching/InMemoryCachingStrategy";
-import type { SdkConfiguration, SdkOptions } from "./types";
+import type { AccessToken, SdkConfiguration, SdkOptions } from "./types";
+import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy";
 
 export class SpotifyApi {
     private sdkConfig: SdkConfiguration;
@@ -75,7 +76,8 @@ export class SpotifyApi {
 
     public async makeRequest<TReturnType>(method: "GET" | "POST" | "PUT" | "DELETE", url: string, body: any = undefined): Promise<TReturnType> {
         try {
-            const token = await this.authenticationStrategy.getAccessToken();
+            const accessToken = await this.authenticationStrategy.getAccessToken();
+            const token = accessToken?.access_token;
 
             const fullUrl = SpotifyApi.rootUrl + url;
             const opts: RequestInit = {
@@ -140,5 +142,59 @@ export class SpotifyApi {
     public static withImplicitGrant(clientId: string, redirectUri: string, scopes: string[] = [], config?: SdkOptions): SpotifyApi {
         const strategy = new ImplicitGrantStrategy(clientId, redirectUri, scopes);
         return new SpotifyApi(strategy, config);
+    }
+
+    /**
+     * Use this when you're running in a Node environment, and accepting the access token from a client-side `performUserAuthorization` call.
+     * You can also use this method if you already have an access token and don't want to use the built-in authentication strategies.
+     */
+    public static withAccessToken(clientId: string, token: AccessToken, config?: SdkOptions): SpotifyApi {
+        const strategy = new ProvidedAccessTokenStrategy(clientId, token);
+        return new SpotifyApi(strategy, config);
+    }
+
+    /**
+     * Use this when you're running in the browser, and want to perform the user authorization flow to post back to your server with the access token.
+     * @param clientId Your Spotify client ID
+     * @param redirectUri The URI to redirect to after the user has authorized your app
+     * @param scopes The scopes to request
+     * @param postbackUrl The URL to post the access token to
+     * @param config Optional configuration
+     */
+    public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], postbackUrl: string, config?: SdkOptions): Promise<void>;
+    
+    /**
+     * Use this when you're running in the browser, and want to perform the user authorization flow to post back to your server with the access token.
+     * This overload is provided for you to perform the postback yourself, if you want to do something other than a simple HTTP POST to a URL - for example, if you want to use a WebSocket, or provide custom authentication.
+     * @param clientId Your Spotify client ID
+     * @param redirectUri The URI to redirect to after the user has authorized your app
+     * @param scopes The scopes to request
+     * @param onAuthorization A function to call with the access token where YOU perform the server-side postback
+     * @param config Optional configuration
+     */
+    public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], onAuthorization: (token: AccessToken) => Promise<void>, config?: SdkOptions): Promise<void>;
+    
+    public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], onAuthorizationOrUrl: ((token: AccessToken) => Promise<void>) | string, config?: SdkOptions): Promise<void> {
+        scopes = scopes || [];
+                
+        const strategy = new AuthorizationCodeWithPKCEStrategy(clientId, redirectUri, scopes);
+        const client = new SpotifyApi(strategy, config);
+        const accessToken = await client.authenticationStrategy.getAccessToken();
+        if (accessToken == emptyAccessToken) {
+            return; // Redirect code path, do nothing.
+        }
+
+        if (typeof onAuthorizationOrUrl === "string") {
+            await fetch(onAuthorizationOrUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(accessToken)
+            });
+            return;
+        }
+
+        await onAuthorizationOrUrl(accessToken);
     }
 }

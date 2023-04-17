@@ -1,10 +1,9 @@
 import type { SdkConfiguration, AccessToken, ICachingStrategy } from "../types";
 import AccessTokenHelpers from "./AccessTokenHelpers";
-import IAuthStrategy from "./IAuthStrategy";
+import IAuthStrategy, { emptyAccessToken } from "./IAuthStrategy";
 
 export default class ImplicitGrantStrategy implements IAuthStrategy {
     private configuration: SdkConfiguration | null = null;
-    private static emptyAccessToken: AccessToken = { access_token: "", token_type: "", expires_in: 0, refresh_token: "" };
     private get cache(): ICachingStrategy { return this.configuration!.cachingStrategy; }
 
     constructor(
@@ -18,7 +17,7 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
         this.configuration = configuration;
     }
 
-    public async getAccessToken(): Promise<string | null> {
+    public async getAccessToken(): Promise<AccessToken> {
         const cacheKey = "spotify-sdk:ImplicitGrantStrategy:token";
 
         const token = await this.cache.getOrCreate<AccessToken>(cacheKey, async () => {
@@ -28,7 +27,7 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
             return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
         });
 
-        return token?.access_token;
+        return token;
     }
 
     private async redirectOrVerifyToken(): Promise<AccessToken> {
@@ -56,6 +55,6 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
         const authUrl = 'https://accounts.spotify.com/authorize?' + params.toString();
 
         this.configuration!.redirectionStrategy.redirect(authUrl);
-        return ImplicitGrantStrategy.emptyAccessToken;
+        return emptyAccessToken;
     }
 }
