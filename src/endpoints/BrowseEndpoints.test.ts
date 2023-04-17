@@ -13,7 +13,7 @@ describe("Integration: Browse Categories Endpoints", () => {
     });
 
     it("getCategories can return information", async () => {
-        const result = await sut.browse.getCategories();//?
+        const result = await sut.browse.getCategories();
 
         expect(fetchSpy.request(0).input).toBe(`https://api.spotify.com/v1/browse/categories`);
         expect(result.categories.items.length).toBeGreaterThan(0);
