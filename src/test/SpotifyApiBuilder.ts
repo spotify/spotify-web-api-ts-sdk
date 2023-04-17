@@ -4,9 +4,9 @@ import { FakeAuthStrategy } from "./FakeAuthStrategy";
 import { FetchApiMock } from "./FetchApiMock";
 import { FetchApiSpy } from "./FetchApiSpy";
 import AuthAsSpecifcUserForTests from "./AuthAsRealUserForTests";
+import InMemoryCachingStrategy from "../caching/InMemoryCachingStrategy";
 
 import dotenv from "dotenv";
-import InMemoryCachingStrategy from "../caching/InMemoryCachingStrategy";
 dotenv.config();
 
 export function buildIntegrationTestSdkInstance(logResults: boolean = false): [SpotifyApi, FetchApiSpy] {

@@ -4,6 +4,9 @@ import AccessTokenHelpers from "../auth/AccessTokenHelpers";
 import type { AccessToken } from "../types";
 
 export default class AuthAsSpecifcUserForTests extends AuthorizationCodeWithPKCEStrategy {
+    private static memoryCachedTokens: Map<string, AccessToken> = new Map();
+    private cacheKey: string;
+
     constructor(
         protected clientId: string,
         protected scopes: string[],
@@ -11,15 +14,16 @@ export default class AuthAsSpecifcUserForTests extends AuthorizationCodeWithPKCE
         private password: string
     ) {
         super(clientId, "http://localhost:3000", scopes);
+        this.cacheKey = `test-user-${email}`;
     }
 
     public async getAccessToken(): Promise<AccessToken> {
-        const token = await this.cache.getOrCreate<AccessToken>("spotify-sdk:token", async () => {
-            const token = await this.useBrowserAutomationToGetToken();
-            const expires = Date.now() + (token.expires_in * 1000);
-            return { ...token, expires };
-        });
+        if (AuthAsSpecifcUserForTests.memoryCachedTokens.has(this.cacheKey)) {
+            return AuthAsSpecifcUserForTests.memoryCachedTokens.get(this.cacheKey)!;
+        }
 
+        const token = await this.useBrowserAutomationToGetToken();     
+        AuthAsSpecifcUserForTests.memoryCachedTokens.set(this.cacheKey, token);
         return token;
     }
 
@@ -63,7 +67,6 @@ export default class AuthAsSpecifcUserForTests extends AuthorizationCodeWithPKCE
         await browser.close();
 
         // Exchange the code for a token
-        const token = await this.exchangeCodeForToken(code!, verifier);
-        return token;
+        return await this.exchangeCodeForToken(code!, verifier);
     }
 }
