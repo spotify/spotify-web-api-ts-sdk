@@ -35,15 +35,27 @@ export default class AuthAsSpecifcUserForTests extends AuthorizationCodeWithPKCE
         const location = await super.generateRedirectUrlForUser(this.scopes, challenge);
 
         // Redirect to Spotify auth page using playwright
-        const browser = await playwright.chromium.launch({ headless: AuthAsSpecifcUserForTests.headless });
-        const context = await browser.newContext();
+        const browser = await playwright.chromium.launch({
+            headless: AuthAsSpecifcUserForTests.headless
+        });
+
+        const context = await browser.newContext({
+            userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+        });
+
         const page = await context.newPage();
+        page.setViewportSize({ width: 1024, height: 2000 });
+
         await page.goto(location);
         await page.waitForSelector('input[id="login-username"]');
 
-        // Fill in the email and password
         await page.fill('input[id="login-username"]', this.email);
         await page.fill('input[id="login-password"]', this.password);
+
+        // Wait for between 1-3 seconds
+        await page.waitForTimeout(Math.floor(Math.random() * 2000) + 1000);
+
+        await page.waitForSelector('button[id="login-button"]',);
         await page.click('button[id="login-button"]');
 
         await page.waitForSelector('button[data-testid="auth-accept"]');
@@ -70,4 +82,16 @@ export default class AuthAsSpecifcUserForTests extends AuthorizationCodeWithPKCE
         // Exchange the code for a token
         return await this.exchangeCodeForToken(code!, verifier);
     }
+}
+
+function timeStampedFilename() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+    const milliseconds = date.getMilliseconds();
+    return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}-${milliseconds}`;
 }
