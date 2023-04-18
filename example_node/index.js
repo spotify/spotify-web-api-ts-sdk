@@ -16,3 +16,4 @@ console.table(items.artists.items.map((item) => ({
     followers: item.followers.total,
     popularity: item.popularity,
 })));
+

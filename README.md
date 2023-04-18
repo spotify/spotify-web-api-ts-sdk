@@ -4,7 +4,7 @@ This is a JavaScript/TypeScript SDK for the [Spotify Web API](https://developer.
 
 ## Requirements
 
-Because we use `fetch` both in Node and the Browser, and ESM, we require the following:
+Because this SDK uses `fetch` both in Node and the Browser, and ESM, we require the following:
 
 - Node 18.0.0 or higher
 - A modern, version infinite, browser
