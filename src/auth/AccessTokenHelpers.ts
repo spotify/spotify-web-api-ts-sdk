@@ -1,4 +1,5 @@
 import type { AccessToken, ICachable } from "../types";
+import { Crypto } from "./Crypto";
 
 export default class AccessTokenHelpers {
     public static async refreshCachedAccessToken(clientId: string, item: AccessToken) {
@@ -44,27 +45,40 @@ export default class AccessTokenHelpers {
 
     public static async generateCodeChallenge(codeVerifier: string) {
         const data = new TextEncoder().encode(codeVerifier);
+        const digest = await Crypto.current.subtle.digest('SHA-256', data);
 
-        let crypto: Crypto;
-
-        if (window?.crypto?.subtle) {
-            crypto = window.crypto;
-        } else {
-            try {
-                const { webcrypto } = require('crypto');
-                crypto = webcrypto;
-            } catch (e) {
-                throw e;
-            }
-        }
-
-        const digest = await crypto.subtle.digest('SHA-256', data);
         const digestBytes = [...new Uint8Array(digest)];
-        const digestAsBase64 = Buffer.from(digestBytes).toString("base64");
+        const hasBuffer = typeof Buffer !== 'undefined';
+
+        const digestAsBase64 = hasBuffer
+            ? Buffer.from(digest).toString('base64')
+            : btoa(String.fromCharCode.apply(null, digestBytes));
 
         return digestAsBase64
             .replace(/\+/g, '-')
             .replace(/\//g, '_')
             .replace(/=+$/, '');
     }
+
+    private static get crypto() {
+        return this.hasSubtleCrypto ? window.crypto : this.tryLoadNodeWebCrypto();
+    }
+
+    private static get hasSubtleCrypto() {
+        return typeof window !== 'undefined' && typeof window.crypto !== 'undefined' && typeof window.crypto.subtle !== 'undefined';
+    }
+
+    private static tryLoadNodeWebCrypto() {
+        try {
+            // Deliberately avoid bundling for browsers depending
+            // on node by doing this require during execution.
+
+            const { webcrypto } = require('crypto');
+            return webcrypto;
+        } catch (e) {
+            throw e;
+        }
+    }
 }
+
+
