@@ -41,7 +41,7 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
             method: 'POST',
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": 'Basic ' + (new Buffer(this.clientId + ':' + this.clientSecret).toString('base64'))
+                "Authorization": 'Basic ' + (Buffer.from(this.clientId + ':' + this.clientSecret).toString('base64'))
             },
             body: bodyAsString
         });
