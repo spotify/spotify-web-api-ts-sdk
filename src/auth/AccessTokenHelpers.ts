@@ -53,13 +53,16 @@ export default class AccessTokenHelpers {
             try {
                 const { webcrypto } = require('crypto');
                 crypto = webcrypto;
-            } catch (e) { 
+            } catch (e) {
                 throw e;
             }
         }
 
         const digest = await crypto.subtle.digest('SHA-256', data);
-        return btoa(String.fromCharCode.apply(null, [...new Uint8Array(digest)]))
+        const digestBytes = [...new Uint8Array(digest)];
+        const digestAsBase64 = Buffer.from(digestBytes).toString("base64");
+
+        return digestAsBase64
             .replace(/\+/g, '-')
             .replace(/\//g, '_')
             .replace(/=+$/, '');
