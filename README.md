@@ -228,7 +228,7 @@ export default class DocumentLocationRedirectionStrategy implements IRedirection
 }
 ```
 
-You might want to override this behaviour if you use a client side framework like React or Vue and you need to record some state, or trigger some opration before the redirect for oAuth / token exchange happens. For example - you might want to add something to localStorage that you can read back when the user returns to the application.
+You might want to override this behaviour if you use a client side framework like React or Vue and you need to record some state, or trigger some operation before the redirect for oAuth / token exchange happens. For example - you might want to add something to localStorage that you can read back when the user returns to the application.
 
 ### Extensibility - cachingStrategy
 
