@@ -157,14 +157,24 @@ export interface Track {
     duration_ms: number
     explicit: boolean
     external_urls: ExternalUrls
+    external_ids: ExternalIds
     href: string
     id: string
     is_local: boolean
+    popularity: number
     name: string
     preview_url: string
     track_number: number
     type: string
     uri: string
+
+    restrictions?: Restrictions
+}
+
+export interface ExternalIds {
+    isrc: string
+    ean: string
+    upc: string
 }
 
 export interface TrackWithAlbum extends Track {

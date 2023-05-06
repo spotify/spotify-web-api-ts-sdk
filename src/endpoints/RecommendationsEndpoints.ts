@@ -1,10 +1,10 @@
-import type { Genres, MaxInt } from '../types';
+import type { Genres, MaxInt, Track } from '../types';
 import EndpointsBase from './EndpointsBase';
 
 export default class RecommendationsEndpoints extends EndpointsBase {
-    public get(request: RecommendationsRequest) {
+    public get(request: RecommendationsRequestRequiredArguments | RecommendationsRequest) {
         const params = this.paramsFor(request);
-        return this.getRequest<any>(`recommendations${params}`);
+        return this.getRequest<RecommendationsResponse>(`recommendations${params}`);
     }
 
     public genreSeeds() {
@@ -12,52 +12,70 @@ export default class RecommendationsEndpoints extends EndpointsBase {
     }
 }
 
-export interface RecommendationsRequest {
-    limit?: number;
-    market?: string;
+export interface RecommendationsRequestRequiredArguments {
     seed_artists?: string[];
     seed_genres?: string[];
     seed_tracks?: string[];
-    min_acousticness?: MaxInt<1>;
-    max_acousticness?: MaxInt<1>;
-    target_acousticness?: MaxInt<1>;
-    min_danceability?: MaxInt<1>;
-    max_danceability?: MaxInt<1>;
-    target_danceability?: MaxInt<1>;
+}
+
+export interface RecommendationsRequest extends RecommendationsRequestRequiredArguments {
+    limit?: number;
+    market?: string;
+    min_acousticness?: number;
+    max_acousticness?: number;
+    target_acousticness?: number;
+    min_danceability?: number;
+    max_danceability?: number;
+    target_danceability?: number;
     min_duration_ms?: number;
     max_duration_ms?: number;
     target_duration_ms?: number;
-    min_energy?: MaxInt<1>;
-    max_energy?: MaxInt<1>;
-    target_energy?: MaxInt<1>;
-    min_instrumentalness?: MaxInt<1>;
-    max_instrumentalness?: MaxInt<1>;
-    target_instrumentalness?: MaxInt<1>;
+    min_energy?: number;
+    max_energy?: number;
+    target_energy?: number;
+    min_instrumentalness?: number;
+    max_instrumentalness?: number;
+    target_instrumentalness?: number;
     min_key?: number;
     max_key?: number;
     target_key?: number;
-    min_liveness?: MaxInt<1>;
-    max_liveness?: MaxInt<1>;
-    target_liveness?: MaxInt<1>;
+    min_liveness?: number;
+    max_liveness?: number;
+    target_liveness?: number;
     min_loudness?: number;
     max_loudness?: number;
     target_loudness?: number;
-    min_mode?: MaxInt<1>;
-    max_mode?: MaxInt<1>;
-    target_mode?: MaxInt<1>;
-    min_popularity?: MaxInt<100>;
-    max_popularity?: MaxInt<100>;
-    target_popularity?: MaxInt<100>;
-    min_speechiness?: MaxInt<1>;
-    max_speechiness?: MaxInt<1>;
-    target_speechiness?: MaxInt<1>;
+    min_mode?: number;
+    max_mode?: number;
+    target_mode?: number;
+    min_popularity?: number;
+    max_popularity?: number;
+    target_popularity?: number;
+    min_speechiness?: number;
+    max_speechiness?: number;
+    target_speechiness?: number;
     min_tempo?: number;
     max_tempo?: number;
     target_tempo?: number;
     min_time_signature?: number;
     max_time_signature?: number;
     target_time_signature?: number;
-    min_valence?: MaxInt<1>;
-    max_valence?: MaxInt<1>;
-    target_valence?: MaxInt<1>;
+    min_valence?: number;
+    max_valence?: number;
+    target_valence?: number;
+}
+
+export interface RecommendationsResponse {
+    seeds: RecommendationSeed[];
+    tracks: Track[];
+}
+
+export interface RecommendationSeed {
+    id: string;
+    href: string;
+    type: string;
+
+    initialPoolSize: number;
+    afterFilteringSize: number;
+    afterRelinkingSize: number;
 }

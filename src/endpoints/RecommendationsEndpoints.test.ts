@@ -19,8 +19,14 @@ describe("Integration: Episodes Endpoints", () => {
         expect(fetchSpy.request(0).input).toBe(`https://api.spotify.com/v1/recommendations/available-genre-seeds`);
         expect(result).toStrictEqual(valid);
     });
-    
+
     it("get can return recommendations", async () => {
-        const result = await sut.recommendations.get();
+        const result = await sut.recommendations.get({
+            seed_artists: ["0oSGxfWSnnOXhD2fKuz2Gy"],
+            seed_genres: ["rock"],
+            seed_tracks: ["0c6xIDDpzE81m2q797ordA"]
+        });
+
+        expect(result.tracks.length).toBeGreaterThan(0);
     })
 });
