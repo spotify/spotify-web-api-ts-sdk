@@ -5,6 +5,7 @@ import { FetchApiMock } from "./FetchApiMock";
 import { FetchApiSpy } from "./FetchApiSpy";
 import AuthAsSpecifcUserForTests from "./AuthAsRealUserForTests";
 import InMemoryCachingStrategy from "../caching/InMemoryCachingStrategy";
+import { Scopes } from "../Scopes";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -48,27 +49,7 @@ export function buildIntegrationTestUserSdkInstance(logResults: boolean = false)
         throw new Error("No client ID, or secret, or email, or password provided. Please provide a valid Spotify client ID and secret in the /.env file.");
     }
 
-    const authStrat = new AuthAsSpecifcUserForTests(clientId, [
-        "user-read-private",
-        "user-read-email",
-        "playlist-modify-public",
-        "playlist-modify-private",
-        "playlist-read-private",
-        "playlist-read-collaborative",
-        "user-library-modify",
-        "user-library-read",
-        "user-top-read",
-        "user-read-recently-played",
-        "user-follow-read",
-        "user-follow-modify",
-        "user-read-playback-position",
-        "user-read-playback-state",
-        "user-modify-playback-state",
-        "user-read-currently-playing",
-        "app-remote-control",
-        "streaming",
-        "ugc-image-upload"
-    ], email, password);
+    const authStrat = new AuthAsSpecifcUserForTests(clientId, Scopes.all, email, password);
 
     const fetchSpy = new FetchApiSpy(logResults);
     const sdkConfig = {
