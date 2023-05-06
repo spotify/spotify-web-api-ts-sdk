@@ -73,7 +73,7 @@ export default class PlaylistsEndpoints extends EndpointsBase {
         } else if (typeof imageData === "string") {
             base64EncodedJpeg = imageData;
         } else {
-            throw new Error("ImageData must be a Buffer, HTMLImageElement or HTMLCanvasElement, alternatively use addCustomPlaylistCoverImageFromBase64String");
+            throw new Error("ImageData must be a Buffer, HTMLImageElement, HTMLCanvasElement, or string containing a base64 encoded jpeg");
         }
 
         await this.addCustomPlaylistCoverImageFromBase64String(playlist_id, base64EncodedJpeg);
