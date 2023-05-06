@@ -8,12 +8,12 @@ export default class EndpointsBase {
         return await this.api.makeRequest<TReturnType>("GET", url);
     }
 
-    protected async postRequest<TReturnType, TBody = unknown>(url: string, body?: TBody): Promise<TReturnType> {
-        return await this.api.makeRequest<TReturnType>("POST", url, body);
+    protected async postRequest<TReturnType, TBody = unknown>(url: string, body?: TBody, contentType: string | undefined = undefined): Promise<TReturnType> {
+        return await this.api.makeRequest<TReturnType>("POST", url, body, contentType);
     }
 
-    protected async putRequest<TReturnType, TBody = unknown>(url: string, body?: TBody): Promise<TReturnType> {
-        return await this.api.makeRequest<TReturnType>("PUT", url, body);
+    protected async putRequest<TReturnType, TBody = unknown>(url: string, body?: TBody, contentType: string | undefined = undefined): Promise<TReturnType> {
+        return await this.api.makeRequest<TReturnType>("PUT", url, body, contentType);
     }
 
     protected async deleteRequest<TReturnType, TBody = unknown>(url: string, body?: TBody): Promise<TReturnType> {

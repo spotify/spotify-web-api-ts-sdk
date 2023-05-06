@@ -4,6 +4,7 @@ import { SpotifyApi } from "../SpotifyApi";
 import { FetchApiSpy } from "../test/FetchApiSpy";
 import { validArtist } from "../test/data/validArtist";
 import { validAlbumResult } from "../test/data/validAlbumResult";
+import fs from "fs";
 
 describe("Integration: Users Endpoints (logged in user)", () => {
     let sut: SpotifyApi;
@@ -79,12 +80,16 @@ describe("Integration: Users Endpoints (logged in user)", () => {
         const validTrack = valid.tracks.items[0];
 
         const me = await sut.currentUser.profile();
-        
+
         const result = await sut.playlists.createPlaylist(me.id, {
             name: "test playlist name!",
             description: "test playlist description!"
         });
 
+        
+        const file = fs.readFileSync("./src/test/valid-image.jpg", { encoding: "base64" });
+
+        await sut.playlists.addCustomPlaylistCoverImage(result.id, file);
         await sut.playlists.addItemsToPlaylist(result.id, [validTrack.uri, validTrack.uri, validTrack.uri, "spotify:track:0ZEigpVOtVunIcimL7dJuh"]);
 
         const snapshotUpdated = await sut.playlists.movePlaylistItems(result.id, 3, 1, 0); // Move last track to start
@@ -108,6 +113,19 @@ describe("Integration: Users Endpoints (logged in user)", () => {
 
         const playlist2 = await sut.playlists.getPlaylist(result.id);
         expect(playlist2.name).toBe("test playlist name 2");
+    });
+
+    it("can set valid image form file (node.js)", async () => {
+        const me = await sut.currentUser.profile();
+
+        const result = await sut.playlists.createPlaylist(me.id, {
+            name: "test playlist name!",
+            description: "test playlist description!"
+        });
+
+        const file = fs.readFileSync("./src/test/valid-image.jpg", { encoding: "base64" });
+
+        await sut.playlists.addCustomPlaylistCoverImage(result.id, file);
     });
 
     it("getCurrentUsersPlaylists returns playlists", async () => {

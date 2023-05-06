@@ -74,7 +74,7 @@ export class SpotifyApi {
         this.authenticationStrategy.setConfiguration(this.sdkConfig);
     }
 
-    public async makeRequest<TReturnType>(method: "GET" | "POST" | "PUT" | "DELETE", url: string, body: any = undefined): Promise<TReturnType> {
+    public async makeRequest<TReturnType>(method: "GET" | "POST" | "PUT" | "DELETE", url: string, body: any = undefined, contentType: string | undefined = undefined): Promise<TReturnType> {
         try {
             const accessToken = await this.authenticationStrategy.getAccessToken();
             const token = accessToken?.access_token;
@@ -84,9 +84,9 @@ export class SpotifyApi {
                 method: method,
                 headers: {
                     Authorization: `Bearer ${token}`,
-                    "Content-Type": "application/json"
+                    "Content-Type": contentType ?? "application/json"
                 },
-                body: body ? JSON.stringify(body) : undefined
+                body: body ? typeof body === "string" ? body : JSON.stringify(body) : undefined
             };
 
             this.sdkConfig.beforeRequest(fullUrl, opts);
@@ -120,9 +120,9 @@ export class SpotifyApi {
             responseValidator: new DefaultResponseValidator(),
             errorHandler: new NoOpErrorHandler(),
             redirectionStrategy: new DocumentLocationRedirectionStrategy(),
-            cachingStrategy: isBrowser 
-                                ? new LocalStorageCachingStrategy() 
-                                : new InMemoryCachingStrategy()
+            cachingStrategy: isBrowser
+                ? new LocalStorageCachingStrategy()
+                : new InMemoryCachingStrategy()
         };
 
         return { ...defaultConfig, ...config };
@@ -167,7 +167,7 @@ export class SpotifyApi {
      * @param config Optional configuration
      */
     public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], postbackUrl: string, config?: SdkOptions): Promise<void>;
-    
+
     /**
      * Use this when you're running in the browser, and want to perform the user authorization flow to post back to your server with the access token.
      * This overload is provided for you to perform the postback yourself, if you want to do something other than a simple HTTP POST to a URL - for example, if you want to use a WebSocket, or provide custom authentication.
@@ -178,10 +178,10 @@ export class SpotifyApi {
      * @param config Optional configuration
      */
     public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], onAuthorization: (token: AccessToken) => Promise<void>, config?: SdkOptions): Promise<void>;
-    
+
     public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], onAuthorizationOrUrl: ((token: AccessToken) => Promise<void>) | string, config?: SdkOptions): Promise<void> {
         scopes = scopes || [];
-                
+
         const strategy = new AuthorizationCodeWithPKCEStrategy(clientId, redirectUri, scopes);
         const client = new SpotifyApi(strategy, config);
         const accessToken = await client.authenticationStrategy.getAccessToken();

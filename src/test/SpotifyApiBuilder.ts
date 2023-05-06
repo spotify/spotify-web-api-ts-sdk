@@ -66,7 +66,8 @@ export function buildIntegrationTestUserSdkInstance(logResults: boolean = false)
         "user-modify-playback-state",
         "user-read-currently-playing",
         "app-remote-control",
-        "streaming"
+        "streaming",
+        "ugc-image-upload"
     ], email, password);
 
     const fetchSpy = new FetchApiSpy(logResults);

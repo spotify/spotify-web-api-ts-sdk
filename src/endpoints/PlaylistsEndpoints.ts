@@ -1,3 +1,4 @@
+import { Url } from 'url';
 import type { Market, PlaylistWithTracks, MaxInt, Page, Track, SnapshotReference, Image } from '../types';
 import EndpointsBase from './EndpointsBase';
 
@@ -52,11 +53,35 @@ export default class PlaylistsEndpoints extends EndpointsBase {
         return this.getRequest<Image[]>(`playlists/${playlist_id}/images`);
     }
 
-    public async addCustomPlaylistCoverImage(playlist_id: string) {
-        // There are no docs for this, seems broken.
-        await this.putRequest(`playlists/${playlist_id}/images`);
+    public async addCustomPlaylistCoverImage(playlist_id: string, imageData: Buffer | HTMLImageElement | HTMLCanvasElement | string) {
+        let base64EncodedJpeg: string = "";
+
+        if (imageData instanceof Buffer) {
+            base64EncodedJpeg = imageData.toString("base64");
+        } else if (imageData instanceof HTMLCanvasElement) {
+            base64EncodedJpeg = imageData.toDataURL("image/jpeg").split(';base64,')[1];
+        } else if (imageData instanceof HTMLImageElement) {
+            const canvas = document.createElement("canvas");
+            canvas.width = imageData.width;
+            canvas.height = imageData.height;
+            const ctx = canvas.getContext("2d");
+            if (!ctx) {
+                throw new Error("Could not get canvas context");
+            }
+            ctx.drawImage(imageData, 0, 0);
+            base64EncodedJpeg = canvas.toDataURL("image/jpeg").split(';base64,')[1];
+        } else if (typeof imageData === "string") {
+            base64EncodedJpeg = imageData;
+        } else {
+            throw new Error("ImageData must be a Buffer, HTMLImageElement or HTMLCanvasElement, alternatively use addCustomPlaylistCoverImageFromBase64String");
+        }
+
+        await this.addCustomPlaylistCoverImageFromBase64String(playlist_id, base64EncodedJpeg);
     }
 
+    public async addCustomPlaylistCoverImageFromBase64String(playlist_id: string, base64EncodedJpeg: string) {
+        await this.putRequest(`playlists/${playlist_id}/images`, base64EncodedJpeg, "image/jpeg");
+    }
 }
 
 interface RemovePlaylistItemsRequest {
