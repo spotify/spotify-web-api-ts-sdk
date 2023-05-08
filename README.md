@@ -35,7 +35,7 @@ npm run start
 Creating an instance of the SDK is easy, and can be done in a number of ways depending on which form of authentication you want to use.
 
 ```js
-import SpotifyWebApi from '@spotify/web-api-ts-sdk';
+import { SpotifyWebApi } from '@spotify/web-api-ts-sdk';
 
 // Choose one of the following:
 const sdk = SpotifyApi.withUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"]);
@@ -45,6 +45,18 @@ const sdk = SpotifyApi.withImplicitGrant("client-id", "secret", ["scope1", "scop
 
 Each of these factory methods will return a `SpotifyApi` instance, which you can use to make requests to the Spotify Web API.
 
+Once you have an authenticated instance of the SDK, you can make requests to the Spotify Web API by using the methods exposed on the client instance of the API. Types are embedded in the package, so if you're using Visual Studio Code or other compatible IDEs, you should get intellisense and type checking by default.
+
+```js
+const items = await sdk.search("The Beatles", ["artist"]);
+
+console.table(items.artists.items.map((item) => ({
+    name: item.name,
+    followers: item.followers.total,
+    popularity: item.popularity,
+})));
+```
+
 ### Authentication Methods
 
 - Authorization Code Flow with PKCE
@@ -53,6 +65,14 @@ Each of these factory methods will return a `SpotifyApi` instance, which you can
 - Mixed Server and Client Side Authentication
 
 We do auto-token refresh when expired and a refresh token is available.
+
+### Picking an Authentication Method
+
+If you're building a browser based application, you should use Authorization Code Flow with PKCE. This is the most secure way to authenticate your users and handles the redirection from your app to Spotify and back. Your server side code will not have access to the Spotify API with user access scopes, but you can use the SDK to perform client side requests with the users access token.
+
+If you're building a server side application, you should use Client Credentials Flow, and is the correct choice when you have both your Client ID and Client Secret available. This flow is not available in the browser (as you should not embed your Client Secret in Client Side web applications), so should only be used from Node.js.
+
+Mixed Server and Client Side Authentication is a special case, and is covered in the section below. This is useful if you want to perform requests with a users access token from your server side code.
 
 ### Mixed Server and Client Side Authentication
 
@@ -112,7 +132,9 @@ const defaultConfig: SdkConfiguration = {
     responseValidator: new DefaultResponseValidator(),
     errorHandler: new NoOpErrorHandler(),
     redirectionStrategy: new DocumentLocationRedirectionStrategy(),
-    cachingStrategy: new LocalStorageCachingStrategy()
+    cachingStrategy: isBrowser
+        ? new LocalStorageCachingStrategy()
+        : new InMemoryCachingStrategy()
 };
 ```
 
