@@ -9,6 +9,8 @@ Because this SDK uses `fetch` both in Node and the Browser, and ESM, we require 
 - Node 18.0.0 or higher
 - A modern, version infinite, browser
 
+The package contains both an ESM and CommonJS build, so you can use it in both Node and the Browser.
+
 ## Running the example app
 
 First install the dependencies:
