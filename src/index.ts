@@ -11,6 +11,11 @@ import NoOpErrorHandler from "./errorhandling/NoOpErrorHandler.js";
 import DocumentLocationRedirectionStrategy from "./redirection/DocumentLocationRedirectionStrategy.js";
 import DefaultResponseValidator from "./responsevalidation/DefaultResponseValidator.js";
 import DefaultResponseDeserializer from "./serialization/DefaultResponseDeserializer.js";
+import { Scopes } from "./Scopes.js";
+
+import type {
+    SearchResults
+} from "./types.js";
 
 export {
     SpotifyApi,
@@ -23,10 +28,12 @@ export {
     NoOpErrorHandler,
     DocumentLocationRedirectionStrategy,
     DefaultResponseValidator,
-    DefaultResponseDeserializer
+    DefaultResponseDeserializer,
+    Scopes
 }
 
 export type {
     IAuthStrategy,
-    ICacheStore
+    ICacheStore,
+    SearchResults
 }

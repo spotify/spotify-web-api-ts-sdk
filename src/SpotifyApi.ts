@@ -134,6 +134,13 @@ export class SpotifyApi {
         this.authenticationStrategy.getAccessToken(); // trigger any redirects 
     }
 
+    /**
+     * Use this when you're running in a browser and you want to control when first authentication+redirect happens.
+    */
+    public async authenticate() {
+        return this.authenticationStrategy.getAccessToken(); // trigger any redirects 
+    }
+
     public static withUserAuthorization(clientId: string, redirectUri: string, scopes: string[] = [], config?: SdkOptions): SpotifyApi {
         const strategy = new AuthorizationCodeWithPKCEStrategy(clientId, redirectUri, scopes);
         return new SpotifyApi(strategy, config);
