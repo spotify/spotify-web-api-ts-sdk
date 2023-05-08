@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
 import { SpotifyApi, Scopes, SearchResults } from "../../src";
+import './App.css'
 
 const sdk = SpotifyApi.withUserAuthorization(
   import.meta.env.VITE_SPOTIFY_CLIENT_ID,
@@ -11,7 +11,11 @@ const sdk = SpotifyApi.withUserAuthorization(
 
 await sdk.authenticate();
 
-function App() {
+function App() { 
+  return (<SpotifySearch sdk={sdk} />)
+}
+
+function SpotifySearch({ sdk }: { sdk: SpotifyApi}) {
   const [results, setResults] = useState<SearchResults>({} as SearchResults);
 
   useEffect(() => {

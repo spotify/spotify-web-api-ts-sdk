@@ -12,6 +12,7 @@ import DocumentLocationRedirectionStrategy from "./redirection/DocumentLocationR
 import DefaultResponseValidator from "./responsevalidation/DefaultResponseValidator.js";
 import DefaultResponseDeserializer from "./serialization/DefaultResponseDeserializer.js";
 import { Scopes } from "./Scopes.js";
+import { emptyAccessToken } from "./auth/IAuthStrategy.js";
 
 import type {
     SearchResults
@@ -29,7 +30,8 @@ export {
     DocumentLocationRedirectionStrategy,
     DefaultResponseValidator,
     DefaultResponseDeserializer,
-    Scopes
+    Scopes,
+    emptyAccessToken
 }
 
 export type {
