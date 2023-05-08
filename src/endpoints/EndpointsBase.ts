@@ -1,4 +1,4 @@
-import { SpotifyApi } from "../SpotifyApi";
+import { SpotifyApi } from "../SpotifyApi.js";
 
 export default class EndpointsBase {
     constructor(protected api: SpotifyApi) {

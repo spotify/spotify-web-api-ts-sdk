@@ -1,6 +1,6 @@
-import { AccessToken, ICachingStrategy, SdkConfiguration } from "../types";
-import AccessTokenHelpers from "./AccessTokenHelpers";
-import IAuthStrategy from "./IAuthStrategy";
+import { AccessToken, ICachingStrategy, SdkConfiguration } from "../types.js";
+import AccessTokenHelpers from "./AccessTokenHelpers.js";
+import IAuthStrategy from "./IAuthStrategy.js";
 
 /**
  * This strategy is used when you already have an access token and want to use it.
@@ -11,10 +11,10 @@ import IAuthStrategy from "./IAuthStrategy";
  * @param {string} accessToken - The access token returned from a client side Authorization Code with PKCE flow.
  */
 export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
-    
+
     private configuration: SdkConfiguration | null = null;
     protected get cache(): ICachingStrategy { return this.configuration!.cachingStrategy; }
-    
+
     constructor(
         protected clientId: string,
         protected accessToken: AccessToken

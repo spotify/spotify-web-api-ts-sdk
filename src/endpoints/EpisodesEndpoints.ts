@@ -1,5 +1,5 @@
-import type { Market, Episode, Episodes } from '../types';
-import EndpointsBase from './EndpointsBase';
+import type { Market, Episode, Episodes } from '../types.js';
+import EndpointsBase from './EndpointsBase.js';
 
 export default class EpisodesEndpoints extends EndpointsBase {
 

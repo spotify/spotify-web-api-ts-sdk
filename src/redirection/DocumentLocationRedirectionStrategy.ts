@@ -1,4 +1,4 @@
-import type { IRedirectionStrategy } from "../types";
+import type { IRedirectionStrategy } from "../types.js";
 
 export default class DocumentLocationRedirectionStrategy implements IRedirectionStrategy {
     public async redirect(targetUrl: string | URL): Promise<void> {

@@ -1,5 +1,5 @@
-import type { Market, MaxInt } from '../types';
-import EndpointsBase from './EndpointsBase';
+import type { Market, MaxInt } from '../types.js';
+import EndpointsBase from './EndpointsBase.js';
 
 interface QueryRange {
     timestamp: number;

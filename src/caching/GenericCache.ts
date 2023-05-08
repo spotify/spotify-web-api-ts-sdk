@@ -1,5 +1,5 @@
-import { ICachingStrategy, ICachable } from "../types";
-import { ICacheStore } from "./ICacheStore";
+import { ICachingStrategy, ICachable } from "../types.js";
+import { ICacheStore } from "./ICacheStore.js";
 
 export default class GenericCache implements ICachingStrategy {
     constructor(

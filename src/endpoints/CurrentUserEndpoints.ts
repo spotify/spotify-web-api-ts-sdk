@@ -1,6 +1,6 @@
-import { SpotifyApi } from '../SpotifyApi';
-import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, Audiobook, PlaylistWithTrackReferences } from '../types';
-import EndpointsBase from './EndpointsBase';
+import { SpotifyApi } from '../SpotifyApi.js';
+import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, Audiobook, PlaylistWithTrackReferences } from '../types.js';
+import EndpointsBase from './EndpointsBase.js';
 
 export default class CurrentUserEndpoints extends EndpointsBase {
     public albums: CurrentUserAlbumsEndpoints;

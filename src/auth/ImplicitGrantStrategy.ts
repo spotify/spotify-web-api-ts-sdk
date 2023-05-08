@@ -1,6 +1,6 @@
-import type { SdkConfiguration, AccessToken, ICachingStrategy } from "../types";
-import AccessTokenHelpers from "./AccessTokenHelpers";
-import IAuthStrategy, { emptyAccessToken } from "./IAuthStrategy";
+import type { SdkConfiguration, AccessToken, ICachingStrategy } from "../types.js";
+import AccessTokenHelpers from "./AccessTokenHelpers.js";
+import IAuthStrategy, { emptyAccessToken } from "./IAuthStrategy.js";
 
 export default class ImplicitGrantStrategy implements IAuthStrategy {
     private configuration: SdkConfiguration | null = null;

@@ -1,6 +1,6 @@
 {
   "name": "@spotify/web-api-ts-sdk",
-  "version": "0.0.14",
+  "version": "0.0.20",
   "description": "A typescript SDK for the Spotify Web API",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
@@ -11,7 +11,10 @@
     "ci": "npm run build",
     "build": "npm run build:cjs && npm run build:mjs",
     "build:mjs": "tsc --project tsconfig.mjs.json && cp res/package.mjs.json dist/mjs/package.json",
-    "build:cjs": "tsc --project tsconfig.cjs.json && cp res/package.cjs.json dist/cjs/package.json"
+    "build:cjs": "tsc --project tsconfig.cjs.json && cp res/package.cjs.json dist/cjs/package.json",
+    "build:win": "npm run build:cjs-win && npm run build:mjs-win",
+    "build:mjs-win": "tsc --project tsconfig.mjs.json && xcopy .\\res\\package.mjs.json .\\dist\\mjs\\package.json /-I /Y",
+    "build:cjs-win": "tsc --project tsconfig.cjs.json && xcopy .\\res\\package.cjs.json .\\dist\\cjs\\package.json /-I /Y"
   },
   "exports": {
     "import": "./dist/mjs/index.js",

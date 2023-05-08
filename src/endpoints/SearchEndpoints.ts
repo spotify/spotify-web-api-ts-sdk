@@ -1,5 +1,5 @@
-import type { ItemTypes, Market, MaxInt, SearchResults } from '../types';
-import EndpointsBase from './EndpointsBase';
+import type { ItemTypes, Market, MaxInt, SearchResults } from '../types.js';
+import EndpointsBase from './EndpointsBase.js';
 
 export interface SearchExecutionFunction {
     (q: string, type: ItemTypes[], market?: Market, limit?: MaxInt<50>, offset?: number, include_external?: string): Promise<SearchResults>;

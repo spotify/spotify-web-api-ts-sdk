@@ -1,5 +1,5 @@
-import type { AccessToken, ICachable } from "../types";
-import { Crypto } from "./Crypto";
+import type { AccessToken, ICachable } from "../types.js";
+import { Crypto } from "./Crypto.js";
 
 export default class AccessTokenHelpers {
     public static async refreshCachedAccessToken(clientId: string, item: AccessToken) {

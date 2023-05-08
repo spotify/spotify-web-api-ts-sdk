@@ -1,6 +1,6 @@
-import type { SdkConfiguration, ICachingStrategy, AccessToken } from "../types";
-import AccessTokenHelpers from "./AccessTokenHelpers";
-import IAuthStrategy from "./IAuthStrategy";
+import type { SdkConfiguration, ICachingStrategy, AccessToken } from "../types.js";
+import AccessTokenHelpers from "./AccessTokenHelpers.js";
+import IAuthStrategy from "./IAuthStrategy.js";
 
 export default class ClientCredentialsStrategy implements IAuthStrategy {
 

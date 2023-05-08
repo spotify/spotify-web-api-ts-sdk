@@ -1,5 +1,5 @@
-import type { Market, TrackWithAlbum, Tracks, AudioFeatures, AudioFeaturesCollection, AudioAnalysis } from '../types';
-import EndpointsBase from './EndpointsBase';
+import type { Market, TrackWithAlbum, Tracks, AudioFeatures, AudioFeaturesCollection, AudioAnalysis } from '../types.js';
+import EndpointsBase from './EndpointsBase.js';
 
 export default class TracksEndpoints extends EndpointsBase {
 

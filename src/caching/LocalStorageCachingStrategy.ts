@@ -1,5 +1,5 @@
-import GenericCache from "./GenericCache";
-import type { ICacheStore } from "./ICacheStore";
+import GenericCache from "./GenericCache.js";
+import type { ICacheStore } from "./ICacheStore.js";
 
 export default class LocalStorageCachingStrategy extends GenericCache {
     constructor() {

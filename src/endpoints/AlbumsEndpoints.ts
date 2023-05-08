@@ -1,5 +1,5 @@
-import type { Market, AlbumWithTracks, Albums, MaxInt, Page, Track } from '../types';
-import EndpointsBase from './EndpointsBase';
+import type { Market, AlbumWithTracks, Albums, MaxInt, Page, Track } from '../types.js';
+import EndpointsBase from './EndpointsBase.js';
 
 export default class AlbumsEndpoints extends EndpointsBase {
 

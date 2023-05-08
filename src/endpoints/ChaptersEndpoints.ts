@@ -1,5 +1,5 @@
-import type { ChapterWithAudiobookAndRestrictions, Chapters } from '../types';
-import EndpointsBase from './EndpointsBase';
+import type { ChapterWithAudiobookAndRestrictions, Chapters } from '../types.js';
+import EndpointsBase from './EndpointsBase.js';
 
 // These are mandatory, and the only supported market codes for the Chapters API
 export type ChapterMarket = "GB" | "US" | "IE" | "NZ" | "AU";

@@ -1,4 +1,4 @@
-import type { IResponseDeserializer } from "../types";
+import type { IResponseDeserializer } from "../types.js";
 
 export default class DefaultResponseDeserializer implements IResponseDeserializer {
     public async deserialize<TReturnType>(response: Response): Promise<TReturnType> {
