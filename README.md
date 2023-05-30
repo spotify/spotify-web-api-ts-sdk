@@ -72,6 +72,14 @@ We do auto-token refresh when expired and a refresh token is available.
 
 If you're building a browser based application, you should use Authorization Code Flow with PKCE. This is the most secure way to authenticate your users and handles the redirection from your app to Spotify and back. Your server side code will not have access to the Spotify API with user access scopes, but you can use the SDK to perform client side requests with the users access token.
 
+Calling any of the methods on the SDK will automatically perform any redirects/refreshes that are necessary.
+
+```js
+const sdk = SpotifyApi.withUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"]);
+const user = await sdk.currentUser.profile()
+```
+
+
 If you're building a server side application, you should use Client Credentials Flow, and is the correct choice when you have both your Client ID and Client Secret available. This flow is not available in the browser (as you should not embed your Client Secret in Client Side web applications), so should only be used from Node.js.
 
 Mixed Server and Client Side Authentication is a special case, and is covered in the section below. This is useful if you want to perform requests with a users access token from your server side code.
