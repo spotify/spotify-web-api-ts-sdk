@@ -18,6 +18,9 @@ export default class GenericCache implements ICachingStrategy {
         createFunction: () => Promise<T & ICachable & object>,
         updateFunction?: (item: T) => Promise<T & ICachable & object>
     ): Promise<T & ICachable> {
+        if (updateFunction) {
+            this.updateFunctions.set(cacheKey, updateFunction);
+        }
         const item = await this.get<T>(cacheKey);
         if (item) {
             return item;
@@ -29,9 +32,7 @@ export default class GenericCache implements ICachingStrategy {
         }
 
         this.setCacheItem(cacheKey, newCacheItem);
-        if (updateFunction) {
-            this.updateFunctions.set(cacheKey, updateFunction);
-        }
+        
 
         return newCacheItem;
     }
