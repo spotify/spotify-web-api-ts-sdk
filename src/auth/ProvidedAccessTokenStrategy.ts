@@ -38,8 +38,8 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
         return this.accessToken;
     }
 
-    public async isAuthenticated(): Promise<boolean> {
+    public async needsAuthentication(): Promise<boolean> {
         const token = await this.cache.get<AccessToken>(ProvidedAccessTokenStrategy.cacheKey);
-        return token !== null;
+        return token === null;
     }
 }

@@ -29,8 +29,8 @@ export class FakeAuthStrategy implements IAuthStrategy {
         return this.promiseToResolve;
     }
 
-    public async isAuthenticated(): Promise<boolean> {
-        return true;
+    public async needsAuthentication(): Promise<boolean> {
+        return false;
     }
 
     public fakeAuthed() {

@@ -31,9 +31,9 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
         return token;
     }
 
-    public async isAuthenticated(): Promise<boolean> {
+    public async needsAuthentication(): Promise<boolean> {
         const token = await this.cache.get<AccessToken>(ClientCredentialsStrategy.cacheKey);
-        return token !== null;
+        return token === null;
     }
 
     private async getTokenFromApi(): Promise<AccessToken> {

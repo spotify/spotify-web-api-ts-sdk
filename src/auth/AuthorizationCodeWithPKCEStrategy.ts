@@ -38,9 +38,9 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
         return token;
     }
 
-    public async isAuthenticated(): Promise<boolean> {
-        const token = await this.cache.get<AccessToken>(AuthorizationCodeWithPKCEStrategy.cacheKey);
-        return token !== null;
+    public async needsAuthentication(): Promise<boolean> {
+        const token = (await this.cache.get<AccessToken>(AuthorizationCodeWithPKCEStrategy.cacheKey)) === null;
+        return token === null;
     }
 
     private async redirectOrVerifyToken(): Promise<AccessToken> {

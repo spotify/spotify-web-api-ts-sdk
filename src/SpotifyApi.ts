@@ -142,10 +142,10 @@ export class SpotifyApi {
     }
 
     /**
-     * Check cache for access token
+     * @returns true if SpotifyApi is not yet authenticated. false is probably authenticated but not guaranteed
      */
-    public async isAuthenticated() {
-        return this.authenticationStrategy.isAuthenticated();
+    public async needsAuthentication() {
+        return this.authenticationStrategy.needsAuthentication();
     }
 
     public static withUserAuthorization(clientId: string, redirectUri: string, scopes: string[] = [], config?: SdkOptions): SpotifyApi {
