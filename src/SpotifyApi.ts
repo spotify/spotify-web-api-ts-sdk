@@ -141,6 +141,13 @@ export class SpotifyApi {
         return this.authenticationStrategy.getAccessToken(); // trigger any redirects 
     }
 
+    /**
+     * Check cache for access token
+     */
+    public async isAuthenticated() {
+        return this.authenticationStrategy.isAuthenticated();
+    }
+
     public static withUserAuthorization(clientId: string, redirectUri: string, scopes: string[] = [], config?: SdkOptions): SpotifyApi {
         const strategy = new AuthorizationCodeWithPKCEStrategy(clientId, redirectUri, scopes);
         return new SpotifyApi(strategy, config);

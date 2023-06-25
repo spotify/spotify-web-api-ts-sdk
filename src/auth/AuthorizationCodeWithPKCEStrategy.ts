@@ -9,6 +9,7 @@ interface CachedVerifier extends ICachable {
 
 export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy {
 
+    private static readonly cacheKey = "spotify-sdk:AuthorizationCodeWithPKCEStrategy:token";
     private configuration: SdkConfiguration | null = null;
     protected get cache(): ICachingStrategy { return this.configuration!.cachingStrategy; }
 
@@ -24,16 +25,22 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
     }
 
     public async getAccessToken(): Promise<AccessToken> {
-        const cacheKey = "spotify-sdk:AuthorizationCodeWithPKCEStrategy:token";
-
-        const token = await this.cache.getOrCreate<AccessToken>(cacheKey, async () => {
-            const token = await this.redirectOrVerifyToken();
-            return AccessTokenHelpers.toCachable(token);
-        }, async (expiring) => {
-            return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
-        });
+        const token = await this.cache.getOrCreate<AccessToken>(
+            AuthorizationCodeWithPKCEStrategy.cacheKey,
+            async () => {
+                const token = await this.redirectOrVerifyToken();
+                return AccessTokenHelpers.toCachable(token);
+            }, async (expiring) => {
+                return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
+            },
+        );
 
         return token;
+    }
+
+    public async isAuthenticated(): Promise<boolean> {
+        const token = await this.cache.get<AccessToken>(AuthorizationCodeWithPKCEStrategy.cacheKey);
+        return token !== null;
     }
 
     private async redirectOrVerifyToken(): Promise<AccessToken> {

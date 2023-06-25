@@ -12,6 +12,7 @@ import IAuthStrategy from "./IAuthStrategy.js";
  */
 export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
 
+    private static readonly cacheKey = "spotify-sdk:ProvidedAccessTokenStrategy:token";
     private configuration: SdkConfiguration | null = null;
     protected get cache(): ICachingStrategy { return this.configuration!.cachingStrategy; }
 
@@ -26,9 +27,8 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
     }
 
     public async getAccessToken(): Promise<AccessToken> {
-        const cacheKey = "spotify-sdk:ProvidedAccessTokenStrategy:token";
 
-        this.accessToken = await this.cache.getOrCreate<AccessToken>(cacheKey, async () => {
+        this.accessToken = await this.cache.getOrCreate<AccessToken>(ProvidedAccessTokenStrategy.cacheKey, async () => {
             const cachableToken = AccessTokenHelpers.toCachable(this.accessToken);
             return Promise.resolve(cachableToken);
         }, async (expiring) => {
@@ -36,5 +36,10 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
         });
 
         return this.accessToken;
+    }
+
+    public async isAuthenticated(): Promise<boolean> {
+        const token = await this.cache.get<AccessToken>(ProvidedAccessTokenStrategy.cacheKey);
+        return token !== null;
     }
 }
