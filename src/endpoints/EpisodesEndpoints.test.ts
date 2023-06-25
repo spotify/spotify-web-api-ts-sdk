@@ -17,6 +17,12 @@ describe("Integration: Episodes Endpoints", () => {
         const result = await sut.episodes.get(valid.id, "GB");
 
         expect(fetchSpy.request(0).input).toBe(`https://api.spotify.com/v1/episodes/${valid.id}?market=GB`);
+
+        // replace inconsistent properties
+        if (result.show) {
+            result.show.total_episodes = valid.show.total_episodes;
+        }
+
         expect(result).toStrictEqual(valid);
     });
 
