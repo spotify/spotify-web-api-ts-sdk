@@ -19,7 +19,7 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
         this.configuration = configuration;
     }
 
-    public async getAccessToken(): Promise<AccessToken> {
+    public async getOrCreateAccessToken(): Promise<AccessToken> {
         const token = await this.cache.getOrCreate<AccessToken>(
             ClientCredentialsStrategy.cacheKey,
             async () => {
@@ -31,9 +31,9 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
         return token;
     }
 
-    public async needsAuthentication(): Promise<boolean> {
+    public async getAccessToken(): Promise<AccessToken | null> {
         const token = await this.cache.get<AccessToken>(ClientCredentialsStrategy.cacheKey);
-        return token === null;
+        return token;
     }
 
     private async getTokenFromApi(): Promise<AccessToken> {

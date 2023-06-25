@@ -25,12 +25,12 @@ export class FakeAuthStrategy implements IAuthStrategy {
     public setConfiguration(configuration: SdkConfiguration): void {
     }
 
-    public getAccessToken(): Promise<AccessToken> {
+    public async getOrCreateAccessToken(): Promise<AccessToken> {
         return this.promiseToResolve;
     }
 
-    public async needsAuthentication(): Promise<boolean> {
-        return false;
+    public async getAccessToken(): Promise<AccessToken | null> {
+        return this.promiseToResolve;
     }
 
     public fakeAuthed() {

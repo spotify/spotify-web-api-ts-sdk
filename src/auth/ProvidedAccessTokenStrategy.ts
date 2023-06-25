@@ -26,7 +26,7 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
         this.configuration = configuration;
     }
 
-    public async getAccessToken(): Promise<AccessToken> {
+    public async getOrCreateAccessToken(): Promise<AccessToken> {
 
         this.accessToken = await this.cache.getOrCreate<AccessToken>(ProvidedAccessTokenStrategy.cacheKey, async () => {
             const cachableToken = AccessTokenHelpers.toCachable(this.accessToken);
@@ -38,8 +38,8 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
         return this.accessToken;
     }
 
-    public async needsAuthentication(): Promise<boolean> {
+    public async getAccessToken(): Promise<AccessToken | null> {
         const token = await this.cache.get<AccessToken>(ProvidedAccessTokenStrategy.cacheKey);
-        return token === null;
+        return token;
     }
 }

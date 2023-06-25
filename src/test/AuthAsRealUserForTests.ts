@@ -18,7 +18,7 @@ export default class AuthAsSpecifcUserForTests extends AuthorizationCodeWithPKCE
         this.cacheKey = `test-user-${email}`;
     }
 
-    public async getAccessToken(): Promise<AccessToken> {
+    public async getOrCreateAccessToken(): Promise<AccessToken> {
         if (AuthAsSpecifcUserForTests.memoryCachedTokens.has(this.cacheKey)) {
             return AuthAsSpecifcUserForTests.memoryCachedTokens.get(this.cacheKey)!;
         }

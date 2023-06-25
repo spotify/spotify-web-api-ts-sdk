@@ -19,7 +19,7 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
         this.configuration = configuration;
     }
 
-    public async getAccessToken(): Promise<AccessToken> {
+    public async getOrCreateAccessToken(): Promise<AccessToken> {
         const token = await this.cache.getOrCreate<AccessToken>(
             ImplicitGrantStrategy.cacheKey,
             async () => {
@@ -33,9 +33,9 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
         return token;
     }
 
-    public async needsAuthentication(): Promise<boolean> {
+    public async getAccessToken(): Promise<AccessToken | null> {
         const token = await this.cache.get<AccessToken>(ImplicitGrantStrategy.cacheKey);
-        return token === null;
+        return token;
     }
 
     private async redirectOrVerifyToken(): Promise<AccessToken> {

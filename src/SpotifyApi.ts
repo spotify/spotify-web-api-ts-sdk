@@ -76,7 +76,7 @@ export class SpotifyApi {
 
     public async makeRequest<TReturnType>(method: "GET" | "POST" | "PUT" | "DELETE", url: string, body: any = undefined, contentType: string | undefined = undefined): Promise<TReturnType> {
         try {
-            const accessToken = await this.authenticationStrategy.getAccessToken();
+            const accessToken = await this.authenticationStrategy.getOrCreateAccessToken();
             const token = accessToken?.access_token;
 
             const fullUrl = SpotifyApi.rootUrl + url;
@@ -131,21 +131,22 @@ export class SpotifyApi {
     public switchAuthenticationStrategy(authentication: IAuthStrategy) {
         this.authenticationStrategy = authentication;
         this.authenticationStrategy.setConfiguration(this.sdkConfig);
-        this.authenticationStrategy.getAccessToken(); // trigger any redirects 
+        this.authenticationStrategy.getOrCreateAccessToken(); // trigger any redirects 
     }
 
     /**
      * Use this when you're running in a browser and you want to control when first authentication+redirect happens.
     */
     public async authenticate() {
-        return this.authenticationStrategy.getAccessToken(); // trigger any redirects 
+        return this.authenticationStrategy.getOrCreateAccessToken(); // trigger any redirects 
     }
 
     /**
      * @returns true if SpotifyApi is not yet authenticated. false is probably authenticated but not guaranteed
      */
     public async needsAuthentication() {
-        return this.authenticationStrategy.needsAuthentication();
+        const token = await this.authenticationStrategy.getAccessToken();
+        return token !== null;
     }
 
     public static withUserAuthorization(clientId: string, redirectUri: string, scopes: string[] = [], config?: SdkOptions): SpotifyApi {
@@ -198,7 +199,7 @@ export class SpotifyApi {
 
         const strategy = new AuthorizationCodeWithPKCEStrategy(clientId, redirectUri, scopes);
         const client = new SpotifyApi(strategy, config);
-        const accessToken = await client.authenticationStrategy.getAccessToken();
+        const accessToken = await client.authenticationStrategy.getOrCreateAccessToken();
         if (accessToken == emptyAccessToken) {
             return; // Redirect code path, do nothing.
         }
