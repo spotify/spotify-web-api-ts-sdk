@@ -28,12 +28,15 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
 
     public async getOrCreateAccessToken(): Promise<AccessToken> {
 
-        this.accessToken = await this.cache.getOrCreate<AccessToken>(ProvidedAccessTokenStrategy.cacheKey, async () => {
-            const cachableToken = AccessTokenHelpers.toCachable(this.accessToken);
-            return Promise.resolve(cachableToken);
-        }, async (expiring) => {
-            return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
-        });
+        this.accessToken = await this.cache.getOrCreate<AccessToken>(
+            ProvidedAccessTokenStrategy.cacheKey,
+            async () => {
+                const cachableToken = AccessTokenHelpers.toCachable(this.accessToken);
+                return Promise.resolve(cachableToken);
+            }, async (expiring) => {
+                return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
+            },
+        );
 
         return this.accessToken;
     }

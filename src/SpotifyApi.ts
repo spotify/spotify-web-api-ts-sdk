@@ -146,7 +146,7 @@ export class SpotifyApi {
      */
     public async needsAuthentication() {
         const token = await this.authenticationStrategy.getAccessToken();
-        return token !== null;
+        return token === null;
     }
 
     public static withUserAuthorization(clientId: string, redirectUri: string, scopes: string[] = [], config?: SdkOptions): SpotifyApi {
