@@ -1,4 +1,4 @@
-import type { Market, ShowWithEpisodes, Shows, MaxInt, Page, Episode } from '../types.js';
+import type { Market, ShowWithEpisodes, Shows, MaxInt, Page, SimplifiedEpisode } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class ShowsEndpoints extends EndpointsBase {
@@ -19,6 +19,6 @@ export default class ShowsEndpoints extends EndpointsBase {
 
     public episodes(id: string, market?: Market, limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ market, limit, offset })
-        return this.getRequest<Page<Episode>>(`shows/${id}/episodes${params}`);
+        return this.getRequest<Page<SimplifiedEpisode>>(`shows/${id}/episodes${params}`);
     }
 }

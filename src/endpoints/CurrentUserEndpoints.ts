@@ -1,5 +1,5 @@
 import { SpotifyApi } from '../SpotifyApi.js';
-import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, Audiobook, PlaylistWithTrackReferences, SavedTrack } from '../types.js';
+import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, Audiobook, PlaylistWithTrackReferences, SavedTrack, SavedEpisode, SavedShow } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class CurrentUserEndpoints extends EndpointsBase {
@@ -78,11 +78,11 @@ class CurrentUserAudiobooksEndpoints extends EndpointsBase {
     }
 
     public async saveAudiobooks(ids: string[]) {
-        await this.putRequest<any>('me/audiobooks', ids);
+        await this.putRequest('me/audiobooks', ids);
     }
 
     public async removeSavedAudiobooks(ids: string[]) {
-        await this.deleteRequest<any>('me/audiobooks', ids);
+        await this.deleteRequest('me/audiobooks', ids);
     }
 
     public hasSavedAudiobooks(ids: string[]) {
@@ -94,20 +94,20 @@ class CurrentUserAudiobooksEndpoints extends EndpointsBase {
 class CurrentUserEpisodesEndpoints extends EndpointsBase {
     public savedEpisodes(market?: Market, limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ market, limit, offset });
-        return this.getRequest<any>(`me/episodes${params}`);
+        return this.getRequest<Page<SavedEpisode>>(`me/episodes${params}`);
     }
 
-    public saveEpisodes(ids: string[]) {
-        return this.putRequest<any>(`me/episodes`, ids)
+    public async saveEpisodes(ids: string[]) {
+        await this.putRequest(`me/episodes`, ids)
     }
 
-    public removeSavedEpisodes(ids: string[]) {
-        return this.deleteRequest<any>(`me/episodes`, ids)
+    public async removeSavedEpisodes(ids: string[]) {
+        await this.deleteRequest(`me/episodes`, ids)
     }
 
     public hasSavedEpisodes(ids: string[]) {
         const params = this.paramsFor({ ids });
-        return this.getRequest<any>(`me/episodes/contains${params}`);
+        return this.getRequest<boolean[]>(`me/episodes/contains${params}`);
     }
 }
 
@@ -132,28 +132,24 @@ class CurrentUserPlaylistsEndpoints extends EndpointsBase {
 }
 
 class CurrentUserShowsEndpoints extends EndpointsBase {
-
     public savedShows(limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ limit, offset })
-        return this.getRequest<any>(`me/shows${params}`);
+        return this.getRequest<Page<SavedShow>>(`me/shows${params}`);
     }
 
-    public saveShows(ids: string[]) {
-        const idString = ids.join(',');
-        const params = this.paramsFor({ idString });
-        return this.putRequest<any>(`me/shows${params}`);
+    public async saveShows(ids: string[]) {
+        const params = this.paramsFor({ ids });
+        await this.putRequest(`me/shows${params}`);
     }
 
-    public removeSavedShows(ids: string[], market?: Market) {
-        const idString = ids.join(',');
-        const params = this.paramsFor({ idString, market });
-        return this.deleteRequest<any>(`me/shows${params}`);
+    public async removeSavedShows(ids: string[], market?: Market) {
+        const params = this.paramsFor({ ids, market });
+        await this.deleteRequest(`me/shows${params}`);
     }
 
-    public hasSavedShow(ids: string[]) {
-        const idString = ids.join(',');
-        const params = this.paramsFor({ idString });
-        return this.getRequest<any>(`me/shows/contains${params}`);
+    public hasSavedShows(ids: string[]) {
+        const params = this.paramsFor({ ids });
+        return this.getRequest<boolean[]>(`me/shows/contains${params}`);
     }
 }
 

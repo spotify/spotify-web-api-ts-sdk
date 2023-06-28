@@ -245,9 +245,11 @@ export interface SearchResults {
     tracks: Page<Track>
     artists: Page<Artist>
     albums: Page<SimplifiedAlbum>
+    // TODO: simplified from here down
+    // https://developer.spotify.com/documentation/web-api/reference/search
     playlists: Page<Playlist>
     shows: Page<Show>
-    episodes: Page<Episode>
+    episodes: Page<SimplifiedEpisode>
     audiobooks: Page<AudiobookWithChapters>
 }
 
@@ -408,7 +410,7 @@ export interface Narrator {
     name: string
 }
 
-export interface Episode {
+export interface SimplifiedEpisode {
     audio_preview_url: string
     description: string
     html_description: string
@@ -429,9 +431,15 @@ export interface Episode {
     type: string
     uri: string
     restrictions: Restrictions
+}
 
-    // If fetched from Episode API, show included
-    show?: Show
+export interface Episode extends SimplifiedEpisode {
+    show: Show
+}
+
+export interface SavedEpisode {
+    added_at: string
+    episode: Episode
 }
 
 export interface Show {
@@ -454,8 +462,13 @@ export interface Show {
     total_episodes: number
 }
 
+export interface SavedShow {
+    added_at: string
+    show: Show
+}
+
 export interface ShowWithEpisodes extends Show {
-    episodes: Page<Episode>
+    episodes: Page<SimplifiedEpisode>
 }
 
 export interface SnapshotReference {

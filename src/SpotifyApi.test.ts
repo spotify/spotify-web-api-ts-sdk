@@ -19,7 +19,7 @@ describe("SpotifyAPI Instance", () => {
             await sut.albums.get("album-id-here");
 
             const [headers, bodyString] = fetchMock.issuedRequestHeadersAndBody(0);
-            expect((headers as any).Authorization).toBe(`Bearer ${FakeAuthStrategy.FAKE_AUTH_TOKEN}`)
+            expect(headers['Authorization']).toBe(`Bearer ${FakeAuthStrategy.FAKE_AUTH_TOKEN}`)
         });
     });
 
