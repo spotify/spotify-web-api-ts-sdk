@@ -1,5 +1,5 @@
 import { SpotifyApi } from '../SpotifyApi.js';
-import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, Audiobook, PlaylistWithTrackReferences } from '../types.js';
+import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, Audiobook, PlaylistWithTrackReferences, SavedTrack } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class CurrentUserEndpoints extends EndpointsBase {
@@ -160,19 +160,20 @@ class CurrentUserShowsEndpoints extends EndpointsBase {
 class CurrentUserTracksEndpoints extends EndpointsBase {
     public savedTracks(limit?: MaxInt<50>, offset?: number, market?: Market) {
         const params = this.paramsFor({ limit, offset, market });
-        return this.getRequest<any>(`me/tracks${params}`);
+        return this.getRequest<Page<SavedTrack>>(`me/tracks${params}`);
     }
+
     public saveTracks(ids: string[]) {
-        return this.putRequest<any>('me/tracks', ids);
+        return this.putRequest('me/tracks', ids);
     }
 
     public removeSavedTracks(ids: string[]) {
-        return this.deleteRequest<any>('me/tracks', ids);
+        return this.deleteRequest('me/tracks', ids);
     }
 
     public hasSavedTracks(ids: string[]) {
         const params = this.paramsFor({ ids });
-        return this.getRequest<any>(`me/tracks/contains${params}`);
+        return this.getRequest<boolean[]>(`me/tracks/contains${params}`);
     }
 }
 

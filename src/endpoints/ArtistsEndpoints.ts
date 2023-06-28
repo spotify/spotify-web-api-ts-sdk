@@ -1,4 +1,4 @@
-import type { Artist, Artists, Market, MaxInt, Page, Album, TopTracksResult } from '../types.js';
+import type { Artist, Artists, Market, MaxInt, Page, TopTracksResult, SimplifiedAlbum } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class ArtistsEndpoints extends EndpointsBase {
@@ -19,7 +19,7 @@ export default class ArtistsEndpoints extends EndpointsBase {
 
     public albums(id: string, includeGroups?: string, market?: Market, limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ "include_groups": includeGroups, market, limit, offset });
-        return this.getRequest<Page<Album>>(`artists/${id}/albums${params}`);
+        return this.getRequest<Page<SimplifiedAlbum>>(`artists/${id}/albums${params}`);
     }
 
     public topTracks(id: string, market: Market) {

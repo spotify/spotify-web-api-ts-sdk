@@ -1,4 +1,4 @@
-import type { Genres, MaxInt, Track } from '../types.js';
+import type { Genres, Track } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class RecommendationsEndpoints extends EndpointsBase {

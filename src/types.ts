@@ -75,44 +75,48 @@ export interface AccessToken {
     refresh_token: string;
 }
 
-export interface Album {
-    album_group: string
+interface AlbumBase {
     album_type: string
-    artists: ArtistReference[]
+    total_tracks: number
     available_markets: string[]
-    copyrights: Copyright[]
-    external_ids: ExternalIds
     external_urls: ExternalUrls
-    genres: any[]
     href: string
     id: string
     images: Image[]
-    label: string
     name: string
-    popularity: number
     release_date: string
     release_date_precision: string
-    total_tracks: number
+    restrictions?: Restrictions
     type: string
     uri: string
+    copyrights: Copyright[]
+    external_ids: ExternalIds
+    genres: string[]
+    label: string
+    popularity: number
+}
 
+export interface Album extends AlbumBase {
+    artists: Artist[]
+    tracks: Page<SimplifiedTrack>
+}
+
+export interface SimplifiedAlbum extends AlbumBase {
+    album_group: string
+    artists: SimplifiedArtist[]
 }
 
 export interface SavedAlbum {
     added_at: string
-    album: AlbumWithTracks
-}
-
-export interface AlbumWithTracks extends Album {
-    tracks: Page<Track>
+    album: Album
 }
 
 export interface Albums {
-    albums: AlbumWithTracks[]
+    albums: Album[]
 }
 
 export interface NewReleases {
-    albums: Page<AlbumWithTracks>
+    albums: Page<SimplifiedAlbum>
 }
 
 export interface Copyright {
@@ -128,18 +132,17 @@ export interface Page<TItemType> {
     href: string
     items: TItemType[]
     limit: number
-    next: any
+    next: string | null
     offset: number
-    previous: any
+    previous: string | null
     total: number
 }
 
-export interface PlaylistedTrack {
+export interface PlaylistTrack {
     added_at: string
     added_by: AddedBy
     is_local: boolean
-    primary_color: any
-    track: TrackWithAlbum
+    track: Track | Episode
 }
 
 export interface AddedBy {
@@ -150,25 +153,37 @@ export interface AddedBy {
     uri: string
 }
 
-export interface Track {
-    artists: ArtistReference[]
+export interface LinkedFrom {
+    external_urls: ExternalUrls
+    href: string
+    id: string
+    type: string
+    uri: string
+}
+
+export interface SimplifiedTrack {
+    artists: SimplifiedArtist[]
     available_markets: string[]
     disc_number: number
     duration_ms: number
     explicit: boolean
     external_urls: ExternalUrls
-    external_ids: ExternalIds
     href: string
     id: string
-    is_local: boolean
-    popularity: number
+    is_playable?: boolean
+    linked_from?: LinkedFrom
+    restrictions?: Restrictions
     name: string
     preview_url: string
     track_number: number
     type: string
     uri: string
+    is_local: boolean
+}
 
-    restrictions?: Restrictions
+export interface SavedTrack {
+    added_at: string
+    track: Track
 }
 
 export interface ExternalIds {
@@ -177,15 +192,17 @@ export interface ExternalIds {
     upc: string
 }
 
-export interface TrackWithAlbum extends Track {
-    album: Album
+export interface Track extends SimplifiedTrack {
+    album: SimplifiedAlbum
+    external_ids: ExternalIds
+    popularity: number
 }
 
 export interface Tracks {
-    tracks: TrackWithAlbum[]
+    tracks: Track[]
 }
 
-export interface ArtistReference {
+export interface SimplifiedArtist {
     external_urls: ExternalUrls
     href: string
     id: string
@@ -216,7 +233,7 @@ export interface FollowedArtists {
 }
 
 export interface Followers {
-    href: any
+    href: string | null
     total: number
 }
 
@@ -227,7 +244,7 @@ export interface ExternalUrls {
 export interface SearchResults {
     tracks: Page<Track>
     artists: Page<Artist>
-    albums: Page<Album>
+    albums: Page<SimplifiedAlbum>
     playlists: Page<Playlist>
     shows: Page<Show>
     episodes: Page<Episode>
@@ -284,7 +301,7 @@ export interface PlaylistCreationResult {
 export interface Audiobook {
     authors: Author[]
     available_markets: string[]
-    copyrights: any[]
+    copyrights: Copyright[]
     description: string
     edition: string
     explicit: boolean
@@ -357,7 +374,7 @@ export interface Chapter {
     images: Image[]
     languages: string[]
     name: string
-    audio_preview_url: any
+    audio_preview_url: string
     release_date: string
     release_date_precision: string
     resume_point: ResumePoint
@@ -463,7 +480,7 @@ export interface Playlist {
 }
 
 export interface PlaylistWithTracks extends Playlist {
-    tracks: Page<PlaylistedTrack>
+    tracks: Page<PlaylistTrack>
 }
 
 export interface PlaylistsWithTrackReferences {
