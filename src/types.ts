@@ -239,10 +239,8 @@ export interface SearchResults {
     tracks: Page<Track>
     artists: Page<Artist>
     albums: Page<SimplifiedAlbum>
-    // TODO: simplified from here down
-    // https://developer.spotify.com/documentation/web-api/reference/search
-    playlists: Page<Playlist>
-    shows: Page<Show>
+    playlists: Page<SimplifiedPlaylist>
+    shows: Page<SimplifiedShow>
     episodes: Page<SimplifiedEpisode>
     audiobooks: Page<SimplifiedAudiobook>
 }
@@ -322,7 +320,7 @@ export interface Markets {
 }
 
 export interface Shows {
-    shows: ShowWithEpisodes[]
+    shows: Show[]
 }
 
 export interface Category {
@@ -410,7 +408,7 @@ export interface SimplifiedEpisode {
 }
 
 export interface Episode extends SimplifiedEpisode {
-    show: Show
+    show: SimplifiedShow
 }
 
 export interface SavedEpisode {
@@ -418,7 +416,7 @@ export interface SavedEpisode {
     episode: Episode
 }
 
-export interface Show {
+export interface SimplifiedShow {
     available_markets: string[]
     copyrights: Copyright[]
     description: string
@@ -440,10 +438,10 @@ export interface Show {
 
 export interface SavedShow {
     added_at: string
-    show: Show
+    show: SimplifiedShow
 }
 
-export interface ShowWithEpisodes extends Show {
+export interface Show extends SimplifiedShow {
     episodes: Page<SimplifiedEpisode>
 }
 
@@ -451,7 +449,7 @@ export interface SnapshotReference {
     snapshot_id: string
 }
 
-export interface Playlist {
+interface PlaylistBase {
     collaborative: boolean
     description: string
     external_urls: ExternalUrls
@@ -468,17 +466,17 @@ export interface Playlist {
     uri: string
 }
 
-export interface PlaylistWithTracks extends Playlist {
+export interface SimplifiedPlaylist extends PlaylistBase {
+    tracks: TrackReference | null
+}
+
+export interface Playlist extends PlaylistBase {
     tracks: Page<PlaylistTrack>
 }
 
-export interface PlaylistsWithTrackReferences {
+export interface FeaturedPlaylists {
     message: string;
-    playlists: Page<PlaylistWithTrackReferences>
-}
-
-export interface PlaylistWithTrackReferences extends Playlist {
-    tracks: TrackReference
+    playlists: Page<SimplifiedPlaylist>
 }
 
 export interface TrackReference {

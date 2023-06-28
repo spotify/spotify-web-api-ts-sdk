@@ -1,5 +1,5 @@
 import { SpotifyApi } from '../SpotifyApi.js';
-import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, SimplifiedAudiobook, PlaylistWithTrackReferences, SavedTrack, SavedEpisode, SavedShow } from '../types.js';
+import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, SimplifiedAudiobook, SavedTrack, SavedEpisode, SavedShow, SimplifiedPlaylist } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class CurrentUserEndpoints extends EndpointsBase {
@@ -114,7 +114,7 @@ class CurrentUserEpisodesEndpoints extends EndpointsBase {
 class CurrentUserPlaylistsEndpoints extends EndpointsBase {
     public playlists(limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ limit, offset });
-        return this.getRequest<Page<PlaylistWithTrackReferences>>(`me/playlists${params}`);
+        return this.getRequest<Page<SimplifiedPlaylist>>(`me/playlists${params}`);
     }
 
     public follow(playlist_id: string) {
