@@ -45,4 +45,8 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
         const token = await this.cache.get<AccessToken>(ProvidedAccessTokenStrategy.cacheKey);
         return token;
     }
+
+    public removeAccessToken(): void {
+        this.cache.remove(ProvidedAccessTokenStrategy.cacheKey);
+    }
 }

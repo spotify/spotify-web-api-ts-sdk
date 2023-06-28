@@ -36,6 +36,10 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
         return token;
     }
 
+    public removeAccessToken(): void {
+        this.cache.remove(ClientCredentialsStrategy.cacheKey);
+    }
+
     private async getTokenFromApi(): Promise<AccessToken> {
         const options = {
             grant_type: 'client_credentials',

@@ -43,6 +43,10 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
         return token;
     }
 
+    public removeAccessToken(): void {
+        this.cache.remove(AuthorizationCodeWithPKCEStrategy.cacheKey);
+    }
+
     private async redirectOrVerifyToken(): Promise<AccessToken> {
         const hashParams = new URLSearchParams(window.location.search);
         const code = hashParams.get("code");

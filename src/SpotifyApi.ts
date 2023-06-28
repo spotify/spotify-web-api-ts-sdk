@@ -142,11 +142,18 @@ export class SpotifyApi {
     }
 
     /**
-     * @returns true if SpotifyApi is not yet authenticated. false is probably authenticated but not guaranteed
+     * @returns true if SpotifyApi is not yet authenticated. false does not imply the SpotifyApi is successfully authenticated.
      */
     public async needsAuthentication() {
         const token = await this.authenticationStrategy.getAccessToken();
         return token === null;
+    }
+
+    /**
+     * Removes the access token if it exists.
+     */
+    public logOut() {
+        this.authenticationStrategy.removeAccessToken();
     }
 
     public static withUserAuthorization(clientId: string, redirectUri: string, scopes: string[] = [], config?: SdkOptions): SpotifyApi {

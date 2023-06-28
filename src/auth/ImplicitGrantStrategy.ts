@@ -38,6 +38,10 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
         return token;
     }
 
+    public removeAccessToken(): void {
+        this.cache.remove(ImplicitGrantStrategy.cacheKey);
+    }
+
     private async redirectOrVerifyToken(): Promise<AccessToken> {
         const hashParams = new URLSearchParams(window.location.hash.substring(1));
         const accessToken = hashParams.get("access_token");

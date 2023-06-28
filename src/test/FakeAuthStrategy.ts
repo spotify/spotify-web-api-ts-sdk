@@ -33,6 +33,10 @@ export class FakeAuthStrategy implements IAuthStrategy {
         return this.promiseToResolve;
     }
 
+    public removeAccessToken(): void {
+        this.returnedToken = null;
+    }
+
     public fakeAuthed() {
         this.res(this.returnedToken);
     }
