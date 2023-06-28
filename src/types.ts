@@ -211,17 +211,11 @@ export interface SimplifiedArtist {
     uri: string
 }
 
-export interface Artist {
-    external_urls: ExternalUrls
+export interface Artist extends SimplifiedArtist {
     followers: Followers
     genres: string[]
-    href: string
-    id: string
     images: Image[]
-    name: string
     popularity: number
-    type: string
-    uri: string
 }
 
 export interface Artists {
@@ -250,19 +244,7 @@ export interface SearchResults {
     playlists: Page<Playlist>
     shows: Page<Show>
     episodes: Page<SimplifiedEpisode>
-    audiobooks: Page<AudiobookWithChapters>
-}
-
-export interface ArtistSearchResult {
-    href: string;
-    items: ArtistSearchResultItem[];
-}
-
-export interface ArtistSearchResultItem {
-    id: string;
-    name: string;
-    popularity: number;
-    genres: string[];
+    audiobooks: Page<SimplifiedAudiobook>
 }
 
 export interface TopTracksResult {
@@ -293,23 +275,16 @@ export interface Image {
     width: number;
 }
 
-export interface PlaylistCreationResult {
-    id: string;
-    name: string;
-    href: string;
-    external_urls: ExternalUrls;
-}
-
-export interface Audiobook {
+export interface SimplifiedAudiobook {
     authors: Author[]
     available_markets: string[]
     copyrights: Copyright[]
     description: string
+    html_description: string
     edition: string
     explicit: boolean
     external_urls: ExternalUrls
     href: string
-    html_description: string
     id: string
     images: Image[]
     languages: string[]
@@ -317,17 +292,17 @@ export interface Audiobook {
     name: string
     narrators: Narrator[]
     publisher: string
-    total_chapters: number
     type: string
     uri: string
+    total_chapters: number
 }
 
-export interface AudiobookWithChapters extends Audiobook {
-    chapters: Page<Chapter>
+export interface Audiobook extends SimplifiedAudiobook {
+    chapters: Page<SimplifiedChapter>
 }
 
 export interface Audiobooks {
-    audiobooks: AudiobookWithChapters[]
+    audiobooks: Audiobook[]
 }
 
 export interface Categories {
@@ -367,34 +342,35 @@ export interface Author {
     name: string
 }
 
-export interface Chapter {
-    id: string
-    description: string
+export interface SimplifiedChapter {
+    audio_preview_url: string
+    available_markets: Market[]
     chapter_number: number
+    description: string
+    html_description: string
     duration_ms: number
     explicit: boolean
+    external_urls: ExternalUrls
+    href: string
+    id: string
     images: Image[]
+    is_playable: boolean
     languages: string[]
     name: string
-    audio_preview_url: string
     release_date: string
     release_date_precision: string
     resume_point: ResumePoint
-    html_description: string
-    available_markets: Market[]
     type: string
     uri: string
-    external_urls: ExternalUrls
-    href: string
+    restrictions?: Restrictions
+}
+
+export interface Chapter extends SimplifiedChapter {
+    audiobook: SimplifiedAudiobook
 }
 
 export interface Chapters {
-    chapters: ChapterWithAudiobookAndRestrictions[];
-}
-
-export interface ChapterWithAudiobookAndRestrictions extends Chapter {
-    restrictions?: Restrictions
-    audiobook: Audiobook
+    chapters: Chapter[];
 }
 
 export interface Restrictions {
