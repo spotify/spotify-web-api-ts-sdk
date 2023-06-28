@@ -1,43 +1,41 @@
 import IAuthStrategy from "../auth/IAuthStrategy";
-import type { AccessToken, SdkConfiguration } from "../types";
+import InMemoryCachingStrategy from "../caching/InMemoryCachingStrategy";
+import type { AccessToken, ICachingStrategy, SdkConfiguration } from "../types";
 
 export class FakeAuthStrategy implements IAuthStrategy {
-    public static FAKE_AUTH_TOKEN = "fake-auth-token";
-    private promiseToResolve: Promise<AccessToken>;
-    private res: any;
 
-    private returnedToken;
+    public static readonly FAKE_AUTH_TOKEN = "fake-auth-token";
+    private static readonly cacheKey = "spotify-sdk:FakeAuthStrategy:token";
+    protected cache: ICachingStrategy;
 
-    constructor(autoResolve: boolean = true, returnedToken: string = FakeAuthStrategy.FAKE_AUTH_TOKEN) {
-
-        this.returnedToken = {
-            access_token: returnedToken
-        };
-
-        this.promiseToResolve = new Promise((res, rej) => {
-            this.res = res;
-            if (autoResolve) {
-                res(this.returnedToken);
-            }
-        });
+    constructor(
+        protected accessToken: string = FakeAuthStrategy.FAKE_AUTH_TOKEN,
+    ) {
+        this.cache = new InMemoryCachingStrategy();
     }
 
-    public setConfiguration(configuration: SdkConfiguration): void {
+    public setConfiguration(_: SdkConfiguration): void {
     }
 
     public async getOrCreateAccessToken(): Promise<AccessToken> {
-        return this.promiseToResolve;
+        const token = await this.cache.getOrCreate<AccessToken>(
+            FakeAuthStrategy.cacheKey,
+            async () => {
+                return {
+                    access_token: this.accessToken,
+                } as AccessToken;
+            },
+        );
+
+        return token;
     }
 
     public async getAccessToken(): Promise<AccessToken | null> {
-        return this.promiseToResolve;
+        const token = await this.cache.get<AccessToken>(FakeAuthStrategy.cacheKey);
+        return token;
     }
 
     public removeAccessToken(): void {
-        this.returnedToken = null;
-    }
-
-    public fakeAuthed() {
-        this.res(this.returnedToken);
+        this.cache.remove(FakeAuthStrategy.cacheKey);
     }
 }

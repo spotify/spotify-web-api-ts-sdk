@@ -4,6 +4,11 @@ import { buildUnitTestSdkInstance } from "./test/SpotifyApiBuilder";
 import { FakeAuthStrategy } from "./test/FakeAuthStrategy";
 import { FetchApiMock } from "./test/FetchApiMock";
 import { validAlbumResult } from "./test/data/validAlbumResult";
+import AuthorizationCodeWithPKCEStrategy from "./auth/AuthorizationCodeWithPKCEStrategy";
+import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy";
+import ImplicitGrantStrategy from "./auth/ImplicitGrantStrategy";
+import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy";
+import { AccessToken } from "./types";
 
 describe("SpotifyAPI Instance", () => {
     let sut: SpotifyApi;
@@ -66,18 +71,45 @@ describe("SpotifyAPI Instance", () => {
 
         it("can create an instance with the authorization code strategy configured", async () => {
             const sut = SpotifyApi.withUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"]);
-            expect(sut["authenticationStrategy"].constructor.name).toBe("AuthorizationCodeWithPKCEStrategy");
+            expect(sut["authenticationStrategy"].constructor.name).toBe(AuthorizationCodeWithPKCEStrategy.name);
         });
 
         it("can create an instance with the client credentials strategy configured", async () => {
             const sut = SpotifyApi.withClientCredentials("client-id", "secret", ["scope1", "scope2"]);
-            expect(sut["authenticationStrategy"].constructor.name).toBe("ClientCredentialsStrategy");
+            expect(sut["authenticationStrategy"].constructor.name).toBe(ClientCredentialsStrategy.name);
         });
 
         it("can create an instance with the implicit grant strategy configured", async () => {
             const sut = SpotifyApi.withImplicitGrant("client-id", "secret", ["scope1", "scope2"]);
-            expect(sut["authenticationStrategy"].constructor.name).toBe("ImplicitGrantStrategy");
+            expect(sut["authenticationStrategy"].constructor.name).toBe(ImplicitGrantStrategy.name);
         });
 
+        it("can create an instance with the provided access token strategy configured", async () => {
+            const sut = SpotifyApi.withAccessToken("client-id", {} as AccessToken);
+            expect(sut["authenticationStrategy"].constructor.name).toBe(ProvidedAccessTokenStrategy.name);
+        });
+
+    });
+
+    describe("can authenticate and log out", () => {
+        it("needs authentication initially", async () => {
+            const needsAuthentication = await sut.needsAuthentication();
+            expect(needsAuthentication).toBe(true);
+        });
+
+        it("authenticates successfully", async () => {
+            const accessToken = await sut.authenticate();
+            expect(accessToken.access_token).toBe(FakeAuthStrategy.FAKE_AUTH_TOKEN);
+
+            const needsAuthentication = await sut.needsAuthentication();
+            expect(needsAuthentication).toBe(false);
+        });
+
+        it("needs authentication after logging out", async () => {
+            sut.logOut();
+
+            const needsAuthentication = await sut.needsAuthentication();
+            expect(needsAuthentication).toBe(true);
+        });
     });
 });
