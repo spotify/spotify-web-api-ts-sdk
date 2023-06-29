@@ -117,12 +117,12 @@ class CurrentUserPlaylistsEndpoints extends EndpointsBase {
         return this.getRequest<Page<SimplifiedPlaylist>>(`me/playlists${params}`);
     }
 
-    public follow(playlist_id: string) {
-        return this.putRequest(`playlists/${playlist_id}/followers`);
+    public async follow(playlist_id: string) {
+        await this.putRequest(`playlists/${playlist_id}/followers`);
     }
 
-    public unfollow(playlist_id: string) {
-        return this.deleteRequest(`playlists/${playlist_id}/followers`);
+    public async unfollow(playlist_id: string) {
+        await this.deleteRequest(`playlists/${playlist_id}/followers`);
     }
 
     public isFollowing(playlistId: string, ids: string[]) {
@@ -159,12 +159,12 @@ class CurrentUserTracksEndpoints extends EndpointsBase {
         return this.getRequest<Page<SavedTrack>>(`me/tracks${params}`);
     }
 
-    public saveTracks(ids: string[]) {
-        return this.putRequest('me/tracks', ids);
+    public async saveTracks(ids: string[]) {
+        await this.putRequest('me/tracks', ids);
     }
 
-    public removeSavedTracks(ids: string[]) {
-        return this.deleteRequest('me/tracks', ids);
+    public async removeSavedTracks(ids: string[]) {
+        await this.deleteRequest('me/tracks', ids);
     }
 
     public hasSavedTracks(ids: string[]) {
