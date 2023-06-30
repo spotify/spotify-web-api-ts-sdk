@@ -171,6 +171,11 @@ export interface Track {
     restrictions?: Restrictions
 }
 
+export interface SavedTrack {
+    added_at: string
+    track: Track
+}
+
 export interface ExternalIds {
     isrc: string
     ean: string
@@ -417,6 +422,11 @@ export interface Episode {
     show?: Show
 }
 
+export interface SavedEpisode {
+    added_at: string
+    episode: Episode
+}
+
 export interface Show {
     available_markets: string[]
     copyrights: Copyright[]
@@ -435,6 +445,11 @@ export interface Show {
     type: string
     uri: string
     total_episodes: number
+}
+
+export interface SavedShow {
+    added_at: string
+    show: Show
 }
 
 export interface ShowWithEpisodes extends Show {
