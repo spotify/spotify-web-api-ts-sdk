@@ -1,17 +1,65 @@
-import { beforeAll, describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { buildIntegrationTestUserSdkInstance } from "../test/SpotifyApiBuilder";
 import { SpotifyApi } from "../SpotifyApi";
 import { FetchApiSpy } from "../test/FetchApiSpy";
 import { validArtist } from "../test/data/validArtist";
 import { validAlbumResult } from "../test/data/validAlbumResult";
 import fs from "fs";
+import { validAudioBook } from "../test/data/validAudioBook";
 
 describe("Integration: Users Endpoints (logged in user)", () => {
     let sut: SpotifyApi;
     let fetchSpy: FetchApiSpy;
 
-    beforeAll(() => {
+    let artistId: string;
+    let wasArtistFollowed: boolean;
+
+    let albumId: string;
+    let wasAlbumSaved: boolean;
+
+    let audioBookId: string;
+    let wasAudioBookSaved: boolean;
+
+    beforeAll(async () => {
         [sut, fetchSpy] = buildIntegrationTestUserSdkInstance();
+
+        artistId = validArtist().id;
+        wasArtistFollowed = (await sut.currentUser.followsArtistsOrUsers([artistId], "artist"))[0];
+        if (!wasArtistFollowed) {
+            await sut.currentUser.followArtistsOrUsers([artistId], "artist");
+        }
+
+        albumId = validAlbumResult().id;
+        wasAlbumSaved = (await sut.currentUser.albums.hasSavedAlbums([albumId]))[0];
+        if (!wasAlbumSaved) {
+            await sut.currentUser.albums.saveAlbums([albumId]);
+        }
+
+        audioBookId = validAudioBook().id;
+        wasAudioBookSaved = (await sut.currentUser.audiobooks.hasSavedAudiobooks([audioBookId]))[0];
+        if (!wasAudioBookSaved) {
+            await sut.currentUser.audiobooks.saveAudiobooks([audioBookId]);
+        }
+    });
+    
+    afterAll(async () => {
+        if (wasArtistFollowed) {
+            await sut.currentUser.followArtistsOrUsers([artistId], "artist");
+        } else {
+            await sut.currentUser.unfollowArtistsOrUsers([artistId], "artist");
+        }
+
+        if (wasAlbumSaved) {
+            await sut.currentUser.albums.saveAlbums([albumId]);
+        } else {
+            await sut.currentUser.albums.removeSavedAlbums([albumId]);
+        }
+
+        if (wasAudioBookSaved) {
+            await sut.currentUser.audiobooks.saveAudiobooks([audioBookId]);
+        } else {
+            await sut.currentUser.audiobooks.removeSavedAudiobooks([audioBookId]);
+        }
     });
 
     it("getCurrentUsersProfile returns a real user", async () => {
@@ -36,27 +84,25 @@ describe("Integration: Users Endpoints (logged in user)", () => {
     });
 
     it("un/followArtistsOrUsersforCurrentUser can add and remove follows for artists", async () => {
-        await sut.currentUser.followArtistsOrUsers(["0qJpY7K8p7g6sacvaGNt6i"], "artist");
+        await sut.currentUser.followArtistsOrUsers([artistId], "artist");
         expect(fetchSpy.lastRequest().input).toBe("https://api.spotify.com/v1/me/following?type=artist");
 
         const result = await sut.currentUser.followedArtists();
-        expect(result.artists.items.find((a) => a.id === '0qJpY7K8p7g6sacvaGNt6i')).toBeTruthy();
+        expect(result.artists.items.find((a) => a.id === artistId)).toBeTruthy();
 
-        await sut.currentUser.unfollowArtistsOrUsers(["0qJpY7K8p7g6sacvaGNt6i"], "artist");
+        await sut.currentUser.unfollowArtistsOrUsers([artistId], "artist");
         expect(fetchSpy.lastRequest().input).toBe("https://api.spotify.com/v1/me/following?type=artist");
 
         const result2 = await sut.currentUser.followedArtists();
-        expect(result2.artists.items.find((a) => a.id === '0qJpY7K8p7g6sacvaGNt6i')).toBeFalsy();
+        expect(result2.artists.items.find((a) => a.id === artistId)).toBeFalsy();
     });
 
     it("checkUserFollowsArtistsOrUsers correctly identifies followed artist", async () => {
-        const valid = validArtist();
-        const followed = await sut.currentUser.followedArtists();
-        const knownFollowedArtist = followed.artists.items.find((a) => a.id === valid.id)!;
+        await sut.currentUser.followArtistsOrUsers([artistId], "artist");
 
-        const result = await sut.currentUser.followsArtistsOrUsers([knownFollowedArtist.id], "artist");
+        const result = await sut.currentUser.followsArtistsOrUsers([artistId], "artist");
 
-        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/following/contains?ids=${valid.id}&type=artist`);
+        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/following/contains?ids=${artistId}&type=artist`);
         expect(result[0]).toBeTruthy();
     });
 
@@ -68,10 +114,9 @@ describe("Integration: Users Endpoints (logged in user)", () => {
     });
 
     it("checkCurrentUsersSavedAlbums returns true for saved known album", async () => {
-        const valid = validAlbumResult();
-        const result = await sut.currentUser.albums.hasSavedAlbums([valid.id]);
+        const result = await sut.currentUser.albums.hasSavedAlbums([albumId]);
 
-        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/albums/contains?ids=${valid.id}`);
+        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/albums/contains?ids=${albumId}`);
         expect(result[0]).toBe(true);
     });
 
@@ -86,7 +131,6 @@ describe("Integration: Users Endpoints (logged in user)", () => {
             description: "test playlist description!"
         });
 
-        
         const file = fs.readFileSync("./src/test/valid-image.jpg", { encoding: "base64" });
 
         await sut.playlists.addCustomPlaylistCoverImage(result.id, file);
@@ -113,6 +157,8 @@ describe("Integration: Users Endpoints (logged in user)", () => {
 
         const playlist2 = await sut.playlists.getPlaylist(result.id);
         expect(playlist2.name).toBe("test playlist name 2");
+
+        await sut.currentUser.playlists.unfollow(result.id);
     });
 
     it("can set valid image form file (node.js)", async () => {
@@ -126,6 +172,7 @@ describe("Integration: Users Endpoints (logged in user)", () => {
         const file = fs.readFileSync("./src/test/valid-image.jpg", { encoding: "base64" });
 
         await sut.playlists.addCustomPlaylistCoverImage(result.id, file);
+        await sut.currentUser.playlists.unfollow(result.id);
     });
 
     it("getCurrentUsersPlaylists returns playlists", async () => {
@@ -136,19 +183,17 @@ describe("Integration: Users Endpoints (logged in user)", () => {
     });
 
     it("can save and remove album for user", async () => {
-        const album = "6yWMN087PgSimbcVmHLEwG"; // Aenema by Tool
-
-        await sut.currentUser.albums.saveAlbums([album]);
+        await sut.currentUser.albums.saveAlbums([albumId]);
         expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/albums`);
 
         const result = await sut.currentUser.albums.savedAlbums();
-        expect(result.items.find((a) => a.album.id === album)).toBeTruthy();
+        expect(result.items.find((a) => a.album.id === albumId)).toBeTruthy();
 
-        await sut.currentUser.albums.removeSavedAlbums([album]);
+        await sut.currentUser.albums.removeSavedAlbums([albumId]);
         expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/albums`);
 
         const result2 = await sut.currentUser.albums.savedAlbums();
-        expect(result2.items.find((a) => a.album.id === album)).toBeFalsy();
+        expect(result2.items.find((a) => a.album.id === albumId)).toBeFalsy();
     });
 
     it("getFeaturedPlaylists returns playlists", async () => {
@@ -174,25 +219,24 @@ describe("Integration: Users Endpoints (logged in user)", () => {
     });
 
     it("checkCurrentUsersSavedAudiobooks returns true for saved book", async () => {
-        const result = await sut.currentUser.audiobooks.hasSavedAudiobooks(["19Xw49IjNbOCCoebfy3qA9"]);
+        const result = await sut.currentUser.audiobooks.hasSavedAudiobooks([audioBookId]);
 
-        expect(fetchSpy.lastRequest().input).toBe("https://api.spotify.com/v1/me/audiobooks/contains?ids=19Xw49IjNbOCCoebfy3qA9");
+        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/audiobooks/contains?ids=${audioBookId}`);
         expect(result[0]).toBeTruthy();
     });
 
     it("can save and remove audiobook for user", async () => {
-        await sut.currentUser.audiobooks.saveAudiobooks(["2lwSCFrbU1Y7tH3BYS0aeM"]);
+        await sut.currentUser.audiobooks.saveAudiobooks([audioBookId]);
         expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/audiobooks`);
 
         const result2 = await sut.currentUser.audiobooks.savedAudiobooks();
-        expect(result2.items.find((a) => a.id === "2lwSCFrbU1Y7tH3BYS0aeM")).toBeTruthy();
+        expect(result2.items.find((a) => a.id === audioBookId)).toBeTruthy();
 
-        await sut.currentUser.audiobooks.removeSavedAudiobooks(["2lwSCFrbU1Y7tH3BYS0aeM"]);
+        await sut.currentUser.audiobooks.removeSavedAudiobooks([audioBookId]);
         expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/audiobooks`);
 
         const result3 = await sut.currentUser.audiobooks.savedAudiobooks();
-        expect(result3.items.find((a) => a.id === "2lwSCFrbU1Y7tH3BYS0aeM")).toBeFalsy();
+        expect(result3.items.find((a) => a.id === audioBookId)).toBeFalsy();
     });
-
 
 }, { timeout: 20000 });
