@@ -78,7 +78,7 @@ export interface AccessToken {
 export interface Album {
     album_group: string
     album_type: string
-    artists: ArtistReference[]
+    artists: SimplifiedArtist[]
     available_markets: string[]
     copyrights: Copyright[]
     external_ids: ExternalIds
@@ -151,7 +151,7 @@ export interface AddedBy {
 }
 
 export interface Track {
-    artists: ArtistReference[]
+    artists: SimplifiedArtist[]
     available_markets: string[]
     disc_number: number
     duration_ms: number
@@ -190,7 +190,7 @@ export interface Tracks {
     tracks: TrackWithAlbum[]
 }
 
-export interface ArtistReference {
+export interface SimplifiedArtist {
     external_urls: ExternalUrls
     href: string
     id: string
@@ -199,17 +199,11 @@ export interface ArtistReference {
     uri: string
 }
 
-export interface Artist {
-    external_urls: ExternalUrls
+export interface Artist extends SimplifiedArtist {
     followers: Followers
     genres: string[]
-    href: string
-    id: string
     images: Image[]
-    name: string
     popularity: number
-    type: string
-    uri: string
 }
 
 export interface Artists {
@@ -234,21 +228,9 @@ export interface SearchResults {
     artists: Page<Artist>
     albums: Page<Album>
     playlists: Page<Playlist>
-    shows: Page<Show>
-    episodes: Page<Episode>
-    audiobooks: Page<AudiobookWithChapters>
-}
-
-export interface ArtistSearchResult {
-    href: string;
-    items: ArtistSearchResultItem[];
-}
-
-export interface ArtistSearchResultItem {
-    id: string;
-    name: string;
-    popularity: number;
-    genres: string[];
+    shows: Page<SimplifiedShow>
+    episodes: Page<SimplifiedEpisode>
+    audiobooks: Page<SimplifiedAudiobook>
 }
 
 export interface TopTracksResult {
@@ -279,14 +261,7 @@ export interface Image {
     width: number;
 }
 
-export interface PlaylistCreationResult {
-    id: string;
-    name: string;
-    href: string;
-    external_urls: ExternalUrls;
-}
-
-export interface Audiobook {
+export interface SimplifiedAudiobook {
     authors: Author[]
     available_markets: string[]
     copyrights: any[]
@@ -308,12 +283,12 @@ export interface Audiobook {
     uri: string
 }
 
-export interface AudiobookWithChapters extends Audiobook {
+export interface Audiobook extends SimplifiedAudiobook {
     chapters: Page<Chapter>
 }
 
 export interface Audiobooks {
-    audiobooks: AudiobookWithChapters[]
+    audiobooks: Audiobook[]
 }
 
 export interface Categories {
@@ -333,7 +308,7 @@ export interface Markets {
 }
 
 export interface Shows {
-    shows: ShowWithEpisodes[]
+    shows: Show[]
 }
 
 export interface Category {
@@ -380,7 +355,7 @@ export interface Chapters {
 
 export interface ChapterWithAudiobookAndRestrictions extends Chapter {
     restrictions?: Restrictions
-    audiobook: Audiobook
+    audiobook: SimplifiedAudiobook
 }
 
 export interface Restrictions {
@@ -396,7 +371,7 @@ export interface Narrator {
     name: string
 }
 
-export interface Episode {
+export interface SimplifiedEpisode {
     audio_preview_url: string
     description: string
     html_description: string
@@ -417,9 +392,10 @@ export interface Episode {
     type: string
     uri: string
     restrictions: Restrictions
+}
 
-    // If fetched from Episode API, show included
-    show?: Show
+export interface Episode extends SimplifiedEpisode {
+    show: SimplifiedShow
 }
 
 export interface SavedEpisode {
@@ -427,7 +403,7 @@ export interface SavedEpisode {
     episode: Episode
 }
 
-export interface Show {
+export interface SimplifiedShow {
     available_markets: string[]
     copyrights: Copyright[]
     description: string
@@ -449,11 +425,11 @@ export interface Show {
 
 export interface SavedShow {
     added_at: string
-    show: Show
+    show: SimplifiedShow
 }
 
-export interface ShowWithEpisodes extends Show {
-    episodes: Page<Episode>
+export interface Show extends SimplifiedShow {
+    episodes: Page<SimplifiedEpisode>
 }
 
 export interface SnapshotReference {

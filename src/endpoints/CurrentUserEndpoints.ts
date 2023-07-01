@@ -1,5 +1,5 @@
 import { SpotifyApi } from '../SpotifyApi.js';
-import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, Audiobook, PlaylistWithTrackReferences, SavedEpisode, SavedShow, SavedTrack } from '../types.js';
+import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, SimplifiedAudiobook, PlaylistWithTrackReferences, SavedEpisode, SavedShow, SavedTrack } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class CurrentUserEndpoints extends EndpointsBase {
@@ -74,7 +74,7 @@ class CurrentUserAlbumsEndpoints extends EndpointsBase {
 class CurrentUserAudiobooksEndpoints extends EndpointsBase {
     public savedAudiobooks(limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ limit, offset });
-        return this.getRequest<Page<Audiobook>>(`me/audiobooks${params}`);
+        return this.getRequest<Page<SimplifiedAudiobook>>(`me/audiobooks${params}`);
     }
 
     public async saveAudiobooks(ids: string[]) {
