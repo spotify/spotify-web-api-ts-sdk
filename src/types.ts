@@ -139,7 +139,7 @@ export interface PlaylistedTrack {
     added_by: AddedBy
     is_local: boolean
     primary_color: any
-    track: Track
+    track: Track | Episode
 }
 
 export interface AddedBy {
