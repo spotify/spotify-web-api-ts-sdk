@@ -104,7 +104,7 @@ export interface SavedAlbum {
 }
 
 export interface AlbumWithTracks extends Album {
-    tracks: Page<Track>
+    tracks: Page<SimplifiedTrack>
 }
 
 export interface Albums {
@@ -139,7 +139,7 @@ export interface PlaylistedTrack {
     added_by: AddedBy
     is_local: boolean
     primary_color: any
-    track: TrackWithAlbum
+    track: Track
 }
 
 export interface AddedBy {
@@ -150,24 +150,31 @@ export interface AddedBy {
     uri: string
 }
 
-export interface Track {
+export interface LinkedFrom {
+    external_urls: ExternalUrls
+    href: string
+    id: string
+    type: string
+    uri: string
+}
+
+export interface SimplifiedTrack {
     artists: ArtistReference[]
     available_markets: string[]
     disc_number: number
     duration_ms: number
     explicit: boolean
     external_urls: ExternalUrls
-    external_ids: ExternalIds
     href: string
     id: string
     is_local: boolean
-    popularity: number
     name: string
     preview_url: string
     track_number: number
     type: string
     uri: string
-
+    is_playable?: boolean
+    linked_from?: LinkedFrom
     restrictions?: Restrictions
 }
 
@@ -182,12 +189,14 @@ export interface ExternalIds {
     upc: string
 }
 
-export interface TrackWithAlbum extends Track {
+export interface Track extends SimplifiedTrack {
     album: Album
+    external_ids: ExternalIds
+    popularity: number
 }
 
 export interface Tracks {
-    tracks: TrackWithAlbum[]
+    tracks: Track[]
 }
 
 export interface ArtistReference {
