@@ -309,7 +309,7 @@ export interface Audiobook {
 }
 
 export interface AudiobookWithChapters extends Audiobook {
-    chapters: Page<Chapter>
+    chapters: Page<SimplifiedChapter>
 }
 
 export interface Audiobooks {
@@ -353,7 +353,7 @@ export interface Author {
     name: string
 }
 
-export interface Chapter {
+export interface SimplifiedChapter {
     id: string
     description: string
     chapter_number: number
@@ -372,14 +372,15 @@ export interface Chapter {
     uri: string
     external_urls: ExternalUrls
     href: string
+    is_playable: boolean
+    restrictions?: Restrictions
 }
 
 export interface Chapters {
-    chapters: ChapterWithAudiobookAndRestrictions[];
+    chapters: Chapter[];
 }
 
-export interface ChapterWithAudiobookAndRestrictions extends Chapter {
-    restrictions?: Restrictions
+export interface Chapter extends SimplifiedChapter {
     audiobook: Audiobook
 }
 
