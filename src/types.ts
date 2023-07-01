@@ -233,7 +233,7 @@ export interface SearchResults {
     tracks: Page<Track>
     artists: Page<Artist>
     albums: Page<Album>
-    playlists: Page<Playlist>
+    playlists: Page<PlaylistBase>
     shows: Page<Show>
     episodes: Page<Episode>
     audiobooks: Page<AudiobookWithChapters>
@@ -460,7 +460,7 @@ export interface SnapshotReference {
     snapshot_id: string
 }
 
-export interface Playlist {
+interface PlaylistBase {
     collaborative: boolean
     description: string
     external_urls: ExternalUrls
@@ -477,17 +477,17 @@ export interface Playlist {
     uri: string
 }
 
-export interface PlaylistWithTracks extends Playlist {
+export interface Playlist extends PlaylistBase {
     tracks: Page<PlaylistedTrack>
 }
 
-export interface PlaylistsWithTrackReferences {
+export interface FeaturedPlaylists {
     message: string;
-    playlists: Page<PlaylistWithTrackReferences>
+    playlists: Page<SimplifiedPlaylist>
 }
 
-export interface PlaylistWithTrackReferences extends Playlist {
-    tracks: TrackReference
+export interface SimplifiedPlaylist extends PlaylistBase {
+    tracks: TrackReference | null
 }
 
 export interface TrackReference {
