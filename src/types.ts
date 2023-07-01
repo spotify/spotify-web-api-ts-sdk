@@ -169,7 +169,7 @@ export interface SimplifiedTrack {
     id: string
     is_local: boolean
     name: string
-    preview_url: string
+    preview_url: string | null
     track_number: number
     type: string
     uri: string
