@@ -83,7 +83,7 @@ export interface Album {
     copyrights: Copyright[]
     external_ids: ExternalIds
     external_urls: ExternalUrls
-    genres: any[]
+    genres: string[]
     href: string
     id: string
     images: Image[]
@@ -128,9 +128,9 @@ export interface Page<TItemType> {
     href: string
     items: TItemType[]
     limit: number
-    next: any
+    next: string | null
     offset: number
-    previous: any
+    previous: string | null
     total: number
 }
 
@@ -138,7 +138,6 @@ export interface PlaylistedTrack {
     added_at: string
     added_by: AddedBy
     is_local: boolean
-    primary_color: any
     track: TrackWithAlbum
 }
 
@@ -221,7 +220,7 @@ export interface FollowedArtists {
 }
 
 export interface Followers {
-    href: any
+    href: string | null
     total: number
 }
 
@@ -289,7 +288,7 @@ export interface PlaylistCreationResult {
 export interface Audiobook {
     authors: Author[]
     available_markets: string[]
-    copyrights: any[]
+    copyrights: Copyright[]
     description: string
     edition: string
     explicit: boolean
@@ -362,7 +361,7 @@ export interface Chapter {
     images: Image[]
     languages: string[]
     name: string
-    audio_preview_url: any
+    audio_preview_url: string
     release_date: string
     release_date_precision: string
     resume_point: ResumePoint
