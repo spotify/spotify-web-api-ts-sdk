@@ -1,14 +1,14 @@
-import type { Market, TrackWithAlbum, Tracks, AudioFeatures, AudioFeaturesCollection, AudioAnalysis } from '../types.js';
+import type { Market, Track, Tracks, AudioFeatures, AudioFeaturesCollection, AudioAnalysis } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class TracksEndpoints extends EndpointsBase {
 
-    public get(id: string, market?: Market): Promise<TrackWithAlbum>
-    public get(ids: string[], market?: Market): Promise<TrackWithAlbum[]>
+    public get(id: string, market?: Market): Promise<Track>
+    public get(ids: string[], market?: Market): Promise<Track[]>
     public async get(idOrIds: string | string[], market?: Market) {
         if (typeof idOrIds === 'string') {
             const params = this.paramsFor({ market });
-            return this.getRequest<TrackWithAlbum>(`tracks/${idOrIds}${params}`);
+            return this.getRequest<Track>(`tracks/${idOrIds}${params}`);
         }
 
         const params = this.paramsFor({ ids: idOrIds, market });
