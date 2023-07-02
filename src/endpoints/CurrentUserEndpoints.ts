@@ -139,20 +139,17 @@ class CurrentUserShowsEndpoints extends EndpointsBase {
     }
 
     public saveShows(ids: string[]) {
-        const idString = ids.join(',');
-        const params = this.paramsFor({ idString });
+        const params = this.paramsFor({ ids });
         return this.putRequest<any>(`me/shows${params}`);
     }
 
     public removeSavedShows(ids: string[], market?: Market) {
-        const idString = ids.join(',');
-        const params = this.paramsFor({ idString, market });
+        const params = this.paramsFor({ ids, market });
         return this.deleteRequest<any>(`me/shows${params}`);
     }
 
     public hasSavedShow(ids: string[]) {
-        const idString = ids.join(',');
-        const params = this.paramsFor({ idString });
+        const params = this.paramsFor({ ids });
         return this.getRequest<any>(`me/shows/contains${params}`);
     }
 }
