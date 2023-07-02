@@ -1,4 +1,4 @@
-import type { Market, Audiobook, Audiobooks, MaxInt, Page, Chapter } from '../types.js';
+import type { Market, Audiobook, Audiobooks, MaxInt, Page, SimplifiedChapter } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class AudiobooksEndpoints extends EndpointsBase {
@@ -17,7 +17,7 @@ export default class AudiobooksEndpoints extends EndpointsBase {
 
     public getAudiobookChapters(id: string, market?: Market, limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ market, limit, offset });
-        return this.getRequest<Page<Chapter>>(`audiobooks/${id}/chapters${params}`);
+        return this.getRequest<Page<SimplifiedChapter>>(`audiobooks/${id}/chapters${params}`);
     }
 
 }

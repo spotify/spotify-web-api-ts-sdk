@@ -1,5 +1,5 @@
 import { SpotifyApi } from '../SpotifyApi.js';
-import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, SimplifiedAudiobook, PlaylistWithTrackReferences, SavedEpisode, SavedShow, SavedTrack } from '../types.js';
+import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, SimplifiedAudiobook, SimplifiedPlaylist, SavedEpisode, SavedShow, SavedTrack } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class CurrentUserEndpoints extends EndpointsBase {
@@ -78,11 +78,11 @@ class CurrentUserAudiobooksEndpoints extends EndpointsBase {
     }
 
     public async saveAudiobooks(ids: string[]) {
-        await this.putRequest<any>('me/audiobooks', ids);
+        await this.putRequest('me/audiobooks', ids);
     }
 
     public async removeSavedAudiobooks(ids: string[]) {
-        await this.deleteRequest<any>('me/audiobooks', ids);
+        await this.deleteRequest('me/audiobooks', ids);
     }
 
     public hasSavedAudiobooks(ids: string[]) {
@@ -97,12 +97,12 @@ class CurrentUserEpisodesEndpoints extends EndpointsBase {
         return this.getRequest<Page<SavedEpisode>>(`me/episodes${params}`);
     }
 
-    public saveEpisodes(ids: string[]) {
-        return this.putRequest<any>(`me/episodes`, ids)
+    public async saveEpisodes(ids: string[]) {
+        await this.putRequest(`me/episodes`, ids)
     }
 
-    public removeSavedEpisodes(ids: string[]) {
-        return this.deleteRequest<any>(`me/episodes`, ids)
+    public async removeSavedEpisodes(ids: string[]) {
+        await this.deleteRequest(`me/episodes`, ids)
     }
 
     public hasSavedEpisodes(ids: string[]) {
@@ -114,15 +114,15 @@ class CurrentUserEpisodesEndpoints extends EndpointsBase {
 class CurrentUserPlaylistsEndpoints extends EndpointsBase {
     public playlists(limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ limit, offset });
-        return this.getRequest<Page<PlaylistWithTrackReferences>>(`me/playlists${params}`);
+        return this.getRequest<Page<SimplifiedPlaylist>>(`me/playlists${params}`);
     }
 
-    public follow(playlist_id: string) {
-        return this.putRequest(`playlists/${playlist_id}/followers`);
+    public async follow(playlist_id: string) {
+        await this.putRequest(`playlists/${playlist_id}/followers`);
     }
 
-    public unfollow(playlist_id: string) {
-        return this.deleteRequest(`playlists/${playlist_id}/followers`);
+    public async unfollow(playlist_id: string) {
+        await this.deleteRequest(`playlists/${playlist_id}/followers`);
     }
 
     public isFollowing(playlistId: string, ids: string[]) {
@@ -132,28 +132,24 @@ class CurrentUserPlaylistsEndpoints extends EndpointsBase {
 }
 
 class CurrentUserShowsEndpoints extends EndpointsBase {
-
     public savedShows(limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ limit, offset })
         return this.getRequest<Page<SavedShow>>(`me/shows${params}`);
     }
 
     public saveShows(ids: string[]) {
-        const idString = ids.join(',');
-        const params = this.paramsFor({ idString });
-        return this.putRequest<any>(`me/shows${params}`);
+        const params = this.paramsFor({ ids });
+        return this.putRequest(`me/shows${params}`);
     }
 
     public removeSavedShows(ids: string[], market?: Market) {
-        const idString = ids.join(',');
-        const params = this.paramsFor({ idString, market });
-        return this.deleteRequest<any>(`me/shows${params}`);
+        const params = this.paramsFor({ ids, market });
+        return this.deleteRequest(`me/shows${params}`);
     }
 
     public hasSavedShow(ids: string[]) {
-        const idString = ids.join(',');
-        const params = this.paramsFor({ idString });
-        return this.getRequest<any>(`me/shows/contains${params}`);
+        const params = this.paramsFor({ ids });
+        return this.getRequest<boolean[]>(`me/shows/contains${params}`);
     }
 }
 
@@ -162,12 +158,12 @@ class CurrentUserTracksEndpoints extends EndpointsBase {
         const params = this.paramsFor({ limit, offset, market });
         return this.getRequest<Page<SavedTrack>>(`me/tracks${params}`);
     }
-    public saveTracks(ids: string[]) {
-        return this.putRequest<any>('me/tracks', ids);
+    public async saveTracks(ids: string[]) {
+        await this.putRequest('me/tracks', ids);
     }
 
-    public removeSavedTracks(ids: string[]) {
-        return this.deleteRequest<any>('me/tracks', ids);
+    public async removeSavedTracks(ids: string[]) {
+        await this.deleteRequest('me/tracks', ids);
     }
 
     public hasSavedTracks(ids: string[]) {

@@ -1,11 +1,12 @@
+import fs from "fs";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { buildIntegrationTestUserSdkInstance } from "../test/SpotifyApiBuilder";
 import { SpotifyApi } from "../SpotifyApi";
 import { FetchApiSpy } from "../test/FetchApiSpy";
 import { validArtist } from "../test/data/validArtist";
 import { validAlbumResult } from "../test/data/validAlbumResult";
-import fs from "fs";
 import { validAudioBook } from "../test/data/validAudioBook";
+import { validShow } from "../test/data/validShow";
 
 describe("Integration: Users Endpoints (logged in user)", () => {
     let sut: SpotifyApi;
@@ -19,6 +20,9 @@ describe("Integration: Users Endpoints (logged in user)", () => {
 
     let audioBookId: string;
     let wasAudioBookSaved: boolean;
+
+    let showId: string;
+    let wasShowSaved: boolean;
 
     beforeAll(async () => {
         [sut, fetchSpy] = buildIntegrationTestUserSdkInstance();
@@ -40,8 +44,14 @@ describe("Integration: Users Endpoints (logged in user)", () => {
         if (!wasAudioBookSaved) {
             await sut.currentUser.audiobooks.saveAudiobooks([audioBookId]);
         }
+
+        showId = validShow().id;
+        wasShowSaved = (await sut.currentUser.shows.hasSavedShow([showId]))[0];
+        if (!wasShowSaved) {
+            await sut.currentUser.shows.saveShows([showId]);
+        }
     });
-    
+
     afterAll(async () => {
         if (wasArtistFollowed) {
             await sut.currentUser.followArtistsOrUsers([artistId], "artist");
@@ -59,6 +69,12 @@ describe("Integration: Users Endpoints (logged in user)", () => {
             await sut.currentUser.audiobooks.saveAudiobooks([audioBookId]);
         } else {
             await sut.currentUser.audiobooks.removeSavedAudiobooks([audioBookId]);
+        }
+
+        if (wasShowSaved) {
+            await sut.currentUser.shows.saveShows([showId]);
+        } else {
+            await sut.currentUser.shows.removeSavedShows([showId]);
         }
     });
 
@@ -237,6 +253,40 @@ describe("Integration: Users Endpoints (logged in user)", () => {
 
         const result3 = await sut.currentUser.audiobooks.savedAudiobooks();
         expect(result3.items.find((a) => a.id === audioBookId)).toBeFalsy();
+    });
+
+    it("savedShows returns shows", async () => {
+        const result = await sut.currentUser.shows.savedShows();
+
+        expect(fetchSpy.lastRequest().input).toBe("https://api.spotify.com/v1/me/shows");
+        expect(result.items.length).toBeGreaterThan(0);
+    });
+
+    it("hasSavedShow returns true for saved show", async () => {
+        const result = await sut.currentUser.shows.hasSavedShow([showId]);
+
+        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/shows/contains?ids=${showId}`);
+        expect(result[0]).toBeTruthy();
+    });
+
+    it("hasSavedShow issues correct request for multiple saved shows", async () => {
+        await sut.currentUser.shows.hasSavedShow([showId, showId]);
+
+        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/shows/contains?ids=${showId}%2C${showId}`);
+    });
+
+    it("can save and remove show for user", async () => {
+        await sut.currentUser.shows.removeSavedShows([showId]);
+        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/shows?ids=${showId}`);
+
+        const result = await sut.currentUser.shows.savedShows();
+        expect(result.items.find((s) => s.show.id === showId)).toBeFalsy();
+
+        await sut.currentUser.shows.saveShows([showId]);
+        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/shows?ids=${showId}`);
+
+        const result2 = await sut.currentUser.shows.savedShows();
+        expect(result2.items.find((s) => s.show.id === showId)).toBeTruthy();
     });
 
 }, { timeout: 20000 });
