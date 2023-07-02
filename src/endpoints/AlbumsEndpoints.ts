@@ -1,14 +1,14 @@
-import type { Market, AlbumWithTracks, Albums, MaxInt, Page, SimplifiedTrack } from '../types.js';
+import type { Market, Album, Albums, MaxInt, Page, SimplifiedTrack } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class AlbumsEndpoints extends EndpointsBase {
 
-    public async get(id: string, market?: Market): Promise<AlbumWithTracks>;
-    public async get(ids: string[], market?: Market): Promise<AlbumWithTracks[]>;
+    public async get(id: string, market?: Market): Promise<Album>;
+    public async get(ids: string[], market?: Market): Promise<Album[]>;
     public async get(idOrIds: string | string[], market?: Market) {
         if (typeof idOrIds === 'string') {
             const params = this.paramsFor({ market });
-            const album = await this.getRequest<AlbumWithTracks>(`albums/${idOrIds}${params}`);
+            const album = await this.getRequest<Album>(`albums/${idOrIds}${params}`);
             return album;
         }
 
