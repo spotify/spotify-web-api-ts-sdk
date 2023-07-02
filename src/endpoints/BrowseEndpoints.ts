@@ -1,4 +1,4 @@
-import type { CountryCodeA2, MaxInt, Categories, Category, NewReleases, PlaylistsWithTrackReferences } from '../types.js';
+import type { CountryCodeA2, MaxInt, Categories, Category, NewReleases, FeaturedPlaylists } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class BrowseEndpoints extends EndpointsBase {
@@ -22,11 +22,11 @@ export default class BrowseEndpoints extends EndpointsBase {
 
     public getFeaturedPlaylists(country?: CountryCodeA2, locale?: string, timestamp?: string, limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ country, locale, timestamp, limit, offset });
-        return this.getRequest<PlaylistsWithTrackReferences>(`browse/featured-playlists${params}`);
+        return this.getRequest<FeaturedPlaylists>(`browse/featured-playlists${params}`);
     }
 
     public getPlaylistsForCategory(category_id: string, country?: CountryCodeA2, limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ country, limit, offset });
-        return this.getRequest<PlaylistsWithTrackReferences>(`browse/categories/${category_id}/playlists${params}`);
+        return this.getRequest<FeaturedPlaylists>(`browse/categories/${category_id}/playlists${params}`);
     }
 }
