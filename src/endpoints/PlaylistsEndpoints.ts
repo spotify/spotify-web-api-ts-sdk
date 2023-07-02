@@ -1,4 +1,4 @@
-import type { Market, PlaylistWithTracks, MaxInt, Page, Track, SnapshotReference, Image, PlaylistedTrack } from '../types.js';
+import type { Market, Playlist, MaxInt, Page, Track, SnapshotReference, Image, PlaylistedTrack } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class PlaylistsEndpoints extends EndpointsBase {
@@ -6,7 +6,7 @@ export default class PlaylistsEndpoints extends EndpointsBase {
     public getPlaylist(playlist_id: string, market?: Market, fields?: string, additional_types?: string) {
         // TODO: better support for fields
         const params = this.paramsFor({ market, fields, additional_types });
-        return this.getRequest<PlaylistWithTracks>(`playlists/${playlist_id}${params}`);
+        return this.getRequest<Playlist>(`playlists/${playlist_id}${params}`);
     }
 
     public getPlaylistItems(playlist_id: string, market?: Market, fields?: string, limit?: MaxInt<50>, offset?: number, additional_types?: string) {
@@ -41,11 +41,11 @@ export default class PlaylistsEndpoints extends EndpointsBase {
 
     public getUsersPlaylists(user_id: string, limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ limit, offset });
-        return this.getRequest<Page<PlaylistWithTracks>>(`users/${user_id}/playlists${params}`);
+        return this.getRequest<Page<Playlist>>(`users/${user_id}/playlists${params}`);
     }
 
     public createPlaylist(user_id: string, request: CreatePlaylistRequest) {
-        return this.postRequest<PlaylistWithTracks>(`users/${user_id}/playlists`, request);
+        return this.postRequest<Playlist>(`users/${user_id}/playlists`, request);
     }
 
     public getPlaylistCoverImage(playlist_id: string) {
