@@ -1,10 +1,10 @@
+import fs from "fs";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { buildIntegrationTestUserSdkInstance } from "../test/SpotifyApiBuilder";
 import { SpotifyApi } from "../SpotifyApi";
 import { FetchApiSpy } from "../test/FetchApiSpy";
 import { validArtist } from "../test/data/validArtist";
 import { validAlbumResult } from "../test/data/validAlbumResult";
-import fs from "fs";
 import { validAudioBook } from "../test/data/validAudioBook";
 import { validShow } from "../test/data/validShow";
 
@@ -51,7 +51,7 @@ describe("Integration: Users Endpoints (logged in user)", () => {
             await sut.currentUser.shows.saveShows([showId]);
         }
     });
-    
+
     afterAll(async () => {
         if (wasArtistFollowed) {
             await sut.currentUser.followArtistsOrUsers([artistId], "artist");
@@ -267,6 +267,12 @@ describe("Integration: Users Endpoints (logged in user)", () => {
 
         expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/shows/contains?ids=${showId}`);
         expect(result[0]).toBeTruthy();
+    });
+
+    it("hasSavedShow issues correct request for multiple saved shows", async () => {
+        await sut.currentUser.shows.hasSavedShow([showId, showId]);
+
+        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/shows/contains?ids=${showId}%2C${showId}`);
     });
 
     it("can save and remove show for user", async () => {
