@@ -75,10 +75,8 @@ export interface AccessToken {
     refresh_token: string;
 }
 
-export interface Album {
-    album_group: string
+interface AlbumBase {
     album_type: string
-    artists: ArtistReference[]
     available_markets: string[]
     copyrights: Copyright[]
     external_ids: ExternalIds
@@ -92,27 +90,33 @@ export interface Album {
     popularity: number
     release_date: string
     release_date_precision: string
+    restrictions?: Restrictions
     total_tracks: number
     type: string
     uri: string
+}
 
+export interface SimplifiedAlbum extends AlbumBase {
+    album_group: string
+    artists: ArtistReference[]
 }
 
 export interface SavedAlbum {
     added_at: string
-    album: AlbumWithTracks
+    album: Album
 }
 
-export interface AlbumWithTracks extends Album {
-    tracks: Page<Track>
+export interface Album extends AlbumBase {
+    artists: Artist[]
+    tracks: Page<SimplifiedTrack>
 }
 
 export interface Albums {
-    albums: AlbumWithTracks[]
+    albums: Album[]
 }
 
 export interface NewReleases {
-    albums: Page<AlbumWithTracks>
+    albums: Page<SimplifiedAlbum>
 }
 
 export interface Copyright {
@@ -139,7 +143,7 @@ export interface PlaylistedTrack {
     added_by: AddedBy
     is_local: boolean
     primary_color: any
-    track: TrackWithAlbum
+    track: Track | Episode
 }
 
 export interface AddedBy {
@@ -150,24 +154,31 @@ export interface AddedBy {
     uri: string
 }
 
-export interface Track {
+export interface LinkedFrom {
+    external_urls: ExternalUrls
+    href: string
+    id: string
+    type: string
+    uri: string
+}
+
+export interface SimplifiedTrack {
     artists: ArtistReference[]
     available_markets: string[]
     disc_number: number
     duration_ms: number
     explicit: boolean
     external_urls: ExternalUrls
-    external_ids: ExternalIds
     href: string
     id: string
     is_local: boolean
-    popularity: number
     name: string
-    preview_url: string
+    preview_url: string | null
     track_number: number
     type: string
     uri: string
-
+    is_playable?: boolean
+    linked_from?: LinkedFrom
     restrictions?: Restrictions
 }
 
@@ -182,12 +193,14 @@ export interface ExternalIds {
     upc: string
 }
 
-export interface TrackWithAlbum extends Track {
-    album: Album
+export interface Track extends SimplifiedTrack {
+    album: SimplifiedAlbum
+    external_ids: ExternalIds
+    popularity: number
 }
 
 export interface Tracks {
-    tracks: TrackWithAlbum[]
+    tracks: Track[]
 }
 
 export interface ArtistReference {
@@ -232,8 +245,8 @@ export interface ExternalUrls {
 export interface SearchResults {
     tracks: Page<Track>
     artists: Page<Artist>
-    albums: Page<Album>
-    playlists: Page<Playlist>
+    albums: Page<SimplifiedAlbum>
+    playlists: Page<PlaylistBase>
     shows: Page<Show>
     episodes: Page<Episode>
     audiobooks: Page<AudiobookWithChapters>
@@ -309,7 +322,7 @@ export interface Audiobook {
 }
 
 export interface AudiobookWithChapters extends Audiobook {
-    chapters: Page<Chapter>
+    chapters: Page<SimplifiedChapter>
 }
 
 export interface Audiobooks {
@@ -353,7 +366,7 @@ export interface Author {
     name: string
 }
 
-export interface Chapter {
+export interface SimplifiedChapter {
     id: string
     description: string
     chapter_number: number
@@ -372,14 +385,15 @@ export interface Chapter {
     uri: string
     external_urls: ExternalUrls
     href: string
+    is_playable: boolean
+    restrictions?: Restrictions
 }
 
 export interface Chapters {
-    chapters: ChapterWithAudiobookAndRestrictions[];
+    chapters: Chapter[];
 }
 
-export interface ChapterWithAudiobookAndRestrictions extends Chapter {
-    restrictions?: Restrictions
+export interface Chapter extends SimplifiedChapter {
     audiobook: Audiobook
 }
 
@@ -460,7 +474,7 @@ export interface SnapshotReference {
     snapshot_id: string
 }
 
-export interface Playlist {
+interface PlaylistBase {
     collaborative: boolean
     description: string
     external_urls: ExternalUrls
@@ -477,17 +491,17 @@ export interface Playlist {
     uri: string
 }
 
-export interface PlaylistWithTracks extends Playlist {
+export interface Playlist extends PlaylistBase {
     tracks: Page<PlaylistedTrack>
 }
 
-export interface PlaylistsWithTrackReferences {
+export interface FeaturedPlaylists {
     message: string;
-    playlists: Page<PlaylistWithTrackReferences>
+    playlists: Page<SimplifiedPlaylist>
 }
 
-export interface PlaylistWithTrackReferences extends Playlist {
-    tracks: TrackReference
+export interface SimplifiedPlaylist extends PlaylistBase {
+    tracks: TrackReference | null
 }
 
 export interface TrackReference {
