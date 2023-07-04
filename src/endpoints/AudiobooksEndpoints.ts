@@ -1,13 +1,13 @@
-import type { Market, AudiobookWithChapters, Audiobooks, MaxInt, Page, Chapter } from '../types.js';
+import type { Market, Audiobook, Audiobooks, MaxInt, Page, SimplifiedChapter } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class AudiobooksEndpoints extends EndpointsBase {
-    public async get(id: string, market?: Market): Promise<AudiobookWithChapters>;
-    public async get(ids: string[], market?: Market): Promise<AudiobookWithChapters[]>;
+    public async get(id: string, market?: Market): Promise<Audiobook>;
+    public async get(ids: string[], market?: Market): Promise<Audiobook[]>;
     public async get(idOrIds: string | string[], market?: Market) {
         if (typeof idOrIds === 'string') {
             const params = this.paramsFor({ market });
-            return this.getRequest<AudiobookWithChapters>(`audiobooks/${idOrIds}${params}`);
+            return this.getRequest<Audiobook>(`audiobooks/${idOrIds}${params}`);
         }
 
         const params = this.paramsFor({ ids: idOrIds, market });
@@ -17,7 +17,7 @@ export default class AudiobooksEndpoints extends EndpointsBase {
 
     public getAudiobookChapters(id: string, market?: Market, limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ market, limit, offset });
-        return this.getRequest<Page<Chapter>>(`audiobooks/${id}/chapters${params}`);
+        return this.getRequest<Page<SimplifiedChapter>>(`audiobooks/${id}/chapters${params}`);
     }
 
 }
