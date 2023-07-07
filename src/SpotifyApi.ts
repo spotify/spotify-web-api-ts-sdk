@@ -137,22 +137,21 @@ export class SpotifyApi {
     /**
      * Use this when you're running in a browser and you want to control when first authentication+redirect happens.
     */
-    public async authenticate() {
+    public async authenticate(): Promise<AccessToken> {
         return this.authenticationStrategy.getOrCreateAccessToken(); // trigger any redirects 
     }
 
     /**
-     * @returns true if SpotifyApi is not yet authenticated. false does not imply the SpotifyApi is successfully authenticated.
+     * @returns the current access token. null implies the SpotifyApi is not yet authenticated.
      */
-    public async needsAuthentication() {
-        const token = await this.authenticationStrategy.getAccessToken();
-        return token === null;
+    public async getAccessToken(): Promise<AccessToken | null> {
+        return this.authenticationStrategy.getAccessToken();
     }
 
     /**
      * Removes the access token if it exists.
      */
-    public logOut() {
+    public logOut(): void {
         this.authenticationStrategy.removeAccessToken();
     }
 

@@ -92,24 +92,24 @@ describe("SpotifyAPI Instance", () => {
     });
 
     describe("can authenticate and log out", () => {
-        it("needs authentication initially", async () => {
-            const needsAuthentication = await sut.needsAuthentication();
-            expect(needsAuthentication).toBe(true);
+        it("null access token initially", async () => {
+            const accessToken = await sut.getAccessToken();
+            expect(accessToken).toBe(null);
         });
 
         it("authenticates successfully", async () => {
             const accessToken = await sut.authenticate();
             expect(accessToken.access_token).toBe(FakeAuthStrategy.FAKE_AUTH_TOKEN);
 
-            const needsAuthentication = await sut.needsAuthentication();
-            expect(needsAuthentication).toBe(false);
+            const accessToken2 = await sut.getAccessToken();
+            expect(accessToken2?.access_token).toBe(FakeAuthStrategy.FAKE_AUTH_TOKEN);
         });
 
-        it("needs authentication after logging out", async () => {
+        it("null access token after logging out", async () => {
             sut.logOut();
 
-            const needsAuthentication = await sut.needsAuthentication();
-            expect(needsAuthentication).toBe(true);
+            const accessToken = await sut.getAccessToken();
+            expect(accessToken).toBe(null);
         });
     });
 });
