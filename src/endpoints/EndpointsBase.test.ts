@@ -12,6 +12,10 @@ class FakeEndPoints extends EndpointsBase {
     public functionWithStringArrayParam(ids: string[]) {
         return this.paramsFor({ ids });
     }
+
+    public functionWithBooleanParam(id: boolean) {
+        return this.paramsFor({ id });
+    }
 }
 
 describe("EndpointsBase", async () => {
@@ -33,6 +37,11 @@ describe("EndpointsBase", async () => {
     it("paramsFor can correctly url encode an array", () => {
         const result = sut.functionWithStringArrayParam(["one", "two"]);
         expect(result).toBe("?ids=one%2Ctwo");
+    });
+
+    it("paramsFor can correctly url encode a false boolean", () => {
+        const result = sut.functionWithBooleanParam(false);
+        expect(result).toBe("?id=false");
     });
 
 });
