@@ -76,7 +76,7 @@ export class SpotifyApi {
 
     public async makeRequest<TReturnType>(method: "GET" | "POST" | "PUT" | "DELETE", url: string, body: any = undefined, contentType: string | undefined = undefined): Promise<TReturnType> {
         try {
-            const accessToken = await this.authenticationStrategy.getAccessToken();
+            const accessToken = await this.authenticationStrategy.getOrCreateAccessToken();
             const token = accessToken?.access_token;
 
             const fullUrl = SpotifyApi.rootUrl + url;
@@ -131,14 +131,28 @@ export class SpotifyApi {
     public switchAuthenticationStrategy(authentication: IAuthStrategy) {
         this.authenticationStrategy = authentication;
         this.authenticationStrategy.setConfiguration(this.sdkConfig);
-        this.authenticationStrategy.getAccessToken(); // trigger any redirects 
+        this.authenticationStrategy.getOrCreateAccessToken(); // trigger any redirects 
     }
 
     /**
      * Use this when you're running in a browser and you want to control when first authentication+redirect happens.
     */
-    public async authenticate() {
-        return this.authenticationStrategy.getAccessToken(); // trigger any redirects 
+    public async authenticate(): Promise<AccessToken> {
+        return this.authenticationStrategy.getOrCreateAccessToken(); // trigger any redirects 
+    }
+
+    /**
+     * @returns the current access token. null implies the SpotifyApi is not yet authenticated.
+     */
+    public async getAccessToken(): Promise<AccessToken | null> {
+        return this.authenticationStrategy.getAccessToken();
+    }
+
+    /**
+     * Removes the access token if it exists.
+     */
+    public logOut(): void {
+        this.authenticationStrategy.removeAccessToken();
     }
 
     public static withUserAuthorization(clientId: string, redirectUri: string, scopes: string[] = [], config?: SdkOptions): SpotifyApi {
@@ -191,7 +205,7 @@ export class SpotifyApi {
 
         const strategy = new AuthorizationCodeWithPKCEStrategy(clientId, redirectUri, scopes);
         const client = new SpotifyApi(strategy, config);
-        const accessToken = await client.authenticationStrategy.getAccessToken();
+        const accessToken = await client.authenticationStrategy.getOrCreateAccessToken();
         if (accessToken == emptyAccessToken) {
             return; // Redirect code path, do nothing.
         }

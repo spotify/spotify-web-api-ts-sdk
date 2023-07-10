@@ -12,6 +12,7 @@ import IAuthStrategy from "./IAuthStrategy.js";
  */
 export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
 
+    private static readonly cacheKey = "spotify-sdk:ProvidedAccessTokenStrategy:token";
     private configuration: SdkConfiguration | null = null;
     protected get cache(): ICachingStrategy { return this.configuration!.cachingStrategy; }
 
@@ -25,16 +26,27 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
         this.configuration = configuration;
     }
 
-    public async getAccessToken(): Promise<AccessToken> {
-        const cacheKey = "spotify-sdk:ProvidedAccessTokenStrategy:token";
+    public async getOrCreateAccessToken(): Promise<AccessToken> {
 
-        this.accessToken = await this.cache.getOrCreate<AccessToken>(cacheKey, async () => {
-            const cachableToken = AccessTokenHelpers.toCachable(this.accessToken);
-            return Promise.resolve(cachableToken);
-        }, async (expiring) => {
-            return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
-        });
+        this.accessToken = await this.cache.getOrCreate<AccessToken>(
+            ProvidedAccessTokenStrategy.cacheKey,
+            async () => {
+                const cachableToken = AccessTokenHelpers.toCachable(this.accessToken);
+                return Promise.resolve(cachableToken);
+            }, async (expiring) => {
+                return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
+            },
+        );
 
         return this.accessToken;
+    }
+
+    public async getAccessToken(): Promise<AccessToken | null> {
+        const token = await this.cache.get<AccessToken>(ProvidedAccessTokenStrategy.cacheKey);
+        return token;
+    }
+
+    public removeAccessToken(): void {
+        this.cache.remove(ProvidedAccessTokenStrategy.cacheKey);
     }
 }

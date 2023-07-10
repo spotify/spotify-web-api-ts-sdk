@@ -8,6 +8,7 @@ import InMemoryCachingStrategy from "../caching/InMemoryCachingStrategy";
 import { Scopes } from "../Scopes";
 
 import dotenv from "dotenv";
+import { SdkOptions } from "../types";
 dotenv.config();
 
 export function buildIntegrationTestSdkInstance(logResults: boolean = false): [SpotifyApi, FetchApiSpy] {
@@ -67,12 +68,12 @@ export function buildIntegrationTestUserSdkInstance(logResults: boolean = false)
 export function buildUnitTestSdkInstance(): [SpotifyApi, FetchApiMock] {
     const authStrat = new FakeAuthStrategy();
     const fetchMock = new FetchApiMock();
-    const sdkConfig = {
+    const sdkConfig: SdkOptions = {
         fetch: (input: RequestInfo | URL, init?: RequestInit | undefined) => {
             return fetchMock.fetch(input, init);
         },
         cachingStrategy: new InMemoryCachingStrategy()
-    }
+    };
 
     const sdkInstance = new SpotifyApi(authStrat, sdkConfig);
 

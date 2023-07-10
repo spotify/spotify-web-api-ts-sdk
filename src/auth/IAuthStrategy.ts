@@ -4,5 +4,7 @@ export const emptyAccessToken: AccessToken = { access_token: "", token_type: "",
 
 export default interface IAuthStrategy {
     setConfiguration(configuration: SdkConfiguration): void;
-    getAccessToken(): Promise<AccessToken>;
+    getOrCreateAccessToken(): Promise<AccessToken>;
+    getAccessToken(): Promise<AccessToken | null>;
+    removeAccessToken(): void;
 }
