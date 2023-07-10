@@ -89,6 +89,6 @@ export default class PlayerEndpoints extends EndpointsBase {
 
     public async addItemToPlaybackQueue(uri: string, device_id?: string) {
         const params = this.paramsFor({ uri, device_id });
-        await this.putRequest(`me/player/queue${params}`);
+        await this.postRequest(`me/player/queue${params}`);
     }
 }
