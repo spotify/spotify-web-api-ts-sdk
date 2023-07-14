@@ -14,12 +14,6 @@ import DefaultResponseDeserializer from "./serialization/DefaultResponseDeserial
 import { Scopes } from "./Scopes.js";
 import { emptyAccessToken } from "./auth/IAuthStrategy.js";
 
-import type {
-    SearchResults
-} from "./types.js";
-
-export * from "./types.js";
-
 export {
     SpotifyApi,
     AuthorizationCodeWithPKCEStrategy,
@@ -36,8 +30,9 @@ export {
     emptyAccessToken
 }
 
+export type * from "./types.js";
+
 export type {
     IAuthStrategy,
     ICacheStore,
-    SearchResults
 }
