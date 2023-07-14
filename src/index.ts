@@ -18,6 +18,8 @@ import type {
     SearchResults
 } from "./types.js";
 
+export * from "./types.js";
+
 export {
     SpotifyApi,
     AuthorizationCodeWithPKCEStrategy,
