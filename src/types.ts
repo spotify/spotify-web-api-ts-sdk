@@ -173,15 +173,15 @@ export interface SimplifiedTrack {
     href: string
     id: string
     is_local: boolean
-    is_playable?: boolean
-    linked_from?: LinkedFrom
     name: string
     preview_url: string | null
-    restrictions?: Restrictions
     track: boolean;
     track_number: number
     type: string
     uri: string
+    is_playable?: boolean
+    linked_from?: LinkedFrom
+    restrictions?: Restrictions
 }
 
 export interface SavedTrack {
