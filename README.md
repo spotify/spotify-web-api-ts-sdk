@@ -108,6 +108,8 @@ These functions will work as usual, triggering a client side redirect to grant p
 
 *Server Side*
 ```js
+const { SpotifyApi } = require("@spotify/web-api-ts-sdk");
+
 const express = require('express');
 const bodyParser = require('body-parser'); 
 const app = express();
