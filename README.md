@@ -129,6 +129,8 @@ app.listen(3000, () => {
 });
 ```
 
+[Check out our blog post for more examples using ES Modules or CommonJS](https://developer.spotify.com/blog/2023-07-03-typescript-sdk)
+
 ### Extensibility
 
 All of the constructors support a configuration object that lets you override the default behavior of the SDK.
