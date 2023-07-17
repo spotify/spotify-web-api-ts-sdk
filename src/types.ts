@@ -167,6 +167,7 @@ export interface SimplifiedTrack {
     available_markets: string[]
     disc_number: number
     duration_ms: number
+    episode: boolean;
     explicit: boolean
     external_urls: ExternalUrls
     href: string
@@ -174,6 +175,7 @@ export interface SimplifiedTrack {
     is_local: boolean
     name: string
     preview_url: string | null
+    track: boolean;
     track_number: number
     type: string
     uri: string
