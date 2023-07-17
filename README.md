@@ -37,7 +37,7 @@ npm run start
 Creating an instance of the SDK is easy, and can be done in a number of ways depending on which form of authentication you want to use.
 
 ```js
-import { SpotifyWebApi } from '@spotify/web-api-ts-sdk';
+import { SpotifyApi } from '@spotify/web-api-ts-sdk';
 
 // Choose one of the following:
 const sdk = SpotifyApi.withUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"]);
