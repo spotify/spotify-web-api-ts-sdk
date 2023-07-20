@@ -93,7 +93,7 @@ describe("Integration: Users Endpoints (logged in user)", () => {
     });
 
     it("getUsersTopItems returns items for artists", async () => {
-        const result = await sut.currentUser.topItems("tracks");
+        const result = await sut.currentUser.topItems("artists");
 
         expect(fetchSpy.lastRequest().input).toBe("https://api.spotify.com/v1/me/top/artists");
         expect(result.limit).toBeGreaterThan(0);
