@@ -25,6 +25,10 @@ export default class CurrentUserEndpoints extends EndpointsBase {
         return this.getRequest<User>('me');
     }
 
+    public topItems(type: "artists" | "tracks") {
+        return this.getRequest<Page<Artist>>(`me/top/${type}`);
+    }
+
     public topItems(type: "artists" | "tracks", timerange: 'short_term' | 'medium_term' | 'long_term') {
         return this.getRequest<Page<Artist>>(`me/top/${type}?time_range=${timerange}`);
     }
