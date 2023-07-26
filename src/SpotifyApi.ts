@@ -204,7 +204,8 @@ export class SpotifyApi {
         const strategy = new AuthorizationCodeWithPKCEStrategy(clientId, redirectUri, scopes);
         const client = new SpotifyApi(strategy, config);
         const accessToken = await client.authenticationStrategy.getOrCreateAccessToken();
-        if (accessToken == emptyAccessToken) {
+
+        if (JSON.stringify({ ...accessToken, expires: 0 }) === JSON.stringify(emptyAccessToken)) {
             return; // Redirect code path, do nothing.
         }
 
