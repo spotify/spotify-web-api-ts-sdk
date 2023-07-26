@@ -85,10 +85,31 @@ describe("Integration: Users Endpoints (logged in user)", () => {
         expect(result.id.length).toBeGreaterThan(0);
     });
 
-    it("getUsersTopItems returns items", async () => {
+    it("getUsersTopItems returns items for tracks", async () => {
+        const result = await sut.currentUser.topItems("tracks");
+
+        expect(fetchSpy.lastRequest().input).toBe("https://api.spotify.com/v1/me/top/tracks");
+        expect(result.limit).toBeGreaterThan(0);
+    });
+
+    it("getUsersTopItems returns items for artists", async () => {
         const result = await sut.currentUser.topItems("artists");
 
         expect(fetchSpy.lastRequest().input).toBe("https://api.spotify.com/v1/me/top/artists");
+        expect(result.limit).toBeGreaterThan(0);
+    });
+
+    it("getUsersTopItems returns items for tracks and time_range", async () => {
+        const result = await sut.currentUser.topItems("tracks", 'medium_term');
+
+        expect(fetchSpy.lastRequest().input).toBe("https://api.spotify.com/v1/me/top/tracks?time_range=medium_term");
+        expect(result.limit).toBeGreaterThan(0);
+    });
+
+    it("getUsersTopItems returns items for artists and time_range", async () => {
+        const result = await sut.currentUser.topItems("artists", 'short_term');
+
+        expect(fetchSpy.lastRequest().input).toBe("https://api.spotify.com/v1/me/top/artists?time_range=short_term");
         expect(result.limit).toBeGreaterThan(0);
     });
 
