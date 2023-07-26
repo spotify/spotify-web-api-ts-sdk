@@ -201,8 +201,6 @@ export class SpotifyApi {
     public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], onAuthorization: (token: AccessToken) => Promise<void>, config?: SdkOptions): Promise<void>;
 
     public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], onAuthorizationOrUrl: ((token: AccessToken) => Promise<void>) | string, config?: SdkOptions): Promise<void> {
-        scopes = scopes || [];
-
         const strategy = new AuthorizationCodeWithPKCEStrategy(clientId, redirectUri, scopes);
         const client = new SpotifyApi(strategy, config);
         const accessToken = await client.authenticationStrategy.getOrCreateAccessToken();
