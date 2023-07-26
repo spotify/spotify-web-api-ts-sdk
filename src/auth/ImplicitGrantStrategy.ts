@@ -3,6 +3,8 @@ import AccessTokenHelpers from "./AccessTokenHelpers.js";
 import IAuthStrategy, { emptyAccessToken } from "./IAuthStrategy.js";
 
 export default class ImplicitGrantStrategy implements IAuthStrategy {
+
+    private static readonly cacheKey = "spotify-sdk:ImplicitGrantStrategy:token";
     private configuration: SdkConfiguration | null = null;
     private get cache(): ICachingStrategy { return this.configuration!.cachingStrategy; }
 
@@ -17,17 +19,27 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
         this.configuration = configuration;
     }
 
-    public async getAccessToken(): Promise<AccessToken> {
-        const cacheKey = "spotify-sdk:ImplicitGrantStrategy:token";
-
-        const token = await this.cache.getOrCreate<AccessToken>(cacheKey, async () => {
-            const token = await this.redirectOrVerifyToken();
-            return AccessTokenHelpers.toCachable(token);
-        }, async (expiring) => {
-            return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
-        });
+    public async getOrCreateAccessToken(): Promise<AccessToken> {
+        const token = await this.cache.getOrCreate<AccessToken>(
+            ImplicitGrantStrategy.cacheKey,
+            async () => {
+                const token = await this.redirectOrVerifyToken();
+                return AccessTokenHelpers.toCachable(token);
+            }, async (expiring) => {
+                return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
+            },
+        );
 
         return token;
+    }
+
+    public async getAccessToken(): Promise<AccessToken | null> {
+        const token = await this.cache.get<AccessToken>(ImplicitGrantStrategy.cacheKey);
+        return token;
+    }
+
+    public removeAccessToken(): void {
+        this.cache.remove(ImplicitGrantStrategy.cacheKey);
     }
 
     private async redirectOrVerifyToken(): Promise<AccessToken> {
