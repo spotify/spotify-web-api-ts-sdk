@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import { SpotifyApi, Scopes, SearchResults } from "../../src";
 import './App.css'
 
@@ -38,11 +37,6 @@ function SpotifySearch({ sdk }: { sdk: SpotifyApi}) {
 
   return (
     <>
-      <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
       <h1>Spotify Search for The Beatles</h1>
       <table>
         <thead>
