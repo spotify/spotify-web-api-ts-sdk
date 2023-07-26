@@ -51,7 +51,8 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
                 access_token: accessToken,
                 token_type: hashParams.get("token_type") ?? "",
                 expires_in: parseInt(hashParams.get("expires_in") ?? "0"),
-                refresh_token: hashParams.get("refresh_token") ?? ""
+                refresh_token: hashParams.get("refresh_token") ?? "",
+                expires: Number(hashParams.get("expires")) || 0
             });
         }
 
