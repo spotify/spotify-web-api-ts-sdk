@@ -25,12 +25,14 @@ export default class CurrentUserEndpoints extends EndpointsBase {
         return this.getRequest<User>('me');
     }
 
-    public topItems(type: "artists" | "tracks") {
-        return this.getRequest<Page<Artist>>(`me/top/${type}`);
-    }
-
-    public topItems(type: "artists" | "tracks", timerange: 'short_term' | 'medium_term' | 'long_term') {
-        return this.getRequest<Page<Artist>>(`me/top/${type}?time_range=${timerange}`);
+    public topItems(type: "artists" | "tracks"): Promise<Page<Artist>>;
+    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term'): Promise<Page<Artist>>;
+    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term') {
+        if (time_range) {
+            return this.getRequest<Page<Artist>>(`me/top/${type}?time_range=${time_range}`);
+        } else {
+            return this.getRequest<Page<Artist>>(`me/top/${type}`);
+        }
     }
 
     public followedArtists(after?: string, limit?: MaxInt<50>) {
