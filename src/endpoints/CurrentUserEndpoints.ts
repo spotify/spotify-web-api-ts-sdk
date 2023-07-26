@@ -26,13 +26,10 @@ export default class CurrentUserEndpoints extends EndpointsBase {
     }
 
     public topItems(type: "artists" | "tracks"): Promise<Page<Artist>>;
-    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term'): Promise<Page<Artist>>;
-    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term') {
-        if (time_range) {
-            return this.getRequest<Page<Artist>>(`me/top/${type}?time_range=${time_range}`);
-        } else {
-            return this.getRequest<Page<Artist>>(`me/top/${type}`);
-        }
+    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term', limit?: MaxInt<50>, offset?: number): Promise<Page<Artist>>;
+    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term', limit?: MaxInt<50>, offset?: number) {
+        const params = this.paramsFor({ time_range, limit, offset });
+        return this.getRequest<Page<Artist>>(`me/top/${type}${params}`);
     }
 
     public followedArtists(after?: string, limit?: MaxInt<50>) {
