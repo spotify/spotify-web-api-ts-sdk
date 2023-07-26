@@ -47,12 +47,18 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
         } as any;
 
         const bodyAsString = Object.keys(options).map(key => key + '=' + options[key]).join('&');
+        const hasBuffer = typeof Buffer !== 'undefined';
+        const credentials = `${this.clientId}:${this.clientSecret}`;
+
+        const basicAuth = hasBuffer
+            ? Buffer.from(credentials).toString('base64')
+            : btoa(credentials);
 
         const result = await fetch("https://accounts.spotify.com/api/token", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": 'Basic ' + (Buffer.from(this.clientId + ':' + this.clientSecret).toString('base64'))
+                "Authorization": `Basic ${basicAuth}`
             },
             body: bodyAsString
         });
