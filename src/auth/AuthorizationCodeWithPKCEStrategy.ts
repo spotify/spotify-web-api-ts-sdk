@@ -87,7 +87,6 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
     }
 
     protected async generateRedirectUrlForUser(scopes: string[], challenge: string) {
-        scopes = scopes ?? [];
         const scope = scopes.join(' ');
 
         const params = new URLSearchParams();
