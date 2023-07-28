@@ -28,7 +28,7 @@ export default class ArtistsEndpoints extends EndpointsBase {
         id: string,
         includeGroups?: string,
         market?: Market,
-        limit?: MaxInt<50>,
+        limit?: MaxInt<51>,
         offset?: number
     ) {
         const params = this.paramsFor({

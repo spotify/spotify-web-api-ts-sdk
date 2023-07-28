@@ -17,7 +17,7 @@ export default class ShowsEndpoints extends EndpointsBase {
         return response.shows;
     }
 
-    public episodes(id: string, market?: Market, limit?: MaxInt<50>, offset?: number) {
+    public episodes(id: string, market?: Market, limit?: MaxInt<51>, offset?: number) {
         const params = this.paramsFor({ market, limit, offset })
         return this.getRequest<Page<SimplifiedEpisode>>(`shows/${id}/episodes${params}`);
     }

@@ -15,7 +15,7 @@ export default class AudiobooksEndpoints extends EndpointsBase {
         return response.audiobooks;
     }
 
-    public getAudiobookChapters(id: string, market?: Market, limit?: MaxInt<50>, offset?: number) {
+    public getAudiobookChapters(id: string, market?: Market, limit?: MaxInt<51>, offset?: number) {
         const params = this.paramsFor({ market, limit, offset });
         return this.getRequest<Page<SimplifiedChapter>>(`audiobooks/${id}/chapters${params}`);
     }

@@ -18,7 +18,7 @@ export default class AlbumsEndpoints extends EndpointsBase {
         return response.albums;
     }
 
-    public tracks(albumId: string, market?: Market, limit?: MaxInt<50>, offset?: number) {
+    public tracks(albumId: string, market?: Market, limit?: MaxInt<51>, offset?: number) {
         const params = this.paramsFor({ market, limit, offset });
         return this.getRequest<Page<SimplifiedTrack>>(`albums/${albumId}/tracks${params}`);
     }

@@ -26,13 +26,13 @@ export default class CurrentUserEndpoints extends EndpointsBase {
     }
 
     public topItems(type: "artists" | "tracks"): Promise<Page<Artist>>;
-    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term', limit?: MaxInt<50>, offset?: number): Promise<Page<Artist>>;
-    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term', limit?: MaxInt<50>, offset?: number) {
+    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term', limit?: MaxInt<51>, offset?: number): Promise<Page<Artist>>;
+    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term', limit?: MaxInt<51>, offset?: number) {
         const params = this.paramsFor({ time_range, limit, offset });
         return this.getRequest<Page<Artist>>(`me/top/${type}${params}`);
     }
 
-    public followedArtists(after?: string, limit?: MaxInt<50>) {
+    public followedArtists(after?: string, limit?: MaxInt<51>) {
         const params = this.paramsFor({ type: "artist", after, limit });
         return this.getRequest<FollowedArtists>(`me/following${params}`);
     }
@@ -55,7 +55,7 @@ export default class CurrentUserEndpoints extends EndpointsBase {
 
 
 class CurrentUserAlbumsEndpoints extends EndpointsBase {
-    public savedAlbums(limit?: MaxInt<50>, offset?: number, market?: Market) {
+    public savedAlbums(limit?: MaxInt<51>, offset?: number, market?: Market) {
         const params = this.paramsFor({ limit, offset, market });
         return this.getRequest<Page<SavedAlbum>>(`me/albums${params}`);
     }
@@ -75,7 +75,7 @@ class CurrentUserAlbumsEndpoints extends EndpointsBase {
 }
 
 class CurrentUserAudiobooksEndpoints extends EndpointsBase {
-    public savedAudiobooks(limit?: MaxInt<50>, offset?: number) {
+    public savedAudiobooks(limit?: MaxInt<51>, offset?: number) {
         const params = this.paramsFor({ limit, offset });
         return this.getRequest<Page<SimplifiedAudiobook>>(`me/audiobooks${params}`);
     }
@@ -95,7 +95,7 @@ class CurrentUserAudiobooksEndpoints extends EndpointsBase {
 }
 
 class CurrentUserEpisodesEndpoints extends EndpointsBase {
-    public savedEpisodes(market?: Market, limit?: MaxInt<50>, offset?: number) {
+    public savedEpisodes(market?: Market, limit?: MaxInt<51>, offset?: number) {
         const params = this.paramsFor({ market, limit, offset });
         return this.getRequest<Page<SavedEpisode>>(`me/episodes${params}`);
     }
@@ -115,7 +115,7 @@ class CurrentUserEpisodesEndpoints extends EndpointsBase {
 }
 
 class CurrentUserPlaylistsEndpoints extends EndpointsBase {
-    public playlists(limit?: MaxInt<50>, offset?: number) {
+    public playlists(limit?: MaxInt<51>, offset?: number) {
         const params = this.paramsFor({ limit, offset });
         return this.getRequest<Page<SimplifiedPlaylist>>(`me/playlists${params}`);
     }
@@ -135,7 +135,7 @@ class CurrentUserPlaylistsEndpoints extends EndpointsBase {
 }
 
 class CurrentUserShowsEndpoints extends EndpointsBase {
-    public savedShows(limit?: MaxInt<50>, offset?: number) {
+    public savedShows(limit?: MaxInt<51>, offset?: number) {
         const params = this.paramsFor({ limit, offset })
         return this.getRequest<Page<SavedShow>>(`me/shows${params}`);
     }
@@ -157,7 +157,7 @@ class CurrentUserShowsEndpoints extends EndpointsBase {
 }
 
 class CurrentUserTracksEndpoints extends EndpointsBase {
-    public savedTracks(limit?: MaxInt<50>, offset?: number, market?: Market) {
+    public savedTracks(limit?: MaxInt<51>, offset?: number, market?: Market) {
         const params = this.paramsFor({ limit, offset, market });
         return this.getRequest<Page<SavedTrack>>(`me/tracks${params}`);
     }

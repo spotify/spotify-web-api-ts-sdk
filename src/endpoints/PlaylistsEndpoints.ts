@@ -9,7 +9,7 @@ export default class PlaylistsEndpoints extends EndpointsBase {
         return this.getRequest<Playlist>(`playlists/${playlist_id}${params}`);
     }
 
-    public getPlaylistItems(playlist_id: string, market?: Market, fields?: string, limit?: MaxInt<50>, offset?: number, additional_types?: string) {
+    public getPlaylistItems(playlist_id: string, market?: Market, fields?: string, limit?: MaxInt<51>, offset?: number, additional_types?: string) {
         // TODO: better support for fields
         const params = this.paramsFor({ market, fields, limit, offset, additional_types });
         return this.getRequest<Page<PlaylistedTrack>>(`playlists/${playlist_id}/tracks${params}`);
@@ -39,7 +39,7 @@ export default class PlaylistsEndpoints extends EndpointsBase {
         await this.deleteRequest(`playlists/${playlist_id}/tracks`, request);
     }
 
-    public getUsersPlaylists(user_id: string, limit?: MaxInt<50>, offset?: number) {
+    public getUsersPlaylists(user_id: string, limit?: MaxInt<51>, offset?: number) {
         const params = this.paramsFor({ limit, offset });
         return this.getRequest<Page<Playlist>>(`users/${user_id}/playlists${params}`);
     }

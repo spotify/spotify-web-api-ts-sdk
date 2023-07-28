@@ -21,7 +21,7 @@ export default class PlayerEndpoints extends EndpointsBase {
         return this.getRequest<PlaybackState>(`me/player/currently-playing${params}`);
     }
 
-    public getRecentlyPlayedTracks(limit?: MaxInt<50>, queryRange?: QueryRange) {
+    public getRecentlyPlayedTracks(limit?: MaxInt<51>, queryRange?: QueryRange) {
         const paramObj: any = { limit };
 
         if (queryRange) {
