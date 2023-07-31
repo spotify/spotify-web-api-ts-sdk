@@ -8,7 +8,8 @@ import AuthorizationCodeWithPKCEStrategy from "./auth/AuthorizationCodeWithPKCES
 import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy";
 import ImplicitGrantStrategy from "./auth/ImplicitGrantStrategy";
 import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy";
-import { AccessToken } from "./types";
+import { AccessToken, SdkOptions } from "./types";
+import InMemoryCachingStrategy from "./caching/InMemoryCachingStrategy";
 
 describe("SpotifyAPI Instance", () => {
     let sut: SpotifyApi;
@@ -87,6 +88,16 @@ describe("SpotifyAPI Instance", () => {
         it("can create an instance with the provided access token strategy configured", async () => {
             const sut = SpotifyApi.withAccessToken("client-id", {} as AccessToken);
             expect(sut["authenticationStrategy"].constructor.name).toBe(ProvidedAccessTokenStrategy.name);
+        });
+
+        it("when access token provided, it is accurately retrieved taking precedence over any existing cached token.", async () => {
+            const config: SdkOptions = { cachingStrategy: new InMemoryCachingStrategy() };
+            config.cachingStrategy?.setCacheItem("spotify-sdk:ProvidedAccessTokenStrategy:token", { access_token: "some-old-token" });
+            
+            const sut = SpotifyApi.withAccessToken("client-id", { access_token: "some-new-token" } as AccessToken, config);
+            const token = await sut.getAccessToken();
+
+            expect(token?.access_token).toBe("some-new-token");
         });
 
     });
