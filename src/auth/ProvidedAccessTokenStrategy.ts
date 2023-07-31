@@ -11,11 +11,6 @@ import IAuthStrategy from "./IAuthStrategy.js";
  * @param {string} accessToken - The access token returned from a client side Authorization Code with PKCE flow.
  */
 export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
-
-    private static readonly cacheKey = "spotify-sdk:ProvidedAccessTokenStrategy:token";
-    private configuration: SdkConfiguration | null = null;
-    protected get cache(): ICachingStrategy { return this.configuration!.cachingStrategy; }
-
     constructor(
         protected clientId: string,
         protected accessToken: AccessToken
@@ -23,30 +18,28 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
     }
 
     public setConfiguration(configuration: SdkConfiguration): void {
-        this.configuration = configuration;
     }
 
     public async getOrCreateAccessToken(): Promise<AccessToken> {
-
-        this.accessToken = await this.cache.getOrCreate<AccessToken>(
-            ProvidedAccessTokenStrategy.cacheKey,
-            async () => {
-                const cachableToken = AccessTokenHelpers.toCachable(this.accessToken);
-                return Promise.resolve(cachableToken);
-            }, async (expiring) => {
-                return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
-            },
-        );
+        if (this.accessToken.expires <= Date.now()) {
+            const refreshed = await AccessTokenHelpers.refreshCachedAccessToken(this.clientId, this.accessToken);
+            this.accessToken = refreshed;
+        }
 
         return this.accessToken;
     }
 
     public async getAccessToken(): Promise<AccessToken | null> {
-        const token = await this.cache.get<AccessToken>(ProvidedAccessTokenStrategy.cacheKey);
-        return token;
+        return this.accessToken;
     }
 
     public removeAccessToken(): void {
-        this.cache.remove(ProvidedAccessTokenStrategy.cacheKey);
+        this.accessToken = {
+            access_token: "",
+            token_type: "",
+            expires_in: 0,
+            refresh_token: "",
+            expires: 0
+        };
     }
 }
