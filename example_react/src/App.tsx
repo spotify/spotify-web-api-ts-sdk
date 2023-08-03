@@ -2,30 +2,43 @@ import { useEffect, useState } from 'react'
 import { SpotifyApi, Scopes, SearchResults } from "../../src";
 import './App.css'
 
-const sdk = SpotifyApi.withUserAuthorization(
-  import.meta.env.VITE_SPOTIFY_CLIENT_ID,
-  import.meta.env.VITE_REDIRECT_TARGET,
-  Scopes.all
-);
-
-await sdk.authenticate();
-
-function App() { 
-  return (<SpotifySearch sdk={sdk} />)
-}
-
-function SpotifySearch({ sdk }: { sdk: SpotifyApi}) {
-  const [results, setResults] = useState<SearchResults>({} as SearchResults);
+function App() {
+  const [spotifyApi, setSpotifyApi] = useState<SpotifyApi>();
 
   useEffect(() => {
-    (async () => {
-      const results = await sdk.search("The Beatles", ["artist"]);
-      setResults(() => results);      
-    })();
+    const api = SpotifyApi.withUserAuthorization(
+      import.meta.env.VITE_SPOTIFY_CLIENT_ID,
+      import.meta.env.VITE_REDIRECT_TARGET,
+      Scopes.all,
+    );
+
+    api.authenticate().then(async () => {
+      const accessToken = await api.getAccessToken();
+
+      if (accessToken) {
+        setSpotifyApi(api);
+      }
+    });
   }, []);
 
+  return (<SpotifySearch spotifyApi={spotifyApi} />)
+}
+
+function SpotifySearch({ spotifyApi }: { spotifyApi: SpotifyApi | undefined }) {
+  const [results, setResults] = useState<SearchResults>();
+
+  useEffect(() => {
+    if (!spotifyApi) {
+      return;
+    }
+
+    spotifyApi.search("The Beatles", ["artist"]).then((results) => {
+      setResults(results);
+    });
+  }, [spotifyApi]);
+
   // generate a table for the results
-  const tableRows = results.artists?.items.map((artist) => {
+  const tableRows = results?.artists?.items.map((artist) => {
     return (
       <tr key={artist.id}>
         <td>{artist.name}</td>
