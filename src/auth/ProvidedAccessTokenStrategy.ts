@@ -1,4 +1,4 @@
-import { AccessToken, ICachingStrategy, SdkConfiguration } from "../types.js";
+import { AccessToken, SdkConfiguration } from "../types.js";
 import AccessTokenHelpers from "./AccessTokenHelpers.js";
 import IAuthStrategy from "./IAuthStrategy.js";
 
@@ -17,7 +17,7 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
     ) {
     }
 
-    public setConfiguration(configuration: SdkConfiguration): void {
+    public setConfiguration(_: SdkConfiguration): void {
     }
 
     public async getOrCreateAccessToken(): Promise<AccessToken> {

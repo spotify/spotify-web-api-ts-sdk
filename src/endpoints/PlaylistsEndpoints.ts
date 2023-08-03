@@ -1,4 +1,4 @@
-import type { Market, Playlist, MaxInt, Page, Track, SnapshotReference, Image, PlaylistedTrack } from '../types.js';
+import type { Market, Playlist, MaxInt, Page, SnapshotReference, Image, PlaylistedTrack } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class PlaylistsEndpoints extends EndpointsBase {
