@@ -3,15 +3,9 @@ import { SpotifyApi, Scopes, SearchResults } from "../../src";
 import './App.css'
 
 function App() {
-  const [mounted, setMounted] = useState(false);
   const [spotifyApi, setSpotifyApi] = useState<SpotifyApi>();
 
   useEffect(() => {
-    if (!mounted) {
-      setMounted(true);
-      return;
-    }
-
     const api = SpotifyApi.withUserAuthorization(
       import.meta.env.VITE_SPOTIFY_CLIENT_ID,
       import.meta.env.VITE_REDIRECT_TARGET,
@@ -25,7 +19,7 @@ function App() {
         setSpotifyApi(api);
       }
     });
-  }, [mounted]);
+  }, []);
 
   return (<SpotifySearch spotifyApi={spotifyApi} />)
 }
