@@ -51,7 +51,14 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
         const hashParams = new URLSearchParams(window.location.search);
         const code = hashParams.get("code");
 
-        if (!code) {
+        if (code) {
+            this.cache.setCacheItem("spotify-sdk:code", code);
+            this.removeCodeFromUrl();
+        }
+
+        const cachedCode = await this.cache.get<string>("spotify-sdk:code");
+
+        if (!cachedCode) {
             const verifier = AccessTokenHelpers.generateCodeVerifier(128);
             const challenge = await AccessTokenHelpers.generateCodeChallenge(verifier);
 
@@ -65,8 +72,6 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
             return emptyAccessToken;
         }
 
-        this.removeCodeFromUrl();
-
         const cachedItem = await this.cache.get<CachedVerifier>("spotify-sdk:verifier");
         const verifier = cachedItem?.verifier;
 
@@ -75,7 +80,7 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
         }
 
         await this.configuration!.redirectionStrategy.onReturnFromRedirect();
-        return await this.exchangeCodeForToken(code, verifier!);
+        return await this.exchangeCodeForToken(cachedCode, verifier!);
     }
 
     private removeCodeFromUrl() {
