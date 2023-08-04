@@ -10,6 +10,8 @@ interface CachedVerifier extends ICachable {
 export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy {
 
     private static readonly cacheKey = "spotify-sdk:AuthorizationCodeWithPKCEStrategy:token";
+    private static readonly codeKey = "spotify-sdk:AuthorizationCodeWithPKCEStrategy:code";
+    private static readonly verifierKey = "spotify-sdk:verifier";
     private configuration: SdkConfiguration | null = null;
     protected get cache(): ICachingStrategy { return this.configuration!.cachingStrategy; }
 
@@ -45,6 +47,7 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
 
     public removeAccessToken(): void {
         this.cache.remove(AuthorizationCodeWithPKCEStrategy.cacheKey);
+        this.cache.remove(AuthorizationCodeWithPKCEStrategy.codeKey);
     }
 
     private async redirectOrVerifyToken(): Promise<AccessToken> {
@@ -52,18 +55,18 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
         const code = hashParams.get("code");
 
         if (code) {
-            this.cache.setCacheItem("spotify-sdk:code", code);
+            this.cache.setCacheItem(AuthorizationCodeWithPKCEStrategy.codeKey, code);
             this.removeCodeFromUrl();
         }
 
-        const cachedCode = await this.cache.get<string>("spotify-sdk:code");
+        const cachedCode = await this.cache.get<string>(AuthorizationCodeWithPKCEStrategy.codeKey);
 
         if (!cachedCode) {
             const verifier = AccessTokenHelpers.generateCodeVerifier(128);
             const challenge = await AccessTokenHelpers.generateCodeChallenge(verifier);
 
             const singleUseVerifier: CachedVerifier = { verifier, expiresOnAccess: true };
-            this.cache.setCacheItem("spotify-sdk:verifier", singleUseVerifier);
+            this.cache.setCacheItem(AuthorizationCodeWithPKCEStrategy.verifierKey, singleUseVerifier);
 
             const redirectTarget = await this.generateRedirectUrlForUser(this.scopes, challenge);
             await this.configuration!.redirectionStrategy.redirect(redirectTarget);
@@ -72,7 +75,7 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
             return emptyAccessToken;
         }
 
-        const cachedItem = await this.cache.get<CachedVerifier>("spotify-sdk:verifier");
+        const cachedItem = await this.cache.get<CachedVerifier>(AuthorizationCodeWithPKCEStrategy.verifierKey);
         const verifier = cachedItem?.verifier;
 
         if (!verifier) {
