@@ -10,6 +10,7 @@ import ImplicitGrantStrategy from "./auth/ImplicitGrantStrategy";
 import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy";
 import { AccessToken, SdkOptions } from "./types";
 import InMemoryCachingStrategy from "./caching/InMemoryCachingStrategy";
+import exp from "constants";
 
 describe("SpotifyAPI Instance", () => {
     let sut: SpotifyApi;
@@ -93,7 +94,7 @@ describe("SpotifyAPI Instance", () => {
         it("when access token provided, it is accurately retrieved taking precedence over any existing cached token.", async () => {
             const config: SdkOptions = { cachingStrategy: new InMemoryCachingStrategy() };
             config.cachingStrategy?.setCacheItem("spotify-sdk:ProvidedAccessTokenStrategy:token", { access_token: "some-old-token" });
-            
+
             const sut = SpotifyApi.withAccessToken("client-id", { access_token: "some-new-token" } as AccessToken, config);
             const token = await sut.getAccessToken();
 
@@ -109,8 +110,9 @@ describe("SpotifyAPI Instance", () => {
         });
 
         it("authenticates successfully", async () => {
-            const accessToken = await sut.authenticate();
-            expect(accessToken.access_token).toBe(FakeAuthStrategy.FAKE_AUTH_TOKEN);
+            const response = await sut.authenticate();
+            expect(response.accessToken.access_token).toBe(FakeAuthStrategy.FAKE_AUTH_TOKEN);
+            expect(response.authenticated).toBe(true);
 
             const accessToken2 = await sut.getAccessToken();
             expect(accessToken2?.access_token).toBe(FakeAuthStrategy.FAKE_AUTH_TOKEN);
