@@ -1,17 +1,19 @@
+import { useSpotify } from './hooks/useSpotify';
+import { Scopes, SearchResults, SpotifyApi } from '../../src';
 import { useEffect, useState } from 'react'
-import { SpotifyApi, Scopes, SearchResults } from "../../src";
 import './App.css'
 
-const sdk = SpotifyApi.withUserAuthorization(
-  import.meta.env.VITE_SPOTIFY_CLIENT_ID,
-  import.meta.env.VITE_REDIRECT_TARGET,
-  Scopes.all
-);
+function App() {
+  
+  const sdk = useSpotify(
+    import.meta.env.VITE_SPOTIFY_CLIENT_ID, 
+    import.meta.env.VITE_REDIRECT_TARGET, 
+    Scopes.userDetails
+  );
 
-await sdk.authenticate();
-
-function App() { 
-  return (<SpotifySearch sdk={sdk} />)
+  return sdk
+    ? (<SpotifySearch sdk={sdk} />) 
+    : (<></>);
 }
 
 function SpotifySearch({ sdk }: { sdk: SpotifyApi}) {
@@ -22,7 +24,7 @@ function SpotifySearch({ sdk }: { sdk: SpotifyApi}) {
       const results = await sdk.search("The Beatles", ["artist"]);
       setResults(() => results);      
     })();
-  }, []);
+  }, [sdk]);
 
   // generate a table for the results
   const tableRows = results.artists?.items.map((artist) => {

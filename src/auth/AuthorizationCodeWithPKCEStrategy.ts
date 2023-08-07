@@ -51,22 +51,28 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
         const hashParams = new URLSearchParams(window.location.search);
         const code = hashParams.get("code");
 
-        if (!code) {
-            const verifier = AccessTokenHelpers.generateCodeVerifier(128);
-            const challenge = await AccessTokenHelpers.generateCodeChallenge(verifier);
-
-            const singleUseVerifier: CachedVerifier = { verifier, expiresOnAccess: true };
-            this.cache.setCacheItem("spotify-sdk:verifier", singleUseVerifier);
-
-            const redirectTarget = await this.generateRedirectUrlForUser(this.scopes, challenge);
-            await this.configuration!.redirectionStrategy.redirect(redirectTarget);
-
-            // Redirected away at this point, just make TypeScript happy :)           
-            return emptyAccessToken;
+        if (code) {
+            const token = await this.verifyAndExchangeCode(code);
+            this.removeCodeFromUrl();
+            return token;
         }
 
-        this.removeCodeFromUrl();
+        this.redirectToSpotify();
+        return emptyAccessToken; // Redirected away at this point, just make TypeScript happy :)         
+    }
 
+    private async redirectToSpotify() {
+        const verifier = AccessTokenHelpers.generateCodeVerifier(128);
+        const challenge = await AccessTokenHelpers.generateCodeChallenge(verifier);
+
+        const singleUseVerifier: CachedVerifier = { verifier, expiresOnAccess: true };
+        this.cache.setCacheItem("spotify-sdk:verifier", singleUseVerifier);
+
+        const redirectTarget = await this.generateRedirectUrlForUser(this.scopes, challenge);
+        await this.configuration!.redirectionStrategy.redirect(redirectTarget);
+    }
+
+    private async verifyAndExchangeCode(code: string) {
         const cachedItem = await this.cache.get<CachedVerifier>("spotify-sdk:verifier");
         const verifier = cachedItem?.verifier;
 

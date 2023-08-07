@@ -115,7 +115,6 @@ export class SpotifyApi {
 
     private initilizeSdk(config: SdkOptions | undefined): SdkConfiguration {
         const isBrowser = typeof window !== 'undefined';
-        const isNode = typeof process === 'object';
 
         const defaultConfig: SdkConfiguration = {
             fetch: (req: RequestInfo | URL, init: RequestInit | undefined) => fetch(req, init),
