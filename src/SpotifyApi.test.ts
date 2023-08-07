@@ -10,7 +10,6 @@ import ImplicitGrantStrategy from "./auth/ImplicitGrantStrategy";
 import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy";
 import { AccessToken, SdkOptions } from "./types";
 import InMemoryCachingStrategy from "./caching/InMemoryCachingStrategy";
-import exp from "constants";
 
 describe("SpotifyAPI Instance", () => {
     let sut: SpotifyApi;
