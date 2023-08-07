@@ -8,6 +8,10 @@ export default class AccessTokenHelpers {
     }
 
     public static toCachable(item: AccessToken): ICachable & AccessToken {
+        if (item.expires && item.expires === -1) {
+            return item;
+        }
+
         return { ...item, expires: Date.now() + (item.expires_in * 1000) };
     }
 
