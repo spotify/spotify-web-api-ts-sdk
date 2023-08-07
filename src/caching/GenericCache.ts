@@ -1,3 +1,4 @@
+import { isEmptyAccessToken } from "../auth/IAuthStrategy.js";
 import { ICachingStrategy, ICachable } from "../types.js";
 import { ICacheStore } from "./ICacheStore.js";
 
@@ -21,6 +22,7 @@ export default class GenericCache implements ICachingStrategy {
         if (updateFunction) {
             this.updateFunctions.set(cacheKey, updateFunction);
         }
+
         const item = await this.get<T>(cacheKey);
         if (item) {
             return item;
@@ -31,8 +33,9 @@ export default class GenericCache implements ICachingStrategy {
             throw new Error("Could not create cache item");
         }
 
-        this.setCacheItem(cacheKey, newCacheItem);
-        
+        if (!isEmptyAccessToken(newCacheItem)) {
+            this.setCacheItem(cacheKey, newCacheItem);
+        }
 
         return newCacheItem;
     }

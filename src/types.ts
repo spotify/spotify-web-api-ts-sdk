@@ -13,6 +13,11 @@ export interface SdkOptions {
     cachingStrategy?: ICachingStrategy;
 }
 
+export interface AuthenticationResponse {
+    authenticated: boolean;
+    accessToken: AccessToken;
+}
+
 export interface SdkConfiguration extends SdkOptions {
     fetch: RequestImplementation;
     beforeRequest: (url: string, options: RequestInit) => void;
