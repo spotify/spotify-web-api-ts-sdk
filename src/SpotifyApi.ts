@@ -77,6 +77,11 @@ export class SpotifyApi {
     public async makeRequest<TReturnType>(method: "GET" | "POST" | "PUT" | "DELETE", url: string, body: any = undefined, contentType: string | undefined = undefined): Promise<TReturnType> {
         try {
             const accessToken = await this.authenticationStrategy.getOrCreateAccessToken();
+            if (isEmptyAccessToken(accessToken)) {
+                console.warn("No access token found, authenticating now.");
+                return null as TReturnType;
+            }
+
             const token = accessToken?.access_token;
 
             const fullUrl = SpotifyApi.rootUrl + url;
