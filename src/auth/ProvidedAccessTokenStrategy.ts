@@ -21,7 +21,7 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
     }
 
     public async getOrCreateAccessToken(): Promise<AccessToken> {
-        if (this.accessToken.expires <= Date.now()) {
+        if (this.accessToken.expires * 1000 <= Date.now()) {
             const refreshed = await AccessTokenHelpers.refreshCachedAccessToken(this.clientId, this.accessToken);
             this.accessToken = refreshed;
         }
