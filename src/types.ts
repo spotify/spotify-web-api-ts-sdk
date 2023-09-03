@@ -270,24 +270,6 @@ export interface TopTracksResult {
     tracks: Track[];
 }
 
-export interface UserResponse {
-    country: string;
-    display_name: string;
-    email: string;
-    explicit_content: {
-        filter_enabled: boolean,
-        filter_locked: boolean
-    },
-    external_urls: ExternalUrls;
-    followers: { href: string; total: number; };
-    href: string;
-    id: string;
-    images: Image[];
-    product: string;
-    type: string;
-    uri: string;
-}
-
 export interface Image {
     url: string;
     height: number;
@@ -524,6 +506,15 @@ export interface User {
     images: Image[]
     type: string
     uri: string
+}
+
+export interface UserProfile extends User {
+    country: string;
+    explicit_content: {
+        filter_enabled: boolean,
+        filter_locked: boolean
+    },
+    product: string;
 }
 
 export interface AudioFeatures {
