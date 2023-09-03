@@ -7,8 +7,8 @@ interface QueryRange {
 }
 
 export default class PlayerEndpoints extends EndpointsBase {
-    public getPlaybackState(market?: Market, additionalTypes?: string) {
-        const params = this.paramsFor({ market, additionalTypes });
+    public getPlaybackState(market?: Market, additional_types?: string) {
+        const params = this.paramsFor({ market, additional_types });
         return this.getRequest<PlaybackState>(`me/player${params}`);
     }
 
@@ -16,8 +16,8 @@ export default class PlayerEndpoints extends EndpointsBase {
         return this.getRequest<Devices>('me/player/devices');
     }
 
-    public getCurrentlyPlayingTrack(market?: Market, additionalTypes?: string) {
-        const params = this.paramsFor({ market, additionalTypes });
+    public getCurrentlyPlayingTrack(market?: Market, additional_types?: string) {
+        const params = this.paramsFor({ market, additional_types });
         return this.getRequest<PlaybackState>(`me/player/currently-playing${params}`);
     }
 
