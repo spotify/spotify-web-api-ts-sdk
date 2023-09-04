@@ -1,6 +1,5 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import ProvidedAccessTokenStrategy from "./ProvidedAccessTokenStrategy";
-import { AccessToken } from "../types";
 
 describe('ProvidedAccessTokenStrategy', () => {
 
