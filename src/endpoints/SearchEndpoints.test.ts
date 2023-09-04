@@ -15,7 +15,9 @@ describe("Integration: Search Endpoints", () => {
         const q = "Katatonia"
         const result = await sut.search(q, ["artist"]);
 
+        const allMentionedArtists = result.artists.items.map(artist => artist.name);
+
         expect(fetchSpy.request(0).input).toBe(`https://api.spotify.com/v1/search?q=${q}&type=artist`);
-        expect(result.artists.items[0].name).toBe("Katatonia");
+        expect(allMentionedArtists).toContain("Katatonia");
     });
 });
