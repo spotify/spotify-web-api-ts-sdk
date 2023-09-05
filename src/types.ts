@@ -246,37 +246,37 @@ export interface ExternalUrls {
 
 
 interface ResourceTypeToResultKey {
-  album: 'albums'
-  artist: 'artists'
-  track: 'tracks'
-  playlist: 'playlists'
-  show: 'shows'
-  episode: 'episodes'
-  audiobook: 'audiobooks'
+    album: 'albums'
+    artist: 'artists'
+    track: 'tracks'
+    playlist: 'playlists'
+    show: 'shows'
+    episode: 'episodes'
+    audiobook: 'audiobooks'
 }
 
 interface SearchResultsMap {
-  album: SimplifiedAlbum
-  artist: Artist
-  track: Track
-  playlist: PlaylistBase
-  show: SimplifiedShow
-  episode: SimplifiedEpisode
-  audiobook: SimplifiedAudiobook
+    album: SimplifiedAlbum
+    artist: Artist
+    track: Track
+    playlist: PlaylistBase
+    show: SimplifiedShow
+    episode: SimplifiedEpisode
+    audiobook: SimplifiedAudiobook
 }
 
 export type PartialSearchResult = {
     [K in ItemTypes as ResourceTypeToResultKey[K]]?: Page<K extends keyof SearchResultsMap ? SearchResultsMap[K] : any>
-  }
-  
+}
+
 /**
  * Makes all properties in SearchResults optional, unless the type T is a tuple (literal array / tuple) of SearchTypes.
  */
 export type SearchResults<T extends readonly ItemTypes[]> = Pick<PartialSearchResult, ResourceTypeToResultKey[T[number]]> extends infer R
-? number extends T['length']
-    ? R
-    : Required<R>
-: never
+    ? number extends T['length']
+        ? R
+        : Required<R>
+    : never
 
 export interface ArtistSearchResult {
     href: string;
