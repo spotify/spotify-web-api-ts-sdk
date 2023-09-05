@@ -26,6 +26,10 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
                 const token = await this.getTokenFromApi();
                 return AccessTokenHelpers.toCachable(token);
             },
+            async (_) => {
+                const refreshed = await this.getTokenFromApi();
+                return AccessTokenHelpers.toCachable(refreshed);
+            }
         );
 
         return token;
