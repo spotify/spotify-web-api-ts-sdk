@@ -12,7 +12,11 @@ export default class AccessTokenHelpers {
             return item;
         }
 
-        return { ...item, expires: Date.now() + (item.expires_in * 1000) };
+        return { ...item, expires: this.calculateExpiry(item) };
+    }
+
+    public static calculateExpiry(item: AccessToken) {
+        return Date.now() + (item.expires_in * 1000);
     }
 
     private static async refreshToken(clientId: string, refreshToken: string): Promise<AccessToken> {

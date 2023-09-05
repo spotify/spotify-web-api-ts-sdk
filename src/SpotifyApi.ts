@@ -145,7 +145,7 @@ export class SpotifyApi {
         const response = await this.authenticationStrategy.getOrCreateAccessToken(); // trigger any redirects
 
         return {
-            authenticated: response.expires > Date.now() && !isEmptyAccessToken(response),
+            authenticated: response.expires! > Date.now() && !isEmptyAccessToken(response),
             accessToken: response
         };
     }
