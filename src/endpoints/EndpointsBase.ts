@@ -23,7 +23,7 @@ export default class EndpointsBase {
     protected paramsFor(args: any) {
         const params = new URLSearchParams();
         for (let key of Object.getOwnPropertyNames(args)) {
-            if (args[key] || (!args[key] && typeof args[key] === 'boolean')) {
+            if (args[key] || (args[key] === 0) || (!args[key] && typeof args[key] === 'boolean')) {
                 params.append(key, args[key].toString());
             }
         }
