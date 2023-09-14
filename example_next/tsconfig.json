@@ -20,7 +20,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@sdk/*": ["../dist/cjs/*"]
     },
     "composite": true,
     "allowSyntheticDefaultImports": true
