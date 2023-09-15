@@ -23,6 +23,7 @@ export class FakeAuthStrategy implements IAuthStrategy {
             async () => {
                 return {
                     access_token: this.accessToken,
+                    expires: Date.now() + 3600 * 1000,
                 } as AccessToken;
             },
         );

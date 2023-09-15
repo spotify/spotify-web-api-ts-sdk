@@ -4,20 +4,6 @@ import EndpointsBase from "./EndpointsBase";
 import { FetchApiSpy } from "../test/FetchApiSpy";
 import { SpotifyApi } from "../SpotifyApi";
 
-class FakeEndPoints extends EndpointsBase {
-    public functionWithStringParam(id: string) {
-        return this.paramsFor({ id });
-    }
-
-    public functionWithStringArrayParam(ids: string[]) {
-        return this.paramsFor({ ids });
-    }
-
-    public functionWithBooleanParam(id: boolean) {
-        return this.paramsFor({ id });
-    }
-}
-
 describe("EndpointsBase", async () => {
 
     let api: SpotifyApi;
@@ -27,6 +13,16 @@ describe("EndpointsBase", async () => {
     beforeEach(() => {
         [api, fetchSpy] = buildIntegrationTestUserSdkInstance();
         sut = new FakeEndPoints(api);
+    });
+
+    it("paramsFor omitts undefined", () => {
+        const result = sut.functionThatPassesUndefined();
+        expect(result).toBe("");
+    });
+
+    it("paramsFor omitts null", () => {
+        const result = sut.functionThatPassesNull();
+        expect(result).toBe("");
     });
 
     it("paramsFor can correctly url encode a string", () => {
@@ -44,4 +40,40 @@ describe("EndpointsBase", async () => {
         expect(result).toBe("?id=false");
     });
 
+    it("paramsFor can correctly url encode a 0", () => {
+        const result = sut.functionWitNumericParam(0);
+        expect(result).toBe("?id=0");
+    });
+
+    it("paramsFor can correctly url encode a non-zero number", () => {
+        const result = sut.functionWitNumericParam(1);
+        expect(result).toBe("?id=1");
+    });
 });
+
+
+class FakeEndPoints extends EndpointsBase {
+    public functionThatPassesUndefined() {
+        return this.paramsFor({ id: undefined });
+    }
+    
+    public functionThatPassesNull() {
+        return this.paramsFor({ id: null });
+    }
+    
+    public functionWithStringParam(id: string) {
+        return this.paramsFor({ id });
+    }
+
+    public functionWithStringArrayParam(ids: string[]) {
+        return this.paramsFor({ ids });
+    }
+
+    public functionWithBooleanParam(id: boolean) {
+        return this.paramsFor({ id });
+    }
+
+    public functionWitNumericParam(id: number) {
+        return this.paramsFor({ id });
+    }
+}

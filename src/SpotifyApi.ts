@@ -11,7 +11,7 @@ import PlaylistsEndpoints from "./endpoints/PlaylistsEndpoints.js";
 import SearchEndpoints, { SearchExecutionFunction } from "./endpoints/SearchEndpoints.js";
 import ShowsEndpoints from "./endpoints/ShowsEndpoints.js";
 import TracksEndpoints from "./endpoints/TracksEndpoints.js";
-import IAuthStrategy, { emptyAccessToken } from "./auth/IAuthStrategy.js";
+import IAuthStrategy, { emptyAccessToken, isEmptyAccessToken } from "./auth/IAuthStrategy.js";
 import UsersEndpoints from "./endpoints/UsersEndpoints.js";
 import CurrentUserEndpoints from "./endpoints/CurrentUserEndpoints.js";
 import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy.js";
@@ -23,8 +23,8 @@ import NoOpErrorHandler from "./errorhandling/NoOpErrorHandler.js";
 import DocumentLocationRedirectionStrategy from "./redirection/DocumentLocationRedirectionStrategy.js";
 import LocalStorageCachingStrategy from "./caching/LocalStorageCachingStrategy.js";
 import InMemoryCachingStrategy from "./caching/InMemoryCachingStrategy.js";
-import type { AccessToken, SdkConfiguration, SdkOptions } from "./types.js";
 import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy.js";
+import type { AccessToken, SdkConfiguration, SdkOptions, AuthenticationResponse } from "./types.js";
 
 export class SpotifyApi {
     private sdkConfig: SdkConfiguration;
@@ -77,6 +77,11 @@ export class SpotifyApi {
     public async makeRequest<TReturnType>(method: "GET" | "POST" | "PUT" | "DELETE", url: string, body: any = undefined, contentType: string | undefined = undefined): Promise<TReturnType> {
         try {
             const accessToken = await this.authenticationStrategy.getOrCreateAccessToken();
+            if (isEmptyAccessToken(accessToken)) {
+                console.warn("No access token found, authenticating now.");
+                return null as TReturnType;
+            }
+
             const token = accessToken?.access_token;
 
             const fullUrl = SpotifyApi.rootUrl + url;
@@ -110,7 +115,6 @@ export class SpotifyApi {
 
     private initilizeSdk(config: SdkOptions | undefined): SdkConfiguration {
         const isBrowser = typeof window !== 'undefined';
-        const isNode = typeof process === 'object';
 
         const defaultConfig: SdkConfiguration = {
             fetch: (req: RequestInfo | URL, init: RequestInit | undefined) => fetch(req, init),
@@ -137,8 +141,13 @@ export class SpotifyApi {
     /**
      * Use this when you're running in a browser and you want to control when first authentication+redirect happens.
     */
-    public async authenticate(): Promise<AccessToken> {
-        return this.authenticationStrategy.getOrCreateAccessToken(); // trigger any redirects 
+    public async authenticate(): Promise<AuthenticationResponse> {
+        const response = await this.authenticationStrategy.getOrCreateAccessToken(); // trigger any redirects
+
+        return {
+            authenticated: response.expires! > Date.now() && !isEmptyAccessToken(response),
+            accessToken: response
+        };
     }
 
     /**

@@ -1,5 +1,5 @@
 import { SpotifyApi } from '../SpotifyApi.js';
-import type { User, Page, Artist, MaxInt, FollowedArtists, Market, SavedAlbum, SimplifiedAudiobook, SimplifiedPlaylist, SavedEpisode, SavedShow, SavedTrack } from '../types.js';
+import type { User, Page, Artist, Track, MaxInt, FollowedArtists, Market, SavedAlbum, SimplifiedAudiobook, SimplifiedPlaylist, SavedEpisode, SavedShow, SavedTrack, UserProfile } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class CurrentUserEndpoints extends EndpointsBase {
@@ -22,14 +22,12 @@ export default class CurrentUserEndpoints extends EndpointsBase {
     }
 
     public profile() {
-        return this.getRequest<User>('me');
+        return this.getRequest<UserProfile>('me');
     }
 
-    public topItems(type: "artists" | "tracks"): Promise<Page<Artist>>;
-    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term', limit?: MaxInt<50>, offset?: number): Promise<Page<Artist>>;
-    public topItems(type: "artists" | "tracks", time_range?: 'short_term' | 'medium_term' | 'long_term', limit?: MaxInt<50>, offset?: number) {
+    public topItems<T extends "artists" | "tracks">(type: T, time_range?: 'short_term' | 'medium_term' | 'long_term', limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ time_range, limit, offset });
-        return this.getRequest<Page<Artist>>(`me/top/${type}${params}`);
+        return this.getRequest<Page<T extends "artists" ? Artist : Track>>(`me/top/${type}${params}`);
     }
 
     public followedArtists(after?: string, limit?: MaxInt<50>) {
