@@ -8,7 +8,15 @@ export default class AccessTokenHelpers {
     }
 
     public static toCachable(item: AccessToken): ICachable & AccessToken {
-        return { ...item, expires: Date.now() + (item.expires_in * 1000) };
+        if (item.expires && item.expires === -1) {
+            return item;
+        }
+
+        return { ...item, expires: this.calculateExpiry(item) };
+    }
+
+    public static calculateExpiry(item: AccessToken) {
+        return Date.now() + (item.expires_in * 1000);
     }
 
     private static async refreshToken(clientId: string, refreshToken: string): Promise<AccessToken> {
