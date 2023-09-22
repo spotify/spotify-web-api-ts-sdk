@@ -1,4 +1,4 @@
-import type { Devices, Market, MaxInt, PlaybackState, Queue, RecentlyPlayedTracksPage } from '../types.js';
+import type { Devices, Market, MaxInt, PlaybackState, QueryAdditionalTypes, Queue, RecentlyPlayedTracksPage } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 interface QueryRange {
@@ -7,8 +7,8 @@ interface QueryRange {
 }
 
 export default class PlayerEndpoints extends EndpointsBase {
-    public getPlaybackState(market?: Market, additional_types?: string) {
-        const params = this.paramsFor({ market, additional_types });
+    public getPlaybackState(market?: Market, additional_types?: QueryAdditionalTypes) {
+        const params = this.paramsFor({ market, additional_types: additional_types?.join(',') });
         return this.getRequest<PlaybackState>(`me/player${params}`);
     }
 
@@ -16,8 +16,8 @@ export default class PlayerEndpoints extends EndpointsBase {
         return this.getRequest<Devices>('me/player/devices');
     }
 
-    public getCurrentlyPlayingTrack(market?: Market, additional_types?: string) {
-        const params = this.paramsFor({ market, additional_types });
+    public getCurrentlyPlayingTrack(market?: Market, additional_types?: QueryAdditionalTypes) {
+        const params = this.paramsFor({ market, additional_types: additional_types?.join(',') });
         return this.getRequest<PlaybackState>(`me/player/currently-playing${params}`);
     }
 

@@ -1,17 +1,17 @@
-import type { Market, Playlist, MaxInt, Page, Track, SnapshotReference, Image, PlaylistedTrack } from '../types.js';
+import type { Market, Playlist, MaxInt, Page, Track, SnapshotReference, Image, PlaylistedTrack, QueryAdditionalTypes } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class PlaylistsEndpoints extends EndpointsBase {
 
-    public getPlaylist(playlist_id: string, market?: Market, fields?: string, additional_types?: string) {
+    public getPlaylist(playlist_id: string, market?: Market, fields?: string, additional_types?: QueryAdditionalTypes) {
         // TODO: better support for fields
-        const params = this.paramsFor({ market, fields, additional_types });
+        const params = this.paramsFor({ market, fields, additional_types: additional_types?.join(',') });
         return this.getRequest<Playlist>(`playlists/${playlist_id}${params}`);
     }
 
-    public getPlaylistItems(playlist_id: string, market?: Market, fields?: string, limit?: MaxInt<50>, offset?: number, additional_types?: string) {
+    public getPlaylistItems(playlist_id: string, market?: Market, fields?: string, limit?: MaxInt<50>, offset?: number, additional_types?: QueryAdditionalTypes) {
         // TODO: better support for fields
-        const params = this.paramsFor({ market, fields, limit, offset, additional_types });
+        const params = this.paramsFor({ market, fields, limit, offset, additional_types: additional_types?.join(',') });
         return this.getRequest<Page<PlaylistedTrack>>(`playlists/${playlist_id}/tracks${params}`);
     }
 
