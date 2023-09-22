@@ -1,18 +1,22 @@
-import type { Market, Playlist, MaxInt, Page, Track, SnapshotReference, Image, PlaylistedTrack, QueryAdditionalTypes } from '../types.js';
+import type { Market, Playlist, MaxInt, Page, Track, SnapshotReference, Image, PlaylistedTrack, QueryAdditionalTypes, TrackItem } from '../types.js';
 import EndpointsBase from './EndpointsBase.js';
 
 export default class PlaylistsEndpoints extends EndpointsBase {
 
-    public getPlaylist(playlist_id: string, market?: Market, fields?: string, additional_types?: QueryAdditionalTypes) {
+    public getPlaylist<AdditionalTypes extends QueryAdditionalTypes | undefined = undefined>(
+        playlist_id: string, market?: Market, fields?: string, additional_types?: AdditionalTypes
+    ) {
         // TODO: better support for fields
         const params = this.paramsFor({ market, fields, additional_types: additional_types?.join(',') });
-        return this.getRequest<Playlist>(`playlists/${playlist_id}${params}`);
+        return this.getRequest<Playlist<AdditionalTypes extends undefined ? Track : TrackItem>>(`playlists/${playlist_id}${params}`);
     }
 
-    public getPlaylistItems(playlist_id: string, market?: Market, fields?: string, limit?: MaxInt<50>, offset?: number, additional_types?: QueryAdditionalTypes) {
+    public getPlaylistItems<AdditionalTypes extends QueryAdditionalTypes | undefined = undefined>(
+        playlist_id: string, market?: Market, fields?: string, limit?: MaxInt<50>, offset?: number, additional_types?: AdditionalTypes
+    ) {
         // TODO: better support for fields
         const params = this.paramsFor({ market, fields, limit, offset, additional_types: additional_types?.join(',') });
-        return this.getRequest<Page<PlaylistedTrack>>(`playlists/${playlist_id}/tracks${params}`);
+        return this.getRequest<Page<PlaylistedTrack<AdditionalTypes extends undefined ? Track : TrackItem>>>(`playlists/${playlist_id}/tracks${params}`);
     }
 
     public async changePlaylistDetails(playlist_id: string, request: ChangePlaylistDetailsRequest) {
