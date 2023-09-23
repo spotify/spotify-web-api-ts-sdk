@@ -32,7 +32,7 @@ export default class ProvidedAccessTokenStrategy implements IAuthStrategy {
         }
     }
 
-    public setConfiguration(configuration: SdkConfiguration): void {
+    public setConfiguration(_: SdkConfiguration): void {
     }
 
     public async getOrCreateAccessToken(): Promise<AccessToken> {
