@@ -11,7 +11,7 @@ import PlaylistsEndpoints from "./endpoints/PlaylistsEndpoints.js";
 import SearchEndpoints, { SearchExecutionFunction } from "./endpoints/SearchEndpoints.js";
 import ShowsEndpoints from "./endpoints/ShowsEndpoints.js";
 import TracksEndpoints from "./endpoints/TracksEndpoints.js";
-import IAuthStrategy, { emptyAccessToken, isEmptyAccessToken } from "./auth/IAuthStrategy.js";
+import IAuthStrategy, { isEmptyAccessToken } from "./auth/IAuthStrategy.js";
 import UsersEndpoints from "./endpoints/UsersEndpoints.js";
 import CurrentUserEndpoints from "./endpoints/CurrentUserEndpoints.js";
 import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy.js";
@@ -50,7 +50,7 @@ export class SpotifyApi {
     public currentUser: CurrentUserEndpoints;
 
     public constructor(authentication: IAuthStrategy, config?: SdkOptions) {
-        this.sdkConfig = this.initilizeSdk(config);
+        this.sdkConfig = this.initializeSdk(config);
 
         this.albums = new AlbumsEndpoints(this);
         this.artists = new ArtistsEndpoints(this);
@@ -113,7 +113,7 @@ export class SpotifyApi {
         }
     }
 
-    private initilizeSdk(config: SdkOptions | undefined): SdkConfiguration {
+    private initializeSdk(config: SdkOptions | undefined): SdkConfiguration {
         const isBrowser = typeof window !== 'undefined';
 
         const defaultConfig: SdkConfiguration = {
@@ -196,7 +196,7 @@ export class SpotifyApi {
      * @param postbackUrl The URL to post the access token to
      * @param config Optional configuration
      */
-    public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], postbackUrl: string, config?: SdkOptions): Promise<void>;
+    public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], postbackUrl: string, config?: SdkOptions): Promise<AuthenticationResponse>;
 
     /**
      * Use this when you're running in the browser, and want to perform the user authorization flow to post back to your server with the access token.
@@ -207,28 +207,31 @@ export class SpotifyApi {
      * @param onAuthorization A function to call with the access token where YOU perform the server-side postback
      * @param config Optional configuration
      */
-    public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], onAuthorization: (token: AccessToken) => Promise<void>, config?: SdkOptions): Promise<void>;
+    public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], onAuthorization: (token: AccessToken) => Promise<void>, config?: SdkOptions): Promise<AuthenticationResponse>;
 
-    public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], onAuthorizationOrUrl: ((token: AccessToken) => Promise<void>) | string, config?: SdkOptions): Promise<void> {
+    public static async performUserAuthorization(clientId: string, redirectUri: string, scopes: string[], onAuthorizationOrUrl: ((token: AccessToken) => Promise<void>) | string, config?: SdkOptions): Promise<AuthenticationResponse> {
         const strategy = new AuthorizationCodeWithPKCEStrategy(clientId, redirectUri, scopes);
         const client = new SpotifyApi(strategy, config);
         const accessToken = await client.authenticationStrategy.getOrCreateAccessToken();
 
-        if (JSON.stringify({ ...accessToken, expires: 0 }) === JSON.stringify(emptyAccessToken)) {
-            return; // Redirect code path, do nothing.
+        if (!isEmptyAccessToken(accessToken)) {
+            if (typeof onAuthorizationOrUrl === "string") {
+                console.log("Posting access token to postback URL.");
+                await fetch(onAuthorizationOrUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(accessToken)
+                });
+            } else {
+                await onAuthorizationOrUrl(accessToken);
+            }
         }
 
-        if (typeof onAuthorizationOrUrl === "string") {
-            await fetch(onAuthorizationOrUrl, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(accessToken)
-            });
-            return;
-        }
-
-        await onAuthorizationOrUrl(accessToken);
+        return {
+            authenticated: accessToken.expires! > Date.now() && !isEmptyAccessToken(accessToken),
+            accessToken
+        };
     }
 }

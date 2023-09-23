@@ -15,12 +15,12 @@ describe("EndpointsBase", async () => {
         sut = new FakeEndPoints(api);
     });
 
-    it("paramsFor omitts undefined", () => {
+    it("paramsFor omits undefined", () => {
         const result = sut.functionThatPassesUndefined();
         expect(result).toBe("");
     });
 
-    it("paramsFor omitts null", () => {
+    it("paramsFor omits null", () => {
         const result = sut.functionThatPassesNull();
         expect(result).toBe("");
     });
