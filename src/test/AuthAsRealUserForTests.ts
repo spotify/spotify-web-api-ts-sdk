@@ -3,7 +3,7 @@ import AuthorizationCodeWithPKCEStrategy from "../auth/AuthorizationCodeWithPKCE
 import AccessTokenHelpers from "../auth/AccessTokenHelpers";
 import type { AccessToken } from "../types";
 
-export default class AuthAsSpecifcUserForTests extends AuthorizationCodeWithPKCEStrategy {
+export default class AuthAsSpecificUserForTests extends AuthorizationCodeWithPKCEStrategy {
     private static headless = true;
     private static memoryCachedTokens: Map<string, AccessToken> = new Map();
     private cacheKey: string;
@@ -19,12 +19,12 @@ export default class AuthAsSpecifcUserForTests extends AuthorizationCodeWithPKCE
     }
 
     public async getOrCreateAccessToken(): Promise<AccessToken> {
-        if (AuthAsSpecifcUserForTests.memoryCachedTokens.has(this.cacheKey)) {
-            return AuthAsSpecifcUserForTests.memoryCachedTokens.get(this.cacheKey)!;
+        if (AuthAsSpecificUserForTests.memoryCachedTokens.has(this.cacheKey)) {
+            return AuthAsSpecificUserForTests.memoryCachedTokens.get(this.cacheKey)!;
         }
 
         const token = await this.useBrowserAutomationToGetToken();
-        AuthAsSpecifcUserForTests.memoryCachedTokens.set(this.cacheKey, token);
+        AuthAsSpecificUserForTests.memoryCachedTokens.set(this.cacheKey, token);
         return token;
     }
 
@@ -36,7 +36,7 @@ export default class AuthAsSpecifcUserForTests extends AuthorizationCodeWithPKCE
 
         // Redirect to Spotify auth page using playwright
         const browser = await playwright.chromium.launch({
-            headless: AuthAsSpecifcUserForTests.headless
+            headless: AuthAsSpecificUserForTests.headless
         });
 
         const context = await browser.newContext({

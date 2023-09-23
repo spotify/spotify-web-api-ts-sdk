@@ -7,6 +7,7 @@ interface QueryRange {
 }
 
 export default class PlayerEndpoints extends EndpointsBase {
+
     public getPlaybackState(market?: Market, additional_types?: string) {
         const params = this.paramsFor({ market, additional_types });
         return this.getRequest<PlaybackState>(`me/player${params}`);
