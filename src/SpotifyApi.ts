@@ -50,7 +50,7 @@ export class SpotifyApi {
     public currentUser: CurrentUserEndpoints;
 
     public constructor(authentication: IAuthStrategy, config?: SdkOptions) {
-        this.sdkConfig = this.initilizeSdk(config);
+        this.sdkConfig = this.initializeSdk(config);
 
         this.albums = new AlbumsEndpoints(this);
         this.artists = new ArtistsEndpoints(this);
@@ -113,7 +113,7 @@ export class SpotifyApi {
         }
     }
 
-    private initilizeSdk(config: SdkOptions | undefined): SdkConfiguration {
+    private initializeSdk(config: SdkOptions | undefined): SdkConfiguration {
         const isBrowser = typeof window !== 'undefined';
 
         const defaultConfig: SdkConfiguration = {

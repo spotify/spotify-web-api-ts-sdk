@@ -11,6 +11,12 @@ Because this SDK uses `fetch` both in Node and the Browser, and ESM, we require 
 
 The package contains both an ESM and CommonJS build, so you can use it in both Node and the Browser.
 
+## Using this in your project
+
+```bash
+npm install @spotify/web-api-ts-sdk
+```
+
 ## Running the example app
 
 First install the dependencies:
