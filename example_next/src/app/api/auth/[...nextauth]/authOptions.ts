@@ -22,26 +22,30 @@ const authOptions: AuthOptions = {
   },
   callbacks: {
     async jwt({ token, account }: { token: JWT; account: Account | null }) {
-      if (!account) {
-        return token;
+      const isNewSession = !!account;
+
+      if (isNewSession) {
+        return {
+          ...token,
+          access_token: account?.access_token,
+          token_type: account?.token_type,
+          expires_at: account?.expires_at ?? Date.now() / 1000,
+          expires_in: (account?.expires_at ?? 0) - Date.now() / 1000,
+          refresh_token: account?.refresh_token,
+          scope: account?.scope,
+          id: account?.providerAccountId,
+        };
       }
 
-      const updatedToken = {
-        ...token,
-        access_token: account?.access_token,
-        token_type: account?.token_type,
-        expires_at: account?.expires_at ?? Date.now() / 1000,
-        expires_in: (account?.expires_at ?? 0) - Date.now() / 1000,
-        refresh_token: account?.refresh_token,
-        scope: account?.scope,
-        id: account?.providerAccountId,
-      };
+      const isTokenExpired =
+        typeof token.expires_at === "number" &&
+        Date.now() < token.expires_at * 1000;
 
-      if (Date.now() < updatedToken.expires_at) {
-        return refreshAccessToken(updatedToken);
-      }
+      if (!isTokenExpired) return token;
 
-      return updatedToken;
+      const refreshedToken = await refreshAccessToken(token);
+
+      return refreshedToken;
     },
     async session({ session, token }: { session: any; token: any }) {
       const user: AuthUser = {
