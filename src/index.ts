@@ -2,6 +2,7 @@ import { SpotifyApi } from "./SpotifyApi.js";
 import AuthorizationCodeWithPKCEStrategy from "./auth/AuthorizationCodeWithPKCEStrategy.js";
 import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy.js";
 import IAuthStrategy from "./auth/IAuthStrategy.js";
+import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy.js";
 import InMemoryCachingStrategy from "./caching/InMemoryCachingStrategy.js";
 import LocalStorageCachingStrategy from "./caching/LocalStorageCachingStrategy.js";
 import { ICacheStore } from "./caching/ICacheStore.js";
@@ -18,6 +19,7 @@ export {
     SpotifyApi,
     AuthorizationCodeWithPKCEStrategy,
     ClientCredentialsStrategy,
+    ProvidedAccessTokenStrategy,
     InMemoryCachingStrategy,
     LocalStorageCachingStrategy,
     GenericCache,
