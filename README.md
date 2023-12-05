@@ -1,8 +1,8 @@
-## Fork for publishing the latest merged commits
-
 # Spotify Web API SDK - TypeScript
 
-This is a JavaScript/TypeScript SDK for the [Spotify Web API](https://developer.spotify.com/web-api/).
+> This is a fork of the [official library](https://github.com/spotify/spotify-web-api-ts-sdk) released by Spotify. I needed to publish my fork to npm so I include a fix in my own application since there has not been an offical release in several months. This project has now diverged from upstream and I plan to maintain this library.
+
+This is a JavaScript/TypeScript SDK for the [Spotify Web API](https://developer.spotify.com/web-api/) and currently does not include any of the Web Playback SDK functionality.
 
 ## Requirements
 
@@ -16,7 +16,7 @@ The package contains both an ESM and CommonJS build, so you can use it in both N
 ## Using this in your project
 
 ```bash
-npm install @spotify/web-api-ts-sdk
+npm install @fostertheweb/spotify-web-sdk
 ```
 
 ## Running the tests
