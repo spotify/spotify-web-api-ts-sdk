@@ -2,7 +2,7 @@
   "include": ["./src/**/*.ts"],
   "exclude": [
     "./src/**/*.test.ts",
-    "./example/**/*.ts",
+    "./examples/**/*.ts",
     "./vite.config.ts",
     "./vitest.config.ts",
     "./src/test/**/*.ts"
