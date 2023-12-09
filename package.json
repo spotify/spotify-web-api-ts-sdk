@@ -27,6 +27,7 @@
   "author": "Spotify",
   "license": "Apache",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@types/node": "^20.3.2",
     "@types/uuid": "^9.0.2",
     "dotenv": "^16.3.1",
@@ -43,14 +44,5 @@
   "keywords": [
     "spotify",
     "webapi"
-  ],
-  "wallaby": {
-    "autoDetect": [
-      "vitest"
-    ],
-    "trace": true
-  },
-  "dependencies": {
-    "@changesets/cli": "^2.27.1"
-  }
+  ]
 }

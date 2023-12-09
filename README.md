@@ -34,7 +34,7 @@ You will need to add the following environment variables:
 
 The latter two credentials are used to run integration tests in the scope of a _real user account_. This is required to test endpoints that require a user's authorization, such as `followPlaylist`. You need to make sure that your user has access to whichever Spotify app your client credentials and secret are for.
 
-You can run the tests with `npm run test`, or using a plugin like [Wallaby](https://wallabyjs.com/).
+You can run the tests with `npm run test`.
 
 We support `dotenv`, so you can add these to a `.env` file in the root of the repository.
 
