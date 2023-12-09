@@ -43,4 +43,4 @@ To run the embedded example app, you will need to add the following environment 
 - `VITE_SPOTIFY_CLIENT_ID`=the same value as set in INTEGRATION_TESTS_SPOTIFY_CLIENT_ID
 - `VITE_REDIRECT_TARGET`=http://localhost:3000
 
-For the example app to work, this .env file needs to be in the ./example folder.
+For the example app to work, this .env file needs to be in the specific example directory within the `/examples`` folder.

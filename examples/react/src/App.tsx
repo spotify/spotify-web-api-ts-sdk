@@ -1,13 +1,13 @@
-import { useSpotify } from "./hooks/useSpotify";
-import { Scopes, SearchResults, SpotifyApi } from "../../src";
 import { useEffect, useState } from "react";
+import { Scopes, SearchResults, SpotifyApi } from "../../../src";
 import "./App.css";
+import { useSpotify } from "./hooks/useSpotify";
 
 function App() {
   const sdk = useSpotify(
     import.meta.env.VITE_SPOTIFY_CLIENT_ID,
     import.meta.env.VITE_REDIRECT_TARGET,
-    Scopes.userDetails,
+    Scopes.userDetails
   );
 
   return sdk ? <SpotifySearch sdk={sdk} /> : <></>;
@@ -15,7 +15,7 @@ function App() {
 
 function SpotifySearch({ sdk }: { sdk: SpotifyApi }) {
   const [results, setResults] = useState<SearchResults<["artist"]>>(
-    {} as SearchResults<["artist"]>,
+    {} as SearchResults<["artist"]>
   );
 
   useEffect(() => {
