@@ -24,11 +24,18 @@ npm run start
 Creating an instance of the SDK is easy, and can be done in a number of ways depending on which form of authentication you want to use.
 
 ```js
-import { SpotifyApi } from '@spotify/web-api-ts-sdk';
+import { SpotifyApi } from "@spotify/web-api-ts-sdk";
 
 // Choose one of the following:
-const sdk = SpotifyApi.withUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"]);
-const sdk = SpotifyApi.withClientCredentials("client-id", "secret", ["scope1", "scope2"]);
+const sdk = SpotifyApi.withUserAuthorization(
+  "client-id",
+  "https://localhost:3000",
+  ["scope1", "scope2"],
+);
+const sdk = SpotifyApi.withClientCredentials("client-id", "secret", [
+  "scope1",
+  "scope2",
+]);
 ```
 
 Each of these factory methods will return a `SpotifyApi` instance, which you can use to make requests to the Spotify Web API.
@@ -38,11 +45,13 @@ Once you have an authenticated instance of the SDK, you can make requests to the
 ```js
 const items = await sdk.search("The Beatles", ["artist"]);
 
-console.table(items.artists.items.map((item) => ({
+console.table(
+  items.artists.items.map((item) => ({
     name: item.name,
     followers: item.followers.total,
     popularity: item.popularity,
-})));
+  })),
+);
 ```
 
 ### Authentication Methods
@@ -61,10 +70,13 @@ If you're building a browser based application, you should use Authorization Cod
 Calling any of the methods on the SDK will automatically perform any redirects/refreshes that are necessary.
 
 ```js
-const sdk = SpotifyApi.withUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"]);
-const user = await sdk.currentUser.profile()
+const sdk = SpotifyApi.withUserAuthorization(
+  "client-id",
+  "https://localhost:3000",
+  ["scope1", "scope2"],
+);
+const user = await sdk.currentUser.profile();
 ```
-
 
 If you're building a server side application, you should use Client Credentials Flow, and is the correct choice when you have both your Client ID and Client Secret available. This flow is not available in the browser (as you should not embed your Client Secret in Client Side web applications), so should only be used from Node.js.
 
@@ -83,35 +95,49 @@ You'll need to do three things.
 
 Setup:
 
-*Client Side*
+_Client Side_
+
 ```js
-SpotifyApi.performUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"], "https://your-backend-server.com/accept-user-token");
+SpotifyApi.performUserAuthorization(
+  "client-id",
+  "https://localhost:3000",
+  ["scope1", "scope2"],
+  "https://your-backend-server.com/accept-user-token",
+);
 // Alternatively if you want to perform your own custom post-back
-SpotifyApi.performUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"], (accessToken) => { /* do postback here */ });
+SpotifyApi.performUserAuthorization(
+  "client-id",
+  "https://localhost:3000",
+  ["scope1", "scope2"],
+  (accessToken) => {
+    /* do postback here */
+  },
+);
 ```
 
 These functions will work as usual, triggering a client side redirect to grant permissions, along with verifying the response and performing token exchange.
 
-*Server Side*
+_Server Side_
+
 ```js
 const { SpotifyApi } = require("@spotify/web-api-ts-sdk");
 
-const express = require('express');
-const bodyParser = require('body-parser'); 
+const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
- 
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 let sdk;
 
-app.post('/accept-user-token', (req, res) => {
-    let data = req.body;
-    sdk = SpotifyApi.withAccessToken("client-id", data); // SDK now authenticated as client-side user
-}); 
- 
+app.post("/accept-user-token", (req, res) => {
+  let data = req.body;
+  sdk = SpotifyApi.withAccessToken("client-id", data); // SDK now authenticated as client-side user
+});
+
 app.listen(3000, () => {
-  console.log('Example app listening on port 3000!')
+  console.log("Example app listening on port 3000!");
 });
 ```
 
@@ -125,16 +151,17 @@ Our defaults look like this, and each of the properties is optional, and can be 
 
 ```ts
 const defaultConfig: SdkConfiguration = {
-    fetch: (req: RequestInfo | URL, init: RequestInit | undefined) => fetch(req, init),
-    beforeRequest: (_: string, __: RequestInit) => { },
-    afterRequest: (_: string, __: RequestInit, ___: Response) => { },
-    deserializer: new DefaultResponseDeserializer(),
-    responseValidator: new DefaultResponseValidator(),
-    errorHandler: new NoOpErrorHandler(),
-    redirectionStrategy: new DocumentLocationRedirectionStrategy(),
-    cachingStrategy: isBrowser
-        ? new LocalStorageCachingStrategy()
-        : new InMemoryCachingStrategy()
+  fetch: (req: RequestInfo | URL, init: RequestInit | undefined) =>
+    fetch(req, init),
+  beforeRequest: (_: string, __: RequestInit) => {},
+  afterRequest: (_: string, __: RequestInit, ___: Response) => {},
+  deserializer: new DefaultResponseDeserializer(),
+  responseValidator: new DefaultResponseValidator(),
+  errorHandler: new NoOpErrorHandler(),
+  redirectionStrategy: new DocumentLocationRedirectionStrategy(),
+  cachingStrategy: isBrowser
+    ? new LocalStorageCachingStrategy()
+    : new InMemoryCachingStrategy(),
 };
 ```
 
@@ -144,13 +171,18 @@ You can provide the options like this, to any of the constructors or static init
 
 ```js
 const opts = {
-    fetch: (req, init) => {
-        console.log("Called via my custom fetch!");
-        return fetch(req, init);
-    }
-}
+  fetch: (req, init) => {
+    console.log("Called via my custom fetch!");
+    return fetch(req, init);
+  },
+};
 
-const sdk = SpotifyApi.withUserAuthorization("client-id", "https://callback", ["scope1"], opts);
+const sdk = SpotifyApi.withUserAuthorization(
+  "client-id",
+  "https://callback",
+  ["scope1"],
+  opts,
+);
 ```
 
 All the below examples are in TypeScript, but the same method signatures all apply to JavaScript - just without the Type information.
@@ -161,11 +193,11 @@ You can override the default Fetch implementation by passing in a function that 
 
 ```js
 const opts = {
-    fetch: (req, init) => {
-        // Do something with the request
-        return fetch(req, init);
-    }
-}
+  fetch: (req, init) => {
+    // Do something with the request
+    return fetch(req, init);
+  },
+};
 ```
 
 ### Extensibility - beforeRequest and afterRequest
@@ -176,13 +208,13 @@ You can use these functions to implement custom instrumentation, logging, or oth
 
 ```js
 const opts = {
-    beforeRequest: (req, init) => {
-        console.log("Called before the request is made");
-    },
-    afterRequest: (req, init, res) => {
-        console.log("Called after the request is made");
-    }
-}
+  beforeRequest: (req, init) => {
+    console.log("Called before the request is made");
+  },
+  afterRequest: (req, init, res) => {
+    console.log("Called after the request is made");
+  },
+};
 ```
 
 ### Extensibility - deserializer
@@ -213,9 +245,9 @@ If you need to customise this behaviour, replace the implementation like this:
 
 ```ts
 export default class MyResponseValidator implements IValidateResponses {
-    public async validateResponse(response: Response): Promise<void> {
-        // Something here
-    }
+  public async validateResponse(response: Response): Promise<void> {
+    // Something here
+  }
 }
 ```
 
@@ -227,9 +259,9 @@ If you need to customise this behaviour, replace the implementation like this:
 
 ```ts
 export default class MyErrorHandler implements IHandleErrors {
-    public async handleErrors(error: any): Promise<boolean> {
-        return false;
-    }
+  public async handleErrors(error: any): Promise<boolean> {
+    return false;
+  }
 }
 ```
 
@@ -240,13 +272,14 @@ If you return `true` from your error handler, the SDK will not throw an error, a
 You can override the default redirection strategy by passing in a class that implements the `IRedirect` interface. By default, we use the `DocumentLocationRedirectionStrategy` class.
 
 ```ts
-export default class DocumentLocationRedirectionStrategy implements IRedirectionStrategy {
-    public async redirect(targetUrl: string | URL): Promise<void> {
-        document.location = targetUrl.toString();
-    }
+export default class DocumentLocationRedirectionStrategy
+  implements IRedirectionStrategy
+{
+  public async redirect(targetUrl: string | URL): Promise<void> {
+    document.location = targetUrl.toString();
+  }
 
-    public async onReturnFromRedirect(): Promise<void> {
-    }
+  public async onReturnFromRedirect(): Promise<void> {}
 }
 ```
 
@@ -258,10 +291,13 @@ You can override the default caching strategy by passing in a class that impleme
 
 ```ts
 interface ICachingStrategy {
-    getOrCreate<T>(cacheKey: string, createFunction: () => Promise<T & ICachable & object>): Promise<T & ICachable>;
-    get<T>(cacheKey: string): T & ICachable | null;
-    setCacheItem<T>(cacheKey: string, item: T & ICachable): void;
-    remove(cacheKey: string): void;
+  getOrCreate<T>(
+    cacheKey: string,
+    createFunction: () => Promise<T & ICachable & object>,
+  ): Promise<T & ICachable>;
+  get<T>(cacheKey: string): (T & ICachable) | null;
+  setCacheItem<T>(cacheKey: string, item: T & ICachable): void;
+  remove(cacheKey: string): void;
 }
 ```
 

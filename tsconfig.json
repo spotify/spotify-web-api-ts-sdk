@@ -1,7 +1,5 @@
 {
-  "include": [
-    "./src/**/*.ts"
-  ],
+  "include": ["./src/**/*.ts"],
   "exclude": [
     "./src/**/*.test.ts",
     "./example/**/*.ts",
@@ -12,11 +10,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "declaration": true,
     "skipLibCheck": false,

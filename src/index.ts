@@ -15,24 +15,21 @@ import { Scopes } from "./Scopes.js";
 import { emptyAccessToken } from "./auth/IAuthStrategy.js";
 
 export {
-    SpotifyApi,
-    AuthorizationCodeWithPKCEStrategy,
-    ClientCredentialsStrategy,
-    InMemoryCachingStrategy,
-    LocalStorageCachingStrategy,
-    GenericCache,
-    ConsoleLoggingErrorHandler,
-    NoOpErrorHandler,
-    DocumentLocationRedirectionStrategy,
-    DefaultResponseValidator,
-    DefaultResponseDeserializer,
-    Scopes,
-    emptyAccessToken
-}
+  SpotifyApi,
+  AuthorizationCodeWithPKCEStrategy,
+  ClientCredentialsStrategy,
+  InMemoryCachingStrategy,
+  LocalStorageCachingStrategy,
+  GenericCache,
+  ConsoleLoggingErrorHandler,
+  NoOpErrorHandler,
+  DocumentLocationRedirectionStrategy,
+  DefaultResponseValidator,
+  DefaultResponseDeserializer,
+  Scopes,
+  emptyAccessToken,
+};
 
 export type * from "./types.js";
 
-export type {
-    IAuthStrategy,
-    ICacheStore,
-}
+export type { IAuthStrategy, ICacheStore };
