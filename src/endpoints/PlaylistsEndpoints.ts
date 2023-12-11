@@ -1,25 +1,25 @@
 import type {
+  Image,
   Market,
-  Playlist,
   MaxInt,
   Page,
-  Track,
-  SnapshotReference,
-  Image,
+  Playlist,
   PlaylistedTrack,
   QueryAdditionalTypes,
+  SnapshotReference,
+  Track,
   TrackItem,
 } from "../types.js";
 import EndpointsBase from "./EndpointsBase.js";
 
 export default class PlaylistsEndpoints extends EndpointsBase {
   public getPlaylist<
-    AdditionalTypes extends QueryAdditionalTypes | undefined = undefined,
+    AdditionalTypes extends QueryAdditionalTypes | undefined = undefined
   >(
     playlist_id: string,
     market?: Market,
     fields?: string,
-    additional_types?: AdditionalTypes,
+    additional_types?: AdditionalTypes
   ) {
     // TODO: better support for fields
     const params = this.paramsFor({
@@ -33,14 +33,14 @@ export default class PlaylistsEndpoints extends EndpointsBase {
   }
 
   public getPlaylistItems<
-    AdditionalTypes extends QueryAdditionalTypes | undefined = undefined,
+    AdditionalTypes extends QueryAdditionalTypes | undefined = undefined
   >(
     playlist_id: string,
     market?: Market,
     fields?: string,
     limit?: MaxInt<50>,
     offset?: number,
-    additional_types?: AdditionalTypes,
+    additional_types?: AdditionalTypes
   ) {
     // TODO: better support for fields
     const params = this.paramsFor({
@@ -59,7 +59,7 @@ export default class PlaylistsEndpoints extends EndpointsBase {
 
   public async changePlaylistDetails(
     playlist_id: string,
-    request: ChangePlaylistDetailsRequest,
+    request: ChangePlaylistDetailsRequest
   ) {
     await this.putRequest(`playlists/${playlist_id}`, request);
   }
@@ -68,7 +68,7 @@ export default class PlaylistsEndpoints extends EndpointsBase {
     playlist_id: string,
     range_start: number,
     range_length: number,
-    moveToPosition: number,
+    moveToPosition: number
   ) {
     return this.updatePlaylistItems(playlist_id, {
       range_start,
@@ -79,18 +79,18 @@ export default class PlaylistsEndpoints extends EndpointsBase {
 
   public updatePlaylistItems(
     playlist_id: string,
-    request: UpdatePlaylistItemsRequest,
+    request: UpdatePlaylistItemsRequest
   ) {
     return this.putRequest<SnapshotReference>(
       `playlists/${playlist_id}/tracks`,
-      request,
+      request
     );
   }
 
   public async addItemsToPlaylist(
     playlist_id: string,
     uris?: string[],
-    position?: number,
+    position?: number
   ) {
     await this.postRequest(`playlists/${playlist_id}/tracks`, {
       position,
@@ -100,7 +100,7 @@ export default class PlaylistsEndpoints extends EndpointsBase {
 
   public async removeItemsFromPlaylist(
     playlist_id: string,
-    request: RemovePlaylistItemsRequest,
+    request: RemovePlaylistItemsRequest
   ) {
     await this.deleteRequest(`playlists/${playlist_id}/tracks`, request);
   }
@@ -108,11 +108,11 @@ export default class PlaylistsEndpoints extends EndpointsBase {
   public getUsersPlaylists(
     user_id: string,
     limit?: MaxInt<50>,
-    offset?: number,
+    offset?: number
   ) {
     const params = this.paramsFor({ limit, offset });
     return this.getRequest<Page<Playlist>>(
-      `users/${user_id}/playlists${params}`,
+      `users/${user_id}/playlists${params}`
     );
   }
 
@@ -126,16 +126,15 @@ export default class PlaylistsEndpoints extends EndpointsBase {
 
   public async addCustomPlaylistCoverImage(
     playlist_id: string,
-    imageData: Buffer | HTMLImageElement | HTMLCanvasElement | string,
+    imageData: Buffer | HTMLImageElement | HTMLCanvasElement | string
   ) {
     let base64EncodedJpeg: string = "";
 
     if (imageData instanceof Buffer) {
       base64EncodedJpeg = imageData.toString("base64");
     } else if (imageData instanceof HTMLCanvasElement) {
-      base64EncodedJpeg = imageData
-        .toDataURL("image/jpeg")
-        .split(";base64,")[1];
+      base64EncodedJpeg =
+        imageData.toDataURL("image/jpeg").split(";base64,")[1] || "";
     } else if (imageData instanceof HTMLImageElement) {
       const canvas = document.createElement("canvas");
       canvas.width = imageData.width;
@@ -145,29 +144,30 @@ export default class PlaylistsEndpoints extends EndpointsBase {
         throw new Error("Could not get canvas context");
       }
       ctx.drawImage(imageData, 0, 0);
-      base64EncodedJpeg = canvas.toDataURL("image/jpeg").split(";base64,")[1];
+      base64EncodedJpeg =
+        canvas.toDataURL("image/jpeg").split(";base64,")[1] || "";
     } else if (typeof imageData === "string") {
       base64EncodedJpeg = imageData;
     } else {
       throw new Error(
-        "ImageData must be a Buffer, HTMLImageElement, HTMLCanvasElement, or string containing a base64 encoded jpeg",
+        "ImageData must be a Buffer, HTMLImageElement, HTMLCanvasElement, or string containing a base64 encoded jpeg"
       );
     }
 
     await this.addCustomPlaylistCoverImageFromBase64String(
       playlist_id,
-      base64EncodedJpeg,
+      base64EncodedJpeg
     );
   }
 
   public async addCustomPlaylistCoverImageFromBase64String(
     playlist_id: string,
-    base64EncodedJpeg: string,
+    base64EncodedJpeg: string
   ) {
     await this.putRequest(
       `playlists/${playlist_id}/images`,
       base64EncodedJpeg,
-      "image/jpeg",
+      "image/jpeg"
     );
   }
 }

@@ -2,25 +2,25 @@
   "include": ["./src/**/*.ts"],
   "exclude": [
     "./src/**/*.test.ts",
-    "./examples/**/*.ts",
+    "./src/test/**/*.ts",
     "./vite.config.ts",
     "./vitest.config.ts",
-    "./src/test/**/*.ts"
+    "./examples/**/*.ts"
   ],
   "compilerOptions": {
     "target": "ESNext",
-    "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
-    "declaration": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Node",
+    "moduleDetection": "force",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "rootDir": "./src",
-    "sourceMap": true,
-    "strict": true
+    "strict": true,
+    "noEmit": true,
+    "module": "ESNext",
+    "noUncheckedIndexedAccess": true
   }
 }
