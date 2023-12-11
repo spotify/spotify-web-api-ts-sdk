@@ -1,3 +1,8 @@
+---
+title: Getting Started
+description: A brief overview of the library.
+---
+
 ## Running the example app
 
 First install the dependencies:
@@ -30,7 +35,7 @@ import { SpotifyApi } from "@spotify/web-api-ts-sdk";
 const sdk = SpotifyApi.withUserAuthorization(
   "client-id",
   "https://localhost:3000",
-  ["scope1", "scope2"],
+  ["scope1", "scope2"]
 );
 const sdk = SpotifyApi.withClientCredentials("client-id", "secret", [
   "scope1",
@@ -50,7 +55,7 @@ console.table(
     name: item.name,
     followers: item.followers.total,
     popularity: item.popularity,
-  })),
+  }))
 );
 ```
 
@@ -73,7 +78,7 @@ Calling any of the methods on the SDK will automatically perform any redirects/r
 const sdk = SpotifyApi.withUserAuthorization(
   "client-id",
   "https://localhost:3000",
-  ["scope1", "scope2"],
+  ["scope1", "scope2"]
 );
 const user = await sdk.currentUser.profile();
 ```
@@ -102,7 +107,7 @@ SpotifyApi.performUserAuthorization(
   "client-id",
   "https://localhost:3000",
   ["scope1", "scope2"],
-  "https://your-backend-server.com/accept-user-token",
+  "https://your-backend-server.com/accept-user-token"
 );
 // Alternatively if you want to perform your own custom post-back
 SpotifyApi.performUserAuthorization(
@@ -111,7 +116,7 @@ SpotifyApi.performUserAuthorization(
   ["scope1", "scope2"],
   (accessToken) => {
     /* do postback here */
-  },
+  }
 );
 ```
 
@@ -181,7 +186,7 @@ const sdk = SpotifyApi.withUserAuthorization(
   "client-id",
   "https://callback",
   ["scope1"],
-  opts,
+  opts
 );
 ```
 
@@ -293,7 +298,7 @@ You can override the default caching strategy by passing in a class that impleme
 interface ICachingStrategy {
   getOrCreate<T>(
     cacheKey: string,
-    createFunction: () => Promise<T & ICachable & object>,
+    createFunction: () => Promise<T & ICachable & object>
   ): Promise<T & ICachable>;
   get<T>(cacheKey: string): (T & ICachable) | null;
   setCacheItem<T>(cacheKey: string, item: T & ICachable): void;
