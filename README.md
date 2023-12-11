@@ -4,6 +4,10 @@
 
 This is a JavaScript/TypeScript SDK for the [Spotify Web API](https://developer.spotify.com/web-api/) and currently **does not** include any of the Web Playback SDK functionality. I recommend installing `@types/spotify-web-playback-sdk` if you are working with the Playback SDK.
 
+## Documentation
+
+While I work on a new documenation website, check out the existing [usage guide](DOCS.md).
+
 ## Requirements
 
 Because this SDK uses `fetch` both in Node and the Browser, and ESM, we require the following:
