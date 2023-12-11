@@ -1,28 +1,27 @@
-import { useSpotify } from './hooks/useSpotify';
-import { Scopes, SearchResults, SpotifyApi } from '../../src';
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useEffect, useState } from "react";
+import { Scopes, SearchResults, SpotifyApi } from "../../../src";
+import "./App.css";
+import { useSpotify } from "./hooks/useSpotify";
 
 function App() {
-  
   const sdk = useSpotify(
-    import.meta.env.VITE_SPOTIFY_CLIENT_ID, 
-    import.meta.env.VITE_REDIRECT_TARGET, 
+    import.meta.env.VITE_SPOTIFY_CLIENT_ID,
+    import.meta.env.VITE_REDIRECT_TARGET,
     Scopes.userDetails
   );
 
-  return sdk
-    ? (<SpotifySearch sdk={sdk} />) 
-    : (<></>);
+  return sdk ? <SpotifySearch sdk={sdk} /> : <></>;
 }
 
-function SpotifySearch({ sdk }: { sdk: SpotifyApi}) {
-  const [results, setResults] = useState<SearchResults<["artist"]>>({} as SearchResults<["artist"]>);
+function SpotifySearch({ sdk }: { sdk: SpotifyApi }) {
+  const [results, setResults] = useState<SearchResults<["artist"]>>(
+    {} as SearchResults<["artist"]>
+  );
 
   useEffect(() => {
     (async () => {
       const results = await sdk.search("The Beatles", ["artist"]);
-      setResults(() => results);      
+      setResults(() => results);
     })();
   }, [sdk]);
 
@@ -48,12 +47,10 @@ function SpotifySearch({ sdk }: { sdk: SpotifyApi}) {
             <th>Followers</th>
           </tr>
         </thead>
-        <tbody>
-          {tableRows}
-        </tbody>
+        <tbody>{tableRows}</tbody>
       </table>
     </>
-  )
+  );
 }
 
 export default App;
