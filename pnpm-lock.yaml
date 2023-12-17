@@ -4,46 +4,67 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-devDependencies:
-  '@changesets/changelog-github':
-    specifier: ^0.5.0
-    version: 0.5.0
-  '@changesets/cli':
-    specifier: ^2.27.1
-    version: 2.27.1
-  '@types/node':
-    specifier: ^20.3.2
-    version: 20.10.4
-  '@types/uuid':
-    specifier: ^9.0.2
-    version: 9.0.7
-  dotenv:
-    specifier: ^16.3.1
-    version: 16.3.1
-  jsdom:
-    specifier: ^22.1.0
-    version: 22.1.0
-  playwright:
-    specifier: ^1.35.1
-    version: 1.40.1
-  tsup:
-    specifier: ^8.0.1
-    version: 8.0.1(typescript@5.3.3)
-  typedoc:
-    specifier: ^0.25.4
-    version: 0.25.4(typescript@5.3.3)
-  typescript:
-    specifier: ^5.1.6
-    version: 5.3.3
-  uuid:
-    specifier: ^9.0.0
-    version: 9.0.1
-  vite:
-    specifier: ^4.3.9
-    version: 4.5.1(@types/node@20.10.4)
-  vitest:
-    specifier: ^0.32.2
-    version: 0.32.4(jsdom@22.1.0)(playwright@1.40.1)
+importers:
+
+  .:
+    devDependencies:
+      '@changesets/changelog-github':
+        specifier: ^0.5.0
+        version: 0.5.0
+      '@changesets/cli':
+        specifier: ^2.27.1
+        version: 2.27.1
+      '@types/node':
+        specifier: ^20.3.2
+        version: 20.10.4
+      '@types/uuid':
+        specifier: ^9.0.2
+        version: 9.0.7
+      dotenv:
+        specifier: ^16.3.1
+        version: 16.3.1
+      jsdom:
+        specifier: ^22.1.0
+        version: 22.1.0
+      playwright:
+        specifier: ^1.35.1
+        version: 1.40.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.0.1(typescript@5.3.3)
+      typescript:
+        specifier: ^5.1.6
+        version: 5.3.3
+      uuid:
+        specifier: ^9.0.0
+        version: 9.0.1
+      vite:
+        specifier: ^4.3.9
+        version: 4.5.1(@types/node@20.10.4)
+      vitest:
+        specifier: ^0.32.2
+        version: 0.32.4(jsdom@22.1.0)(playwright@1.40.1)
+
+  docs:
+    dependencies:
+      '@astrojs/starlight':
+        specifier: ^0.15.0
+        version: 0.15.0(astro@4.0.6)
+      astro:
+        specifier: ^4.0.1
+        version: 4.0.6(@types/node@20.10.4)(typescript@5.3.3)
+      sharp:
+        specifier: ^0.32.5
+        version: 0.32.6
+      starlight-typedoc:
+        specifier: ^0.6.0
+        version: 0.6.0(@astrojs/starlight@0.15.0)(astro@4.0.6)(typedoc-plugin-markdown@4.0.0-next.36)(typedoc@0.25.4)
+      typedoc:
+        specifier: ^0.25.4
+        version: 0.25.4(typescript@5.3.3)
+      typedoc-plugin-markdown:
+        specifier: 4.0.0-next.36
+        version: 4.0.0-next.36(typedoc@0.25.4)
 
 packages:
 
@@ -2135,6 +2156,28 @@ packages:
     resolution: {integrity: sha512-68s5jYdlvasItOJnCuI2Q9s4q98g0pCyL3HrcKJu8KNugUl8ahgmZYg38ysLTgQjjXX3H8CJLkAvWrclWfcalw==}
     dev: true
 
+  /debug@2.6.9:
+    resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.0.0
+    dev: false
+
+  /debug@3.2.7:
+    resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+    dev: false
+
   /debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -2292,6 +2335,23 @@ packages:
     resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
     engines: {node: '>=10'}
     dev: true
+
+  /dset@3.1.3:
+    resolution: {integrity: sha512-20TuZZHCEZ2O71q9/+8BwKwZ0QtD9D8ObhrihJPr+vLLYlSuAU3/zL4cSlgbfeoGHTjCSJBa7NGcrF9/Bx/WJQ==}
+    engines: {node: '>=4'}
+    dev: false
+
+  /eastasianwidth@0.2.0:
+    resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
+    dev: false
+
+  /electron-to-chromium@1.4.614:
+    resolution: {integrity: sha512-X4ze/9Sc3QWs6h92yerwqv7aB/uU8vCjZcrMjA8N9R1pjMFRe44dLsck5FzLilOYvcXuDn93B+bpGYyufc70gQ==}
+    dev: false
+
+  /emoji-regex@10.3.0:
+    resolution: {integrity: sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==}
+    dev: false
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -4427,10 +4487,6 @@ packages:
     resolution: {integrity: sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==}
     dev: false
 
-  /node-releases@2.0.14:
-    resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
-    dev: false
-
   /node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -4442,6 +4498,10 @@ packages:
     dependencies:
       whatwg-url: 5.0.0
     dev: true
+
+  /node-releases@2.0.14:
+    resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
+    dev: false
 
   /normalize-package-data@2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
@@ -6417,6 +6477,10 @@ packages:
     dependencies:
       defaults: 1.0.4
     dev: true
+
+  /web-namespaces@2.0.1:
+    resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
+    dev: false
 
   /webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
