@@ -3,7 +3,7 @@
   "changelog": ["@changesets/changelog-github", { "repo": "fostertheweb/spotify-web-sdk" }],
   "commit": false,
   "fixed": [],
-  "linked": [],
+  "linked": [["@fostertheweb/spotify-web-sdk", "docs"]],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
