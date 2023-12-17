@@ -13,7 +13,7 @@ title: "AccessToken"
 
 #### Source
 
-[types.ts:538](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L538)
+[types.ts:538](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L538)
 
 ***
 
@@ -23,7 +23,7 @@ title: "AccessToken"
 
 #### Source
 
-[types.ts:542](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L542)
+[types.ts:542](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L542)
 
 ***
 
@@ -33,7 +33,7 @@ title: "AccessToken"
 
 #### Source
 
-[types.ts:540](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L540)
+[types.ts:540](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L540)
 
 ***
 
@@ -43,7 +43,7 @@ title: "AccessToken"
 
 #### Source
 
-[types.ts:541](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L541)
+[types.ts:541](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L541)
 
 ***
 
@@ -53,7 +53,7 @@ title: "AccessToken"
 
 #### Source
 
-[types.ts:539](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L539)
+[types.ts:539](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L539)
 
 ***
 

@@ -13,7 +13,7 @@ title: "SavedEpisode"
 
 #### Source
 
-[types.ts:907](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L907)
+[types.ts:907](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L907)
 
 ***
 
@@ -23,7 +23,7 @@ title: "SavedEpisode"
 
 #### Source
 
-[types.ts:908](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L908)
+[types.ts:908](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L908)
 
 ***
 

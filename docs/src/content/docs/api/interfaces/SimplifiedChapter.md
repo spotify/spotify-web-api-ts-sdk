@@ -17,7 +17,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:844](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L844)
+[types.ts:844](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L844)
 
 ***
 
@@ -27,7 +27,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:849](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L849)
+[types.ts:849](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L849)
 
 ***
 
@@ -37,7 +37,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:838](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L838)
+[types.ts:838](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L838)
 
 ***
 
@@ -47,7 +47,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:837](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L837)
+[types.ts:837](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L837)
 
 ***
 
@@ -57,7 +57,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:839](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L839)
+[types.ts:839](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L839)
 
 ***
 
@@ -67,7 +67,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:840](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L840)
+[types.ts:840](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L840)
 
 ***
 
@@ -77,7 +77,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:852](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L852)
+[types.ts:852](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L852)
 
 ***
 
@@ -87,7 +87,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:853](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L853)
+[types.ts:853](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L853)
 
 ***
 
@@ -97,7 +97,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:848](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L848)
+[types.ts:848](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L848)
 
 ***
 
@@ -107,7 +107,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:836](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L836)
+[types.ts:836](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L836)
 
 ***
 
@@ -117,7 +117,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:841](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L841)
+[types.ts:841](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L841)
 
 ***
 
@@ -127,7 +127,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:854](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L854)
+[types.ts:854](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L854)
 
 ***
 
@@ -137,7 +137,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:842](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L842)
+[types.ts:842](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L842)
 
 ***
 
@@ -147,7 +147,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:843](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L843)
+[types.ts:843](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L843)
 
 ***
 
@@ -157,7 +157,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:845](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L845)
+[types.ts:845](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L845)
 
 ***
 
@@ -167,7 +167,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:846](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L846)
+[types.ts:846](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L846)
 
 ***
 
@@ -177,7 +177,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:855](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L855)
+[types.ts:855](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L855)
 
 ***
 
@@ -187,7 +187,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:847](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L847)
+[types.ts:847](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L847)
 
 ***
 
@@ -197,7 +197,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:850](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L850)
+[types.ts:850](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L850)
 
 ***
 
@@ -207,7 +207,7 @@ title: "SimplifiedChapter"
 
 #### Source
 
-[types.ts:851](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L851)
+[types.ts:851](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L851)
 
 ***
 

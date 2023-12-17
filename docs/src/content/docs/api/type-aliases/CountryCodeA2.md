@@ -9,7 +9,7 @@ title: "CountryCodeA2"
 
 ## Source
 
-[types.ts:276](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L276)
+[types.ts:276](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L276)
 
 ***
 

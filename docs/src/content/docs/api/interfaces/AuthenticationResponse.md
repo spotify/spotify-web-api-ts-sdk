@@ -13,7 +13,7 @@ title: "AuthenticationResponse"
 
 #### Source
 
-[types.ts:25](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L25)
+[types.ts:25](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L25)
 
 ***
 
@@ -23,7 +23,7 @@ title: "AuthenticationResponse"
 
 #### Source
 
-[types.ts:24](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L24)
+[types.ts:24](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L24)
 
 ***
 

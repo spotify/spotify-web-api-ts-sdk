@@ -25,7 +25,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:945](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L945)
+[types.ts:945](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L945)
 
 ***
 
@@ -39,7 +39,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:946](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L946)
+[types.ts:946](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L946)
 
 ***
 
@@ -53,7 +53,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:947](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L947)
+[types.ts:947](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L947)
 
 ***
 
@@ -67,7 +67,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:948](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L948)
+[types.ts:948](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L948)
 
 ***
 
@@ -81,7 +81,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:949](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L949)
+[types.ts:949](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L949)
 
 ***
 
@@ -95,7 +95,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:950](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L950)
+[types.ts:950](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L950)
 
 ***
 
@@ -109,7 +109,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:951](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L951)
+[types.ts:951](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L951)
 
 ***
 
@@ -123,7 +123,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:952](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L952)
+[types.ts:952](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L952)
 
 ***
 
@@ -137,7 +137,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:953](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L953)
+[types.ts:953](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L953)
 
 ***
 
@@ -151,7 +151,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:954](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L954)
+[types.ts:954](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L954)
 
 ***
 
@@ -165,7 +165,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:955](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L955)
+[types.ts:955](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L955)
 
 ***
 
@@ -179,7 +179,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:956](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L956)
+[types.ts:956](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L956)
 
 ***
 
@@ -189,7 +189,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:963](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L963)
+[types.ts:963](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L963)
 
 ***
 
@@ -203,7 +203,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:957](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L957)
+[types.ts:957](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L957)
 
 ***
 
@@ -217,7 +217,7 @@ title: "Playlist"
 
 #### Source
 
-[types.ts:958](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L958)
+[types.ts:958](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L958)
 
 ***
 

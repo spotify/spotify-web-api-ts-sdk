@@ -15,7 +15,7 @@ title: "_Range"
 
 ## Source
 
-[types.ts:78](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L78)
+[types.ts:78](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L78)
 
 ***
 

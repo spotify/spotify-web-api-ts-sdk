@@ -29,7 +29,7 @@ title: "SdkOptions"
 
 #### Source
 
-[types.ts:11](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L11)
+[types.ts:11](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L11)
 
 ***
 
@@ -49,7 +49,7 @@ title: "SdkOptions"
 
 #### Source
 
-[types.ts:10](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L10)
+[types.ts:10](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L10)
 
 ***
 
@@ -59,7 +59,7 @@ title: "SdkOptions"
 
 #### Source
 
-[types.ts:20](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L20)
+[types.ts:20](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L20)
 
 ***
 
@@ -69,7 +69,7 @@ title: "SdkOptions"
 
 #### Source
 
-[types.ts:16](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L16)
+[types.ts:16](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L16)
 
 ***
 
@@ -79,7 +79,7 @@ title: "SdkOptions"
 
 #### Source
 
-[types.ts:18](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L18)
+[types.ts:18](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L18)
 
 ***
 
@@ -89,7 +89,7 @@ title: "SdkOptions"
 
 #### Source
 
-[types.ts:9](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L9)
+[types.ts:9](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L9)
 
 ***
 
@@ -99,7 +99,7 @@ title: "SdkOptions"
 
 #### Source
 
-[types.ts:19](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L19)
+[types.ts:19](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L19)
 
 ***
 
@@ -109,7 +109,7 @@ title: "SdkOptions"
 
 #### Source
 
-[types.ts:17](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L17)
+[types.ts:17](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L17)
 
 ***
 

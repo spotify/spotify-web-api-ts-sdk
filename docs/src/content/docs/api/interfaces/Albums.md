@@ -13,7 +13,7 @@ title: "Albums"
 
 #### Source
 
-[types.ts:582](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L582)
+[types.ts:582](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L582)
 
 ***
 

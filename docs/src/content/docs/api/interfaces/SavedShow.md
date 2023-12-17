@@ -13,7 +13,7 @@ title: "SavedShow"
 
 #### Source
 
-[types.ts:932](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L932)
+[types.ts:932](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L932)
 
 ***
 
@@ -23,7 +23,7 @@ title: "SavedShow"
 
 #### Source
 
-[types.ts:933](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L933)
+[types.ts:933](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L933)
 
 ***
 

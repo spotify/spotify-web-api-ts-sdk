@@ -13,7 +13,7 @@ title: "Queue"
 
 #### Source
 
-[types.ts:1195](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1195)
+[types.ts:1195](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1195)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Queue"
 
 #### Source
 
-[types.ts:1196](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1196)
+[types.ts:1196](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1196)
 
 ***
 

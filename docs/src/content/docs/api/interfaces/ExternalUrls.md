@@ -13,7 +13,7 @@ title: "ExternalUrls"
 
 #### Source
 
-[types.ts:705](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L705)
+[types.ts:705](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L705)
 
 ***
 

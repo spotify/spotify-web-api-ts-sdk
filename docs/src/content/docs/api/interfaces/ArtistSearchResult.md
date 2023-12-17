@@ -13,7 +13,7 @@ title: "ArtistSearchResult"
 
 #### Source
 
-[types.ts:747](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L747)
+[types.ts:747](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L747)
 
 ***
 
@@ -23,7 +23,7 @@ title: "ArtistSearchResult"
 
 #### Source
 
-[types.ts:748](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L748)
+[types.ts:748](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L748)
 
 ***
 

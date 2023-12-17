@@ -21,7 +21,7 @@ title: "ICacheStore"
 
 #### Source
 
-[caching/ICacheStore.ts:2](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/caching/ICacheStore.ts#L2)
+[caching/ICacheStore.ts:2](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/caching/ICacheStore.ts#L2)
 
 ***
 
@@ -39,7 +39,7 @@ title: "ICacheStore"
 
 #### Source
 
-[caching/ICacheStore.ts:4](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/caching/ICacheStore.ts#L4)
+[caching/ICacheStore.ts:4](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/caching/ICacheStore.ts#L4)
 
 ***
 
@@ -59,7 +59,7 @@ title: "ICacheStore"
 
 #### Source
 
-[caching/ICacheStore.ts:3](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/caching/ICacheStore.ts#L3)
+[caching/ICacheStore.ts:3](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/caching/ICacheStore.ts#L3)
 
 ***
 

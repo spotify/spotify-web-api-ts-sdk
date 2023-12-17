@@ -13,7 +13,7 @@ title: "Shows"
 
 #### Source
 
-[types.ts:815](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L815)
+[types.ts:815](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L815)
 
 ***
 

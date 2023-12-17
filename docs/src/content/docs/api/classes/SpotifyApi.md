@@ -23,7 +23,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:59](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L59)
+[SpotifyApi.ts:59](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L59)
 
 ## Properties
 
@@ -33,7 +33,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:42](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L42)
+[SpotifyApi.ts:42](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L42)
 
 ***
 
@@ -43,7 +43,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:43](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L43)
+[SpotifyApi.ts:43](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L43)
 
 ***
 
@@ -53,7 +53,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:44](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L44)
+[SpotifyApi.ts:44](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L44)
 
 ***
 
@@ -63,7 +63,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:45](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L45)
+[SpotifyApi.ts:45](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L45)
 
 ***
 
@@ -73,7 +73,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L46)
+[SpotifyApi.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L46)
 
 ***
 
@@ -83,7 +83,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:57](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L57)
+[SpotifyApi.ts:57](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L57)
 
 ***
 
@@ -93,7 +93,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:47](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L47)
+[SpotifyApi.ts:47](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L47)
 
 ***
 
@@ -103,7 +103,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:49](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L49)
+[SpotifyApi.ts:49](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L49)
 
 ***
 
@@ -113,7 +113,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:50](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L50)
+[SpotifyApi.ts:50](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L50)
 
 ***
 
@@ -123,7 +123,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:51](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L51)
+[SpotifyApi.ts:51](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L51)
 
 ***
 
@@ -133,7 +133,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:48](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L48)
+[SpotifyApi.ts:48](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L48)
 
 ***
 
@@ -143,7 +143,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:55](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L55)
+[SpotifyApi.ts:55](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L55)
 
 ***
 
@@ -153,7 +153,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:52](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L52)
+[SpotifyApi.ts:52](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L52)
 
 ***
 
@@ -163,7 +163,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:53](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L53)
+[SpotifyApi.ts:53](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L53)
 
 ***
 
@@ -173,7 +173,7 @@ title: "SpotifyApi"
 
 #### Source
 
-[SpotifyApi.ts:54](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L54)
+[SpotifyApi.ts:54](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L54)
 
 ## Methods
 
@@ -189,7 +189,7 @@ Use this when you're running in a browser and you want to control when first aut
 
 #### Source
 
-[SpotifyApi.ts:162](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L162)
+[SpotifyApi.ts:162](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L162)
 
 ***
 
@@ -205,7 +205,7 @@ the current access token. null implies the SpotifyApi is not yet authenticated.
 
 #### Source
 
-[SpotifyApi.ts:175](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L175)
+[SpotifyApi.ts:175](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L175)
 
 ***
 
@@ -221,7 +221,7 @@ Removes the access token if it exists.
 
 #### Source
 
-[SpotifyApi.ts:182](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L182)
+[SpotifyApi.ts:182](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L182)
 
 ***
 
@@ -249,7 +249,7 @@ Removes the access token if it exists.
 
 #### Source
 
-[SpotifyApi.ts:84](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L84)
+[SpotifyApi.ts:84](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L84)
 
 ***
 
@@ -267,7 +267,7 @@ Removes the access token if it exists.
 
 #### Source
 
-[SpotifyApi.ts:153](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L153)
+[SpotifyApi.ts:153](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L153)
 
 ***
 
@@ -307,7 +307,7 @@ Optional configuration
 
 ##### Source
 
-[SpotifyApi.ts:245](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L245)
+[SpotifyApi.ts:245](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L245)
 
 #### performUserAuthorization(clientId, redirectUri, scopes, onAuthorization, config)
 
@@ -344,7 +344,7 @@ Optional configuration
 
 ##### Source
 
-[SpotifyApi.ts:262](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L262)
+[SpotifyApi.ts:262](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L262)
 
 ***
 
@@ -369,7 +369,7 @@ You can also use this method if you already have an access token and don't want 
 
 #### Source
 
-[SpotifyApi.ts:228](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L228)
+[SpotifyApi.ts:228](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L228)
 
 ***
 
@@ -393,7 +393,7 @@ You can also use this method if you already have an access token and don't want 
 
 #### Source
 
-[SpotifyApi.ts:200](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L200)
+[SpotifyApi.ts:200](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L200)
 
 ***
 
@@ -417,7 +417,7 @@ You can also use this method if you already have an access token and don't want 
 
 #### Source
 
-[SpotifyApi.ts:214](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L214)
+[SpotifyApi.ts:214](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L214)
 
 ***
 
@@ -441,7 +441,7 @@ You can also use this method if you already have an access token and don't want 
 
 #### Source
 
-[SpotifyApi.ts:186](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/SpotifyApi.ts#L186)
+[SpotifyApi.ts:186](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/SpotifyApi.ts#L186)
 
 ***
 

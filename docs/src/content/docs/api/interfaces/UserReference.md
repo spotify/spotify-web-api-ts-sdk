@@ -13,7 +13,7 @@ title: "UserReference"
 
 #### Source
 
-[types.ts:981](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L981)
+[types.ts:981](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L981)
 
 ***
 
@@ -23,7 +23,7 @@ title: "UserReference"
 
 #### Source
 
-[types.ts:982](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L982)
+[types.ts:982](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L982)
 
 ***
 
@@ -33,7 +33,7 @@ title: "UserReference"
 
 #### Source
 
-[types.ts:983](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L983)
+[types.ts:983](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L983)
 
 ***
 
@@ -43,7 +43,7 @@ title: "UserReference"
 
 #### Source
 
-[types.ts:984](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L984)
+[types.ts:984](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L984)
 
 ***
 
@@ -53,7 +53,7 @@ title: "UserReference"
 
 #### Source
 
-[types.ts:985](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L985)
+[types.ts:985](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L985)
 
 ***
 
@@ -63,7 +63,7 @@ title: "UserReference"
 
 #### Source
 
-[types.ts:986](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L986)
+[types.ts:986](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L986)
 
 ***
 

@@ -13,7 +13,7 @@ title: "PlaybackState"
 
 #### Source
 
-[types.ts:1139](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1139)
+[types.ts:1139](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1139)
 
 ***
 
@@ -23,7 +23,7 @@ title: "PlaybackState"
 
 #### Source
 
-[types.ts:1133](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1133)
+[types.ts:1133](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1133)
 
 ***
 
@@ -33,7 +33,7 @@ title: "PlaybackState"
 
 #### Source
 
-[types.ts:1138](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1138)
+[types.ts:1138](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1138)
 
 ***
 
@@ -43,7 +43,7 @@ title: "PlaybackState"
 
 #### Source
 
-[types.ts:1130](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1130)
+[types.ts:1130](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1130)
 
 ***
 
@@ -53,7 +53,7 @@ title: "PlaybackState"
 
 #### Source
 
-[types.ts:1136](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1136)
+[types.ts:1136](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1136)
 
 ***
 
@@ -63,7 +63,7 @@ title: "PlaybackState"
 
 #### Source
 
-[types.ts:1137](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1137)
+[types.ts:1137](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1137)
 
 ***
 
@@ -73,7 +73,7 @@ title: "PlaybackState"
 
 #### Source
 
-[types.ts:1135](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1135)
+[types.ts:1135](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1135)
 
 ***
 
@@ -83,7 +83,7 @@ title: "PlaybackState"
 
 #### Source
 
-[types.ts:1131](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1131)
+[types.ts:1131](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1131)
 
 ***
 
@@ -93,7 +93,7 @@ title: "PlaybackState"
 
 #### Source
 
-[types.ts:1132](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1132)
+[types.ts:1132](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1132)
 
 ***
 
@@ -103,7 +103,7 @@ title: "PlaybackState"
 
 #### Source
 
-[types.ts:1134](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1134)
+[types.ts:1134](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1134)
 
 ***
 

@@ -27,7 +27,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:66](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L66)
+[Scopes.ts:66](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L66)
 
 ***
 
@@ -41,7 +41,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:2](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L2)
+[Scopes.ts:2](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L2)
 
 ***
 
@@ -55,7 +55,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:10](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L10)
+[Scopes.ts:10](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L10)
 
 ***
 
@@ -69,7 +69,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:6](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L6)
+[Scopes.ts:6](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L6)
 
 ***
 
@@ -83,7 +83,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:18](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L18)
+[Scopes.ts:18](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L18)
 
 ***
 
@@ -97,7 +97,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:38](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L38)
+[Scopes.ts:38](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L38)
 
 ***
 
@@ -111,7 +111,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L46)
+[Scopes.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L46)
 
 ***
 
@@ -125,7 +125,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:42](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L42)
+[Scopes.ts:42](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L42)
 
 ***
 
@@ -139,7 +139,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:22](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L22)
+[Scopes.ts:22](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L22)
 
 ***
 
@@ -153,7 +153,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:30](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L30)
+[Scopes.ts:30](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L30)
 
 ***
 
@@ -167,7 +167,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:26](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L26)
+[Scopes.ts:26](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L26)
 
 ***
 
@@ -181,7 +181,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:50](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L50)
+[Scopes.ts:50](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L50)
 
 ***
 
@@ -195,7 +195,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:62](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L62)
+[Scopes.ts:62](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L62)
 
 ***
 
@@ -209,7 +209,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:54](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L54)
+[Scopes.ts:54](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L54)
 
 ***
 
@@ -223,7 +223,7 @@ title: "Scopes"
 
 #### Source
 
-[Scopes.ts:34](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/Scopes.ts#L34)
+[Scopes.ts:34](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/Scopes.ts#L34)
 
 ***
 

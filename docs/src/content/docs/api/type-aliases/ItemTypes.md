@@ -9,7 +9,7 @@ title: "ItemTypes"
 
 ## Source
 
-[types.ts:83](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L83)
+[types.ts:83](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L83)
 
 ***
 

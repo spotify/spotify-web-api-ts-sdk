@@ -13,7 +13,7 @@ title: "AudioAnalysis"
 
 #### Source
 
-[types.ts:1038](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1038)
+[types.ts:1038](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1038)
 
 ***
 
@@ -23,7 +23,7 @@ title: "AudioAnalysis"
 
 #### Source
 
-[types.ts:1039](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1039)
+[types.ts:1039](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1039)
 
 ***
 
@@ -33,7 +33,7 @@ title: "AudioAnalysis"
 
 #### Source
 
-[types.ts:1036](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1036)
+[types.ts:1036](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1036)
 
 ***
 
@@ -43,7 +43,7 @@ title: "AudioAnalysis"
 
 #### Source
 
-[types.ts:1040](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1040)
+[types.ts:1040](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1040)
 
 ***
 
@@ -53,7 +53,7 @@ title: "AudioAnalysis"
 
 #### Source
 
-[types.ts:1041](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1041)
+[types.ts:1041](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1041)
 
 ***
 
@@ -63,7 +63,7 @@ title: "AudioAnalysis"
 
 #### Source
 
-[types.ts:1042](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1042)
+[types.ts:1042](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1042)
 
 ***
 
@@ -73,7 +73,7 @@ title: "AudioAnalysis"
 
 #### Source
 
-[types.ts:1037](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1037)
+[types.ts:1037](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1037)
 
 ***
 

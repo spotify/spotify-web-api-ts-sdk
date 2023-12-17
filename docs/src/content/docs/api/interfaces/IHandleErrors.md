@@ -21,7 +21,7 @@ title: "IHandleErrors"
 
 #### Source
 
-[types.ts:45](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L45)
+[types.ts:45](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L45)
 
 ***
 

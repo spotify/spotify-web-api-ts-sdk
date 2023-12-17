@@ -9,7 +9,7 @@ title: "Market"
 
 ## Source
 
-[types.ts:91](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L91)
+[types.ts:91](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L91)
 
 ***
 

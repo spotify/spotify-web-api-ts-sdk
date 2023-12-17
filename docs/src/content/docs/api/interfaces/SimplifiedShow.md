@@ -17,7 +17,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:912](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L912)
+[types.ts:912](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L912)
 
 ***
 
@@ -27,7 +27,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:913](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L913)
+[types.ts:913](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L913)
 
 ***
 
@@ -37,7 +37,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:914](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L914)
+[types.ts:914](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L914)
 
 ***
 
@@ -47,7 +47,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:916](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L916)
+[types.ts:916](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L916)
 
 ***
 
@@ -57,7 +57,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:917](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L917)
+[types.ts:917](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L917)
 
 ***
 
@@ -67,7 +67,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:918](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L918)
+[types.ts:918](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L918)
 
 ***
 
@@ -77,7 +77,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:915](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L915)
+[types.ts:915](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L915)
 
 ***
 
@@ -87,7 +87,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:919](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L919)
+[types.ts:919](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L919)
 
 ***
 
@@ -97,7 +97,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:920](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L920)
+[types.ts:920](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L920)
 
 ***
 
@@ -107,7 +107,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:921](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L921)
+[types.ts:921](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L921)
 
 ***
 
@@ -117,7 +117,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:922](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L922)
+[types.ts:922](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L922)
 
 ***
 
@@ -127,7 +127,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:923](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L923)
+[types.ts:923](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L923)
 
 ***
 
@@ -137,7 +137,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:924](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L924)
+[types.ts:924](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L924)
 
 ***
 
@@ -147,7 +147,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:925](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L925)
+[types.ts:925](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L925)
 
 ***
 
@@ -157,7 +157,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:928](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L928)
+[types.ts:928](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L928)
 
 ***
 
@@ -167,7 +167,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:926](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L926)
+[types.ts:926](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L926)
 
 ***
 
@@ -177,7 +177,7 @@ title: "SimplifiedShow"
 
 #### Source
 
-[types.ts:927](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L927)
+[types.ts:927](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L927)
 
 ***
 

@@ -13,7 +13,7 @@ title: "SavedAlbum"
 
 #### Source
 
-[types.ts:572](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L572)
+[types.ts:572](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L572)
 
 ***
 
@@ -23,7 +23,7 @@ title: "SavedAlbum"
 
 #### Source
 
-[types.ts:573](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L573)
+[types.ts:573](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L573)
 
 ***
 

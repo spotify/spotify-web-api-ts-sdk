@@ -17,7 +17,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:25](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L25)
+[endpoints/RecommendationsEndpoints.ts:25](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L25)
 
 ***
 
@@ -27,7 +27,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:26](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L26)
+[endpoints/RecommendationsEndpoints.ts:26](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L26)
 
 ***
 
@@ -37,7 +37,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:28](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L28)
+[endpoints/RecommendationsEndpoints.ts:28](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L28)
 
 ***
 
@@ -47,7 +47,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:31](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L31)
+[endpoints/RecommendationsEndpoints.ts:31](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L31)
 
 ***
 
@@ -57,7 +57,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:34](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L34)
+[endpoints/RecommendationsEndpoints.ts:34](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L34)
 
 ***
 
@@ -67,7 +67,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:37](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L37)
+[endpoints/RecommendationsEndpoints.ts:37](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L37)
 
 ***
 
@@ -77,7 +77,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:40](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L40)
+[endpoints/RecommendationsEndpoints.ts:40](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L40)
 
 ***
 
@@ -87,7 +87,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:43](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L43)
+[endpoints/RecommendationsEndpoints.ts:43](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L43)
 
 ***
 
@@ -97,7 +97,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L46)
+[endpoints/RecommendationsEndpoints.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L46)
 
 ***
 
@@ -107,7 +107,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:49](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L49)
+[endpoints/RecommendationsEndpoints.ts:49](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L49)
 
 ***
 
@@ -117,7 +117,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:52](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L52)
+[endpoints/RecommendationsEndpoints.ts:52](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L52)
 
 ***
 
@@ -127,7 +127,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:55](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L55)
+[endpoints/RecommendationsEndpoints.ts:55](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L55)
 
 ***
 
@@ -137,7 +137,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:58](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L58)
+[endpoints/RecommendationsEndpoints.ts:58](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L58)
 
 ***
 
@@ -147,7 +147,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:61](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L61)
+[endpoints/RecommendationsEndpoints.ts:61](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L61)
 
 ***
 
@@ -157,7 +157,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:64](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L64)
+[endpoints/RecommendationsEndpoints.ts:64](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L64)
 
 ***
 
@@ -167,7 +167,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:67](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L67)
+[endpoints/RecommendationsEndpoints.ts:67](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L67)
 
 ***
 
@@ -177,7 +177,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:27](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L27)
+[endpoints/RecommendationsEndpoints.ts:27](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L27)
 
 ***
 
@@ -187,7 +187,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:30](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L30)
+[endpoints/RecommendationsEndpoints.ts:30](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L30)
 
 ***
 
@@ -197,7 +197,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:33](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L33)
+[endpoints/RecommendationsEndpoints.ts:33](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L33)
 
 ***
 
@@ -207,7 +207,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:36](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L36)
+[endpoints/RecommendationsEndpoints.ts:36](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L36)
 
 ***
 
@@ -217,7 +217,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:39](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L39)
+[endpoints/RecommendationsEndpoints.ts:39](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L39)
 
 ***
 
@@ -227,7 +227,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:42](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L42)
+[endpoints/RecommendationsEndpoints.ts:42](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L42)
 
 ***
 
@@ -237,7 +237,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:45](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L45)
+[endpoints/RecommendationsEndpoints.ts:45](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L45)
 
 ***
 
@@ -247,7 +247,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:48](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L48)
+[endpoints/RecommendationsEndpoints.ts:48](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L48)
 
 ***
 
@@ -257,7 +257,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:51](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L51)
+[endpoints/RecommendationsEndpoints.ts:51](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L51)
 
 ***
 
@@ -267,7 +267,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:54](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L54)
+[endpoints/RecommendationsEndpoints.ts:54](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L54)
 
 ***
 
@@ -277,7 +277,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:57](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L57)
+[endpoints/RecommendationsEndpoints.ts:57](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L57)
 
 ***
 
@@ -287,7 +287,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:60](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L60)
+[endpoints/RecommendationsEndpoints.ts:60](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L60)
 
 ***
 
@@ -297,7 +297,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:63](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L63)
+[endpoints/RecommendationsEndpoints.ts:63](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L63)
 
 ***
 
@@ -307,7 +307,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:66](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L66)
+[endpoints/RecommendationsEndpoints.ts:66](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L66)
 
 ***
 
@@ -321,7 +321,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:18](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L18)
+[endpoints/RecommendationsEndpoints.ts:18](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L18)
 
 ***
 
@@ -335,7 +335,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:19](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L19)
+[endpoints/RecommendationsEndpoints.ts:19](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L19)
 
 ***
 
@@ -349,7 +349,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:20](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L20)
+[endpoints/RecommendationsEndpoints.ts:20](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L20)
 
 ***
 
@@ -359,7 +359,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:29](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L29)
+[endpoints/RecommendationsEndpoints.ts:29](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L29)
 
 ***
 
@@ -369,7 +369,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:32](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L32)
+[endpoints/RecommendationsEndpoints.ts:32](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L32)
 
 ***
 
@@ -379,7 +379,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:35](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L35)
+[endpoints/RecommendationsEndpoints.ts:35](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L35)
 
 ***
 
@@ -389,7 +389,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:38](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L38)
+[endpoints/RecommendationsEndpoints.ts:38](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L38)
 
 ***
 
@@ -399,7 +399,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:41](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L41)
+[endpoints/RecommendationsEndpoints.ts:41](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L41)
 
 ***
 
@@ -409,7 +409,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:44](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L44)
+[endpoints/RecommendationsEndpoints.ts:44](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L44)
 
 ***
 
@@ -419,7 +419,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:47](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L47)
+[endpoints/RecommendationsEndpoints.ts:47](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L47)
 
 ***
 
@@ -429,7 +429,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:50](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L50)
+[endpoints/RecommendationsEndpoints.ts:50](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L50)
 
 ***
 
@@ -439,7 +439,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:53](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L53)
+[endpoints/RecommendationsEndpoints.ts:53](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L53)
 
 ***
 
@@ -449,7 +449,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:56](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L56)
+[endpoints/RecommendationsEndpoints.ts:56](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L56)
 
 ***
 
@@ -459,7 +459,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:59](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L59)
+[endpoints/RecommendationsEndpoints.ts:59](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L59)
 
 ***
 
@@ -469,7 +469,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:62](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L62)
+[endpoints/RecommendationsEndpoints.ts:62](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L62)
 
 ***
 
@@ -479,7 +479,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:65](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L65)
+[endpoints/RecommendationsEndpoints.ts:65](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L65)
 
 ***
 
@@ -489,7 +489,7 @@ title: "RecommendationsRequest"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:68](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L68)
+[endpoints/RecommendationsEndpoints.ts:68](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L68)
 
 ***
 

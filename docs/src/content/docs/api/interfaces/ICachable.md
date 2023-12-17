@@ -13,7 +13,7 @@ title: "ICachable"
 
 #### Source
 
-[types.ts:69](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L69)
+[types.ts:69](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L69)
 
 ***
 
@@ -23,7 +23,7 @@ title: "ICachable"
 
 #### Source
 
-[types.ts:70](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L70)
+[types.ts:70](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L70)
 
 ***
 

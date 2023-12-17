@@ -17,7 +17,7 @@ title: "RecommendationsRequestRequiredArguments"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:18](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L18)
+[endpoints/RecommendationsEndpoints.ts:18](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L18)
 
 ***
 
@@ -27,7 +27,7 @@ title: "RecommendationsRequestRequiredArguments"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:19](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L19)
+[endpoints/RecommendationsEndpoints.ts:19](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L19)
 
 ***
 
@@ -37,7 +37,7 @@ title: "RecommendationsRequestRequiredArguments"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:20](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/endpoints/RecommendationsEndpoints.ts#L20)
+[endpoints/RecommendationsEndpoints.ts:20](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L20)
 
 ***
 

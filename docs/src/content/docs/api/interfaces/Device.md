@@ -13,7 +13,7 @@ title: "Device"
 
 #### Source
 
-[types.ts:1143](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1143)
+[types.ts:1143](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1143)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Device"
 
 #### Source
 
-[types.ts:1144](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1144)
+[types.ts:1144](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1144)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Device"
 
 #### Source
 
-[types.ts:1145](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1145)
+[types.ts:1145](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1145)
 
 ***
 
@@ -43,7 +43,7 @@ title: "Device"
 
 #### Source
 
-[types.ts:1146](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1146)
+[types.ts:1146](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1146)
 
 ***
 
@@ -53,7 +53,7 @@ title: "Device"
 
 #### Source
 
-[types.ts:1147](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1147)
+[types.ts:1147](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1147)
 
 ***
 
@@ -63,7 +63,7 @@ title: "Device"
 
 #### Source
 
-[types.ts:1148](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1148)
+[types.ts:1148](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1148)
 
 ***
 
@@ -73,7 +73,7 @@ title: "Device"
 
 #### Source
 
-[types.ts:1149](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L1149)
+[types.ts:1149](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1149)
 
 ***
 

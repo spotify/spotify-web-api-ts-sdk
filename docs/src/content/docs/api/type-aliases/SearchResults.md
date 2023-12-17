@@ -15,7 +15,7 @@ Makes all properties in SearchResults optional, unless the type T is a tuple (li
 
 ## Source
 
-[types.ts:737](https://github.com/fostertheweb/spotify-web-sdk/blob/9d7441b/src/types.ts#L737)
+[types.ts:737](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L737)
 
 ***
 
