@@ -2,7 +2,7 @@
 
 export type RequestImplementation = (
   input: RequestInfo | URL,
-  init?: RequestInit | undefined,
+  init?: RequestInit | undefined
 ) => Promise<Response>;
 
 export interface SdkOptions {
@@ -11,7 +11,7 @@ export interface SdkOptions {
   afterRequest?: (
     url: string,
     options: RequestInit,
-    response: Response,
+    response: Response
   ) => void;
   deserializer?: IResponseDeserializer;
   responseValidator?: IValidateResponses;
@@ -57,7 +57,7 @@ export interface ICachingStrategy {
   getOrCreate<T>(
     cacheKey: string,
     createFunction: () => Promise<T & ICachable & object>,
-    updateFunction?: (item: T) => Promise<T & ICachable & object>,
+    updateFunction?: (item: T) => Promise<T & ICachable & object>
   ): Promise<T & ICachable>;
 
   get<T>(cacheKey: string): Promise<(T & ICachable) | null>;
@@ -77,7 +77,7 @@ export type MaxInt<T extends number> = number extends T
   : _Range<T, []>;
 export type _Range<
   T extends number,
-  R extends unknown[],
+  R extends unknown[]
 > = R["length"] extends T ? R[number] | T : _Range<T, [R["length"], ...R]>;
 
 export type ItemTypes =
@@ -525,10 +525,10 @@ export type CountryCodeA2 =
   | "ZW";
 
 export type {
+  RecommendationSeed,
   RecommendationsRequest,
   RecommendationsRequestRequiredArguments,
   RecommendationsResponse,
-  RecommendationSeed,
 } from "./endpoints/RecommendationsEndpoints";
 
 export type QueryAdditionalTypes = ["episode"];

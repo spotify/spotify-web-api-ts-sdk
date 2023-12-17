@@ -1,6 +1,6 @@
 {
   "name": "@fostertheweb/spotify-web-sdk",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A TypeScript SDK for the Spotify Web API",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -17,6 +17,7 @@
   "author": "Spotify",
   "license": "Apache",
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.1",
     "@types/node": "^20.3.2",
     "@types/uuid": "^9.0.2",
