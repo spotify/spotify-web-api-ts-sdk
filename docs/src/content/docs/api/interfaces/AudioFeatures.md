@@ -13,7 +13,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1017](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1017)
+[types.ts:1017](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1017)
 
 ***
 
@@ -23,7 +23,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1026](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1026)
+[types.ts:1026](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1026)
 
 ***
 
@@ -33,7 +33,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1011](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1011)
+[types.ts:1011](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1011)
 
 ***
 
@@ -43,7 +43,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1027](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1027)
+[types.ts:1027](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1027)
 
 ***
 
@@ -53,7 +53,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1012](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1012)
+[types.ts:1012](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1012)
 
 ***
 
@@ -63,7 +63,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1023](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1023)
+[types.ts:1023](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1023)
 
 ***
 
@@ -73,7 +73,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1018](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1018)
+[types.ts:1018](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1018)
 
 ***
 
@@ -83,7 +83,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1013](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1013)
+[types.ts:1013](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1013)
 
 ***
 
@@ -93,7 +93,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1019](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1019)
+[types.ts:1019](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1019)
 
 ***
 
@@ -103,7 +103,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1014](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1014)
+[types.ts:1014](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1014)
 
 ***
 
@@ -113,7 +113,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1015](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1015)
+[types.ts:1015](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1015)
 
 ***
 
@@ -123,7 +123,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1016](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1016)
+[types.ts:1016](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1016)
 
 ***
 
@@ -133,7 +133,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1021](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1021)
+[types.ts:1021](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1021)
 
 ***
 
@@ -143,7 +143,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1028](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1028)
+[types.ts:1028](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1028)
 
 ***
 
@@ -153,7 +153,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1025](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1025)
+[types.ts:1025](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1025)
 
 ***
 
@@ -163,7 +163,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1022](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1022)
+[types.ts:1022](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1022)
 
 ***
 
@@ -173,7 +173,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1024](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1024)
+[types.ts:1024](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1024)
 
 ***
 
@@ -183,7 +183,7 @@ title: "AudioFeatures"
 
 #### Source
 
-[types.ts:1020](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1020)
+[types.ts:1020](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1020)
 
 ***
 

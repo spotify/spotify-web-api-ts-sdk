@@ -17,7 +17,7 @@ title: "IAuthStrategy"
 
 #### Source
 
-[auth/IAuthStrategy.ts:17](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/auth/IAuthStrategy.ts#L17)
+[auth/IAuthStrategy.ts:17](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/IAuthStrategy.ts#L17)
 
 ***
 
@@ -31,7 +31,7 @@ title: "IAuthStrategy"
 
 #### Source
 
-[auth/IAuthStrategy.ts:16](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/auth/IAuthStrategy.ts#L16)
+[auth/IAuthStrategy.ts:16](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/IAuthStrategy.ts#L16)
 
 ***
 
@@ -45,7 +45,7 @@ title: "IAuthStrategy"
 
 #### Source
 
-[auth/IAuthStrategy.ts:18](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/auth/IAuthStrategy.ts#L18)
+[auth/IAuthStrategy.ts:18](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/IAuthStrategy.ts#L18)
 
 ***
 
@@ -63,7 +63,7 @@ title: "IAuthStrategy"
 
 #### Source
 
-[auth/IAuthStrategy.ts:15](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/auth/IAuthStrategy.ts#L15)
+[auth/IAuthStrategy.ts:15](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/IAuthStrategy.ts#L15)
 
 ***
 

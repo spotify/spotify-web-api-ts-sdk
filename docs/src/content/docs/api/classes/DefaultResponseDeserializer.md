@@ -43,7 +43,7 @@ title: "DefaultResponseDeserializer"
 
 #### Source
 
-[serialization/DefaultResponseDeserializer.ts:6](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/serialization/DefaultResponseDeserializer.ts#L6)
+[serialization/DefaultResponseDeserializer.ts:6](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/serialization/DefaultResponseDeserializer.ts#L6)
 
 ***
 

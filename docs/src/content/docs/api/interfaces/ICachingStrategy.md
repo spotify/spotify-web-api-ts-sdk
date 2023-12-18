@@ -25,7 +25,7 @@ title: "ICachingStrategy"
 
 #### Source
 
-[types.ts:63](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L63)
+[types.ts:63](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L63)
 
 ***
 
@@ -51,7 +51,7 @@ title: "ICachingStrategy"
 
 #### Source
 
-[types.ts:57](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L57)
+[types.ts:57](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L57)
 
 ***
 
@@ -69,7 +69,7 @@ title: "ICachingStrategy"
 
 #### Source
 
-[types.ts:65](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L65)
+[types.ts:65](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L65)
 
 ***
 
@@ -93,7 +93,7 @@ title: "ICachingStrategy"
 
 #### Source
 
-[types.ts:64](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L64)
+[types.ts:64](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L64)
 
 ***
 

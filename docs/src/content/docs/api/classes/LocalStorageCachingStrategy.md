@@ -25,7 +25,7 @@ title: "LocalStorageCachingStrategy"
 
 #### Source
 
-[caching/LocalStorageCachingStrategy.ts:5](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/LocalStorageCachingStrategy.ts#L5)
+[caching/LocalStorageCachingStrategy.ts:5](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/LocalStorageCachingStrategy.ts#L5)
 
 ## Methods
 
@@ -51,7 +51,7 @@ title: "LocalStorageCachingStrategy"
 
 #### Source
 
-[caching/GenericCache.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/GenericCache.ts#L46)
+[caching/GenericCache.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/GenericCache.ts#L46)
 
 ***
 
@@ -81,7 +81,7 @@ title: "LocalStorageCachingStrategy"
 
 #### Source
 
-[caching/GenericCache.ts:20](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/GenericCache.ts#L20)
+[caching/GenericCache.ts:20](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/GenericCache.ts#L20)
 
 ***
 
@@ -103,7 +103,7 @@ title: "LocalStorageCachingStrategy"
 
 #### Source
 
-[caching/GenericCache.ts:93](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/GenericCache.ts#L93)
+[caching/GenericCache.ts:93](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/GenericCache.ts#L93)
 
 ***
 
@@ -129,7 +129,7 @@ title: "LocalStorageCachingStrategy"
 
 #### Source
 
-[caching/GenericCache.ts:82](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/GenericCache.ts#L82)
+[caching/GenericCache.ts:82](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/GenericCache.ts#L82)
 
 ***
 
@@ -153,7 +153,7 @@ title: "LocalStorageCachingStrategy"
 
 #### Source
 
-[caching/GenericCache.ts:88](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/GenericCache.ts#L88)
+[caching/GenericCache.ts:88](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/GenericCache.ts#L88)
 
 ***
 

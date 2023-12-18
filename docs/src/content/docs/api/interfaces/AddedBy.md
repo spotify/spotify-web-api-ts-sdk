@@ -13,7 +13,7 @@ title: "AddedBy"
 
 #### Source
 
-[types.ts:617](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L617)
+[types.ts:617](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L617)
 
 ***
 
@@ -23,7 +23,7 @@ title: "AddedBy"
 
 #### Source
 
-[types.ts:618](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L618)
+[types.ts:618](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L618)
 
 ***
 
@@ -33,7 +33,7 @@ title: "AddedBy"
 
 #### Source
 
-[types.ts:619](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L619)
+[types.ts:619](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L619)
 
 ***
 
@@ -43,7 +43,7 @@ title: "AddedBy"
 
 #### Source
 
-[types.ts:620](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L620)
+[types.ts:620](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L620)
 
 ***
 
@@ -53,7 +53,7 @@ title: "AddedBy"
 
 #### Source
 
-[types.ts:621](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L621)
+[types.ts:621](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L621)
 
 ***
 

@@ -15,21 +15,20 @@ export default defineConfig({
       components: {
         Hero: "./src/components/Hero.astro",
       },
+      customCss: ["./src/styles/custom.css"],
       social: {
         github: "https://github.com/fostertheweb/spotify-web-sdk",
       },
       sidebar: [
         {
           label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Getting Started", link: "/guides/quickstart/" },
-          ],
+          autogenerate: {
+            directory: "guides",
+          },
         },
-        typeDocSidebarGroup,
         {
+          ...typeDocSidebarGroup,
           label: "Reference",
-          autogenerate: { directory: "reference" },
         },
       ],
     }),

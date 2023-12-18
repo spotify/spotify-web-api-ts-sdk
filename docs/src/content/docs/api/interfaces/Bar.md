@@ -13,7 +13,7 @@ title: "Bar"
 
 #### Source
 
-[types.ts:1087](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1087)
+[types.ts:1087](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1087)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Bar"
 
 #### Source
 
-[types.ts:1086](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1086)
+[types.ts:1086](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1086)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Bar"
 
 #### Source
 
-[types.ts:1085](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1085)
+[types.ts:1085](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1085)
 
 ***
 

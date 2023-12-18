@@ -13,7 +13,7 @@ title: "SnapshotReference"
 
 #### Source
 
-[types.ts:941](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L941)
+[types.ts:941](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L941)
 
 ***
 

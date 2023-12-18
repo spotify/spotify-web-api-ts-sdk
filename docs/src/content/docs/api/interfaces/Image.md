@@ -13,7 +13,7 @@ title: "Image"
 
 #### Source
 
-[types.ts:764](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L764)
+[types.ts:764](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L764)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Image"
 
 #### Source
 
-[types.ts:763](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L763)
+[types.ts:763](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L763)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Image"
 
 #### Source
 
-[types.ts:765](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L765)
+[types.ts:765](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L765)
 
 ***
 

@@ -39,7 +39,7 @@ title: "NoOpErrorHandler"
 
 #### Source
 
-[errorhandling/NoOpErrorHandler.ts:4](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/errorhandling/NoOpErrorHandler.ts#L4)
+[errorhandling/NoOpErrorHandler.ts:4](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/errorhandling/NoOpErrorHandler.ts#L4)
 
 ***
 

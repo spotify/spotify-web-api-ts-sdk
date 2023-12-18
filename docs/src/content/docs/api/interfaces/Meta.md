@@ -13,7 +13,7 @@ title: "Meta"
 
 #### Source
 
-[types.ts:1051](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1051)
+[types.ts:1051](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1051)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Meta"
 
 #### Source
 
-[types.ts:1046](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1046)
+[types.ts:1046](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1046)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Meta"
 
 #### Source
 
-[types.ts:1048](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1048)
+[types.ts:1048](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1048)
 
 ***
 
@@ -43,7 +43,7 @@ title: "Meta"
 
 #### Source
 
-[types.ts:1052](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1052)
+[types.ts:1052](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1052)
 
 ***
 
@@ -53,7 +53,7 @@ title: "Meta"
 
 #### Source
 
-[types.ts:1047](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1047)
+[types.ts:1047](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1047)
 
 ***
 
@@ -63,7 +63,7 @@ title: "Meta"
 
 #### Source
 
-[types.ts:1049](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1049)
+[types.ts:1049](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1049)
 
 ***
 
@@ -73,7 +73,7 @@ title: "Meta"
 
 #### Source
 
-[types.ts:1050](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1050)
+[types.ts:1050](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1050)
 
 ***
 

@@ -13,7 +13,7 @@ title: "AudioFeaturesCollection"
 
 #### Source
 
-[types.ts:1032](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1032)
+[types.ts:1032](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1032)
 
 ***
 

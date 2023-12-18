@@ -23,7 +23,7 @@ title: "RecentlyPlayedTracksPage"
 
 #### Source
 
-[types.ts:1180](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1180)
+[types.ts:1180](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1180)
 
 ***
 
@@ -33,7 +33,7 @@ title: "RecentlyPlayedTracksPage"
 
 #### Source
 
-[types.ts:1177](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1177)
+[types.ts:1177](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1177)
 
 ***
 
@@ -43,7 +43,7 @@ title: "RecentlyPlayedTracksPage"
 
 #### Source
 
-[types.ts:1185](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1185)
+[types.ts:1185](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1185)
 
 ***
 
@@ -53,7 +53,7 @@ title: "RecentlyPlayedTracksPage"
 
 #### Source
 
-[types.ts:1178](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1178)
+[types.ts:1178](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1178)
 
 ***
 
@@ -63,7 +63,7 @@ title: "RecentlyPlayedTracksPage"
 
 #### Source
 
-[types.ts:1179](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1179)
+[types.ts:1179](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1179)
 
 ***
 
@@ -73,7 +73,7 @@ title: "RecentlyPlayedTracksPage"
 
 #### Source
 
-[types.ts:1184](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1184)
+[types.ts:1184](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1184)
 
 ***
 

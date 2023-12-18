@@ -17,7 +17,7 @@ title: "SimplifiedArtist"
 
 #### Source
 
-[types.ts:676](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L676)
+[types.ts:676](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L676)
 
 ***
 
@@ -27,7 +27,7 @@ title: "SimplifiedArtist"
 
 #### Source
 
-[types.ts:677](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L677)
+[types.ts:677](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L677)
 
 ***
 
@@ -37,7 +37,7 @@ title: "SimplifiedArtist"
 
 #### Source
 
-[types.ts:678](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L678)
+[types.ts:678](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L678)
 
 ***
 
@@ -47,7 +47,7 @@ title: "SimplifiedArtist"
 
 #### Source
 
-[types.ts:679](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L679)
+[types.ts:679](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L679)
 
 ***
 
@@ -57,7 +57,7 @@ title: "SimplifiedArtist"
 
 #### Source
 
-[types.ts:680](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L680)
+[types.ts:680](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L680)
 
 ***
 
@@ -67,7 +67,7 @@ title: "SimplifiedArtist"
 
 #### Source
 
-[types.ts:681](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L681)
+[types.ts:681](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L681)
 
 ***
 

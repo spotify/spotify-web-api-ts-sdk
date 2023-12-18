@@ -13,7 +13,7 @@ title: "Segment"
 
 #### Source
 
-[types.ts:1114](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1114)
+[types.ts:1114](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1114)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Segment"
 
 #### Source
 
-[types.ts:1113](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1113)
+[types.ts:1113](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1113)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Segment"
 
 #### Source
 
-[types.ts:1118](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1118)
+[types.ts:1118](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1118)
 
 ***
 
@@ -43,7 +43,7 @@ title: "Segment"
 
 #### Source
 
-[types.ts:1116](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1116)
+[types.ts:1116](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1116)
 
 ***
 
@@ -53,7 +53,7 @@ title: "Segment"
 
 #### Source
 
-[types.ts:1117](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1117)
+[types.ts:1117](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1117)
 
 ***
 
@@ -63,7 +63,7 @@ title: "Segment"
 
 #### Source
 
-[types.ts:1115](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1115)
+[types.ts:1115](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1115)
 
 ***
 
@@ -73,7 +73,7 @@ title: "Segment"
 
 #### Source
 
-[types.ts:1119](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1119)
+[types.ts:1119](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1119)
 
 ***
 
@@ -83,7 +83,7 @@ title: "Segment"
 
 #### Source
 
-[types.ts:1112](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1112)
+[types.ts:1112](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1112)
 
 ***
 
@@ -93,7 +93,7 @@ title: "Segment"
 
 #### Source
 
-[types.ts:1120](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1120)
+[types.ts:1120](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1120)
 
 ***
 

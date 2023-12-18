@@ -3,7 +3,7 @@ import CallToAction from '@astrojs/starlight/components/CallToAction.astro';
 import type { Props } from '@astrojs/starlight/props';
 
 const { data } = Astro.props.entry;
-const { title = data.title, tagline, image, actions = [] } = data.hero || {};
+const { title = data.title, tagline, actions = [] } = data.hero || {};
 ---
 
 <div class="hero">
@@ -68,9 +68,8 @@ const { title = data.title, tagline, image, actions = [] } = data.hero || {};
 
 	@media (min-width: 50rem) {
 		.hero {
-			grid-template-columns: 7fr 4fr;
 			gap: 3%;
-			padding-block: clamp(2.5rem, calc(1rem + 10vmin), 10rem);
+			padding-block: clamp(2.5rem, calc(1rem + 2.5vmin), 10rem);
 		}
 
 		.stack {

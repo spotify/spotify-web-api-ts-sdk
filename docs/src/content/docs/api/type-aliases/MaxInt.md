@@ -13,7 +13,7 @@ title: "MaxInt"
 
 ## Source
 
-[types.ts:75](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L75)
+[types.ts:75](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L75)
 
 ***
 

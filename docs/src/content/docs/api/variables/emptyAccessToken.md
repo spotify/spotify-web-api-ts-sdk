@@ -9,7 +9,7 @@ title: "emptyAccessToken"
 
 ## Source
 
-[auth/IAuthStrategy.ts:3](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/auth/IAuthStrategy.ts#L3)
+[auth/IAuthStrategy.ts:3](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/IAuthStrategy.ts#L3)
 
 ***
 

@@ -36,7 +36,7 @@ title: "GenericCache"
 
 #### Source
 
-[caching/GenericCache.ts:6](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/GenericCache.ts#L6)
+[caching/GenericCache.ts:6](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/GenericCache.ts#L6)
 
 ## Methods
 
@@ -62,7 +62,7 @@ title: "GenericCache"
 
 #### Source
 
-[caching/GenericCache.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/GenericCache.ts#L46)
+[caching/GenericCache.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/GenericCache.ts#L46)
 
 ***
 
@@ -92,7 +92,7 @@ title: "GenericCache"
 
 #### Source
 
-[caching/GenericCache.ts:20](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/GenericCache.ts#L20)
+[caching/GenericCache.ts:20](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/GenericCache.ts#L20)
 
 ***
 
@@ -114,7 +114,7 @@ title: "GenericCache"
 
 #### Source
 
-[caching/GenericCache.ts:93](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/GenericCache.ts#L93)
+[caching/GenericCache.ts:93](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/GenericCache.ts#L93)
 
 ***
 
@@ -136,7 +136,7 @@ title: "GenericCache"
 
 #### Source
 
-[caching/GenericCache.ts:82](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/GenericCache.ts#L82)
+[caching/GenericCache.ts:82](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/GenericCache.ts#L82)
 
 ***
 
@@ -160,7 +160,7 @@ title: "GenericCache"
 
 #### Source
 
-[caching/GenericCache.ts:88](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/caching/GenericCache.ts#L88)
+[caching/GenericCache.ts:88](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/caching/GenericCache.ts#L88)
 
 ***
 
