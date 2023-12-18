@@ -9,7 +9,7 @@ title: "PartialSearchResult"
 
 ## Source
 
-[types.ts:728](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L728)
+[types.ts:728](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L728)
 
 ***
 

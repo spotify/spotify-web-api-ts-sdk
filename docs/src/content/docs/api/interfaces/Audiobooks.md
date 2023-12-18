@@ -13,7 +13,7 @@ title: "Audiobooks"
 
 #### Source
 
-[types.ts:795](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L795)
+[types.ts:795](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L795)
 
 ***
 

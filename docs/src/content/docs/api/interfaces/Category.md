@@ -13,7 +13,7 @@ title: "Category"
 
 #### Source
 
-[types.ts:819](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L819)
+[types.ts:819](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L819)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Category"
 
 #### Source
 
-[types.ts:820](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L820)
+[types.ts:820](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L820)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Category"
 
 #### Source
 
-[types.ts:821](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L821)
+[types.ts:821](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L821)
 
 ***
 
@@ -43,7 +43,7 @@ title: "Category"
 
 #### Source
 
-[types.ts:822](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L822)
+[types.ts:822](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L822)
 
 ***
 

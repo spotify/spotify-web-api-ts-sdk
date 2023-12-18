@@ -13,7 +13,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1099](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1099)
+[types.ts:1099](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1099)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1098](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1098)
+[types.ts:1098](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1098)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1103](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1103)
+[types.ts:1103](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1103)
 
 ***
 
@@ -43,7 +43,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1104](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1104)
+[types.ts:1104](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1104)
 
 ***
 
@@ -53,7 +53,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1100](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1100)
+[types.ts:1100](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1100)
 
 ***
 
@@ -63,7 +63,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1105](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1105)
+[types.ts:1105](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1105)
 
 ***
 
@@ -73,7 +73,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1106](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1106)
+[types.ts:1106](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1106)
 
 ***
 
@@ -83,7 +83,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1097](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1097)
+[types.ts:1097](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1097)
 
 ***
 
@@ -93,7 +93,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1101](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1101)
+[types.ts:1101](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1101)
 
 ***
 
@@ -103,7 +103,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1102](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1102)
+[types.ts:1102](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1102)
 
 ***
 
@@ -113,7 +113,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1107](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1107)
+[types.ts:1107](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1107)
 
 ***
 
@@ -123,7 +123,7 @@ title: "Section"
 
 #### Source
 
-[types.ts:1108](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1108)
+[types.ts:1108](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1108)
 
 ***
 

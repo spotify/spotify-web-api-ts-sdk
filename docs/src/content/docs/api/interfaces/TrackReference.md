@@ -13,7 +13,7 @@ title: "TrackReference"
 
 #### Source
 
-[types.ts:976](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L976)
+[types.ts:976](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L976)
 
 ***
 
@@ -23,7 +23,7 @@ title: "TrackReference"
 
 #### Source
 
-[types.ts:977](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L977)
+[types.ts:977](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L977)
 
 ***
 

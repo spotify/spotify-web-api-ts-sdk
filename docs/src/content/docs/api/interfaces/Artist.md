@@ -21,7 +21,7 @@ title: "Artist"
 
 #### Source
 
-[types.ts:676](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L676)
+[types.ts:676](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L676)
 
 ***
 
@@ -31,7 +31,7 @@ title: "Artist"
 
 #### Source
 
-[types.ts:685](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L685)
+[types.ts:685](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L685)
 
 ***
 
@@ -41,7 +41,7 @@ title: "Artist"
 
 #### Source
 
-[types.ts:686](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L686)
+[types.ts:686](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L686)
 
 ***
 
@@ -55,7 +55,7 @@ title: "Artist"
 
 #### Source
 
-[types.ts:677](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L677)
+[types.ts:677](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L677)
 
 ***
 
@@ -69,7 +69,7 @@ title: "Artist"
 
 #### Source
 
-[types.ts:678](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L678)
+[types.ts:678](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L678)
 
 ***
 
@@ -79,7 +79,7 @@ title: "Artist"
 
 #### Source
 
-[types.ts:687](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L687)
+[types.ts:687](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L687)
 
 ***
 
@@ -93,7 +93,7 @@ title: "Artist"
 
 #### Source
 
-[types.ts:679](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L679)
+[types.ts:679](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L679)
 
 ***
 
@@ -103,7 +103,7 @@ title: "Artist"
 
 #### Source
 
-[types.ts:688](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L688)
+[types.ts:688](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L688)
 
 ***
 
@@ -117,7 +117,7 @@ title: "Artist"
 
 #### Source
 
-[types.ts:680](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L680)
+[types.ts:680](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L680)
 
 ***
 
@@ -131,7 +131,7 @@ title: "Artist"
 
 #### Source
 
-[types.ts:681](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L681)
+[types.ts:681](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L681)
 
 ***
 

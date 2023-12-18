@@ -13,7 +13,7 @@ title: "Restrictions"
 
 #### Source
 
-[types.ts:867](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L867)
+[types.ts:867](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L867)
 
 ***
 

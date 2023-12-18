@@ -13,7 +13,7 @@ title: "Artists"
 
 #### Source
 
-[types.ts:692](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L692)
+[types.ts:692](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L692)
 
 ***
 

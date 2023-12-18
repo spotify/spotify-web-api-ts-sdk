@@ -13,7 +13,7 @@ title: "PlayHistory"
 
 #### Source
 
-[types.ts:1191](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1191)
+[types.ts:1191](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1191)
 
 ***
 
@@ -23,7 +23,7 @@ title: "PlayHistory"
 
 #### Source
 
-[types.ts:1190](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1190)
+[types.ts:1190](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1190)
 
 ***
 
@@ -33,7 +33,7 @@ title: "PlayHistory"
 
 #### Source
 
-[types.ts:1189](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1189)
+[types.ts:1189](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1189)
 
 ***
 

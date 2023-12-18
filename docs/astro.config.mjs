@@ -11,9 +11,12 @@ const typeDocSidebarGroup = await generateTypeDoc({
 export default defineConfig({
   integrations: [
     starlight({
-      title: "My Docs",
+      title: "Spotify Web SDK",
+      components: {
+        Hero: "./src/components/Hero.astro",
+      },
       social: {
-        github: "https://github.com/withastro/starlight",
+        github: "https://github.com/fostertheweb/spotify-web-sdk",
       },
       sidebar: [
         {

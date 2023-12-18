@@ -13,7 +13,7 @@ title: "Context"
 
 #### Source
 
-[types.ts:1159](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1159)
+[types.ts:1159](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1159)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Context"
 
 #### Source
 
-[types.ts:1158](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1158)
+[types.ts:1158](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1158)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Context"
 
 #### Source
 
-[types.ts:1157](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1157)
+[types.ts:1157](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1157)
 
 ***
 
@@ -43,7 +43,7 @@ title: "Context"
 
 #### Source
 
-[types.ts:1160](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1160)
+[types.ts:1160](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1160)
 
 ***
 

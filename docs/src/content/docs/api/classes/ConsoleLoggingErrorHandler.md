@@ -39,7 +39,7 @@ title: "ConsoleLoggingErrorHandler"
 
 #### Source
 
-[errorhandling/ConsoleLoggingErrorHandler.ts:4](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/errorhandling/ConsoleLoggingErrorHandler.ts#L4)
+[errorhandling/ConsoleLoggingErrorHandler.ts:4](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/errorhandling/ConsoleLoggingErrorHandler.ts#L4)
 
 ***
 

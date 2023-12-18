@@ -21,7 +21,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:546](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L546)
+[types.ts:546](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L546)
 
 ***
 
@@ -31,7 +31,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:577](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L577)
+[types.ts:577](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L577)
 
 ***
 
@@ -45,7 +45,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:547](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L547)
+[types.ts:547](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L547)
 
 ***
 
@@ -59,7 +59,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:548](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L548)
+[types.ts:548](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L548)
 
 ***
 
@@ -73,7 +73,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:549](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L549)
+[types.ts:549](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L549)
 
 ***
 
@@ -87,7 +87,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:550](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L550)
+[types.ts:550](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L550)
 
 ***
 
@@ -101,7 +101,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:551](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L551)
+[types.ts:551](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L551)
 
 ***
 
@@ -115,7 +115,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:552](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L552)
+[types.ts:552](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L552)
 
 ***
 
@@ -129,7 +129,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:553](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L553)
+[types.ts:553](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L553)
 
 ***
 
@@ -143,7 +143,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:554](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L554)
+[types.ts:554](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L554)
 
 ***
 
@@ -157,7 +157,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:555](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L555)
+[types.ts:555](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L555)
 
 ***
 
@@ -171,7 +171,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:556](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L556)
+[types.ts:556](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L556)
 
 ***
 
@@ -185,7 +185,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:557](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L557)
+[types.ts:557](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L557)
 
 ***
 
@@ -199,7 +199,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:558](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L558)
+[types.ts:558](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L558)
 
 ***
 
@@ -213,7 +213,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:559](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L559)
+[types.ts:559](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L559)
 
 ***
 
@@ -227,7 +227,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:560](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L560)
+[types.ts:560](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L560)
 
 ***
 
@@ -241,7 +241,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:561](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L561)
+[types.ts:561](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L561)
 
 ***
 
@@ -251,7 +251,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:578](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L578)
+[types.ts:578](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L578)
 
 ***
 
@@ -265,7 +265,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:562](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L562)
+[types.ts:562](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L562)
 
 ***
 
@@ -279,7 +279,7 @@ title: "Album"
 
 #### Source
 
-[types.ts:563](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L563)
+[types.ts:563](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L563)
 
 ***
 

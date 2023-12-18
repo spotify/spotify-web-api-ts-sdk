@@ -13,7 +13,7 @@ title: "Copyright"
 
 #### Source
 
-[types.ts:590](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L590)
+[types.ts:590](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L590)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Copyright"
 
 #### Source
 
-[types.ts:591](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L591)
+[types.ts:591](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L591)
 
 ***
 

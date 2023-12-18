@@ -39,7 +39,7 @@ title: "DefaultResponseValidator"
 
 #### Source
 
-[responsevalidation/DefaultResponseValidator.ts:4](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/responsevalidation/DefaultResponseValidator.ts#L4)
+[responsevalidation/DefaultResponseValidator.ts:4](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/responsevalidation/DefaultResponseValidator.ts#L4)
 
 ***
 

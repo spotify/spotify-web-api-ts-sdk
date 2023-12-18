@@ -17,6 +17,7 @@ title: "@fostertheweb/spotify-web-sdk"
 - [InMemoryCachingStrategy](/api/classes/inmemorycachingstrategy/)
 - [LocalStorageCachingStrategy](/api/classes/localstoragecachingstrategy/)
 - [NoOpErrorHandler](/api/classes/nooperrorhandler/)
+- [ProvidedAccessTokenStrategy](/api/classes/providedaccesstokenstrategy/)
 - [Scopes](/api/classes/scopes/)
 - [SpotifyApi](/api/classes/spotifyapi/)
 

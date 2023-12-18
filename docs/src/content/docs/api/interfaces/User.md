@@ -17,7 +17,7 @@ title: "User"
 
 #### Source
 
-[types.ts:990](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L990)
+[types.ts:990](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L990)
 
 ***
 
@@ -27,7 +27,7 @@ title: "User"
 
 #### Source
 
-[types.ts:991](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L991)
+[types.ts:991](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L991)
 
 ***
 
@@ -37,7 +37,7 @@ title: "User"
 
 #### Source
 
-[types.ts:992](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L992)
+[types.ts:992](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L992)
 
 ***
 
@@ -47,7 +47,7 @@ title: "User"
 
 #### Source
 
-[types.ts:993](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L993)
+[types.ts:993](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L993)
 
 ***
 
@@ -57,7 +57,7 @@ title: "User"
 
 #### Source
 
-[types.ts:994](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L994)
+[types.ts:994](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L994)
 
 ***
 
@@ -67,7 +67,7 @@ title: "User"
 
 #### Source
 
-[types.ts:995](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L995)
+[types.ts:995](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L995)
 
 ***
 
@@ -77,7 +77,7 @@ title: "User"
 
 #### Source
 
-[types.ts:996](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L996)
+[types.ts:996](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L996)
 
 ***
 
@@ -87,7 +87,7 @@ title: "User"
 
 #### Source
 
-[types.ts:997](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L997)
+[types.ts:997](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L997)
 
 ***
 
@@ -97,7 +97,7 @@ title: "User"
 
 #### Source
 
-[types.ts:998](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L998)
+[types.ts:998](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L998)
 
 ***
 

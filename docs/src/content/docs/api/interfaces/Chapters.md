@@ -13,7 +13,7 @@ title: "Chapters"
 
 #### Source
 
-[types.ts:859](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L859)
+[types.ts:859](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L859)
 
 ***
 

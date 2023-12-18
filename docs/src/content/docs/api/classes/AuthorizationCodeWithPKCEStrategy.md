@@ -29,7 +29,7 @@ title: "AuthorizationCodeWithPKCEStrategy"
 
 #### Source
 
-[auth/AuthorizationCodeWithPKCEStrategy.ts:25](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/auth/AuthorizationCodeWithPKCEStrategy.ts#L25)
+[auth/AuthorizationCodeWithPKCEStrategy.ts:25](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/auth/AuthorizationCodeWithPKCEStrategy.ts#L25)
 
 ## Methods
 
@@ -47,7 +47,7 @@ title: "AuthorizationCodeWithPKCEStrategy"
 
 #### Source
 
-[auth/AuthorizationCodeWithPKCEStrategy.ts:53](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/auth/AuthorizationCodeWithPKCEStrategy.ts#L53)
+[auth/AuthorizationCodeWithPKCEStrategy.ts:53](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/auth/AuthorizationCodeWithPKCEStrategy.ts#L53)
 
 ***
 
@@ -65,7 +65,7 @@ title: "AuthorizationCodeWithPKCEStrategy"
 
 #### Source
 
-[auth/AuthorizationCodeWithPKCEStrategy.ts:35](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/auth/AuthorizationCodeWithPKCEStrategy.ts#L35)
+[auth/AuthorizationCodeWithPKCEStrategy.ts:35](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/auth/AuthorizationCodeWithPKCEStrategy.ts#L35)
 
 ***
 
@@ -83,7 +83,7 @@ title: "AuthorizationCodeWithPKCEStrategy"
 
 #### Source
 
-[auth/AuthorizationCodeWithPKCEStrategy.ts:60](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/auth/AuthorizationCodeWithPKCEStrategy.ts#L60)
+[auth/AuthorizationCodeWithPKCEStrategy.ts:60](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/auth/AuthorizationCodeWithPKCEStrategy.ts#L60)
 
 ***
 
@@ -105,7 +105,7 @@ title: "AuthorizationCodeWithPKCEStrategy"
 
 #### Source
 
-[auth/AuthorizationCodeWithPKCEStrategy.ts:31](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/auth/AuthorizationCodeWithPKCEStrategy.ts#L31)
+[auth/AuthorizationCodeWithPKCEStrategy.ts:31](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/auth/AuthorizationCodeWithPKCEStrategy.ts#L31)
 
 ***
 

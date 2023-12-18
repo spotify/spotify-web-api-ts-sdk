@@ -13,7 +13,7 @@ title: "RecommendationsResponse"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:72](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L72)
+[endpoints/RecommendationsEndpoints.ts:72](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/endpoints/RecommendationsEndpoints.ts#L72)
 
 ***
 
@@ -23,7 +23,7 @@ title: "RecommendationsResponse"
 
 #### Source
 
-[endpoints/RecommendationsEndpoints.ts:73](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/endpoints/RecommendationsEndpoints.ts#L73)
+[endpoints/RecommendationsEndpoints.ts:73](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/endpoints/RecommendationsEndpoints.ts#L73)
 
 ***
 

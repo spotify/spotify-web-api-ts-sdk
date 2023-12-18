@@ -17,7 +17,7 @@ title: "IRedirectionStrategy"
 
 #### Source
 
-[types.ts:41](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L41)
+[types.ts:41](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L41)
 
 ***
 
@@ -35,7 +35,7 @@ title: "IRedirectionStrategy"
 
 #### Source
 
-[types.ts:40](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L40)
+[types.ts:40](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L40)
 
 ***
 

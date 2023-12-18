@@ -13,7 +13,7 @@ title: "Author"
 
 #### Source
 
-[types.ts:832](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L832)
+[types.ts:832](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L832)
 
 ***
 

@@ -13,7 +13,7 @@ title: "Tatum"
 
 #### Source
 
-[types.ts:1126](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1126)
+[types.ts:1126](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1126)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Tatum"
 
 #### Source
 
-[types.ts:1125](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1125)
+[types.ts:1125](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1125)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Tatum"
 
 #### Source
 
-[types.ts:1124](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1124)
+[types.ts:1124](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1124)
 
 ***
 

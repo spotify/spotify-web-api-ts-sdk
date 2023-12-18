@@ -17,7 +17,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:1002](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1002)
+[types.ts:1002](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1002)
 
 ***
 
@@ -31,7 +31,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:990](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L990)
+[types.ts:990](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L990)
 
 ***
 
@@ -45,7 +45,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:991](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L991)
+[types.ts:991](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L991)
 
 ***
 
@@ -65,7 +65,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:1003](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1003)
+[types.ts:1003](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1003)
 
 ***
 
@@ -79,7 +79,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:992](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L992)
+[types.ts:992](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L992)
 
 ***
 
@@ -93,7 +93,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:993](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L993)
+[types.ts:993](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L993)
 
 ***
 
@@ -107,7 +107,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:994](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L994)
+[types.ts:994](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L994)
 
 ***
 
@@ -121,7 +121,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:995](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L995)
+[types.ts:995](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L995)
 
 ***
 
@@ -135,7 +135,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:996](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L996)
+[types.ts:996](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L996)
 
 ***
 
@@ -145,7 +145,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:1007](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L1007)
+[types.ts:1007](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L1007)
 
 ***
 
@@ -159,7 +159,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:997](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L997)
+[types.ts:997](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L997)
 
 ***
 
@@ -173,7 +173,7 @@ title: "UserProfile"
 
 #### Source
 
-[types.ts:998](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L998)
+[types.ts:998](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L998)
 
 ***
 

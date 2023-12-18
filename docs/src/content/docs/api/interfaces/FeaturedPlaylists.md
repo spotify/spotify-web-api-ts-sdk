@@ -13,7 +13,7 @@ title: "FeaturedPlaylists"
 
 #### Source
 
-[types.ts:967](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L967)
+[types.ts:967](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L967)
 
 ***
 
@@ -23,7 +23,7 @@ title: "FeaturedPlaylists"
 
 #### Source
 
-[types.ts:968](https://github.com/fostertheweb/spotify-web-sdk/blob/eb6b780/src/types.ts#L968)
+[types.ts:968](https://github.com/fostertheweb/spotify-web-sdk/blob/b2835c1/src/types.ts#L968)
 
 ***
 
