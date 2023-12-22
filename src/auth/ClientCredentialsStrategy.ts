@@ -10,8 +10,7 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
 
     constructor(
         private clientId: string,
-        private clientSecret: string,
-        private scopes: string[] = []
+        private clientSecret: string
     ) {
     }
 
@@ -46,8 +45,7 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
 
     private async getTokenFromApi(): Promise<AccessToken> {
         const options = {
-            grant_type: 'client_credentials',
-            scope: this.scopes.join(' ')
+            grant_type: 'client_credentials'
         } as any;
 
         const bodyAsString = Object.keys(options).map(key => key + '=' + options[key]).join('&');
