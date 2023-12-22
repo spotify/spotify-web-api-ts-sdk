@@ -169,8 +169,8 @@ export class SpotifyApi {
         return new SpotifyApi(strategy, config);
     }
 
-    public static withClientCredentials(clientId: string, clientSecret: string, scopes: string[] = [], config?: SdkOptions): SpotifyApi {
-        const strategy = new ClientCredentialsStrategy(clientId, clientSecret, scopes);
+    public static withClientCredentials(clientId: string, clientSecret: string, config?: SdkOptions): SpotifyApi {//change
+        const strategy = new ClientCredentialsStrategy(clientId, clientSecret);
         return new SpotifyApi(strategy, config);
     }
 
