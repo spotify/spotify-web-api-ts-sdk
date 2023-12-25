@@ -1,36 +1,36 @@
+import AuthorizationCodeWithPKCEStrategy from "./auth/AuthorizationCodeWithPKCEStrategy.js";
+import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy.js";
+import IAuthStrategy, { isEmptyAccessToken } from "./auth/IAuthStrategy.js";
+import ImplicitGrantStrategy from "./auth/ImplicitGrantStrategy.js";
+import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy.js";
+import InMemoryCachingStrategy from "./caching/InMemoryCachingStrategy.js";
+import LocalStorageCachingStrategy from "./caching/LocalStorageCachingStrategy.js";
 import AlbumsEndpoints from "./endpoints/AlbumsEndpoints.js";
 import ArtistsEndpoints from "./endpoints/ArtistsEndpoints.js";
 import AudiobooksEndpoints from "./endpoints/AudiobooksEndpoints.js";
 import BrowseEndpoints from "./endpoints/BrowseEndpoints.js";
 import ChaptersEndpoints from "./endpoints/ChaptersEndpoints.js";
+import CurrentUserEndpoints from "./endpoints/CurrentUserEndpoints.js";
 import EpisodesEndpoints from "./endpoints/EpisodesEndpoints.js";
-import RecommendationsEndpoints from "./endpoints/RecommendationsEndpoints.js";
 import MarketsEndpoints from "./endpoints/MarketsEndpoints.js";
 import PlayerEndpoints from "./endpoints/PlayerEndpoints.js";
 import PlaylistsEndpoints from "./endpoints/PlaylistsEndpoints.js";
+import RecommendationsEndpoints from "./endpoints/RecommendationsEndpoints.js";
 import SearchEndpoints, {
   SearchExecutionFunction,
 } from "./endpoints/SearchEndpoints.js";
 import ShowsEndpoints from "./endpoints/ShowsEndpoints.js";
 import TracksEndpoints from "./endpoints/TracksEndpoints.js";
-import IAuthStrategy, { isEmptyAccessToken } from "./auth/IAuthStrategy.js";
 import UsersEndpoints from "./endpoints/UsersEndpoints.js";
-import CurrentUserEndpoints from "./endpoints/CurrentUserEndpoints.js";
-import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy.js";
-import ImplicitGrantStrategy from "./auth/ImplicitGrantStrategy.js";
-import AuthorizationCodeWithPKCEStrategy from "./auth/AuthorizationCodeWithPKCEStrategy.js";
-import DefaultResponseDeserializer from "./serialization/DefaultResponseDeserializer.js";
-import DefaultResponseValidator from "./responsevalidation/DefaultResponseValidator.js";
 import NoOpErrorHandler from "./errorhandling/NoOpErrorHandler.js";
 import DocumentLocationRedirectionStrategy from "./redirection/DocumentLocationRedirectionStrategy.js";
-import LocalStorageCachingStrategy from "./caching/LocalStorageCachingStrategy.js";
-import InMemoryCachingStrategy from "./caching/InMemoryCachingStrategy.js";
-import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy.js";
+import DefaultResponseValidator from "./responsevalidation/DefaultResponseValidator.js";
+import DefaultResponseDeserializer from "./serialization/DefaultResponseDeserializer.js";
 import type {
   AccessToken,
+  AuthenticationResponse,
   SdkConfiguration,
   SdkOptions,
-  AuthenticationResponse,
 } from "./types.js";
 
 export class SpotifyApi {
@@ -85,7 +85,7 @@ export class SpotifyApi {
     method: "GET" | "POST" | "PUT" | "DELETE",
     url: string,
     body: any = undefined,
-    contentType: string | undefined = undefined,
+    contentType: string | undefined = undefined
   ): Promise<TReturnType> {
     try {
       const accessToken =
@@ -187,12 +187,12 @@ export class SpotifyApi {
     clientId: string,
     redirectUri: string,
     scopes: string[] = [],
-    config?: SdkOptions,
+    config?: SdkOptions
   ): SpotifyApi {
     const strategy = new AuthorizationCodeWithPKCEStrategy(
       clientId,
       redirectUri,
-      scopes,
+      scopes
     );
     return new SpotifyApi(strategy, config);
   }
@@ -200,14 +200,23 @@ export class SpotifyApi {
   public static withClientCredentials(
     clientId: string,
     clientSecret: string,
-    scopes: string[] = [],
-    config?: SdkOptions,
+    config?: SdkOptions
+  ): SpotifyApi;
+
+  /** @deprecated The scopes array is not used for client authorization. Remove the arugment.  */
+  public static withClientCredentials(
+    clientId: string,
+    clientSecret: string,
+    config: SdkOptions,
+    scopes: string[]
+  ): SpotifyApi;
+
+  public static withClientCredentials(
+    clientId: string,
+    clientSecret: string,
+    config?: SdkOptions
   ): SpotifyApi {
-    const strategy = new ClientCredentialsStrategy(
-      clientId,
-      clientSecret,
-      scopes,
-    );
+    const strategy = new ClientCredentialsStrategy(clientId, clientSecret);
     return new SpotifyApi(strategy, config);
   }
 
@@ -215,7 +224,7 @@ export class SpotifyApi {
     clientId: string,
     redirectUri: string,
     scopes: string[] = [],
-    config?: SdkOptions,
+    config?: SdkOptions
   ): SpotifyApi {
     const strategy = new ImplicitGrantStrategy(clientId, redirectUri, scopes);
     return new SpotifyApi(strategy, config);
@@ -228,7 +237,7 @@ export class SpotifyApi {
   public static withAccessToken(
     clientId: string,
     token: AccessToken,
-    config?: SdkOptions,
+    config?: SdkOptions
   ): SpotifyApi {
     const strategy = new ProvidedAccessTokenStrategy(clientId, token);
     return new SpotifyApi(strategy, config);
@@ -247,7 +256,7 @@ export class SpotifyApi {
     redirectUri: string,
     scopes: string[],
     postbackUrl: string,
-    config?: SdkOptions,
+    config?: SdkOptions
   ): Promise<AuthenticationResponse>;
 
   /**
@@ -264,7 +273,7 @@ export class SpotifyApi {
     redirectUri: string,
     scopes: string[],
     onAuthorization: (token: AccessToken) => Promise<void>,
-    config?: SdkOptions,
+    config?: SdkOptions
   ): Promise<AuthenticationResponse>;
 
   public static async performUserAuthorization(
@@ -272,12 +281,12 @@ export class SpotifyApi {
     redirectUri: string,
     scopes: string[],
     onAuthorizationOrUrl: ((token: AccessToken) => Promise<void>) | string,
-    config?: SdkOptions,
+    config?: SdkOptions
   ): Promise<AuthenticationResponse> {
     const strategy = new AuthorizationCodeWithPKCEStrategy(
       clientId,
       redirectUri,
-      scopes,
+      scopes
     );
     const client = new SpotifyApi(strategy, config);
     const accessToken =

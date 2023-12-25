@@ -1,6 +1,6 @@
 {
   "name": "@fostertheweb/spotify-web-sdk",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A TypeScript SDK for the Spotify Web API",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

@@ -1,7 +1,7 @@
 import type {
-  SdkConfiguration,
-  ICachingStrategy,
   AccessToken,
+  ICachingStrategy,
+  SdkConfiguration,
 } from "../types.js";
 import AccessTokenHelpers from "./AccessTokenHelpers.js";
 import IAuthStrategy from "./IAuthStrategy.js";
@@ -14,11 +14,7 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
     return this.configuration!.cachingStrategy;
   }
 
-  constructor(
-    private clientId: string,
-    private clientSecret: string,
-    private scopes: string[] = [],
-  ) {}
+  constructor(private clientId: string, private clientSecret: string) {}
 
   public setConfiguration(configuration: SdkConfiguration): void {
     this.configuration = configuration;
@@ -34,7 +30,7 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
       async (_) => {
         const refreshed = await this.getTokenFromApi();
         return AccessTokenHelpers.toCachable(refreshed);
-      },
+      }
     );
 
     return token;
@@ -42,7 +38,7 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
 
   public async getAccessToken(): Promise<AccessToken | null> {
     const token = await this.cache.get<AccessToken>(
-      ClientCredentialsStrategy.cacheKey,
+      ClientCredentialsStrategy.cacheKey
     );
     return token;
   }
@@ -54,7 +50,6 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
   private async getTokenFromApi(): Promise<AccessToken> {
     const options = {
       grant_type: "client_credentials",
-      scope: this.scopes.join(" "),
     } as any;
 
     const bodyAsString = Object.keys(options)
