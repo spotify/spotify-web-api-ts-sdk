@@ -197,6 +197,15 @@ export class SpotifyApi {
     return new SpotifyApi(strategy, config);
   }
 
+  // keep this overload to prevent consumers from
+  // getting TS error for number of arugments
+  public static withClientCredentials(
+    clientId: string,
+    clientSecret: string,
+    config?: SdkOptions,
+    scopes?: string[]
+  ): SpotifyApi;
+
   public static withClientCredentials(
     clientId: string,
     clientSecret: string,
