@@ -40,7 +40,7 @@ Add the following environment variables:
 - `INTEGRATION_TESTS_USER_EMAIL`
 - `INTEGRATION_TESTS_USER_PASSWORD`
 
-The latter two credentials are used to run integration tests in the scope of a *real user account*. This is required to test endpoints that require a user's authorization, such as `followPlaylist`. You need to make sure that your user has access to whichever Spotify app your client credentials and secret are for.
+The latter two credentials are used to run integration tests in the scope of a _real user account_. This is required to test endpoints that require a user's authorization, such as `followPlaylist`. You need to make sure that your user has access to whichever Spotify app your client credentials and secret are for.
 
 You can run the tests with `npm run test`, or using a plugin like [Wallaby](https://wallabyjs.com/).
 
@@ -81,7 +81,7 @@ You will need to add the following environment variables:
 - `INTEGRATION_TESTS_USER_EMAIL`
 - `INTEGRATION_TESTS_USER_PASSWORD`
 
-The latter two credentials are used to run integration tests in the scope of a *real user account*. This is required to test endpoints that require a user's authorization, such as `followPlaylist`. You need to make sure that your user has access to whichever Spotify app your client credentials and secret are for.
+The latter two credentials are used to run integration tests in the scope of a _real user account_. This is required to test endpoints that require a user's authorization, such as `followPlaylist`. You need to make sure that your user has access to whichever Spotify app your client credentials and secret are for.
 
 You can run the tests with `npm run test`, or using a plugin like [Wallaby](https://wallabyjs.com/).
 
@@ -147,7 +147,7 @@ Some important notes regarding the summary line:
 
 # License
 
-By contributing your code, you agree to license your contribution under the 
+By contributing your code, you agree to license your contribution under the
 terms of the [LICENSE](LICENSE)
 
 # Code of Conduct
