@@ -6,6 +6,7 @@
   "module": "dist/mjs/index.js",
   "types": "dist/mjs/index.d.ts",
   "scripts": {
+    "commit": "cz",
     "start": "npx vite serve",
     "test": "vitest run",
     "ci": "npm run build",
@@ -14,7 +15,8 @@
     "build:cjs": "tsc --project tsconfig.cjs.json && cp res/package.cjs.json dist/cjs/package.json",
     "build:win": "npm run build:cjs-win && npm run build:mjs-win",
     "build:mjs-win": "tsc --project tsconfig.mjs.json && xcopy .\\res\\package.mjs.json .\\dist\\mjs\\package.json /-I /Y",
-    "build:cjs-win": "tsc --project tsconfig.cjs.json && xcopy .\\res\\package.cjs.json .\\dist\\cjs\\package.json /-I /Y"
+    "build:cjs-win": "tsc --project tsconfig.cjs.json && xcopy .\\res\\package.cjs.json .\\dist\\cjs\\package.json /-I /Y",
+    "prepare": "husky install"
   },
   "exports": {
     "import": "./dist/mjs/index.js",
@@ -27,11 +29,16 @@
   "author": "Spotify",
   "license": "Apache",
   "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "@commitlint/cz-commitlint": "^18.4.4",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/node": "^20.3.2",
     "@types/uuid": "^9.0.2",
+    "commitizen": "^4.3.0",
     "dotenv": "^16.3.1",
+    "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "playwright": "^1.35.1",
     "semantic-release": "^23.0.0",
