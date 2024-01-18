@@ -22,9 +22,14 @@ export default defineConfig({
       sidebar: [
         {
           label: "Guides",
-          autogenerate: {
-            directory: "guides",
-          },
+          items: [
+            { label: "Getting Started", link: "/guides/quickstart" },
+            { label: "Authentication", link: "/guides/authentication" },
+            {
+              label: "Extensibility",
+              link: "/guides/exstensibility",
+            },
+          ],
         },
         {
           ...typeDocSidebarGroup,

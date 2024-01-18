@@ -13,7 +13,7 @@ title: "Followers"
 
 #### Source
 
-[types.ts:700](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L700)
+[types.ts:700](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L700)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Followers"
 
 #### Source
 
-[types.ts:701](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L701)
+[types.ts:701](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L701)
 
 ***
 

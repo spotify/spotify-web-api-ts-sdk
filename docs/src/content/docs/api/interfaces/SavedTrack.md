@@ -13,7 +13,7 @@ title: "SavedTrack"
 
 #### Source
 
-[types.ts:655](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L655)
+[types.ts:655](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L655)
 
 ***
 
@@ -23,7 +23,7 @@ title: "SavedTrack"
 
 #### Source
 
-[types.ts:656](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L656)
+[types.ts:656](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L656)
 
 ***
 

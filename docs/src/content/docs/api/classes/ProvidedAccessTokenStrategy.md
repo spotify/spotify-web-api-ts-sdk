@@ -41,7 +41,7 @@ The access token returned from a client side Authorization Code with PKCE flow.
 
 #### Source
 
-[auth/ProvidedAccessTokenStrategy.ts:19](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/ProvidedAccessTokenStrategy.ts#L19)
+[auth/ProvidedAccessTokenStrategy.ts:19](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/auth/ProvidedAccessTokenStrategy.ts#L19)
 
 ## Methods
 
@@ -59,7 +59,7 @@ The access token returned from a client side Authorization Code with PKCE flow.
 
 #### Source
 
-[auth/ProvidedAccessTokenStrategy.ts:58](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/ProvidedAccessTokenStrategy.ts#L58)
+[auth/ProvidedAccessTokenStrategy.ts:58](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/auth/ProvidedAccessTokenStrategy.ts#L58)
 
 ***
 
@@ -77,7 +77,7 @@ The access token returned from a client side Authorization Code with PKCE flow.
 
 #### Source
 
-[auth/ProvidedAccessTokenStrategy.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/ProvidedAccessTokenStrategy.ts#L46)
+[auth/ProvidedAccessTokenStrategy.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/auth/ProvidedAccessTokenStrategy.ts#L46)
 
 ***
 
@@ -95,7 +95,7 @@ The access token returned from a client side Authorization Code with PKCE flow.
 
 #### Source
 
-[auth/ProvidedAccessTokenStrategy.ts:62](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/ProvidedAccessTokenStrategy.ts#L62)
+[auth/ProvidedAccessTokenStrategy.ts:62](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/auth/ProvidedAccessTokenStrategy.ts#L62)
 
 ***
 
@@ -117,7 +117,7 @@ The access token returned from a client side Authorization Code with PKCE flow.
 
 #### Source
 
-[auth/ProvidedAccessTokenStrategy.ts:44](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/ProvidedAccessTokenStrategy.ts#L44)
+[auth/ProvidedAccessTokenStrategy.ts:44](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/auth/ProvidedAccessTokenStrategy.ts#L44)
 
 ***
 

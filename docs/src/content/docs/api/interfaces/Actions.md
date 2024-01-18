@@ -13,7 +13,7 @@ title: "Actions"
 
 #### Source
 
-[types.ts:1164](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1164)
+[types.ts:1164](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1164)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Actions"
 
 #### Source
 
-[types.ts:1165](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1165)
+[types.ts:1165](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1165)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Actions"
 
 #### Source
 
-[types.ts:1166](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1166)
+[types.ts:1166](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1166)
 
 ***
 
@@ -43,7 +43,7 @@ title: "Actions"
 
 #### Source
 
-[types.ts:1167](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1167)
+[types.ts:1167](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1167)
 
 ***
 
@@ -53,7 +53,7 @@ title: "Actions"
 
 #### Source
 
-[types.ts:1168](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1168)
+[types.ts:1168](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1168)
 
 ***
 
@@ -63,7 +63,7 @@ title: "Actions"
 
 #### Source
 
-[types.ts:1169](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1169)
+[types.ts:1169](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1169)
 
 ***
 
@@ -73,7 +73,7 @@ title: "Actions"
 
 #### Source
 
-[types.ts:1170](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1170)
+[types.ts:1170](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1170)
 
 ***
 
@@ -83,7 +83,7 @@ title: "Actions"
 
 #### Source
 
-[types.ts:1172](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1172)
+[types.ts:1172](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1172)
 
 ***
 
@@ -93,7 +93,7 @@ title: "Actions"
 
 #### Source
 
-[types.ts:1171](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1171)
+[types.ts:1171](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1171)
 
 ***
 
@@ -103,7 +103,7 @@ title: "Actions"
 
 #### Source
 
-[types.ts:1173](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1173)
+[types.ts:1173](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1173)
 
 ***
 

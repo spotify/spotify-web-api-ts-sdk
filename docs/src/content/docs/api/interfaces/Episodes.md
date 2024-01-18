@@ -13,7 +13,7 @@ title: "Episodes"
 
 #### Source
 
-[types.ts:803](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L803)
+[types.ts:803](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L803)
 
 ***
 

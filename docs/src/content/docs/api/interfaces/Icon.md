@@ -13,7 +13,7 @@ title: "Icon"
 
 #### Source
 
-[types.ts:826](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L826)
+[types.ts:826](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L826)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Icon"
 
 #### Source
 
-[types.ts:827](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L827)
+[types.ts:827](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L827)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Icon"
 
 #### Source
 
-[types.ts:828](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L828)
+[types.ts:828](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L828)
 
 ***
 

@@ -13,7 +13,7 @@ title: "NewReleases"
 
 #### Source
 
-[types.ts:586](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L586)
+[types.ts:586](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L586)
 
 ***
 

@@ -13,7 +13,7 @@ title: "ResumePoint"
 
 #### Source
 
-[types.ts:871](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L871)
+[types.ts:871](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L871)
 
 ***
 
@@ -23,7 +23,7 @@ title: "ResumePoint"
 
 #### Source
 
-[types.ts:872](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L872)
+[types.ts:872](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L872)
 
 ***
 

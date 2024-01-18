@@ -13,7 +13,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1062](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1062)
+[types.ts:1062](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1062)
 
 ***
 
@@ -23,7 +23,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1061](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1061)
+[types.ts:1061](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1061)
 
 ***
 
@@ -33,7 +33,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1075](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1075)
+[types.ts:1075](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1075)
 
 ***
 
@@ -43,7 +43,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1074](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1074)
+[types.ts:1074](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1074)
 
 ***
 
@@ -53,7 +53,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1057](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1057)
+[types.ts:1057](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1057)
 
 ***
 
@@ -63,7 +63,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1077](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1077)
+[types.ts:1077](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1077)
 
 ***
 
@@ -73,7 +73,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1076](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1076)
+[types.ts:1076](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1076)
 
 ***
 
@@ -83,7 +83,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1063](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1063)
+[types.ts:1063](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1063)
 
 ***
 
@@ -93,7 +93,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1070](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1070)
+[types.ts:1070](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1070)
 
 ***
 
@@ -103,7 +103,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1071](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1071)
+[types.ts:1071](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1071)
 
 ***
 
@@ -113,7 +113,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1065](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1065)
+[types.ts:1065](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1065)
 
 ***
 
@@ -123,7 +123,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1072](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1072)
+[types.ts:1072](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1072)
 
 ***
 
@@ -133,7 +133,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1073](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1073)
+[types.ts:1073](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1073)
 
 ***
 
@@ -143,7 +143,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1056](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1056)
+[types.ts:1056](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1056)
 
 ***
 
@@ -153,7 +153,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1059](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1059)
+[types.ts:1059](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1059)
 
 ***
 
@@ -163,7 +163,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1081](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1081)
+[types.ts:1081](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1081)
 
 ***
 
@@ -173,7 +173,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1080](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1080)
+[types.ts:1080](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1080)
 
 ***
 
@@ -183,7 +183,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1058](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1058)
+[types.ts:1058](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1058)
 
 ***
 
@@ -193,7 +193,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1064](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1064)
+[types.ts:1064](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1064)
 
 ***
 
@@ -203,7 +203,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1079](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1079)
+[types.ts:1079](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1079)
 
 ***
 
@@ -213,7 +213,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1078](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1078)
+[types.ts:1078](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1078)
 
 ***
 
@@ -223,7 +223,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1066](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1066)
+[types.ts:1066](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1066)
 
 ***
 
@@ -233,7 +233,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1067](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1067)
+[types.ts:1067](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1067)
 
 ***
 
@@ -243,7 +243,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1068](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1068)
+[types.ts:1068](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1068)
 
 ***
 
@@ -253,7 +253,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1069](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1069)
+[types.ts:1069](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1069)
 
 ***
 
@@ -263,7 +263,7 @@ title: "TrackAnalysis"
 
 #### Source
 
-[types.ts:1060](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1060)
+[types.ts:1060](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1060)
 
 ***
 

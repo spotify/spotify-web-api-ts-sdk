@@ -17,7 +17,7 @@ title: "PlaylistedTrack"
 
 #### Source
 
-[types.ts:609](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L609)
+[types.ts:609](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L609)
 
 ***
 
@@ -27,7 +27,7 @@ title: "PlaylistedTrack"
 
 #### Source
 
-[types.ts:610](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L610)
+[types.ts:610](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L610)
 
 ***
 
@@ -37,7 +37,7 @@ title: "PlaylistedTrack"
 
 #### Source
 
-[types.ts:611](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L611)
+[types.ts:611](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L611)
 
 ***
 
@@ -47,7 +47,7 @@ title: "PlaylistedTrack"
 
 #### Source
 
-[types.ts:612](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L612)
+[types.ts:612](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L612)
 
 ***
 
@@ -57,7 +57,7 @@ title: "PlaylistedTrack"
 
 #### Source
 
-[types.ts:613](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L613)
+[types.ts:613](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L613)
 
 ***
 

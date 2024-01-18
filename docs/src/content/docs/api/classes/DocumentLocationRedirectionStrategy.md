@@ -35,7 +35,7 @@ title: "DocumentLocationRedirectionStrategy"
 
 #### Source
 
-[redirection/DocumentLocationRedirectionStrategy.ts:10](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/redirection/DocumentLocationRedirectionStrategy.ts#L10)
+[redirection/DocumentLocationRedirectionStrategy.ts:10](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/redirection/DocumentLocationRedirectionStrategy.ts#L10)
 
 ***
 
@@ -57,7 +57,7 @@ title: "DocumentLocationRedirectionStrategy"
 
 #### Source
 
-[redirection/DocumentLocationRedirectionStrategy.ts:6](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/redirection/DocumentLocationRedirectionStrategy.ts#L6)
+[redirection/DocumentLocationRedirectionStrategy.ts:6](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/redirection/DocumentLocationRedirectionStrategy.ts#L6)
 
 ***
 

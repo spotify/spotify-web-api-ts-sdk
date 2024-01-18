@@ -13,7 +13,7 @@ title: "ExternalIds"
 
 #### Source
 
-[types.ts:661](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L661)
+[types.ts:661](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L661)
 
 ***
 
@@ -23,7 +23,7 @@ title: "ExternalIds"
 
 #### Source
 
-[types.ts:660](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L660)
+[types.ts:660](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L660)
 
 ***
 
@@ -33,7 +33,7 @@ title: "ExternalIds"
 
 #### Source
 
-[types.ts:595](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L595)
+[types.ts:595](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L595)
 
 ***
 

@@ -13,7 +13,7 @@ title: "LinkedFrom"
 
 #### Source
 
-[types.ts:625](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L625)
+[types.ts:625](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L625)
 
 ***
 
@@ -23,7 +23,7 @@ title: "LinkedFrom"
 
 #### Source
 
-[types.ts:626](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L626)
+[types.ts:626](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L626)
 
 ***
 
@@ -33,7 +33,7 @@ title: "LinkedFrom"
 
 #### Source
 
-[types.ts:627](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L627)
+[types.ts:627](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L627)
 
 ***
 
@@ -43,7 +43,7 @@ title: "LinkedFrom"
 
 #### Source
 
-[types.ts:628](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L628)
+[types.ts:628](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L628)
 
 ***
 
@@ -53,7 +53,7 @@ title: "LinkedFrom"
 
 #### Source
 
-[types.ts:629](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L629)
+[types.ts:629](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L629)
 
 ***
 

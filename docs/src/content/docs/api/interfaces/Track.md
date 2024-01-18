@@ -17,7 +17,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:666](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L666)
+[types.ts:666](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L666)
 
 ***
 
@@ -31,7 +31,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:633](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L633)
+[types.ts:633](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L633)
 
 ***
 
@@ -45,7 +45,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:634](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L634)
+[types.ts:634](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L634)
 
 ***
 
@@ -59,7 +59,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:635](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L635)
+[types.ts:635](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L635)
 
 ***
 
@@ -73,7 +73,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:636](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L636)
+[types.ts:636](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L636)
 
 ***
 
@@ -87,7 +87,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:637](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L637)
+[types.ts:637](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L637)
 
 ***
 
@@ -101,7 +101,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:638](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L638)
+[types.ts:638](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L638)
 
 ***
 
@@ -111,7 +111,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:667](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L667)
+[types.ts:667](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L667)
 
 ***
 
@@ -125,7 +125,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:639](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L639)
+[types.ts:639](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L639)
 
 ***
 
@@ -139,7 +139,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:640](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L640)
+[types.ts:640](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L640)
 
 ***
 
@@ -153,7 +153,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:641](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L641)
+[types.ts:641](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L641)
 
 ***
 
@@ -167,7 +167,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:642](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L642)
+[types.ts:642](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L642)
 
 ***
 
@@ -181,7 +181,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:649](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L649)
+[types.ts:649](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L649)
 
 ***
 
@@ -195,7 +195,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:650](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L650)
+[types.ts:650](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L650)
 
 ***
 
@@ -209,7 +209,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:643](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L643)
+[types.ts:643](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L643)
 
 ***
 
@@ -219,7 +219,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:668](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L668)
+[types.ts:668](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L668)
 
 ***
 
@@ -233,7 +233,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:644](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L644)
+[types.ts:644](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L644)
 
 ***
 
@@ -247,7 +247,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:651](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L651)
+[types.ts:651](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L651)
 
 ***
 
@@ -261,7 +261,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:645](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L645)
+[types.ts:645](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L645)
 
 ***
 
@@ -275,7 +275,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:646](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L646)
+[types.ts:646](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L646)
 
 ***
 
@@ -289,7 +289,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:647](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L647)
+[types.ts:647](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L647)
 
 ***
 
@@ -303,7 +303,7 @@ title: "Track"
 
 #### Source
 
-[types.ts:648](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L648)
+[types.ts:648](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L648)
 
 ***
 

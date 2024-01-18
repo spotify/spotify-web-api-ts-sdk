@@ -13,7 +13,7 @@ title: "Narrator"
 
 #### Source
 
-[types.ts:876](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L876)
+[types.ts:876](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L876)
 
 ***
 

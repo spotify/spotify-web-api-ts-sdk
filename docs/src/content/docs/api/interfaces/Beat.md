@@ -13,7 +13,7 @@ title: "Beat"
 
 #### Source
 
-[types.ts:1093](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1093)
+[types.ts:1093](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1093)
 
 ***
 
@@ -23,7 +23,7 @@ title: "Beat"
 
 #### Source
 
-[types.ts:1092](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1092)
+[types.ts:1092](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1092)
 
 ***
 
@@ -33,7 +33,7 @@ title: "Beat"
 
 #### Source
 
-[types.ts:1091](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L1091)
+[types.ts:1091](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L1091)
 
 ***
 

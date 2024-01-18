@@ -33,7 +33,7 @@ title: "SdkConfiguration"
 
 #### Source
 
-[types.ts:31](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L31)
+[types.ts:31](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L31)
 
 ***
 
@@ -57,7 +57,7 @@ title: "SdkConfiguration"
 
 #### Source
 
-[types.ts:30](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L30)
+[types.ts:30](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L30)
 
 ***
 
@@ -71,7 +71,7 @@ title: "SdkConfiguration"
 
 #### Source
 
-[types.ts:36](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L36)
+[types.ts:36](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L36)
 
 ***
 
@@ -85,7 +85,7 @@ title: "SdkConfiguration"
 
 #### Source
 
-[types.ts:32](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L32)
+[types.ts:32](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L32)
 
 ***
 
@@ -99,7 +99,7 @@ title: "SdkConfiguration"
 
 #### Source
 
-[types.ts:34](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L34)
+[types.ts:34](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L34)
 
 ***
 
@@ -113,7 +113,7 @@ title: "SdkConfiguration"
 
 #### Source
 
-[types.ts:29](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L29)
+[types.ts:29](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L29)
 
 ***
 
@@ -127,7 +127,7 @@ title: "SdkConfiguration"
 
 #### Source
 
-[types.ts:35](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L35)
+[types.ts:35](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L35)
 
 ***
 
@@ -141,7 +141,7 @@ title: "SdkConfiguration"
 
 #### Source
 
-[types.ts:33](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L33)
+[types.ts:33](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L33)
 
 ***
 

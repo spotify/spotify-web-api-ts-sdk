@@ -11,9 +11,9 @@ title: "ClientCredentialsStrategy"
 
 ## Constructors
 
-### new ClientCredentialsStrategy(clientId, clientSecret, scopes)
+### new ClientCredentialsStrategy(clientId, clientSecret)
 
-> **new ClientCredentialsStrategy**(`clientId`, `clientSecret`, `scopes`): [`ClientCredentialsStrategy`](/api/classes/clientcredentialsstrategy/)
+> **new ClientCredentialsStrategy**(`clientId`, `clientSecret`): [`ClientCredentialsStrategy`](/api/classes/clientcredentialsstrategy/)
 
 #### Parameters
 
@@ -21,15 +21,13 @@ title: "ClientCredentialsStrategy"
 
 • **clientSecret**: `string`
 
-• **scopes**: `string`[]= `[]`
-
 #### Returns
 
 [`ClientCredentialsStrategy`](/api/classes/clientcredentialsstrategy/)
 
 #### Source
 
-[auth/ClientCredentialsStrategy.ts:17](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/ClientCredentialsStrategy.ts#L17)
+[auth/ClientCredentialsStrategy.ts:17](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/auth/ClientCredentialsStrategy.ts#L17)
 
 ## Methods
 
@@ -47,7 +45,7 @@ title: "ClientCredentialsStrategy"
 
 #### Source
 
-[auth/ClientCredentialsStrategy.ts:43](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/ClientCredentialsStrategy.ts#L43)
+[auth/ClientCredentialsStrategy.ts:39](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/auth/ClientCredentialsStrategy.ts#L39)
 
 ***
 
@@ -65,7 +63,7 @@ title: "ClientCredentialsStrategy"
 
 #### Source
 
-[auth/ClientCredentialsStrategy.ts:27](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/ClientCredentialsStrategy.ts#L27)
+[auth/ClientCredentialsStrategy.ts:23](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/auth/ClientCredentialsStrategy.ts#L23)
 
 ***
 
@@ -83,7 +81,7 @@ title: "ClientCredentialsStrategy"
 
 #### Source
 
-[auth/ClientCredentialsStrategy.ts:50](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/ClientCredentialsStrategy.ts#L50)
+[auth/ClientCredentialsStrategy.ts:46](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/auth/ClientCredentialsStrategy.ts#L46)
 
 ***
 
@@ -105,7 +103,7 @@ title: "ClientCredentialsStrategy"
 
 #### Source
 
-[auth/ClientCredentialsStrategy.ts:23](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/auth/ClientCredentialsStrategy.ts#L23)
+[auth/ClientCredentialsStrategy.ts:19](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/auth/ClientCredentialsStrategy.ts#L19)
 
 ***
 

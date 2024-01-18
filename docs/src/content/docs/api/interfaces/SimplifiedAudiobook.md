@@ -17,7 +17,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:769](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L769)
+[types.ts:769](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L769)
 
 ***
 
@@ -27,7 +27,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:770](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L770)
+[types.ts:770](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L770)
 
 ***
 
@@ -37,7 +37,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:771](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L771)
+[types.ts:771](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L771)
 
 ***
 
@@ -47,7 +47,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:772](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L772)
+[types.ts:772](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L772)
 
 ***
 
@@ -57,7 +57,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:773](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L773)
+[types.ts:773](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L773)
 
 ***
 
@@ -67,7 +67,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:774](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L774)
+[types.ts:774](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L774)
 
 ***
 
@@ -77,7 +77,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:775](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L775)
+[types.ts:775](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L775)
 
 ***
 
@@ -87,7 +87,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:776](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L776)
+[types.ts:776](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L776)
 
 ***
 
@@ -97,7 +97,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:777](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L777)
+[types.ts:777](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L777)
 
 ***
 
@@ -107,7 +107,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:778](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L778)
+[types.ts:778](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L778)
 
 ***
 
@@ -117,7 +117,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:779](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L779)
+[types.ts:779](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L779)
 
 ***
 
@@ -127,7 +127,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:780](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L780)
+[types.ts:780](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L780)
 
 ***
 
@@ -137,7 +137,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:781](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L781)
+[types.ts:781](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L781)
 
 ***
 
@@ -147,7 +147,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:782](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L782)
+[types.ts:782](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L782)
 
 ***
 
@@ -157,7 +157,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:783](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L783)
+[types.ts:783](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L783)
 
 ***
 
@@ -167,7 +167,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:784](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L784)
+[types.ts:784](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L784)
 
 ***
 
@@ -177,7 +177,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:785](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L785)
+[types.ts:785](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L785)
 
 ***
 
@@ -187,7 +187,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:786](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L786)
+[types.ts:786](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L786)
 
 ***
 
@@ -197,7 +197,7 @@ title: "SimplifiedAudiobook"
 
 #### Source
 
-[types.ts:787](https://github.com/fostertheweb/spotify-web-sdk/blob/8d95f4b/src/types.ts#L787)
+[types.ts:787](https://github.com/fostertheweb/spotify-web-sdk/blob/e412602/src/types.ts#L787)
 
 ***
 
