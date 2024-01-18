@@ -6,7 +6,7 @@ This is a JavaScript/TypeScript SDK for the [Spotify Web API](https://developer.
 
 ## Documentation
 
-While I work on a new documenation website, check out the existing [usage guide](DOCS.md).
+Check out the new [documenation website](https://fostertheweb.github.io/spotify-web-sdk/).
 
 ## Requirements
 
