@@ -203,7 +203,7 @@ export class SpotifyApi {
     config?: SdkOptions
   ): SpotifyApi;
 
-  /** @deprecated The scopes array is not used for client authorization. Remove the arugment.  */
+  /** @deprecated The scopes array is not used for client authorization. Remove the argument.  */
   public static withClientCredentials(
     clientId: string,
     clientSecret: string,
