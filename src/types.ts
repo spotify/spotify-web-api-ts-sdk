@@ -269,7 +269,7 @@ interface SearchResultsMap {
     album: SimplifiedAlbum
     artist: Artist
     track: Track
-    playlist: PlaylistBase
+    playlist: SimplifiedPlaylist
     show: SimplifiedShow
     episode: SimplifiedEpisode
     audiobook: SimplifiedAudiobook
