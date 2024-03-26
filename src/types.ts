@@ -89,6 +89,7 @@ export interface AccessToken {
     expires_in: number;
     refresh_token: string;
     expires?: number;
+    state?: string,
 }
 
 interface AlbumBase {
