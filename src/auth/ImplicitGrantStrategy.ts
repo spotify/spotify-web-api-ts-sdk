@@ -19,11 +19,11 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
         this.configuration = configuration;
     }
 
-    public async getOrCreateAccessToken(): Promise<AccessToken> {
+    public async getOrCreateAccessToken(state?: string): Promise<AccessToken> {
         const token = await this.cache.getOrCreate<AccessToken>(
             ImplicitGrantStrategy.cacheKey,
             async () => {
-                const token = await this.redirectOrVerifyToken();
+                const token = await this.redirectOrVerifyToken(state);
                 return AccessTokenHelpers.toCachable(token);
             }, async (expiring) => {
                 return AccessTokenHelpers.refreshCachedAccessToken(this.clientId, expiring);
@@ -42,7 +42,7 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
         this.cache.remove(ImplicitGrantStrategy.cacheKey);
     }
 
-    private async redirectOrVerifyToken(): Promise<AccessToken> {
+    private async redirectOrVerifyToken(state?: string): Promise<AccessToken> {
         const hashParams = new URLSearchParams(window.location.hash.substring(1));
         const accessToken = hashParams.get("access_token");
 
@@ -52,7 +52,8 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
                 token_type: hashParams.get("token_type") ?? "",
                 expires_in: parseInt(hashParams.get("expires_in") ?? "0"),
                 refresh_token: hashParams.get("refresh_token") ?? "",
-                expires: Number(hashParams.get("expires")) || 0
+                expires: Number(hashParams.get("expires")) || 0,
+                state,
             });
         }
 
@@ -64,6 +65,9 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
         params.append("response_type", "token");
         params.append("redirect_uri", this.redirectUri);
         params.append("scope", scope);
+        if (state) {
+            params.append("state", state);
+        }
 
         const authUrl = 'https://accounts.spotify.com/authorize?' + params.toString();
 

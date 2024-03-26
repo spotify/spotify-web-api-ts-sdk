@@ -7,7 +7,7 @@ export function isEmptyAccessToken(value: any): boolean {
 
 export default interface IAuthStrategy {
     setConfiguration(configuration: SdkConfiguration): void;
-    getOrCreateAccessToken(): Promise<AccessToken>;
+    getOrCreateAccessToken(state?: string): Promise<AccessToken>;
     getAccessToken(): Promise<AccessToken | null>;
     removeAccessToken(): void;
 }
