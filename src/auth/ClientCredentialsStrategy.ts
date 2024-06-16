@@ -40,8 +40,8 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
         return token;
     }
 
-    public removeAccessToken(): void {
-        this.cache.remove(ClientCredentialsStrategy.cacheKey);
+    public async removeAccessToken(): Promise<void> {
+        await this.cache.remove(ClientCredentialsStrategy.cacheKey);
     }
 
     private async getTokenFromApi(): Promise<AccessToken> {

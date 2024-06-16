@@ -43,8 +43,8 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
         return token;
     }
 
-    public removeAccessToken(): void {
-        this.cache.remove(AuthorizationCodeWithPKCEStrategy.cacheKey);
+    public async removeAccessToken(): Promise<void> {
+        await this.cache.remove(AuthorizationCodeWithPKCEStrategy.cacheKey);
     }
 
     private async redirectOrVerifyToken(): Promise<AccessToken> {
@@ -66,7 +66,7 @@ export default class AuthorizationCodeWithPKCEStrategy implements IAuthStrategy 
         const challenge = await AccessTokenHelpers.generateCodeChallenge(verifier);
 
         const singleUseVerifier: CachedVerifier = { verifier, expiresOnAccess: true };
-        this.cache.setCacheItem("spotify-sdk:verifier", singleUseVerifier);
+        await this.cache.setCacheItem("spotify-sdk:verifier", singleUseVerifier);
 
         const redirectTarget = await this.generateRedirectUrlForUser(this.scopes, challenge);
         await this.configuration!.redirectionStrategy.redirect(redirectTarget);
