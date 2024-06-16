@@ -38,8 +38,8 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
         return token;
     }
 
-    public removeAccessToken(): void {
-        this.cache.remove(ImplicitGrantStrategy.cacheKey);
+    public async removeAccessToken(): Promise<void> {
+        await this.cache.remove(ImplicitGrantStrategy.cacheKey);
     }
 
     private async redirectOrVerifyToken(): Promise<AccessToken> {

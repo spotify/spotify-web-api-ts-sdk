@@ -17,27 +17,27 @@ describe('GenericCache', () => {
     });
 
     it('should set and get a value', async () => {
-        sut.set('test', { test: "test" }, 1000);
+        await sut.set('test', { test: "test" }, 1000);
         const result = await sut.get<{ test: string }>('test');
         expect(result?.test).toBe('test');
     });
 
     it('should remove a value', async () => {
-        sut.set('test', { test: "test" }, 1000);
+        await sut.set('test', { test: "test" }, 1000);
         sut.remove('test');
         const result = await sut.get<{ test: string }>('test');
         expect(result).toBeNull();
     });
 
     it('should return null for expired value', async () => {
-        sut.set('test', { test: "test" }, 0);
+        await sut.set('test', { test: "test" }, 0);
         const result = await sut.get<{ test: string }>('test');
         expect(result).toBeNull();
     });
 
     it("should return and remove value if expiresOnAccess is true", async () => {
         const value = { test: "test", expiresOnAccess: true };
-        sut.setCacheItem('test', value);
+        await sut.setCacheItem('test', value);
 
         const result = await sut.get<{ test: string }>('test');
         expect(result).toEqual(value);
@@ -60,7 +60,7 @@ describe('GenericCache', () => {
     });
 
     it("should return existing item if it exists in the cache when getOrCreate is called", async () => {
-        sut.set('test', { test: "test" }, 1000);
+        await sut.set('test', { test: "test" }, 1000);
 
         const result = await sut.getOrCreate('test', async () => {
             return { test: "test2" };
