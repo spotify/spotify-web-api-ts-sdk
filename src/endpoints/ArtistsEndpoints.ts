@@ -21,7 +21,7 @@ export default class ArtistsEndpoints extends EndpointsBase {
 
         const params = this.paramsFor({ ids: idOrIds });
         const response = await this.getRequest<Artists>(`artists${params}`);
-        return response.artists;
+        return response?.artists;
     }
 
     public albums(

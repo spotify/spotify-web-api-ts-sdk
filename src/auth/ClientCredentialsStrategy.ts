@@ -45,10 +45,10 @@ export default class ClientCredentialsStrategy implements IAuthStrategy {
     }
 
     private async getTokenFromApi(): Promise<AccessToken> {
-        const options = {
+        const options: Record<string,string> = {
             grant_type: 'client_credentials',
             scope: this.scopes.join(' ')
-        } as any;
+        };
 
         const bodyAsString = Object.keys(options).map(key => key + '=' + options[key]).join('&');
         const hasBuffer = typeof Buffer !== 'undefined';

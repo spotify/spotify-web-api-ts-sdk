@@ -74,12 +74,12 @@ export class SpotifyApi {
         this.authenticationStrategy.setConfiguration(this.sdkConfig);
     }
 
-    public async makeRequest<TReturnType>(method: "GET" | "POST" | "PUT" | "DELETE", url: string, body: any = undefined, contentType: string | undefined = undefined): Promise<TReturnType> {
+    public async makeRequest<TReturnType>(method: "GET" | "POST" | "PUT" | "DELETE", url: string, body: any = undefined, contentType: string | undefined = undefined): Promise<TReturnType|null> {
         try {
             const accessToken = await this.authenticationStrategy.getOrCreateAccessToken();
             if (isEmptyAccessToken(accessToken)) {
                 console.warn("No access token found, authenticating now.");
-                return null as TReturnType;
+                return null;
             }
 
             const token = accessToken?.access_token;
@@ -99,7 +99,7 @@ export class SpotifyApi {
             this.sdkConfig.afterRequest(fullUrl, opts, result);
 
             if (result.status === 204) {
-                return null as TReturnType;
+                return null;
             }
 
             await this.sdkConfig.responseValidator.validateResponse(result);
@@ -109,7 +109,7 @@ export class SpotifyApi {
             if (!handled) {
                 throw error;
             }
-            return null as TReturnType;
+            return null;
         }
     }
 

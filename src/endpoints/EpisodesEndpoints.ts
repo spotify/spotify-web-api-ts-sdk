@@ -13,6 +13,6 @@ export default class EpisodesEndpoints extends EndpointsBase {
 
         const params = this.paramsFor({ ids: idOrIds, market });
         const response = await this.getRequest<Episodes>(`episodes${params}`);
-        return response.episodes;
+        return response?.episodes;
     }
 }

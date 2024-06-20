@@ -4,19 +4,19 @@ export default class EndpointsBase {
     constructor(protected api: SpotifyApi) {
     }
 
-    protected async getRequest<TReturnType>(url: string): Promise<TReturnType> {
+    protected async getRequest<TReturnType>(url: string): Promise<TReturnType|null> {
         return await this.api.makeRequest<TReturnType>("GET", url);
     }
 
-    protected async postRequest<TReturnType, TBody = unknown>(url: string, body?: TBody, contentType: string | undefined = undefined): Promise<TReturnType> {
+    protected async postRequest<TReturnType, TBody = unknown>(url: string, body?: TBody, contentType: string | undefined = undefined): Promise<TReturnType|null> {
         return await this.api.makeRequest<TReturnType>("POST", url, body, contentType);
     }
 
-    protected async putRequest<TReturnType, TBody = unknown>(url: string, body?: TBody, contentType: string | undefined = undefined): Promise<TReturnType> {
+    protected async putRequest<TReturnType, TBody = unknown>(url: string, body?: TBody, contentType: string | undefined = undefined): Promise<TReturnType|null> {
         return await this.api.makeRequest<TReturnType>("PUT", url, body, contentType);
     }
 
-    protected async deleteRequest<TReturnType, TBody = unknown>(url: string, body?: TBody): Promise<TReturnType> {
+    protected async deleteRequest<TReturnType, TBody = unknown>(url: string, body?: TBody): Promise<TReturnType|null> {
         return await this.api.makeRequest<TReturnType>("DELETE", url, body);
     }
 
