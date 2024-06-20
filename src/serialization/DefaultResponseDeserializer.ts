@@ -1,7 +1,7 @@
 import type { IResponseDeserializer } from "../types.js";
 
 export default class DefaultResponseDeserializer implements IResponseDeserializer {
-    public async deserialize<TReturnType>(response: Response): Promise<TReturnType> {
+    public async deserialize<TReturnType>(response: Response): Promise<TReturnType|null> {
         const text = await response.text();
 
         if (text.length > 0) {
@@ -9,6 +9,6 @@ export default class DefaultResponseDeserializer implements IResponseDeserialize
             return json as TReturnType;
         }
 
-        return null as TReturnType;
+        return null;
     }
 }

@@ -10,6 +10,7 @@ export class FakeAuthStrategy implements IAuthStrategy {
 
     constructor(
         protected accessToken: string = FakeAuthStrategy.FAKE_AUTH_TOKEN,
+        protected refreshToken: string = FakeAuthStrategy.FAKE_AUTH_TOKEN,
     ) {
         this.cache = new InMemoryCachingStrategy();
     }
@@ -24,7 +25,10 @@ export class FakeAuthStrategy implements IAuthStrategy {
                 return {
                     access_token: this.accessToken,
                     expires: Date.now() + 3600 * 1000,
-                } as AccessToken;
+                    token_type: "Bearer",
+                    refresh_token: this.refreshToken,
+                    expires_in: 3600,
+                } satisfies AccessToken;
             },
         );
 

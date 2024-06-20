@@ -14,7 +14,7 @@ export default class ShowsEndpoints extends EndpointsBase {
         // TODO: only returns 50, validate here
         const params = this.paramsFor({ ids: idOrIds, market });
         const response = await this.getRequest<Shows>(`shows${params}`);
-        return response.shows;
+        return response?.shows;
     }
 
     public episodes(id: string, market?: Market, limit?: MaxInt<50>, offset?: number) {

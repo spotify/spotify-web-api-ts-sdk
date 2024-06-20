@@ -14,7 +14,7 @@ export default class TracksEndpoints extends EndpointsBase {
         const params = this.paramsFor({ ids: idOrIds, market });
         // TODO: only returns top 20, validate here
         const response = await this.getRequest<Tracks>(`tracks${params}`);
-        return response.tracks;
+        return response?.tracks;
     }
 
     public audioFeatures(id: string): Promise<AudioFeatures>
@@ -25,7 +25,7 @@ export default class TracksEndpoints extends EndpointsBase {
         }
         const params = this.paramsFor({ ids: idOrIds });
         const response = await this.getRequest<AudioFeaturesCollection>(`audio-features${params}`);
-        return response.audio_features;
+        return response?.audio_features;
     }
 
     public audioAnalysis(id: string) {

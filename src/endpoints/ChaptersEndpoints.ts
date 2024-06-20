@@ -16,6 +16,6 @@ export default class ChaptersEndpoints extends EndpointsBase {
         // TODO: Only returns top 50, validate / pre-check here
         const params = this.paramsFor({ ids: idOrIds, market });
         const response = await this.getRequest<Chapters>(`chapters${params}`);
-        return response.chapters;
+        return response?.chapters;
     }
 }

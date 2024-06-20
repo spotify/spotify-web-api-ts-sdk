@@ -43,7 +43,7 @@ export interface IValidateResponses {
 }
 
 export interface IResponseDeserializer {
-    deserialize<TReturnType>(response: Response): Promise<TReturnType>;
+    deserialize<TReturnType>(response: Response): Promise<TReturnType|null>;
 }
 
 export interface ICachingStrategy {

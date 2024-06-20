@@ -12,7 +12,7 @@ export default class AudiobooksEndpoints extends EndpointsBase {
 
         const params = this.paramsFor({ ids: idOrIds, market });
         const response = await this.getRequest<Audiobooks>(`audiobooks${params}`);
-        return response.audiobooks;
+        return response?.audiobooks;
     }
 
     public getAudiobookChapters(id: string, market?: Market, limit?: MaxInt<50>, offset?: number) {

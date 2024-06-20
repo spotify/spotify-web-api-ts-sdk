@@ -15,7 +15,7 @@ export default class AlbumsEndpoints extends EndpointsBase {
         const params = this.paramsFor({ ids: idOrIds, market });
         // TODO: only returns top 20, validate here
         const response = await this.getRequest<Albums>(`albums${params}`);
-        return response.albums;
+        return response?.albums;
     }
 
     public tracks(albumId: string, market?: Market, limit?: MaxInt<50>, offset?: number) {
