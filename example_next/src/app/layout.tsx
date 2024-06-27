@@ -1,5 +1,5 @@
 import authOptions from "@/app/api/auth/[...nextauth]/authOptions";
-import "@/globals.css";
+import "@/app/globals.css";
 import AuthSessionProvider from "@/components/AuthSessionProvider";
 import { getServerSession } from "next-auth";
 import { Inter } from "next/font/google";
