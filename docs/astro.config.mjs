@@ -1,11 +1,7 @@
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
-import { generateTypeDoc } from "starlight-typedoc";
-
-const typeDocSidebarGroup = await generateTypeDoc({
-  entryPoints: ["../src/index.ts"],
-  tsconfig: ["../tsconfig.json"],
-});
+import starlightTypeDoc, { typeDocSidebarGroup } from "starlight-typedoc";
+import path from "path";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,6 +15,12 @@ export default defineConfig({
       social: {
         github: "https://github.com/fostertheweb/spotify-web-sdk",
       },
+      plugins: [
+        starlightTypeDoc({
+          entryPoints: [path.resolve("../src/index.ts")],
+          tsconfig: [path.resolve("../tsconfig.json")],
+        }),
+      ],
       sidebar: [
         {
           label: "Guides",
@@ -31,10 +33,7 @@ export default defineConfig({
             },
           ],
         },
-        {
-          ...typeDocSidebarGroup,
-          label: "Reference",
-        },
+        typeDocSidebarGroup,
       ],
     }),
   ],
