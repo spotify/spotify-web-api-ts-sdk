@@ -200,14 +200,23 @@ export class SpotifyApi {
   public static withClientCredentials(
     clientId: string,
     clientSecret: string,
-    scopes: string[] = [],
+    config?: SdkOptions
+  ): SpotifyApi;
+
+  /** @deprecated The scopes array is not used for client authorization. Remove the argument.  */
+  public static withClientCredentials(
+    clientId: string,
+    clientSecret: string,
+    config: SdkOptions,
+    scopes: string[]
+  ): SpotifyApi;
+
+  public static withClientCredentials(
+    clientId: string,
+    clientSecret: string,
     config?: SdkOptions
   ): SpotifyApi {
-    const strategy = new ClientCredentialsStrategy(
-      clientId,
-      clientSecret,
-      scopes
-    );
+    const strategy = new ClientCredentialsStrategy(clientId, clientSecret);
     return new SpotifyApi(strategy, config);
   }
 
