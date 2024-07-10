@@ -1,39 +1,25 @@
 {
-  "name": "@spotify/web-api-ts-sdk",
-  "version": "1.2.0",
-  "description": "A typescript SDK for the Spotify Web API",
-  "main": "dist/cjs/index.js",
-  "module": "dist/mjs/index.js",
-  "types": "dist/mjs/index.d.ts",
+  "name": "@fostertheweb/spotify-web-sdk",
+  "version": "1.2.3",
+  "description": "A TypeScript SDK for the Spotify Web API",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "commit": "cz",
-    "start": "npx vite serve",
-    "test": "vitest run",
-    "ci": "npm run build",
-    "build": "npm run build:cjs && npm run build:mjs",
-    "build:mjs": "tsc --project tsconfig.mjs.json && cp res/package.mjs.json dist/mjs/package.json",
-    "build:cjs": "tsc --project tsconfig.cjs.json && cp res/package.cjs.json dist/cjs/package.json",
-    "build:win": "npm run build:cjs-win && npm run build:mjs-win",
-    "build:mjs-win": "tsc --project tsconfig.mjs.json && xcopy .\\res\\package.mjs.json .\\dist\\mjs\\package.json /-I /Y",
-    "build:cjs-win": "tsc --project tsconfig.cjs.json && xcopy .\\res\\package.cjs.json .\\dist\\cjs\\package.json /-I /Y",
-    "prepare": "husky install"
-  },
-  "exports": {
-    "import": "./dist/mjs/index.js",
-    "require": "./dist/cjs/index.js"
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "release": "pnpm run build && changeset publish",
+    "lint": "tsc",
+    "docs": "pnpm -C docs dev"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/spotify/spotify-web-api-ts-sdk"
+    "url": "https://github.com/fostertheweb/spotify-web-sdk"
   },
   "author": "Spotify",
   "license": "Apache",
   "devDependencies": {
-    "@commitlint/cli": "^18.4.4",
-    "@commitlint/config-conventional": "^18.4.4",
-    "@commitlint/cz-commitlint": "^18.4.4",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
     "@types/node": "^20.3.2",
     "@types/uuid": "^9.0.2",
     "commitizen": "^4.3.0",
@@ -41,7 +27,7 @@
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "playwright": "^1.35.1",
-    "semantic-release": "^23.0.0",
+    "tsup": "^8.0.1",
     "typescript": "^5.1.6",
     "uuid": "^9.0.0",
     "vite": "^4.3.9",
@@ -53,11 +39,5 @@
   "keywords": [
     "spotify",
     "webapi"
-  ],
-  "wallaby": {
-    "autoDetect": [
-      "vitest"
-    ],
-    "trace": true
-  }
+  ]
 }
