@@ -1,15 +1,15 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { SpotifyApi } from "./SpotifyApi";
-import { buildUnitTestSdkInstance } from "./test/SpotifyApiBuilder";
-import { FakeAuthStrategy } from "./test/FakeAuthStrategy";
-import { FetchApiMock } from "./test/FetchApiMock";
-import { validAlbumResult } from "./test/data/validAlbumResult";
 import AuthorizationCodeWithPKCEStrategy from "./auth/AuthorizationCodeWithPKCEStrategy";
 import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy";
 import ImplicitGrantStrategy from "./auth/ImplicitGrantStrategy";
 import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy";
-import { AccessToken, SdkOptions } from "./types";
 import InMemoryCachingStrategy from "./caching/InMemoryCachingStrategy";
+import { FakeAuthStrategy } from "./test/FakeAuthStrategy";
+import { FetchApiMock } from "./test/FetchApiMock";
+import { buildUnitTestSdkInstance } from "./test/SpotifyApiBuilder";
+import { validAlbumResult } from "./test/data/validAlbumResult";
+import { AccessToken, SdkOptions } from "./types";
 
 describe("SpotifyAPI Instance", () => {
   let sut: SpotifyApi;
@@ -26,7 +26,7 @@ describe("SpotifyAPI Instance", () => {
 
       const [headers, bodyString] = fetchMock.issuedRequestHeadersAndBody(0);
       expect((headers as any).Authorization).toBe(
-        `Bearer ${FakeAuthStrategy.FAKE_AUTH_TOKEN}`,
+        `Bearer ${FakeAuthStrategy.FAKE_AUTH_TOKEN}`
       );
     });
   });
@@ -76,10 +76,10 @@ describe("SpotifyAPI Instance", () => {
       const sut = SpotifyApi.withUserAuthorization(
         "client-id",
         "https://localhost:3000",
-        ["scope1", "scope2"],
+        ["scope1", "scope2"]
       );
       expect(sut["authenticationStrategy"].constructor.name).toBe(
-        AuthorizationCodeWithPKCEStrategy.name,
+        AuthorizationCodeWithPKCEStrategy.name
       );
     });
 
@@ -89,7 +89,7 @@ describe("SpotifyAPI Instance", () => {
         "scope2",
       ]);
       expect(sut["authenticationStrategy"].constructor.name).toBe(
-        ClientCredentialsStrategy.name,
+        ClientCredentialsStrategy.name
       );
     });
 
@@ -99,14 +99,14 @@ describe("SpotifyAPI Instance", () => {
         "scope2",
       ]);
       expect(sut["authenticationStrategy"].constructor.name).toBe(
-        ImplicitGrantStrategy.name,
+        ImplicitGrantStrategy.name
       );
     });
 
     it("can create an instance with the provided access token strategy configured", async () => {
       const sut = SpotifyApi.withAccessToken("client-id", {} as AccessToken);
       expect(sut["authenticationStrategy"].constructor.name).toBe(
-        ProvidedAccessTokenStrategy.name,
+        ProvidedAccessTokenStrategy.name
       );
     });
 
@@ -114,15 +114,15 @@ describe("SpotifyAPI Instance", () => {
       const config: SdkOptions = {
         cachingStrategy: new InMemoryCachingStrategy(),
       };
-      config.cachingStrategy?.setCacheItem(
+      await config.cachingStrategy?.setCacheItem(
         "spotify-sdk:ProvidedAccessTokenStrategy:token",
-        { access_token: "some-old-token" },
+        { access_token: "some-old-token" }
       );
 
       const sut = SpotifyApi.withAccessToken(
         "client-id",
         { access_token: "some-new-token" } as AccessToken,
-        config,
+        config
       );
       const token = await sut.getAccessToken();
 
@@ -139,7 +139,7 @@ describe("SpotifyAPI Instance", () => {
     it("authenticates successfully", async () => {
       const response = await sut.authenticate();
       expect(response.accessToken.access_token).toBe(
-        FakeAuthStrategy.FAKE_AUTH_TOKEN,
+        FakeAuthStrategy.FAKE_AUTH_TOKEN
       );
       expect(response.authenticated).toBe(true);
 

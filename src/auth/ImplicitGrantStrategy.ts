@@ -1,7 +1,7 @@
 import type {
-  SdkConfiguration,
   AccessToken,
   ICachingStrategy,
+  SdkConfiguration,
 } from "../types.js";
 import AccessTokenHelpers from "./AccessTokenHelpers.js";
 import IAuthStrategy, { emptyAccessToken } from "./IAuthStrategy.js";
@@ -16,7 +16,7 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
   constructor(
     private clientId: string,
     private redirectUri: string,
-    private scopes: string[],
+    private scopes: string[]
   ) {}
 
   public setConfiguration(configuration: SdkConfiguration): void {
@@ -33,9 +33,9 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
       async (expiring) => {
         return AccessTokenHelpers.refreshCachedAccessToken(
           this.clientId,
-          expiring,
+          expiring
         );
-      },
+      }
     );
 
     return token;
@@ -43,13 +43,13 @@ export default class ImplicitGrantStrategy implements IAuthStrategy {
 
   public async getAccessToken(): Promise<AccessToken | null> {
     const token = await this.cache.get<AccessToken>(
-      ImplicitGrantStrategy.cacheKey,
+      ImplicitGrantStrategy.cacheKey
     );
     return token;
   }
 
-  public removeAccessToken(): void {
-    this.cache.remove(ImplicitGrantStrategy.cacheKey);
+  public async removeAccessToken(): Promise<void> {
+    await this.cache.remove(ImplicitGrantStrategy.cacheKey);
   }
 
   private async redirectOrVerifyToken(): Promise<AccessToken> {

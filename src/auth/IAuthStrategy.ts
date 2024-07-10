@@ -15,5 +15,5 @@ export default interface IAuthStrategy {
   setConfiguration(configuration: SdkConfiguration): void;
   getOrCreateAccessToken(): Promise<AccessToken>;
   getAccessToken(): Promise<AccessToken | null>;
-  removeAccessToken(): void;
+  removeAccessToken(): void | Promise<void>;
 }

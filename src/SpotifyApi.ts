@@ -179,8 +179,8 @@ export class SpotifyApi {
   /**
    * Removes the access token if it exists.
    */
-  public logOut(): void {
-    this.authenticationStrategy.removeAccessToken();
+  public async logOut(): Promise<void> {
+    await this.authenticationStrategy.removeAccessToken();
   }
 
   public static withUserAuthorization(

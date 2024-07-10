@@ -1,8 +1,8 @@
 import type {
-  ICachable,
-  SdkConfiguration,
   AccessToken,
+  ICachable,
   ICachingStrategy,
+  SdkConfiguration,
 } from "../types.js";
 import AccessTokenHelpers from "./AccessTokenHelpers.js";
 import IAuthStrategy, { emptyAccessToken } from "./IAuthStrategy.js";
@@ -25,7 +25,7 @@ export default class AuthorizationCodeWithPKCEStrategy
   constructor(
     protected clientId: string,
     protected redirectUri: string,
-    protected scopes: string[],
+    protected scopes: string[]
   ) {}
 
   public setConfiguration(configuration: SdkConfiguration): void {
@@ -42,9 +42,9 @@ export default class AuthorizationCodeWithPKCEStrategy
       async (expiring) => {
         return AccessTokenHelpers.refreshCachedAccessToken(
           this.clientId,
-          expiring,
+          expiring
         );
-      },
+      }
     );
 
     return token;
@@ -52,13 +52,13 @@ export default class AuthorizationCodeWithPKCEStrategy
 
   public async getAccessToken(): Promise<AccessToken | null> {
     const token = await this.cache.get<AccessToken>(
-      AuthorizationCodeWithPKCEStrategy.cacheKey,
+      AuthorizationCodeWithPKCEStrategy.cacheKey
     );
     return token;
   }
 
-  public removeAccessToken(): void {
-    this.cache.remove(AuthorizationCodeWithPKCEStrategy.cacheKey);
+  public async removeAccessToken(): Promise<void> {
+    await this.cache.remove(AuthorizationCodeWithPKCEStrategy.cacheKey);
   }
 
   private async redirectOrVerifyToken(): Promise<AccessToken> {
@@ -83,24 +83,24 @@ export default class AuthorizationCodeWithPKCEStrategy
       verifier,
       expiresOnAccess: true,
     };
-    this.cache.setCacheItem("spotify-sdk:verifier", singleUseVerifier);
+    await this.cache.setCacheItem("spotify-sdk:verifier", singleUseVerifier);
 
     const redirectTarget = await this.generateRedirectUrlForUser(
       this.scopes,
-      challenge,
+      challenge
     );
     await this.configuration!.redirectionStrategy.redirect(redirectTarget);
   }
 
   private async verifyAndExchangeCode(code: string) {
     const cachedItem = await this.cache.get<CachedVerifier>(
-      "spotify-sdk:verifier",
+      "spotify-sdk:verifier"
     );
     const verifier = cachedItem?.verifier;
 
     if (!verifier) {
       throw new Error(
-        "No verifier found in cache - can't validate query string callback parameters.",
+        "No verifier found in cache - can't validate query string callback parameters."
       );
     }
 
@@ -118,7 +118,7 @@ export default class AuthorizationCodeWithPKCEStrategy
 
   protected async generateRedirectUrlForUser(
     scopes: string[],
-    challenge: string,
+    challenge: string
   ) {
     const scope = scopes.join(" ");
 
@@ -135,7 +135,7 @@ export default class AuthorizationCodeWithPKCEStrategy
 
   protected async exchangeCodeForToken(
     code: string,
-    verifier: string,
+    verifier: string
   ): Promise<AccessToken> {
     const params = new URLSearchParams();
     params.append("client_id", this.clientId);
@@ -154,7 +154,7 @@ export default class AuthorizationCodeWithPKCEStrategy
 
     if (!result.ok) {
       throw new Error(
-        `Failed to exchange code for token: ${result.statusText}, ${text}`,
+        `Failed to exchange code for token: ${result.statusText}, ${text}`
       );
     }
 

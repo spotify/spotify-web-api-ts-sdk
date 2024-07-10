@@ -1,5 +1,5 @@
 import { isEmptyAccessToken } from "../auth/IAuthStrategy.js";
-import { ICachingStrategy, ICachable } from "../types.js";
+import { ICachable, ICachingStrategy } from "../types.js";
 import { ICacheStore } from "./ICacheStore.js";
 
 export default class GenericCache implements ICachingStrategy {
@@ -10,7 +10,7 @@ export default class GenericCache implements ICachingStrategy {
       (item: any) => Promise<ICachable>
     > = new Map(),
     private autoRenewInterval: number = 0,
-    private autoRenewWindow: number = 2 * 60 * 1000, // Two minutes
+    private autoRenewWindow: number = 2 * 60 * 1000 // Two minutes
   ) {
     if (this.autoRenewInterval > 0) {
       setInterval(() => this.autoRenewRenewableItems(), this.autoRenewInterval);
@@ -20,7 +20,7 @@ export default class GenericCache implements ICachingStrategy {
   public async getOrCreate<T>(
     cacheKey: string,
     createFunction: () => Promise<T & ICachable & object>,
-    updateFunction?: (item: T) => Promise<T & ICachable & object>,
+    updateFunction?: (item: T) => Promise<T & ICachable & object>
   ): Promise<T & ICachable> {
     if (updateFunction) {
       this.updateFunctions.set(cacheKey, updateFunction);
@@ -37,14 +37,14 @@ export default class GenericCache implements ICachingStrategy {
     }
 
     if (!isEmptyAccessToken(newCacheItem)) {
-      this.setCacheItem(cacheKey, newCacheItem);
+      await this.setCacheItem(cacheKey, newCacheItem);
     }
 
     return newCacheItem;
   }
 
   public async get<T>(cacheKey: string): Promise<(T & ICachable) | null> {
-    let asString = this.storage.get(cacheKey);
+    let asString = await this.storage.get(cacheKey);
     let cachedItem: T & ICachable = asString ? JSON.parse(asString) : null;
 
     if (
@@ -55,7 +55,7 @@ export default class GenericCache implements ICachingStrategy {
       await this.tryUpdateItem(cacheKey, cachedItem, updateFunction!);
 
       // Ensure updated item is returned
-      asString = this.storage.get(cacheKey);
+      asString = await this.storage.get(cacheKey);
       cachedItem = asString ? JSON.parse(asString) : null;
     }
 
@@ -67,31 +67,38 @@ export default class GenericCache implements ICachingStrategy {
       cachedItem.expires &&
       (cachedItem.expires === -1 || cachedItem.expires <= Date.now())
     ) {
-      this.remove(cacheKey);
+      await this.remove(cacheKey);
       return null;
     }
 
     if (cachedItem.expiresOnAccess && cachedItem.expiresOnAccess === true) {
-      this.remove(cacheKey);
+      await this.remove(cacheKey);
       return cachedItem;
     }
 
     return cachedItem;
   }
 
-  public set(cacheKey: string, value: object, expiresIn: number): void {
+  public async set(
+    cacheKey: string,
+    value: object,
+    expiresIn: number
+  ): Promise<void> {
     const expires = Date.now() + expiresIn;
     const cacheItem: ICachable = { ...value, expires };
-    this.setCacheItem(cacheKey, cacheItem);
+    await this.setCacheItem(cacheKey, cacheItem);
   }
 
-  public setCacheItem(cacheKey: string, cacheItem: ICachable): void {
+  public async setCacheItem(
+    cacheKey: string,
+    cacheItem: ICachable
+  ): Promise<void> {
     const asString = JSON.stringify(cacheItem);
-    this.storage.set(cacheKey, asString);
+    await this.storage.set(cacheKey, asString);
   }
 
-  public remove(cacheKey: string): void {
-    this.storage.remove(cacheKey);
+  public async remove(cacheKey: string): Promise<void> {
+    await this.storage.remove(cacheKey);
   }
 
   private itemDueToExpire(item: ICachable): boolean {
@@ -122,12 +129,12 @@ export default class GenericCache implements ICachingStrategy {
   private async tryUpdateItem(
     key: string,
     cachedItem: ICachable,
-    updateFunction: (item: ICachable) => Promise<ICachable>,
+    updateFunction: (item: ICachable) => Promise<ICachable>
   ) {
     try {
       const updated = await updateFunction(cachedItem);
       if (updated) {
-        this.setCacheItem(key, updated);
+        await this.setCacheItem(key, updated);
       }
     } catch (e) {
       console.error(e);
