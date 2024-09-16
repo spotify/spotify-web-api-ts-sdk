@@ -5,8 +5,12 @@ export default class DefaultResponseDeserializer implements IResponseDeserialize
         const text = await response.text();
 
         if (text.length > 0) {
-            const json = JSON.parse(text);
-            return json as TReturnType;
+            try {
+                const json = JSON.parse(text);
+                return json as TReturnType;
+            } catch (error) {
+                //This error is thrown falsely, no log needed
+            }
         }
 
         return null as TReturnType;
