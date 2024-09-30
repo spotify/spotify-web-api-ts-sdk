@@ -1,21 +1,6 @@
-import { SpotifyApi } from "../SpotifyApi.js";
-import type {
-    User,
-    Page,
-    Artist,
-    Track,
-    MaxInt,
-    FollowedArtists,
-    Market,
-    SavedAlbum,
-    SimplifiedAudiobook,
-    SimplifiedPlaylist,
-    SavedEpisode,
-    SavedShow,
-    SavedTrack,
-    UserProfile,
-} from "../types.js";
-import EndpointsBase from "./EndpointsBase.js";
+import { SpotifyApi } from '../SpotifyApi.js';
+import type { User, Page, Artist, Track, MaxInt, FollowedArtists, Market, SavedAlbum, SimplifiedAudiobook, SimplifiedPlaylist, SavedEpisode, SavedShow, SavedTrack, UserProfile } from '../types.js';
+import EndpointsBase from './EndpointsBase.js';
 
 export default class CurrentUserEndpoints extends EndpointsBase {
     public albums: CurrentUserAlbumsEndpoints;
@@ -37,10 +22,10 @@ export default class CurrentUserEndpoints extends EndpointsBase {
     }
 
     public profile() {
-        return this.getRequest<UserProfile>("me");
+        return this.getRequest<UserProfile>('me');
     }
 
-    public topItems<T extends "artists" | "tracks">(type: T, time_range?: "short_term" | "medium_term" | "long_term", limit?: MaxInt<50>, offset?: number) {
+    public topItems<T extends "artists" | "tracks">(type: T, time_range?: 'short_term' | 'medium_term' | 'long_term', limit?: MaxInt<50>, offset?: number) {
         const params = this.paramsFor({ time_range, limit, offset });
         return this.getRequest<Page<T extends "artists" ? Artist : Track>>(`me/top/${type}${params}`);
     }
@@ -50,21 +35,22 @@ export default class CurrentUserEndpoints extends EndpointsBase {
         return this.getRequest<FollowedArtists>(`me/following${params}`);
     }
 
-    public async followArtistsOrUsers(ids: string[], type: "artist" | "user") {
+    public async followArtistsOrUsers(ids: string[], type: 'artist' | 'user') {
         const params = this.paramsFor({ type });
         await this.putRequest(`me/following${params}`, { ids });
     }
 
-    public async unfollowArtistsOrUsers(ids: string[], type: "artist" | "user") {
+    public async unfollowArtistsOrUsers(ids: string[], type: 'artist' | 'user') {
         const params = this.paramsFor({ type });
         await this.deleteRequest(`me/following${params}`, { ids });
     }
 
-    public followsArtistsOrUsers(ids: string[], type: "artist" | "user") {
+    public followsArtistsOrUsers(ids: string[], type: 'artist' | 'user') {
         const params = this.paramsFor({ ids, type });
         return this.getRequest<boolean[]>(`me/following/contains${params}`);
     }
 }
+
 
 class CurrentUserAlbumsEndpoints extends EndpointsBase {
     public savedAlbums(limit?: MaxInt<50>, offset?: number, market?: Market) {
@@ -73,11 +59,11 @@ class CurrentUserAlbumsEndpoints extends EndpointsBase {
     }
 
     public async saveAlbums(ids: string[]) {
-        await this.putRequest("me/albums", { ids });
+        await this.putRequest('me/albums', { ids });
     }
 
     public async removeSavedAlbums(ids: string[]) {
-        await this.deleteRequest("me/albums", { ids });
+        await this.deleteRequest('me/albums', { ids });
     }
 
     public hasSavedAlbums(ids: string[]) {
@@ -115,11 +101,11 @@ class CurrentUserEpisodesEndpoints extends EndpointsBase {
     }
 
     public async saveEpisodes(ids: string[]) {
-        await this.putRequest(`me/episodes`, { ids });
+        await this.putRequest(`me/episodes`, { ids })
     }
 
     public async removeSavedEpisodes(ids: string[]) {
-        await this.deleteRequest(`me/episodes`, { ids });
+        await this.deleteRequest(`me/episodes`, { ids })
     }
 
     public hasSavedEpisodes(ids: string[]) {
@@ -144,13 +130,13 @@ class CurrentUserPlaylistsEndpoints extends EndpointsBase {
 
     public isFollowing(playlistId: string, ids: string[]) {
         const params = this.paramsFor({ ids });
-        return this.getRequest<boolean[]>(`playlists/${playlistId}/followers/contains${params}`);
+        return this.getRequest<boolean[]>(`playlists/${playlistId}/followers/contains${params}`)
     }
 }
 
 class CurrentUserShowsEndpoints extends EndpointsBase {
     public savedShows(limit?: MaxInt<50>, offset?: number) {
-        const params = this.paramsFor({ limit, offset });
+        const params = this.paramsFor({ limit, offset })
         return this.getRequest<Page<SavedShow>>(`me/shows${params}`);
     }
 
@@ -176,11 +162,11 @@ class CurrentUserTracksEndpoints extends EndpointsBase {
         return this.getRequest<Page<SavedTrack>>(`me/tracks${params}`);
     }
     public async saveTracks(ids: string[]) {
-        await this.putRequest("me/tracks", { ids });
+        await this.putRequest('me/tracks', { ids });
     }
 
     public async removeSavedTracks(ids: string[]) {
-        await this.deleteRequest("me/tracks", { ids });
+        await this.deleteRequest('me/tracks', { ids });
     }
 
     public hasSavedTracks(ids: string[]) {
@@ -188,3 +174,4 @@ class CurrentUserTracksEndpoints extends EndpointsBase {
         return this.getRequest<boolean[]>(`me/tracks/contains${params}`);
     }
 }
+
