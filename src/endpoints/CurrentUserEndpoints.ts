@@ -59,11 +59,11 @@ class CurrentUserAlbumsEndpoints extends EndpointsBase {
     }
 
     public async saveAlbums(ids: string[]) {
-        await this.putRequest('me/albums', ids);
+        await this.putRequest('me/albums', { ids });
     }
 
     public async removeSavedAlbums(ids: string[]) {
-        await this.deleteRequest('me/albums', ids);
+        await this.deleteRequest('me/albums', { ids });
     }
 
     public hasSavedAlbums(ids: string[]) {
