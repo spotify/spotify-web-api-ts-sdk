@@ -38,6 +38,13 @@ export interface IHandleErrors {
     handleErrors(error: any): Promise<boolean>;
 }
 
+export interface ISpotifyError {
+    status: number;
+    statusText: string;
+    message: string;
+    response: Response;  
+}
+
 export interface IValidateResponses {
     validateResponse: (response: Response) => Promise<any | null>;
 }
