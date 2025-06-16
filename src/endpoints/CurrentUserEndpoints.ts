@@ -178,7 +178,6 @@ class CurrentUserShowsEndpoints extends EndpointsBase {
 }
 
 class CurrentUserTracksEndpoints extends EndpointsBase {
-
   public savedTracks(limit?: MaxInt<50>, offset?: number, market?: Market) {
     const params = this.paramsFor({ limit, offset, market });
     return this.getRequest<Page<SavedTrack>>(`me/tracks${params}`);
