@@ -5,18 +5,20 @@ import { FetchApiSpy } from "../test/FetchApiSpy";
 import { validMarkets } from "../test/data/validMarkets";
 
 describe("Integration: Episodes Endpoints", () => {
-    let sut: SpotifyApi;
-    let fetchSpy: FetchApiSpy;
+  let sut: SpotifyApi;
+  let fetchSpy: FetchApiSpy;
 
-    beforeEach(() => {
-        [sut, fetchSpy] = buildIntegrationTestSdkInstance();
-    });
+  beforeEach(() => {
+    [sut, fetchSpy] = buildIntegrationTestSdkInstance();
+  });
 
-    it("getAvailableMarkets can return information", async () => {
-        const valid = validMarkets();
-        const result = await sut.markets.getAvailableMarkets();
+  it("getAvailableMarkets can return information", async () => {
+    const valid = validMarkets();
+    const result = await sut.markets.getAvailableMarkets();
 
-        expect(fetchSpy.request(0).input).toBe(`https://api.spotify.com/v1/markets`);
-        expect(result).toStrictEqual(valid);
-    });
+    expect(fetchSpy.request(0).input).toBe(
+      `https://api.spotify.com/v1/markets`,
+    );
+    expect(result).toStrictEqual(valid);
+  });
 });
