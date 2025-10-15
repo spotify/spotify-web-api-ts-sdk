@@ -68,7 +68,6 @@ console.table(items.artists.items.map((item) => ({
 
 - Authorization Code Flow with PKCE
 - Client Credentials Flow
-- Implicit Grant Flow
 - Mixed Server and Client Side Authentication
 
 We do auto-token refresh when expired and a refresh token is available.

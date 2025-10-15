@@ -1,13 +1,13 @@
 import { SpotifyApi } from "../src/index";
 import AuthorizationCodeWithPKCEStrategy from "../src/auth/AuthorizationCodeWithPKCEStrategy";
 
-const implicitGrantStrategy = new AuthorizationCodeWithPKCEStrategy(
+const authStrategy = new AuthorizationCodeWithPKCEStrategy(
     import.meta.env.VITE_SPOTIFY_CLIENT_ID,
     import.meta.env.VITE_REDIRECT_TARGET,
     ['user-read-private', 'user-read-email', 'playlist-modify-public', 'playlist-modify-private, user-read-playback-state, user-modify-playback-state']
 );
 
-const spotify = new SpotifyApi(implicitGrantStrategy);
+const spotify = new SpotifyApi(authStrategy);
 const profile = await spotify.currentUser.profile();
 console.log(profile);
 
