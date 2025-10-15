@@ -31,7 +31,7 @@ npm run start
 
 To run the tests, you need to have a Spotify account.
 
-You will need to create a new app in the Spotify Developer portal, and add a redirect URI of `http://localhost:3000`.
+You will need to create a new app in the Spotify Developer portal, and add a redirect URI of `http://127.0.0.1:3000`.
 
 Add the following environment variables:
 
@@ -49,7 +49,7 @@ We support `dotenv`, so you can add these to a `.env` file in the root of the re
 To run the embedded example app, you will need to add the following environment variables:
 
 - `VITE_SPOTIFY_CLIENT_ID`=the same value as set in INTEGRATION_TESTS_SPOTIFY_CLIENT_ID
-- `VITE_REDIRECT_TARGET`=http://localhost:3000
+- `VITE_REDIRECT_TARGET`=http://127.0.0.1:3000
 
 For the example app to work, this .env file needs to be in the ./example folder.
 
@@ -72,7 +72,7 @@ We follow the [GitHub Flow Workflow](https://guides.github.com/introduction/flow
 
 To run the tests, you need to have a Spotify account.
 
-You will need to create a new app in the Spotify Developer portal, and add a redirect URI of `http://localhost:3000`.
+You will need to create a new app in the Spotify Developer portal, and add a redirect URI of `http://127.0.0.1:3000`.
 
 You will need to add the following environment variables:
 
@@ -91,7 +91,7 @@ To run the embedded example app, you will need to add the following environment 
 
 ```bash
 VITE_SPOTIFY_CLIENT_ID=the same value as set in INTEGRATION_TESTS_SPOTIFY_CLIENT_ID
-VITE_REDIRECT_TARGET=http://localhost:3000
+VITE_REDIRECT_TARGET=http://127.0.0.1:3000
 ```
 
 For the example app to work, this .env file needs to be in the ./example folder.

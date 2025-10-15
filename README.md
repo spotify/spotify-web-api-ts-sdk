@@ -29,7 +29,7 @@ Create a `.env` file in the example directory with your `client_id` and redirect
 
 ```bash .env
 VITE_SPOTIFY_CLIENT_ID=your_spotify_client_id_for_tests
-VITE_REDIRECT_TARGET=http://localhost:3000
+VITE_REDIRECT_TARGET=http://127.0.0.1:3000
 ```
 
 To run the app:
@@ -46,7 +46,7 @@ Creating an instance of the SDK is easy, and can be done in a number of ways dep
 import { SpotifyApi } from '@spotify/web-api-ts-sdk';
 
 // Choose one of the following:
-const sdk = SpotifyApi.withUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"]);
+const sdk = SpotifyApi.withUserAuthorization("client-id", "http://127.0.0.1:3000", ["scope1", "scope2"]);
 const sdk = SpotifyApi.withClientCredentials("client-id", "secret", ["scope1", "scope2"]);
 ```
 
@@ -79,7 +79,7 @@ If you're building a browser based application, you should use Authorization Cod
 Calling any of the methods on the SDK will automatically perform any redirects/refreshes that are necessary.
 
 ```js
-const sdk = SpotifyApi.withUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"]);
+const sdk = SpotifyApi.withUserAuthorization("client-id", "http://127.0.0.1:3000", ["scope1", "scope2"]);
 const user = await sdk.currentUser.profile()
 ```
 
@@ -103,9 +103,9 @@ Setup:
 
 *Client Side*
 ```js
-SpotifyApi.performUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"], "https://your-backend-server.com/accept-user-token");
+SpotifyApi.performUserAuthorization("client-id", "http://127.0.0.1:3000", ["scope1", "scope2"], "https://your-backend-server.com/accept-user-token");
 // Alternatively if you want to perform your own custom post-back
-SpotifyApi.performUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"], (accessToken) => { /* do postback here */ });
+SpotifyApi.performUserAuthorization("client-id", "http://127.0.0.1:3000", ["scope1", "scope2"], (accessToken) => { /* do postback here */ });
 ```
 
 These functions will work as usual, triggering a client side redirect to grant permissions, along with verifying the response and performing token exchange.
@@ -289,7 +289,7 @@ We provide a default browser (localStorage) caching strategy and (TODO) a node i
 
 To run the tests, you need to have a Spotify account.
 
-You will need to create a new app in the Spotify Developer portal, and add a redirect URI of `http://localhost:3000`.
+You will need to create a new app in the Spotify Developer portal, and add a redirect URI of `http://127.0.0.1:3000`.
 
 You will need to add the following environment variables:
 
@@ -307,6 +307,6 @@ We support `dotenv`, so you can add these to a `.env` file in the root of the re
 To run the embedded example app, you will need to add the following environment variables:
 
 - `VITE_SPOTIFY_CLIENT_ID`=the same value as set in INTEGRATION_TESTS_SPOTIFY_CLIENT_ID
-- `VITE_REDIRECT_TARGET`=http://localhost:3000
+- `VITE_REDIRECT_TARGET`=http://127.0.0.1:3000
 
 For the example app to work, this .env file needs to be in the ./example folder.
