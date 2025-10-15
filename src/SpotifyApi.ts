@@ -15,7 +15,6 @@ import IAuthStrategy, { isEmptyAccessToken } from "./auth/IAuthStrategy.js";
 import UsersEndpoints from "./endpoints/UsersEndpoints.js";
 import CurrentUserEndpoints from "./endpoints/CurrentUserEndpoints.js";
 import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy.js";
-import ImplicitGrantStrategy from "./auth/ImplicitGrantStrategy.js";
 import AuthorizationCodeWithPKCEStrategy from "./auth/AuthorizationCodeWithPKCEStrategy.js";
 import DefaultResponseDeserializer from "./serialization/DefaultResponseDeserializer.js";
 import DefaultResponseValidator from "./responsevalidation/DefaultResponseValidator.js";
@@ -171,11 +170,6 @@ export class SpotifyApi {
 
     public static withClientCredentials(clientId: string, clientSecret: string, scopes: string[] = [], config?: SdkOptions): SpotifyApi {
         const strategy = new ClientCredentialsStrategy(clientId, clientSecret, scopes);
-        return new SpotifyApi(strategy, config);
-    }
-
-    public static withImplicitGrant(clientId: string, redirectUri: string, scopes: string[] = [], config?: SdkOptions): SpotifyApi {
-        const strategy = new ImplicitGrantStrategy(clientId, redirectUri, scopes);
         return new SpotifyApi(strategy, config);
     }
 
