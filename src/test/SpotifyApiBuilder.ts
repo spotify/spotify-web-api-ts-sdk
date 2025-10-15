@@ -68,6 +68,7 @@ export function buildIntegrationTestUserSdkInstance(logResults: boolean = false)
     };
 
     const sdkInstance = new SpotifyApi(authStrat, sdkConfig);
+
     return [sdkInstance, fetchSpy];
 }
 
