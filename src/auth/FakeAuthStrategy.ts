@@ -2,7 +2,7 @@ import IAuthStrategy from "../auth/IAuthStrategy";
 import InMemoryCachingStrategy from "../caching/InMemoryCachingStrategy";
 import type { AccessToken, ICachingStrategy, SdkConfiguration } from "../types";
 
-export class FakeAuthStrategy implements IAuthStrategy {
+export default class FakeAuthStrategy implements IAuthStrategy {
 
     public static readonly FAKE_AUTH_TOKEN = "fake-auth-token";
     private static readonly cacheKey = "spotify-sdk:FakeAuthStrategy:token";

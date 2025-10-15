@@ -24,3 +24,6 @@ document.getElementById("uri")!.setAttribute("href", profile.external_urls.spoti
 document.getElementById("url")!.innerText = profile.href;
 document.getElementById("url")!.setAttribute("href", profile.href);
 document.getElementById("imgUrl")!.innerText = profile.images[0]?.url ?? '(no profile image)';
+
+const accessToken = await authStrategy.getAccessToken();
+document.getElementById("refreshToken")!.innerText = accessToken?.refresh_token ?? '(no refresh token)';
