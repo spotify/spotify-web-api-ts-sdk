@@ -14,7 +14,7 @@ export default class AuthAsSpecificUserForTests extends AuthorizationCodeWithPKC
         private email: string,
         private password: string
     ) {
-        super(clientId, "http://localhost:3000", scopes);
+        super(clientId, "http://127.0.0.1:3000", scopes);
         this.cacheKey = `test-user-${email}`;
     }
 
@@ -66,7 +66,7 @@ export default class AuthAsSpecificUserForTests extends AuthorizationCodeWithPKC
             await page.waitForRequest(r => {
                 const url = r.url();
                 capturedUrl = url;
-                return url.includes("http://localhost:3000");
+                return url.includes("http://127.0.0.1:3000");
             });
         } catch (e) {
             console.log(capturedUrl, e);

@@ -71,7 +71,7 @@ describe("SpotifyAPI Instance", () => {
         });
 
         it("can create an instance with the authorization code strategy configured", async () => {
-            const sut = SpotifyApi.withUserAuthorization("client-id", "https://localhost:3000", ["scope1", "scope2"]);
+            const sut = SpotifyApi.withUserAuthorization("client-id", "http://127.0.0.1:3000", ["scope1", "scope2"]);
             expect(sut["authenticationStrategy"].constructor.name).toBe(AuthorizationCodeWithPKCEStrategy.name);
         });
 
