@@ -294,10 +294,9 @@ You will need to create a new app in the Spotify Developer portal, and add a red
 
 You will need to add the following environment variables:
 
+- `INTEGRATION_TESTS_REFRESH_TOKEN`
 - `INTEGRATION_TESTS_SPOTIFY_CLIENT_ID`
 - `INTEGRATION_TESTS_SPOTIFY_CLIENT_SECRET`
-- `INTEGRATION_TESTS_USER_EMAIL`
-- `INTEGRATION_TESTS_USER_PASSWORD`
 
 The latter two credentials are used to run integration tests in the scope of a *real user account*. This is required to test endpoints that require a user's authorization, such as `followPlaylist`. You need to make sure that your user has access to whichever Spotify app your client credentials and secret are for.
 

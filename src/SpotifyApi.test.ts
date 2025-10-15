@@ -1,11 +1,11 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { SpotifyApi } from "./SpotifyApi";
 import { buildUnitTestSdkInstance } from "./test/SpotifyApiBuilder";
-import { FakeAuthStrategy } from "./test/FakeAuthStrategy";
 import { FetchApiMock } from "./test/FetchApiMock";
 import { validAlbumResult } from "./test/data/validAlbumResult";
 import AuthorizationCodeWithPKCEStrategy from "./auth/AuthorizationCodeWithPKCEStrategy";
 import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy";
+import FakeAuthStrategy from "./auth/FakeAuthStrategy";
 import ImplicitGrantStrategy from "./auth/ImplicitGrantStrategy";
 import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy";
 import { AccessToken, SdkOptions } from "./types";
