@@ -48,9 +48,9 @@ export default class PlayerEndpoints extends EndpointsBase {
         await this.putRequest('me/player', { device_ids, play });
     }
 
-    public async startResumePlayback(device_id: string, context_uri?: string, uris?: string[], offset?: object, positionMs?: number) {
+    public async startResumePlayback(device_id: string, context_uri?: string, uris?: string[], offset?: object, position_ms?: number) {
         const params = this.paramsFor({ device_id });
-        await this.putRequest(`me/player/play${params}`, { context_uri, uris, offset, positionMs });
+        await this.putRequest(`me/player/play${params}`, { context_uri, uris, offset, position_ms });
     }
 
     public async pausePlayback(device_id: string) {
