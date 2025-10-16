@@ -36,11 +36,11 @@ export default class PlaylistsEndpoints extends EndpointsBase {
     }
 
     public async addItemsToPlaylist(playlist_id: string, uris?: string[], position?: number) {
-        await this.postRequest(`playlists/${playlist_id}/tracks`, { position, uris: uris });
+        return this.postRequest<SnapshotReference>(`playlists/${playlist_id}/tracks`, { position, uris: uris });
     }
 
     public async removeItemsFromPlaylist(playlist_id: string, request: RemovePlaylistItemsRequest) {
-        await this.deleteRequest(`playlists/${playlist_id}/tracks`, request);
+        return this.deleteRequest<SnapshotReference>(`playlists/${playlist_id}/tracks`, request);
     }
 
     public getUsersPlaylists(user_id: string, limit?: MaxInt<50>, offset?: number) {
