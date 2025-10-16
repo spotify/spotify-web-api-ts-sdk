@@ -5,6 +5,7 @@ import { SpotifyApi } from "../SpotifyApi";
 import { FetchApiSpy } from "../test/FetchApiSpy";
 import { validArtist } from "../test/data/validArtist";
 import { validAlbumResult } from "../test/data/validAlbumResult";
+import { validTrack } from "../test/data/validTrack";
 import { validAudioBook } from "../test/data/validAudioBook";
 import { validShow } from "../test/data/validShow";
 
@@ -17,6 +18,9 @@ describe("Integration: Users Endpoints (logged in user)", () => {
 
     let albumId: string;
     let wasAlbumSaved: boolean;
+
+    let trackId: string;
+    let wasTrackSaved: boolean;
 
     let audioBookId: string;
     let wasAudioBookSaved: boolean;
@@ -37,6 +41,12 @@ describe("Integration: Users Endpoints (logged in user)", () => {
         wasAlbumSaved = (await sut.currentUser.albums.hasSavedAlbums([albumId]))[0];
         if (!wasAlbumSaved) {
             await sut.currentUser.albums.saveAlbums([albumId]);
+        }
+
+        trackId = validTrack().id;
+        wasTrackSaved = (await sut.currentUser.tracks.hasSavedTracks([trackId]))[0];
+        if (!wasTrackSaved) {
+            await sut.currentUser.tracks.saveTracks([trackId]);
         }
 
         audioBookId = validAudioBook().id;
@@ -63,6 +73,12 @@ describe("Integration: Users Endpoints (logged in user)", () => {
             await sut.currentUser.albums.saveAlbums([albumId]);
         } else {
             await sut.currentUser.albums.removeSavedAlbums([albumId]);
+        }
+
+        if (wasTrackSaved) {
+            await sut.currentUser.tracks.saveTracks([trackId]);
+        } else {
+            await sut.currentUser.tracks.removeSavedTracks([trackId]);
         }
 
         if (wasAudioBookSaved) {
@@ -231,6 +247,20 @@ describe("Integration: Users Endpoints (logged in user)", () => {
 
         const result2 = await sut.currentUser.albums.savedAlbums();
         expect(result2.items.find((a) => a.album.id === albumId)).toBeFalsy();
+    });
+
+    it("can save and remove tracks for user", async () => {
+        await sut.currentUser.tracks.saveTracks([trackId]);
+        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/tracks`);
+
+        const result = await sut.currentUser.tracks.savedTracks();
+        expect(result.items.find((a) => a.track.id === trackId)).toBeTruthy();
+
+        await sut.currentUser.tracks.removeSavedTracks([trackId]);
+        expect(fetchSpy.lastRequest().input).toBe(`https://api.spotify.com/v1/me/tracks`);
+
+        const result2 = await sut.currentUser.tracks.savedTracks();
+        expect(result2.items.find((a) => a.track.id === trackId)).toBeFalsy();
     });
 
     it("getFeaturedPlaylists returns playlists", async () => {
