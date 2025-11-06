@@ -54,8 +54,8 @@ export interface ICachingStrategy {
     ): Promise<T & ICachable>;
 
     get<T>(cacheKey: string): Promise<T & ICachable | null>;
-    setCacheItem<T>(cacheKey: string, item: T & ICachable): void;
-    remove(cacheKey: string): void;
+    setCacheItem<T>(cacheKey: string, item: T & ICachable): void | Promise<void>;
+    remove(cacheKey: string): void | Promise<void>;
 }
 
 export interface ICachable {

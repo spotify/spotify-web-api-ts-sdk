@@ -86,7 +86,7 @@ describe("SpotifyAPI Instance", () => {
 
         it("when access token provided, it is accurately retrieved taking precedence over any existing cached token.", async () => {
             const config: SdkOptions = { cachingStrategy: new InMemoryCachingStrategy() };
-            config.cachingStrategy?.setCacheItem("spotify-sdk:ProvidedAccessTokenStrategy:token", { access_token: "some-old-token" });
+            await config.cachingStrategy?.setCacheItem("spotify-sdk:ProvidedAccessTokenStrategy:token", { access_token: "some-old-token" });
 
             const sut = SpotifyApi.withAccessToken("client-id", { access_token: "some-new-token" } as AccessToken, config);
             const token = await sut.getAccessToken();
