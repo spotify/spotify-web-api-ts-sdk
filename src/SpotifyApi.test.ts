@@ -1,12 +1,11 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { SpotifyApi } from "./SpotifyApi";
 import { buildUnitTestSdkInstance } from "./test/SpotifyApiBuilder";
-import { FakeAuthStrategy } from "./test/FakeAuthStrategy";
 import { FetchApiMock } from "./test/FetchApiMock";
 import { validAlbumResult } from "./test/data/validAlbumResult";
 import AuthorizationCodeWithPKCEStrategy from "./auth/AuthorizationCodeWithPKCEStrategy";
 import ClientCredentialsStrategy from "./auth/ClientCredentialsStrategy";
-import ImplicitGrantStrategy from "./auth/ImplicitGrantStrategy";
+import FakeAuthStrategy from "./auth/FakeAuthStrategy";
 import ProvidedAccessTokenStrategy from "./auth/ProvidedAccessTokenStrategy";
 import { AccessToken, SdkOptions } from "./types";
 import InMemoryCachingStrategy from "./caching/InMemoryCachingStrategy";
@@ -78,11 +77,6 @@ describe("SpotifyAPI Instance", () => {
         it("can create an instance with the client credentials strategy configured", async () => {
             const sut = SpotifyApi.withClientCredentials("client-id", "secret", ["scope1", "scope2"]);
             expect(sut["authenticationStrategy"].constructor.name).toBe(ClientCredentialsStrategy.name);
-        });
-
-        it("can create an instance with the implicit grant strategy configured", async () => {
-            const sut = SpotifyApi.withImplicitGrant("client-id", "secret", ["scope1", "scope2"]);
-            expect(sut["authenticationStrategy"].constructor.name).toBe(ImplicitGrantStrategy.name);
         });
 
         it("can create an instance with the provided access token strategy configured", async () => {

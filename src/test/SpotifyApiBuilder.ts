@@ -1,11 +1,10 @@
 import { SpotifyApi } from "../SpotifyApi";
 import ClientCredentialsStrategy from "../auth/ClientCredentialsStrategy";
-import { FakeAuthStrategy } from "./FakeAuthStrategy";
+import FakeAuthStrategy from "../auth/FakeAuthStrategy";
+import ProvidedAccessTokenStrategy from "../auth/ProvidedAccessTokenStrategy";
 import { FetchApiMock } from "./FetchApiMock";
 import { FetchApiSpy } from "./FetchApiSpy";
-import AuthAsSpecifcUserForTests from "./AuthAsRealUserForTests";
 import InMemoryCachingStrategy from "../caching/InMemoryCachingStrategy";
-import { Scopes } from "../Scopes";
 
 import dotenv from "dotenv";
 import { SdkOptions } from "../types";
@@ -43,14 +42,22 @@ export function buildIntegrationTestSdkInstance(logResults: boolean = false): [S
 
 export function buildIntegrationTestUserSdkInstance(logResults: boolean = false): [SpotifyApi, FetchApiSpy] {
     const clientId = process.env.INTEGRATION_TESTS_SPOTIFY_CLIENT_ID;
-    const email = process.env.INTEGRATION_TESTS_USER_EMAIL;
-    const password = process.env.INTEGRATION_TESTS_USER_PASSWORD;
+    const refreshToken = process.env.INTEGRATION_TESTS_REFRESH_TOKEN;
 
-    if (!clientId || !email || !password) {
-        throw new Error("No client ID, or secret, or email, or password provided. Please provide a valid Spotify client ID and secret in the /.env file.");
+    if (!clientId || !refreshToken) {
+        throw new Error("No client ID or refresh token provided. Please provide INTEGRATION_TESTS_SPOTIFY_CLIENT_ID and INTEGRATION_TESTS_REFRESH_TOKEN in the .env file.");
     }
 
-    const authStrat = new AuthAsSpecifcUserForTests(clientId, Scopes.all, email, password);
+    // Create an expired token so it gets refreshed immediately with the refresh token
+    const expiredToken = {
+        access_token: 'expired',
+        token_type: 'Bearer' as const,
+        expires_in: 0,
+        refresh_token: refreshToken,
+        expires: Date.now() - 1000 // Expired
+    };
+
+    const authStrat = new ProvidedAccessTokenStrategy(clientId, expiredToken);
 
     const fetchSpy = new FetchApiSpy(logResults);
     const sdkConfig = {
@@ -58,7 +65,7 @@ export function buildIntegrationTestUserSdkInstance(logResults: boolean = false)
             return fetchSpy.fetch(input, init);
         },
         cachingStrategy: new InMemoryCachingStrategy()
-    }
+    };
 
     const sdkInstance = new SpotifyApi(authStrat, sdkConfig);
 
